@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EpicorIntegrationModelStoreContainer" CdmEntityContainer="EpicorIntegrationEntities">
+    <EntitySetMapping Name="PRODUCTs">
+      <EntityTypeMapping TypeName="EpicorIntegrationModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+          <ScalarProperty Name="SalesItemPerUnit" ColumnName="SalesItemPerUnit" />
+          <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
+          <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
+          <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
+          <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
+          <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
+          <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
+          <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+          <ScalarProperty Name="PurchaseItemsPerUnit" ColumnName="PurchaseItemsPerUnit" />
+          <ScalarProperty Name="PurchaseUnitLength" ColumnName="PurchaseUnitLength" />
+          <ScalarProperty Name="PurchaseUnitWidth" ColumnName="PurchaseUnitWidth" />
+          <ScalarProperty Name="PurchaseUnitHeight" ColumnName="PurchaseUnitHeight" />
+          <ScalarProperty Name="PurchaseUnitVolume" ColumnName="PurchaseUnitVolume" />
+          <ScalarProperty Name="PurchaseUnitWeight" ColumnName="PurchaseUnitWeight" />
+          <ScalarProperty Name="PurchaseVATGroup" ColumnName="PurchaseVATGroup" />
+          <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
+          <ScalarProperty Name="MOQ" ColumnName="MOQ" />
+          <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
+          <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+          <ScalarProperty Name="AttrCode01" ColumnName="AttrCode01" />
+          <ScalarProperty Name="AttrName01" ColumnName="AttrName01" />
+          <ScalarProperty Name="AttrCode02" ColumnName="AttrCode02" />
+          <ScalarProperty Name="AttrName02" ColumnName="AttrName02" />
+          <ScalarProperty Name="AttrCode03" ColumnName="AttrCode03" />
+          <ScalarProperty Name="AttrName03" ColumnName="AttrName03" />
+          <ScalarProperty Name="AttrCode04" ColumnName="AttrCode04" />
+          <ScalarProperty Name="AttrName04" ColumnName="AttrName04" />
+          <ScalarProperty Name="AttrCode05" ColumnName="AttrCode05" />
+          <ScalarProperty Name="AttrName05" ColumnName="AttrName05" />
+          <ScalarProperty Name="AttrCode06" ColumnName="AttrCode06" />
+          <ScalarProperty Name="AttrName06" ColumnName="AttrName06" />
+          <ScalarProperty Name="AttrCode07" ColumnName="AttrCode07" />
+          <ScalarProperty Name="AttrName07" ColumnName="AttrName07" />
+          <ScalarProperty Name="AttrCode08" ColumnName="AttrCode08" />
+          <ScalarProperty Name="AttrName08" ColumnName="AttrName08" />
+          <ScalarProperty Name="AttrCode09" ColumnName="AttrCode09" />
+          <ScalarProperty Name="AttrName09" ColumnName="AttrName09" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+          <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRICE_LIST">
+      <EntityTypeMapping TypeName="EpicorIntegrationModel.PRICE_LIST">
+        <MappingFragment StoreEntitySet="PRICE_LIST">
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+          <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+          <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

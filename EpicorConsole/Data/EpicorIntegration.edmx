@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EpicorIntegrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PRICE_LIST">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PriceListNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Price" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ForeignName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SalesUnit" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SalesItemPerUnit" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="SalesUnitLength" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="SalesUnitWidth" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="SalesUnitHeight" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="SalesUnitVolume" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="SalesUnitWeight" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="SalesVATGroup" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="PurchaseUnit" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PurchaseItemsPerUnit" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="PurchaseUnitLength" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitWidth" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitHeight" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitVolume" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitWeight" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PurchaseVATGroup" Type="nvarchar" MaxLength="16" />
+          <Property Name="InventoryUOM" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MOQ" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="AttrCode0" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName0" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode01" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName01" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode02" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName02" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode03" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName03" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode04" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName04" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode05" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName05" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode06" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName06" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode07" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName07" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode08" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName08" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrCode09" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrName09" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EpicorIntegrationModelStoreContainer">
+          <EntitySet Name="PRICE_LIST" EntityType="Self.PRICE_LIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EpicorIntegrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ItemName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ForeignName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BarCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SalesUnit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SalesItemPerUnit" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="SalesUnitLength" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="SalesUnitWidth" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="SalesUnitHeight" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="SalesUnitVolume" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="SalesUnitWeight" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="SalesVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurchaseUnit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurchaseItemsPerUnit" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="PurchaseUnitLength" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitWidth" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitHeight" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitVolume" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PurchaseUnitWeight" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PurchaseVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryUOM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MOQ" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode01" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName01" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode02" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName02" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode03" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName03" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode04" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName04" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode05" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName05" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode06" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName06" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode07" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName07" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode08" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName08" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode09" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName09" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EpicorIntegrationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
+          <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
+        </EntityContainer>
+        <EntityType Name="PRICE_LIST">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EpicorIntegrationModelStoreContainer" CdmEntityContainer="EpicorIntegrationEntities">
+          <EntitySetMapping Name="PRODUCTs">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.PRODUCT">
+              <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+                <ScalarProperty Name="SalesItemPerUnit" ColumnName="SalesItemPerUnit" />
+                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
+                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
+                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
+                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
+                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
+                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
+                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+                <ScalarProperty Name="PurchaseItemsPerUnit" ColumnName="PurchaseItemsPerUnit" />
+                <ScalarProperty Name="PurchaseUnitLength" ColumnName="PurchaseUnitLength" />
+                <ScalarProperty Name="PurchaseUnitWidth" ColumnName="PurchaseUnitWidth" />
+                <ScalarProperty Name="PurchaseUnitHeight" ColumnName="PurchaseUnitHeight" />
+                <ScalarProperty Name="PurchaseUnitVolume" ColumnName="PurchaseUnitVolume" />
+                <ScalarProperty Name="PurchaseUnitWeight" ColumnName="PurchaseUnitWeight" />
+                <ScalarProperty Name="PurchaseVATGroup" ColumnName="PurchaseVATGroup" />
+                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
+                <ScalarProperty Name="MOQ" ColumnName="MOQ" />
+                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
+                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+                <ScalarProperty Name="AttrCode01" ColumnName="AttrCode01" />
+                <ScalarProperty Name="AttrName01" ColumnName="AttrName01" />
+                <ScalarProperty Name="AttrCode02" ColumnName="AttrCode02" />
+                <ScalarProperty Name="AttrName02" ColumnName="AttrName02" />
+                <ScalarProperty Name="AttrCode03" ColumnName="AttrCode03" />
+                <ScalarProperty Name="AttrName03" ColumnName="AttrName03" />
+                <ScalarProperty Name="AttrCode04" ColumnName="AttrCode04" />
+                <ScalarProperty Name="AttrName04" ColumnName="AttrName04" />
+                <ScalarProperty Name="AttrCode05" ColumnName="AttrCode05" />
+                <ScalarProperty Name="AttrName05" ColumnName="AttrName05" />
+                <ScalarProperty Name="AttrCode06" ColumnName="AttrCode06" />
+                <ScalarProperty Name="AttrName06" ColumnName="AttrName06" />
+                <ScalarProperty Name="AttrCode07" ColumnName="AttrCode07" />
+                <ScalarProperty Name="AttrName07" ColumnName="AttrName07" />
+                <ScalarProperty Name="AttrCode08" ColumnName="AttrCode08" />
+                <ScalarProperty Name="AttrName08" ColumnName="AttrName08" />
+                <ScalarProperty Name="AttrCode09" ColumnName="AttrCode09" />
+                <ScalarProperty Name="AttrName09" ColumnName="AttrName09" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_LIST">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.PRICE_LIST">
+              <MappingFragment StoreEntitySet="PRICE_LIST">
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

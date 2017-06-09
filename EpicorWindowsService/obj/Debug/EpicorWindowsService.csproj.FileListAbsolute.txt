@@ -1,0 +1,10 @@
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EpicorWindowsService.exe.config
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EpicorWindowsService.exe
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EpicorWindowsService.pdb
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EpicorConsole.exe
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EntityFramework.dll
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EpicorConsole.pdb
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\bin\Debug\EntityFramework.xml
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\obj\Debug\EpicorWindowsService.csprojResolveAssemblyReference.cache
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\obj\Debug\EpicorWindowsService.exe
+C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorWindowsService\obj\Debug\EpicorWindowsService.pdb

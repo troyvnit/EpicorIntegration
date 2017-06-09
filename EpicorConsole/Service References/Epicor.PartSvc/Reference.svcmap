@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd8c1b19-c753-4b95-9eea-cf7109e6277c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/Part.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Part.xsd" MetadataType="Schema" ID="ee244b9a-944c-4eb6-8d2e-73cf1cb3e80c" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd2" />
+    <MetadataFile FileName="Part1.xsd" MetadataType="Schema" ID="e3b81777-f0b9-4697-8a84-5243f4730c4f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd3" />
+    <MetadataFile FileName="Part2.xsd" MetadataType="Schema" ID="01e10605-cf07-4c35-8609-d137ddd72f6a" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd0" />
+    <MetadataFile FileName="Part.wsdl" MetadataType="Wsdl" ID="7c692773-943f-46ae-8187-bbdcaadb4b59" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Part3.xsd" MetadataType="Schema" ID="31f7eda7-5ecd-46f4-9b0e-750f0ccbb721" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd1" />
+    <MetadataFile FileName="PartSvcFacade.wsdl" MetadataType="Wsdl" ID="eed80339-d003-4401-8da3-d46ea8468161" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?wsdl" />
+    <MetadataFile FileName="Part.disco" MetadataType="Disco" ID="f5aef643-5e56-4a09-9448-a7a280ecabed" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?disco" />
+    <MetadataFile FileName="Part4.xsd" MetadataType="Schema" ID="9112f2cb-c445-4cc0-a7fa-b9aaf617ceff" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd6" />
+    <MetadataFile FileName="Part5.xsd" MetadataType="Schema" ID="c2294c41-59bf-41cb-ac3f-48b7917555d8" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd7" />
+    <MetadataFile FileName="Part6.xsd" MetadataType="Schema" ID="1d85311a-7cf8-471b-aea9-b9b1c08bcc76" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd4" />
+    <MetadataFile FileName="Part7.xsd" MetadataType="Schema" ID="b7a3019d-53e7-43ec-8317-e0a8a9e7811a" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Part.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

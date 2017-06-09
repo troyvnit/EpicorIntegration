@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="559a77e2-a1a4-440b-9854-e03b300fc58f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/ICE/Lib/SessionMod.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SessionModSvcFacade.wsdl" MetadataType="Wsdl" ID="bf655be1-0131-46be-ac13-92f9d2522b14" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?wsdl" />
+    <MetadataFile FileName="SessionMod.xsd" MetadataType="Schema" ID="be35bd3b-b030-4883-bda6-6e8984c1cd43" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd4" />
+    <MetadataFile FileName="SessionMod1.xsd" MetadataType="Schema" ID="f71afb6c-c368-49df-b740-9b77107ddae8" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd6" />
+    <MetadataFile FileName="SessionMod2.xsd" MetadataType="Schema" ID="75861939-4946-49b3-b91d-ea50662f225d" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd0" />
+    <MetadataFile FileName="SessionMod.disco" MetadataType="Disco" ID="66daf049-b6df-4029-ae38-83ff03841471" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?disco" />
+    <MetadataFile FileName="SessionMod3.xsd" MetadataType="Schema" ID="393dbd31-5be1-468c-b87a-554ced9e76b9" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd2" />
+    <MetadataFile FileName="SessionMod.wsdl" MetadataType="Wsdl" ID="6c3f62b2-d3af-41f0-8e6b-b6eeb606bc7f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SessionMod4.xsd" MetadataType="Schema" ID="160e98a8-35fd-4f82-a979-d53510201a5d" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd8" />
+    <MetadataFile FileName="SessionMod5.xsd" MetadataType="Schema" ID="cc91c9da-316c-4c73-8aa6-31658b80eb20" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd5" />
+    <MetadataFile FileName="SessionMod6.xsd" MetadataType="Schema" ID="4e49987d-ea2f-4694-b5eb-180d1e5c7554" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd7" />
+    <MetadataFile FileName="SessionMod7.xsd" MetadataType="Schema" ID="5456af4a-fb77-4818-85cb-4dc6e240f392" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd1" />
+    <MetadataFile FileName="SessionMod8.xsd" MetadataType="Schema" ID="a776ec64-1f94-4ecc-ac9d-4c3a0968245b" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Ice/Lib/SessionMod.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

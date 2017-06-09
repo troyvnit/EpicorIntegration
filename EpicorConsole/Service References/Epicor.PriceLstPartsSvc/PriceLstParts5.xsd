@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Erp.Tablesets" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+  <xs:complexType name="PriceLstPartsListTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ice" base="q1:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PriceLstPartsList" nillable="true" type="tns:PriceLstPartsListTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsListTableset" nillable="true" type="tns:PriceLstPartsListTableset" />
+  <xs:complexType name="PriceLstPartsListTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceLstPartsListRow" nillable="true" type="tns:PriceLstPartsListRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsListTable" nillable="true" type="tns:PriceLstPartsListTable" />
+  <xs:complexType name="PriceLstPartsListRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ice" base="q2:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasePrice" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:PriceLstPartsListRowColumnOrder" />
+          <xs:element minOccurs="0" name="CommentText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiscountPercent1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent5" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GlobalLock" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GlobalPriceLstParts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ListCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListCodeListDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumIUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPartDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPricePerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSalesUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSellingFactor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PartNumTrackDimension" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackLots" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackSerialNum" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartPricePerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartSalesUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartSellingFactor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak5" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SellingFactorDirection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="UOMCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitPrice1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice5" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsListRow" nillable="true" type="tns:PriceLstPartsListRow" />
+  <xs:simpleType name="PriceLstPartsListRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="ListCode" />
+      <xs:enumeration value="PartNum" />
+      <xs:enumeration value="BasePrice" />
+      <xs:enumeration value="DiscountPercent1" />
+      <xs:enumeration value="DiscountPercent2" />
+      <xs:enumeration value="DiscountPercent3" />
+      <xs:enumeration value="DiscountPercent4" />
+      <xs:enumeration value="DiscountPercent5" />
+      <xs:enumeration value="QtyBreak1" />
+      <xs:enumeration value="QtyBreak2" />
+      <xs:enumeration value="QtyBreak3" />
+      <xs:enumeration value="QtyBreak4" />
+      <xs:enumeration value="QtyBreak5" />
+      <xs:enumeration value="UnitPrice1" />
+      <xs:enumeration value="UnitPrice2" />
+      <xs:enumeration value="UnitPrice3" />
+      <xs:enumeration value="UnitPrice4" />
+      <xs:enumeration value="UnitPrice5" />
+      <xs:enumeration value="CommentText" />
+      <xs:enumeration value="UOMCode" />
+      <xs:enumeration value="GlobalPriceLstParts" />
+      <xs:enumeration value="GlobalLock" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="PartSalesUM" />
+      <xs:enumeration value="PartSellingFactor" />
+      <xs:enumeration value="PartPricePerCode" />
+      <xs:enumeration value="PartDescription" />
+      <xs:enumeration value="SellingFactorDirection" />
+      <xs:enumeration value="CurrencyCode" />
+      <xs:enumeration value="ListCodeListDescription" />
+      <xs:enumeration value="PartNumPricePerCode" />
+      <xs:enumeration value="PartNumTrackDimension" />
+      <xs:enumeration value="PartNumIUM" />
+      <xs:enumeration value="PartNumSalesUM" />
+      <xs:enumeration value="PartNumTrackLots" />
+      <xs:enumeration value="PartNumPartDescription" />
+      <xs:enumeration value="PartNumSellingFactor" />
+      <xs:enumeration value="PartNumTrackSerialNum" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriceLstPartsListRowColumnOrder" nillable="true" type="tns:PriceLstPartsListRowColumnOrder" />
+  <xs:complexType name="PriceLstPartsTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Ice" base="q3:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PLPartBrk" nillable="true" type="tns:PLPartBrkTable" />
+          <xs:element minOccurs="0" name="PriceLstParts" nillable="true" type="tns:PriceLstPartsTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsTableset" nillable="true" type="tns:PriceLstPartsTableset" />
+  <xs:complexType name="PLPartBrkTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PLPartBrkRow" nillable="true" type="tns:PLPartBrkRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PLPartBrkTable" nillable="true" type="tns:PLPartBrkTable" />
+  <xs:complexType name="PLPartBrkRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Ice" base="q4:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:PLPartBrkRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiscountPercent" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GlobalLock" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GlobalPLPartBrk" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ListCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListCodeListDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumIUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPartDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPricePerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSalesUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSellingFactor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PartNumTrackDimension" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackLots" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackSerialNum" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RadioButtonValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="UOMCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PLPartBrkRow" nillable="true" type="tns:PLPartBrkRow" />
+  <xs:simpleType name="PLPartBrkRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="ListCode" />
+      <xs:enumeration value="PartNum" />
+      <xs:enumeration value="Quantity" />
+      <xs:enumeration value="DiscountPercent" />
+      <xs:enumeration value="UnitPrice" />
+      <xs:enumeration value="UOMCode" />
+      <xs:enumeration value="GlobalPLPartBrk" />
+      <xs:enumeration value="GlobalLock" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RadioButtonValue" />
+      <xs:enumeration value="CurrencyCode" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="ListCodeListDescription" />
+      <xs:enumeration value="PartNumTrackSerialNum" />
+      <xs:enumeration value="PartNumSellingFactor" />
+      <xs:enumeration value="PartNumPartDescription" />
+      <xs:enumeration value="PartNumIUM" />
+      <xs:enumeration value="PartNumPricePerCode" />
+      <xs:enumeration value="PartNumSalesUM" />
+      <xs:enumeration value="PartNumTrackLots" />
+      <xs:enumeration value="PartNumTrackDimension" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PLPartBrkRowColumnOrder" nillable="true" type="tns:PLPartBrkRowColumnOrder" />
+  <xs:complexType name="PriceLstPartsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceLstPartsRow" nillable="true" type="tns:PriceLstPartsRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsTable" nillable="true" type="tns:PriceLstPartsTable" />
+  <xs:complexType name="PriceLstPartsRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Ice" base="q5:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasePrice" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:PriceLstPartsRowColumnOrder" />
+          <xs:element minOccurs="0" name="CommentText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiscountPercent1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DiscountPercent5" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GlobalLock" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GlobalPriceLstParts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ListCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListCodeListDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumIUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPartDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumPricePerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSalesUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumSellingFactor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PartNumTrackDimension" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackLots" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumTrackSerialNum" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartPricePerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartSalesUM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartSellingFactor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyBreak5" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SellingFactorDirection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="UOMCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitPrice1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice4" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnitPrice5" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceLstPartsRow" nillable="true" type="tns:PriceLstPartsRow" />
+  <xs:simpleType name="PriceLstPartsRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="ListCode" />
+      <xs:enumeration value="PartNum" />
+      <xs:enumeration value="BasePrice" />
+      <xs:enumeration value="DiscountPercent1" />
+      <xs:enumeration value="DiscountPercent2" />
+      <xs:enumeration value="DiscountPercent3" />
+      <xs:enumeration value="DiscountPercent4" />
+      <xs:enumeration value="DiscountPercent5" />
+      <xs:enumeration value="QtyBreak1" />
+      <xs:enumeration value="QtyBreak2" />
+      <xs:enumeration value="QtyBreak3" />
+      <xs:enumeration value="QtyBreak4" />
+      <xs:enumeration value="QtyBreak5" />
+      <xs:enumeration value="UnitPrice1" />
+      <xs:enumeration value="UnitPrice2" />
+      <xs:enumeration value="UnitPrice3" />
+      <xs:enumeration value="UnitPrice4" />
+      <xs:enumeration value="UnitPrice5" />
+      <xs:enumeration value="CommentText" />
+      <xs:enumeration value="UOMCode" />
+      <xs:enumeration value="GlobalPriceLstParts" />
+      <xs:enumeration value="GlobalLock" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="PartSalesUM" />
+      <xs:enumeration value="PartSellingFactor" />
+      <xs:enumeration value="PartPricePerCode" />
+      <xs:enumeration value="PartDescription" />
+      <xs:enumeration value="SellingFactorDirection" />
+      <xs:enumeration value="CurrencyCode" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="ListCodeListDescription" />
+      <xs:enumeration value="PartNumPricePerCode" />
+      <xs:enumeration value="PartNumTrackLots" />
+      <xs:enumeration value="PartNumSellingFactor" />
+      <xs:enumeration value="PartNumSalesUM" />
+      <xs:enumeration value="PartNumTrackSerialNum" />
+      <xs:enumeration value="PartNumIUM" />
+      <xs:enumeration value="PartNumTrackDimension" />
+      <xs:enumeration value="PartNumPartDescription" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriceLstPartsRowColumnOrder" nillable="true" type="tns:PriceLstPartsRowColumnOrder" />
+  <xs:complexType name="UpdExtPriceLstPartsTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Ice" base="q6:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PLPartBrk" nillable="true" type="tns:PLPartBrkTable" />
+          <xs:element minOccurs="0" name="PriceLstParts" nillable="true" type="tns:PriceLstPartsTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdExtPriceLstPartsTableset" nillable="true" type="tns:UpdExtPriceLstPartsTableset" />
+</xs:schema>

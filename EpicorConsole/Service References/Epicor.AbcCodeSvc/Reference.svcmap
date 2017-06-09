@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4cf1191d-ac90-4e04-9cf5-4a773002450d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/AbcCode.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ABCCode.xsd" MetadataType="Schema" ID="95d1501d-e5ad-40de-8e54-b25e3d6710f6" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd3" />
+    <MetadataFile FileName="ABCCode1.xsd" MetadataType="Schema" ID="0f63464d-fa57-47e6-bab2-dc08b6413ad7" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd5" />
+    <MetadataFile FileName="ABCCode2.xsd" MetadataType="Schema" ID="0c5f4736-4320-44b0-af0f-7872ccec65a7" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd7" />
+    <MetadataFile FileName="ABCCodeSvcFacade.wsdl" MetadataType="Wsdl" ID="eb99bd0a-bf9e-4b31-b3c3-5280e3a6a96c" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?wsdl" />
+    <MetadataFile FileName="ABCCode3.xsd" MetadataType="Schema" ID="d0f0c575-e572-4d1a-910f-18fef59c0281" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd1" />
+    <MetadataFile FileName="ABCCode.disco" MetadataType="Disco" ID="7123fd45-609e-4ee7-92b6-8c7d51c08494" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?disco" />
+    <MetadataFile FileName="ABCCode4.xsd" MetadataType="Schema" ID="dd857345-aca0-42c5-b639-25d100c4443f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd6" />
+    <MetadataFile FileName="ABCCode5.xsd" MetadataType="Schema" ID="0aa64f06-82a6-4837-a564-8329568e95fc" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd2" />
+    <MetadataFile FileName="ABCCode.wsdl" MetadataType="Wsdl" ID="4831dcec-9451-470c-a914-33dadfa8980a" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ABCCode6.xsd" MetadataType="Schema" ID="d11b7cd8-a40a-419f-9b81-79f6d069b9fd" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd4" />
+    <MetadataFile FileName="ABCCode7.xsd" MetadataType="Schema" ID="19f4931e-aef6-40cd-83a5-2a43d25500ff" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

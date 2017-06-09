@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EpicorIntegrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ForeignName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BarCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SalesUnit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SalesItemPerUnit" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="SalesUnitLength" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="SalesUnitWidth" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="SalesUnitHeight" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="SalesUnitVolume" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="SalesUnitWeight" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="SalesVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PurchaseUnit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PurchaseItemsPerUnit" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="PurchaseUnitLength" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PurchaseUnitWidth" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PurchaseUnitHeight" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PurchaseUnitVolume" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PurchaseUnitWeight" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PurchaseVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="InventoryUOM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOQ" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode01" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName01" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode02" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName02" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode03" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName03" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode04" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName04" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode05" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName05" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode06" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName06" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode07" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName07" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode08" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName08" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttrCode09" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttrName09" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EpicorIntegrationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
+    <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
+  </EntityContainer>
+  <EntityType Name="PRICE_LIST">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

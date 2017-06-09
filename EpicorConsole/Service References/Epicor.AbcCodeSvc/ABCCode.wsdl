@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Erp:BO:ABCCode" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Erp:BO:ABCCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Erp:BO:ABCCode/Imports">
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd0" namespace="Erp:BO:ABCCode" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Ice.Common" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Epicor.Data" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd5" namespace="http://epicor.com/UserDefinedColumns" />
+      <xsd:import schemaLocation="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ABCCodeSvcContract_GetNewABCCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewABCCode" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetNewABCCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewABCCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetNewABCCode_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q1:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_DeleteByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByID" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_DeleteByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_DeleteByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q2:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q3:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetList_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q4:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetRows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRows" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetRows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetRows_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q5:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowID" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q6:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDs" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_GetBySysRowIDs_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q7:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_Update_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q8:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_UpdateExt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExt" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_UpdateExt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABCCodeSvcContract_UpdateExt_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q9:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:portType name="ABCCodeSvcContract">
+    <wsdl:operation name="GetNewABCCode">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetNewABCCode" message="tns:ABCCodeSvcContract_GetNewABCCode_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetNewABCCodeResponse" message="tns:ABCCodeSvcContract_GetNewABCCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetNewABCCodeEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetNewABCCode_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByID">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/DeleteByID" message="tns:ABCCodeSvcContract_DeleteByID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/DeleteByIDResponse" message="tns:ABCCodeSvcContract_DeleteByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/DeleteByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_DeleteByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByID">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetByID" message="tns:ABCCodeSvcContract_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetByIDResponse" message="tns:ABCCodeSvcContract_GetByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetList" message="tns:ABCCodeSvcContract_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetListResponse" message="tns:ABCCodeSvcContract_GetList_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetListEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetList_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRows">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetRows" message="tns:ABCCodeSvcContract_GetRows_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetRowsResponse" message="tns:ABCCodeSvcContract_GetRows_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetRowsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetRows_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowID">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowID" message="tns:ABCCodeSvcContract_GetBySysRowID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowIDResponse" message="tns:ABCCodeSvcContract_GetBySysRowID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetBySysRowID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowIDs">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowIDs" message="tns:ABCCodeSvcContract_GetBySysRowIDs_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowIDsResponse" message="tns:ABCCodeSvcContract_GetBySysRowIDs_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/GetBySysRowIDsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_GetBySysRowIDs_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/Update" message="tns:ABCCodeSvcContract_Update_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/UpdateResponse" message="tns:ABCCodeSvcContract_Update_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/UpdateEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_Update_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExt">
+      <wsdl:input wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/UpdateExt" message="tns:ABCCodeSvcContract_UpdateExt_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/UpdateExtResponse" message="tns:ABCCodeSvcContract_UpdateExt_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:ABCCode/ABCCodeSvcContract/UpdateExtEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:ABCCodeSvcContract_UpdateExt_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

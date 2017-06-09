@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e5233c8a-a46a-436a-9e27-16ef56542e49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/PriceLstParts.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PriceLstParts.xsd" MetadataType="Schema" ID="d65713c0-0a8a-4f97-9796-868dfd262b30" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd7" />
+    <MetadataFile FileName="PriceLstParts.wsdl" MetadataType="Wsdl" ID="ab7e6ebb-28c7-4c15-a562-e43e4de3c056" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PriceLstParts1.xsd" MetadataType="Schema" ID="0146856c-2620-4601-988b-09468ba75dda" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd6" />
+    <MetadataFile FileName="PriceLstParts.disco" MetadataType="Disco" ID="c90c2a91-0519-4f16-9b51-f7e633b1305e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?disco" />
+    <MetadataFile FileName="PriceLstParts2.xsd" MetadataType="Schema" ID="756b6653-4422-4db2-917d-397d061f87d5" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd4" />
+    <MetadataFile FileName="PriceLstParts3.xsd" MetadataType="Schema" ID="4a62039c-61bb-461e-a5da-ba5d2c4b7dbd" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd5" />
+    <MetadataFile FileName="PriceLstPartsSvcFacade.wsdl" MetadataType="Wsdl" ID="32e7bb35-c687-415e-85a2-bd595f34325c" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?wsdl" />
+    <MetadataFile FileName="PriceLstParts4.xsd" MetadataType="Schema" ID="37480079-a0da-4525-baa5-132c87f5425f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd3" />
+    <MetadataFile FileName="PriceLstParts5.xsd" MetadataType="Schema" ID="4df12d25-43d4-4d83-9db2-601d3270400e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd2" />
+    <MetadataFile FileName="PriceLstParts6.xsd" MetadataType="Schema" ID="be9409ff-0249-4f9b-a4e1-41d67164f42f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd1" />
+    <MetadataFile FileName="PriceLstParts7.xsd" MetadataType="Schema" ID="2479f630-d3d9-48a6-ab85-bd89a3e8be44" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/PriceLstParts.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
