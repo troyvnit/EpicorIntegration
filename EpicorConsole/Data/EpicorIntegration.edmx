@@ -31,7 +31,7 @@
           <Property Name="PriceListNum" Type="smallint" />
           <Property Name="Currency" Type="nvarchar" MaxLength="6" />
           <Property Name="Country" Type="nvarchar" MaxLength="6" />
-          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="100" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="4" />
           <Property Name="GroupTax" Type="nvarchar" MaxLength="16" />
           <Property Name="TaxCode" Type="nvarchar" MaxLength="100" />
           <Property Name="BusinessRegistrationCertificate" Type="nvarchar" MaxLength="100" />
@@ -46,7 +46,6 @@
           <Property Name="AllowShipTo3" Type="bit" Nullable="false" />
           <Property Name="AllowOTS" Type="bit" Nullable="false" />
           <Property Name="PrintStatements" Type="bit" Nullable="false" />
-          <Property Name="TermsCode" Type="nvarchar" MaxLength="4" />
           <Property Name="CreditHold" Type="bit" Nullable="false" />
           <Property Name="EstablishedDate" Type="datetime2" Precision="7" />
           <Property Name="CountryNum" Type="int" />
@@ -231,7 +230,7 @@
           <Property Name="PriceListNum" Type="Int16" />
           <Property Name="Currency" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="PaymentTerm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerm" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="GroupTax" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="TaxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="BusinessRegistrationCertificate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -246,7 +245,6 @@
           <Property Name="AllowShipTo3" Type="Boolean" Nullable="false" />
           <Property Name="AllowOTS" Type="Boolean" Nullable="false" />
           <Property Name="PrintStatements" Type="Boolean" Nullable="false" />
-          <Property Name="TermsCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="CreditHold" Type="Boolean" Nullable="false" />
           <Property Name="EstablishedDate" Type="DateTime" Precision="7" />
           <Property Name="CountryNum" Type="Int32" />
@@ -338,7 +336,6 @@
                 <ScalarProperty Name="CountryNum" ColumnName="CountryNum" />
                 <ScalarProperty Name="EstablishedDate" ColumnName="EstablishedDate" />
                 <ScalarProperty Name="CreditHold" ColumnName="CreditHold" />
-                <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
                 <ScalarProperty Name="PrintStatements" ColumnName="PrintStatements" />
                 <ScalarProperty Name="AllowOTS" ColumnName="AllowOTS" />
                 <ScalarProperty Name="AllowShipTo3" ColumnName="AllowShipTo3" />

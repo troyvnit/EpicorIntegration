@@ -39,53 +39,10 @@ namespace EpicorConsole
                 
                 //RecurringJob.AddOrUpdate(() => partService.SyncParts().Wait(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate(() => priceService.SyncPrices().Wait(), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => customerService.SyncPrices().Wait(), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => customerService.SyncCustomers().Wait(), Cron.Minutely);
 
                 Console.ReadKey();
             }
-
-            //var manager = new RecurringJobManager();
-            //manager.AddOrUpdate("SyncParts", Job.FromExpression(() => partService.SyncParts().Wait()), Cron.Minutely());
-            //manager.AddOrUpdate("SyncPrices", Job.FromExpression(() => priceService.SyncPrices().Wait()), Cron.Minutely());
-
-            //ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return true; };
-            //EndpointBindingType bindingType = EndpointBindingType.SOAPHttp;
-            //string epicorUserID = "dms.user03"; string epiorUserPassword = "tri@2017";
-            //string scheme = "http"; if (bindingType == EndpointBindingType.BasicHttp) { scheme = "https"; }
-            //UriBuilder builder = new UriBuilder(scheme, "DMS_SERVER.greenvet.com");
-            //builder.Path = "ERP101500/Ice/Lib/SessionMod.svc";
-            //SessionModSvcContractClient sessionModClient = GetClient<SessionModSvcContractClient, SessionModSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            //builder.Path = "ERP101500/Erp/BO/Part.svc";
-            //PartSvcContractClient partClient = GetClient<PartSvcContractClient, PartSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            //Guid sessionId = Guid.Empty;
-            //sessionId = sessionModClient.Login();
-            //builder.Path = "ERP100500/Ice/Lib/SessionMod.svc";
-            //sessionModClient = GetClient<SessionModSvcContractClient, SessionModSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            //sessionModClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
-            //partClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
-
-
-            //PartTableset partTableset = new PartTableset();
-            //partClient.GetNewPart(ref partTableset);
-            //var newPart = partTableset.Part.Where(p => p.RowMod == "A").FirstOrDefault();
-            //if (newPart != null)
-            //{
-            //    newPart.PartDescription = "Troy Lee";
-            //    newPart.PartNum = "99999";
-            //    newPart.TypeCode = "P";
-            //    newPart.IUM = "GOI";
-            //    newPart.PUM = "GOI";
-            //    newPart.SalesUM = "GOI";
-            //}
-            //partClient.Update(ref partTableset);
-
-            //var line = Console.ReadLine();
-            //if(line == "y")
-            //{
-            //    GetParts(partClient).Wait();
-            //}
-
-            //Console.ReadLine();
         }
     }
 }

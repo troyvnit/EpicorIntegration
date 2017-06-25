@@ -51,7 +51,6 @@ namespace EpicorConsole.Data
         public bool AllowShipTo3 { get; set; }
         public bool AllowOTS { get; set; }
         public bool PrintStatements { get; set; }
-        public string TermsCode { get; set; }
         public bool CreditHold { get; set; }
         public Nullable<System.DateTime> EstablishedDate { get; set; }
         public Nullable<int> CountryNum { get; set; }

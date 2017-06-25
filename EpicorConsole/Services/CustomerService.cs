@@ -20,7 +20,7 @@ namespace EpicorConsole.Services
             customerClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
 
-        public async Task SyncPrices()
+        public async Task SyncCustomers()
         {
             Console.WriteLine("Syncing Customers...");
             try
