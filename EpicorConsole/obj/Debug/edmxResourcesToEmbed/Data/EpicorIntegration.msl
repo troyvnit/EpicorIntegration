@@ -72,5 +72,54 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="EpicorIntegrationModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="ConsolidateSO" ColumnName="ConsolidateSO" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CountryNum" ColumnName="CountryNum" />
+          <ScalarProperty Name="EstablishedDate" ColumnName="EstablishedDate" />
+          <ScalarProperty Name="CreditHold" ColumnName="CreditHold" />
+          <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
+          <ScalarProperty Name="PrintStatements" ColumnName="PrintStatements" />
+          <ScalarProperty Name="AllowOTS" ColumnName="AllowOTS" />
+          <ScalarProperty Name="AllowShipTo3" ColumnName="AllowShipTo3" />
+          <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+          <ScalarProperty Name="TerritoryCode" ColumnName="TerritoryCode" />
+          <ScalarProperty Name="ValidShipTo" ColumnName="ValidShipTo" />
+          <ScalarProperty Name="ValidSoldTo" ColumnName="ValidSoldTo" />
+          <ScalarProperty Name="ValidPayer" ColumnName="ValidPayer" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="BusinessRegistrationCertificate" ColumnName="BusinessRegistrationCertificate" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="GroupTax" ColumnName="GroupTax" />
+          <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+          <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

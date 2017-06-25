@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="052d1dc1-d59c-47ea-9ba9-1b4e957fd31a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/Customer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Customer.xsd" MetadataType="Schema" ID="aa4c61e7-9994-438b-ba27-4ab76be0ebde" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd4" />
+    <MetadataFile FileName="Customer1.xsd" MetadataType="Schema" ID="69fa32db-514a-49cd-8d50-a890f9396331" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd5" />
+    <MetadataFile FileName="Customer.wsdl" MetadataType="Wsdl" ID="d4e96419-41eb-4a9a-83b0-1f90e14581bb" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Customer2.xsd" MetadataType="Schema" ID="972cc609-73b4-477a-b116-39073c84f4a0" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd7" />
+    <MetadataFile FileName="Customer3.xsd" MetadataType="Schema" ID="c3e53416-9b8c-4b36-a4d9-538cace1f944" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd0" />
+    <MetadataFile FileName="Customer.disco" MetadataType="Disco" ID="e8c3718e-18cd-4cab-8482-b7792199c085" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?disco" />
+    <MetadataFile FileName="Customer4.xsd" MetadataType="Schema" ID="06dfd606-62af-4052-8555-b2a1db6e5e98" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd2" />
+    <MetadataFile FileName="Customer5.xsd" MetadataType="Schema" ID="e62f80bd-9eb8-4afa-9a24-4a354b98f676" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerSvcFacade.wsdl" MetadataType="Wsdl" ID="405bdd6f-384b-460b-94ab-924a1e3e715d" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?wsdl" />
+    <MetadataFile FileName="Customer6.xsd" MetadataType="Schema" ID="4be633ba-20af-4bd0-9cb3-fc237ab4ef7b" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd6" />
+    <MetadataFile FileName="Customer7.xsd" MetadataType="Schema" ID="881144e1-0991-475e-b869-271ecdf4a192" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/Customer.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

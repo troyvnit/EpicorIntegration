@@ -57,6 +57,7 @@
   <EntityContainer Name="EpicorIntegrationEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
     <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
+    <EntitySet Name="CUSTOMERs" EntityType="EpicorIntegrationModel.CUSTOMER" />
   </EntityContainer>
   <EntityType Name="PRICE_LIST">
     <Key>
@@ -71,6 +72,54 @@
     <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
-    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CompanyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ForeignName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="CreditLimit" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="PriceListNum" Type="Int16" />
+    <Property Name="Currency" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentTerm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GroupTax" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessRegistrationCertificate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="LegalName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GroupCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="ValidPayer" Type="Boolean" Nullable="false" />
+    <Property Name="ValidSoldTo" Type="Boolean" Nullable="false" />
+    <Property Name="ValidShipTo" Type="Boolean" Nullable="false" />
+    <Property Name="TerritoryCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="SalesRepCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="AllowShipTo3" Type="Boolean" Nullable="false" />
+    <Property Name="AllowOTS" Type="Boolean" Nullable="false" />
+    <Property Name="PrintStatements" Type="Boolean" Nullable="false" />
+    <Property Name="TermsCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CreditHold" Type="Boolean" Nullable="false" />
+    <Property Name="EstablishedDate" Type="DateTime" Precision="7" />
+    <Property Name="CountryNum" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConsolidateSO" Type="Boolean" Nullable="false" />
   </EntityType>
 </Schema>

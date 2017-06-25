@@ -1,5 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="EpicorIntegrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ForeignName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="40" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="180" />
+    <Property Name="CreditLimit" Type="numeric" Precision="9" Scale="0" />
+    <Property Name="PriceListNum" Type="smallint" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="6" />
+    <Property Name="Country" Type="nvarchar" MaxLength="6" />
+    <Property Name="PaymentTerm" Type="nvarchar" MaxLength="100" />
+    <Property Name="GroupTax" Type="nvarchar" MaxLength="16" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="BusinessRegistrationCertificate" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="nvarchar" MaxLength="3" />
+    <Property Name="LegalName" Type="nvarchar" MaxLength="200" />
+    <Property Name="GroupCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="ValidPayer" Type="bit" Nullable="false" />
+    <Property Name="ValidSoldTo" Type="bit" Nullable="false" />
+    <Property Name="ValidShipTo" Type="bit" Nullable="false" />
+    <Property Name="TerritoryCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="SalesRepCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="AllowShipTo3" Type="bit" Nullable="false" />
+    <Property Name="AllowOTS" Type="bit" Nullable="false" />
+    <Property Name="PrintStatements" Type="bit" Nullable="false" />
+    <Property Name="TermsCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="CreditHold" Type="bit" Nullable="false" />
+    <Property Name="EstablishedDate" Type="datetime2" Precision="7" />
+    <Property Name="CountryNum" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsolidateSO" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="PRICE_LIST">
     <Key>
       <PropertyRef Name="Id" />
@@ -13,7 +61,7 @@
     <Property Name="PriceListNum" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Price" Type="numeric" Precision="9" Scale="0" Nullable="false" />
-    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PRODUCT">
     <Key>
@@ -70,6 +118,7 @@
     <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
   <EntityContainer Name="EpicorIntegrationModelStoreContainer">
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PRICE_LIST" EntityType="Self.PRICE_LIST" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

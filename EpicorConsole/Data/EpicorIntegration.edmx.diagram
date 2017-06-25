@@ -7,6 +7,7 @@
       <Diagram DiagramId="65d6370582cb47a8ab6c183752a9e444" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="EpicorIntegrationModel.PRODUCT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PRICE_LIST" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.CUSTOMER" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

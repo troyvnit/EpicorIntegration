@@ -28,6 +28,7 @@ namespace EpicorConsole
 
             var partService = new PartService(sessionId);
             var priceService = new PriceService(sessionId);
+            var customerService = new CustomerService(sessionId);
 
             var connectionString = ConfigurationManager.ConnectionStrings["EpicorHangfire"].ConnectionString;
             GlobalConfiguration.Configuration.UseSqlServerStorage(connectionString);
@@ -36,8 +37,9 @@ namespace EpicorConsole
             {
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
                 
-                RecurringJob.AddOrUpdate(() => partService.SyncParts().Wait(), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => priceService.SyncPrices().Wait(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate(() => partService.SyncParts().Wait(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate(() => priceService.SyncPrices().Wait(), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => customerService.SyncPrices().Wait(), Cron.Minutely);
 
                 Console.ReadKey();
             }

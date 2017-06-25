@@ -5,6 +5,54 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="EpicorIntegrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="200" />
+          <Property Name="ForeignName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="40" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="40" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="40" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="180" />
+          <Property Name="CreditLimit" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="PriceListNum" Type="smallint" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="6" />
+          <Property Name="Country" Type="nvarchar" MaxLength="6" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="100" />
+          <Property Name="GroupTax" Type="nvarchar" MaxLength="16" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BusinessRegistrationCertificate" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerType" Type="nvarchar" MaxLength="3" />
+          <Property Name="LegalName" Type="nvarchar" MaxLength="200" />
+          <Property Name="GroupCode" Type="nvarchar" MaxLength="4" />
+          <Property Name="ValidPayer" Type="bit" Nullable="false" />
+          <Property Name="ValidSoldTo" Type="bit" Nullable="false" />
+          <Property Name="ValidShipTo" Type="bit" Nullable="false" />
+          <Property Name="TerritoryCode" Type="nvarchar" MaxLength="8" />
+          <Property Name="SalesRepCode" Type="nvarchar" MaxLength="8" />
+          <Property Name="AllowShipTo3" Type="bit" Nullable="false" />
+          <Property Name="AllowOTS" Type="bit" Nullable="false" />
+          <Property Name="PrintStatements" Type="bit" Nullable="false" />
+          <Property Name="TermsCode" Type="nvarchar" MaxLength="4" />
+          <Property Name="CreditHold" Type="bit" Nullable="false" />
+          <Property Name="EstablishedDate" Type="datetime2" Precision="7" />
+          <Property Name="CountryNum" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConsolidateSO" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="PRICE_LIST">
           <Key>
             <PropertyRef Name="Id" />
@@ -18,7 +66,7 @@
           <Property Name="PriceListNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="numeric" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCT">
           <Key>
@@ -75,6 +123,7 @@
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityContainer Name="EpicorIntegrationModelStoreContainer">
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRICE_LIST" EntityType="Self.PRICE_LIST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -139,6 +188,7 @@
         <EntityContainer Name="EpicorIntegrationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
           <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
+          <EntitySet Name="CUSTOMERs" EntityType="EpicorIntegrationModel.CUSTOMER" />
         </EntityContainer>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -153,7 +203,55 @@
           <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
-          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ForeignName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="CreditLimit" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="PriceListNum" Type="Int16" />
+          <Property Name="Currency" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GroupTax" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessRegistrationCertificate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerType" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="LegalName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GroupCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="ValidPayer" Type="Boolean" Nullable="false" />
+          <Property Name="ValidSoldTo" Type="Boolean" Nullable="false" />
+          <Property Name="ValidShipTo" Type="Boolean" Nullable="false" />
+          <Property Name="TerritoryCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="SalesRepCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="AllowShipTo3" Type="Boolean" Nullable="false" />
+          <Property Name="AllowOTS" Type="Boolean" Nullable="false" />
+          <Property Name="PrintStatements" Type="Boolean" Nullable="false" />
+          <Property Name="TermsCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CreditHold" Type="Boolean" Nullable="false" />
+          <Property Name="EstablishedDate" Type="DateTime" Precision="7" />
+          <Property Name="CountryNum" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ConsolidateSO" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -223,6 +321,55 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
                 <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="ConsolidateSO" ColumnName="ConsolidateSO" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CountryNum" ColumnName="CountryNum" />
+                <ScalarProperty Name="EstablishedDate" ColumnName="EstablishedDate" />
+                <ScalarProperty Name="CreditHold" ColumnName="CreditHold" />
+                <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
+                <ScalarProperty Name="PrintStatements" ColumnName="PrintStatements" />
+                <ScalarProperty Name="AllowOTS" ColumnName="AllowOTS" />
+                <ScalarProperty Name="AllowShipTo3" ColumnName="AllowShipTo3" />
+                <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+                <ScalarProperty Name="TerritoryCode" ColumnName="TerritoryCode" />
+                <ScalarProperty Name="ValidShipTo" ColumnName="ValidShipTo" />
+                <ScalarProperty Name="ValidSoldTo" ColumnName="ValidSoldTo" />
+                <ScalarProperty Name="ValidPayer" ColumnName="ValidPayer" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="BusinessRegistrationCertificate" ColumnName="BusinessRegistrationCertificate" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="GroupTax" ColumnName="GroupTax" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
                 <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
                 <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
