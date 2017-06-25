@@ -27,32 +27,58 @@ namespace EpicorConsole.Services
             {
                 using (var db = new EpicorIntegrationEntities())
                 {
-                    var requestCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "N" || c.DMSFlag == "U");
-                    CustomerTableset customerTableset = new CustomerTableset();
-                    if (requestCustomers.Any())
+                    var addedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "N");
+                    var updatedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "U");
+                    if (addedCustomers.Any() || updatedCustomers.Any())
                     {
-                        foreach (var customer in requestCustomers)
+                        foreach (var customer in addedCustomers)
                         {
                             try
                             {
+                                CustomerTableset customerTableset = new CustomerTableset();
                                 customerClient.GetNewCustomer(ref customerTableset);
-                                var customerRow = customer.DMSFlag == "N" ? customerTableset.Customer.Where(p => p.RowMod == "A").FirstOrDefault() : customerTableset.Customer.Where(p => p.CustID == customer.CustomerCode).FirstOrDefault();
+                                var customerRow = customerTableset.Customer.Where(p => p.RowMod == "A").FirstOrDefault();
                                 if (customerRow != null)
                                 {
                                     MapToRow(customerRow, customer);
+                                    customerClient.Update(ref customerTableset);
+                                    customer.DMSFlag = "S";
+                                    Console.WriteLine($"Added customer: #{customer.CustomerCode} successfully!");
                                 }
-                                customerClient.Update(ref customerTableset);
-                                customer.DMSFlag = "S";
-                                Console.WriteLine($"Added/Updated customer: #{customer.CustomerCode} successfully!");
                             }
                             catch (Exception e)
                             {
                                 customer.DMSFlag = "F";
-                                Console.WriteLine($"Added/Updated customer: #{customer.CustomerCode} failed! - {e.Message}");
+                                Console.WriteLine($"Added customer: #{customer.CustomerCode} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
                             }
                         }
+
+                        foreach(var customer in updatedCustomers)
+                        {
+                            try
+                            {
+                                CustomerTableset customerTableset = customerClient.GetByCustID(customer.CustomerCode, true);
+                                var customerRow = customerTableset.Customer.FirstOrDefault();
+                                if (customerRow != null)
+                                {
+                                    customerRow.RowMod = "U";
+                                    MapToRow(customerRow, customer);
+                                    customerClient.Update(ref customerTableset);
+                                    customer.DMSFlag = "S";
+                                    Console.WriteLine($"Updated customer: #{customer.CustomerCode} successfully!");
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                customer.DMSFlag = "F";
+                                Console.WriteLine($"Updated customer: #{customer.CustomerCode} failed! - {e.Message}");
+                                Console.WriteLine(e.GetBaseException().Message);
+                                continue;
+                            }
+                        }
+
                         await db.SaveChangesAsync();
                     }
                 }

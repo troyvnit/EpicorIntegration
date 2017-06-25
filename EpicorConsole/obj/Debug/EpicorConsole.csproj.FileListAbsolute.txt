@@ -17,3 +17,22 @@ C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorCo
 C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorConsole\bin\Debug\zh\Hangfire.Core.resources.dll
 C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorConsole\bin\Debug\Hangfire.SqlServer.dll
 C:\Users\dms.user03\Documents\Visual Studio 2015\Projects\EpicorConsole\EpicorConsole\bin\Debug\Hangfire.SqlServer.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EpicorConsole.exe.config
+C:\EpicorIntegration\EpicorConsole\obj\Debug\EpicorConsole.exe
+C:\EpicorIntegration\EpicorConsole\obj\Debug\EpicorConsole.pdb
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EpicorConsole.exe
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EpicorConsole.pdb
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EntityFramework.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EntityFramework.SqlServer.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Hangfire.Core.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Hangfire.SqlServer.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Newtonsoft.Json.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Owin.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EntityFramework.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\EntityFramework.SqlServer.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Hangfire.Core.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Hangfire.SqlServer.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\Newtonsoft.Json.xml
+C:\EpicorIntegration\EpicorConsole\bin\Debug\es\Hangfire.Core.resources.dll
+C:\EpicorIntegration\EpicorConsole\bin\Debug\zh\Hangfire.Core.resources.dll
+C:\EpicorIntegration\EpicorConsole\obj\Debug\EpicorConsole.csprojResolveAssemblyReference.cache
