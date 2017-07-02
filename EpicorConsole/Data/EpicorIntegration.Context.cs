@@ -28,5 +28,7 @@ namespace EpicorConsole.Data
         public virtual DbSet<PRODUCT> PRODUCTs { get; set; }
         public virtual DbSet<PRICE_LIST> PRICE_LIST { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
+        public virtual DbSet<PO_DETAIL> PO_DETAIL { get; set; }
+        public virtual DbSet<PO_HEADER> PO_HEADER { get; set; }
     }
 }

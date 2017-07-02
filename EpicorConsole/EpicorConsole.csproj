@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EpicorIntegration.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\PO_DETAIL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PO_HEADER.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\PRICE_LIST.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -114,6 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Epicor.POSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Epicor.PriceLstPartsSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +136,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\POService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\PriceService.cs" />
     <Compile Include="Services\PartService.cs" />
@@ -797,6 +809,386 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Epicor.PartSvc\PartSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.BOUpdErrorTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeApproveSwitchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeContractUOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeCurrencyCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeCurrencySwitchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangedApproveSwitchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailAssemblySeqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailCalcOurQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailCalcVendQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailIUMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailJobNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailJobSeqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailMangCustResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailMfgNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailMfgPartNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailOrderLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailOrderNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailOverridePriceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailPartClassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailPartNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailPUMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailRevisionNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailTaxCatIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeDetailTranTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangedHeaderTaxManualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeExpAcctResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxFixedAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxRateCodeMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxRateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxReportableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxTaxableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxTaxAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxTaxCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxTaxDeductableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeHeaderTaxTaxPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOHeadMiscAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOHeadMiscCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOHeadMiscPrcntResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOMiscAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOMiscCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePoMiscCurrSwitchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOMiscPrcntResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePORelContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOTaxRegionCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePOTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePrcConNumByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePrcConNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangePurPointResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeQtyOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelAssemblySeqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelGlbCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelGlbPlantResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelGlbWarehouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelIUMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelJobNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelJobSeqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelMangCustResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelOrderLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelOrderNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelOrderRelNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelOurQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelPlantResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelPUMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelTaxExemptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeRelVendQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxDeductableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxRateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxReportableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxTaxableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxTaxAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTaxTaxCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeTranTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeUnitPriceConfirmOverrideResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeUnitPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangeVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ChangingDetailRevisionNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.CheckBeforeUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.CheckLOCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.CheckPONumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.CheckProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.CheckRateGrpCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.DuplicatePOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetAPLOCDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetBasePartForConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetDefaultBuyerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetDefaultGLAccountAllPOReleasesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetDefaultGLAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewConsolidatedPOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewContractPOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPODetailAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPODetailInspResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPODetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOHeaderAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOHeaderTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOHeadMiscResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOHeadMiscTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOMiscResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPOMiscTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPORelAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPORelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPORelTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetNewPORelTGLCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetPartSubListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.GetRowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.PartStatusValidationMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.PartSubsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.POHeaderListTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.POReceiptsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.POTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.SetReadyToCalcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.UpdateExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.UpdExtPOTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.ValidateInspectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO.wsdl" />
+    <None Include="Service References\Epicor.POSvc\PO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\PO7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.POSvc\POSvcFacade.wsdl" />
     <None Include="Service References\Epicor.PriceLstPartsSvc\EpicorConsole.Epicor.PriceLstPartsSvc.BOUpdErrorTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -914,6 +1306,7 @@
     <WCFMetadataStorage Include="Service References\Epicor.AbcCodeSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.CustomerSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.PartSvc\" />
+    <WCFMetadataStorage Include="Service References\Epicor.POSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.PriceLstPartsSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.SessionModSvc\" />
   </ItemGroup>
@@ -973,6 +1366,13 @@
       <DependentUpon>EpicorIntegration.edmx</DependentUpon>
       <LastGenOutput>EpicorIntegration.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\Epicor.POSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Epicor.POSvc\configuration.svcinfo" />
+    <None Include="Service References\Epicor.POSvc\configuration91.svcinfo" />
+    <None Include="Service References\Epicor.POSvc\PO.disco" />
     <None Include="Service References\Epicor.CustomerSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

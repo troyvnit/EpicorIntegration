@@ -52,6 +52,65 @@
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="ConsolidateSO" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="PO_DETAIL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="PONum" Type="int" Nullable="false" />
+          <Property Name="POLine" Type="int" Nullable="false" />
+          <Property Name="CalcTranType" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="PartNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QtyOption" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CalcVendQty" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="PUM" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="DocUnitCost" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="DocScrUnitCost" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CalcDueDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Taxable" Type="bit" Nullable="false" />
+          <Property Name="RcvInspectionReq" Type="bit" Nullable="false" />
+          <Property Name="BranchCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="WhsCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PO_HEADER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="PONum" Type="int" Nullable="false" />
+          <Property Name="RefNum" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="POType" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="ShipViaCode" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="PostingDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ApprovalStatus" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ShipState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PODate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ShippingDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="BranchCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="VendorNumber" Type="int" Nullable="false" />
+          <Property Name="POTotal" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="EntryPerson" Type="nvarchar" MaxLength="75" />
+          <Property Name="BuyerID" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="ExchangeRate" Type="numeric" Precision="9" Scale="0" />
+        </EntityType>
         <EntityType Name="PRICE_LIST">
           <Key>
             <PropertyRef Name="Id" />
@@ -123,6 +182,8 @@
         </EntityType>
         <EntityContainer Name="EpicorIntegrationModelStoreContainer">
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PO_DETAIL" EntityType="Self.PO_DETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PO_HEADER" EntityType="Self.PO_HEADER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRICE_LIST" EntityType="Self.PRICE_LIST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -188,6 +249,8 @@
           <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
           <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
           <EntitySet Name="CUSTOMERs" EntityType="EpicorIntegrationModel.CUSTOMER" />
+          <EntitySet Name="PO_DETAIL" EntityType="EpicorIntegrationModel.PO_DETAIL" />
+          <EntitySet Name="PO_HEADER" EntityType="EpicorIntegrationModel.PO_HEADER" />
         </EntityContainer>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -250,6 +313,65 @@
           <Property Name="CountryNum" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ConsolidateSO" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PO_DETAIL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="Int32" Nullable="false" />
+          <Property Name="POLine" Type="Int32" Nullable="false" />
+          <Property Name="CalcTranType" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="PartNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QtyOption" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CalcVendQty" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="PUM" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="DocUnitCost" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="DocScrUnitCost" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="CalcDueDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Taxable" Type="Boolean" Nullable="false" />
+          <Property Name="RcvInspectionReq" Type="Boolean" Nullable="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WhsCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PO_HEADER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="Int32" Nullable="false" />
+          <Property Name="RefNum" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="POType" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerm" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ShipViaCode" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PostingDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ApprovalStatus" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ShipState" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="PODate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ShippingDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="BranchCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="VendorNumber" Type="Int32" Nullable="false" />
+          <Property Name="POTotal" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EntryPerson" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="BuyerID" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ExchangeRate" Type="Decimal" Precision="9" Scale="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -365,6 +487,67 @@
                 <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PO_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.PO_DETAIL">
+              <MappingFragment StoreEntitySet="PO_DETAIL">
+                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="RcvInspectionReq" ColumnName="RcvInspectionReq" />
+                <ScalarProperty Name="Taxable" ColumnName="Taxable" />
+                <ScalarProperty Name="CalcDueDate" ColumnName="CalcDueDate" />
+                <ScalarProperty Name="DocScrUnitCost" ColumnName="DocScrUnitCost" />
+                <ScalarProperty Name="DocUnitCost" ColumnName="DocUnitCost" />
+                <ScalarProperty Name="PUM" ColumnName="PUM" />
+                <ScalarProperty Name="CalcVendQty" ColumnName="CalcVendQty" />
+                <ScalarProperty Name="QtyOption" ColumnName="QtyOption" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+                <ScalarProperty Name="CalcTranType" ColumnName="CalcTranType" />
+                <ScalarProperty Name="POLine" ColumnName="POLine" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PO_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.PO_HEADER">
+              <MappingFragment StoreEntitySet="PO_HEADER">
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="BuyerID" ColumnName="BuyerID" />
+                <ScalarProperty Name="EntryPerson" ColumnName="EntryPerson" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="POTotal" ColumnName="POTotal" />
+                <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="ShippingDate" ColumnName="ShippingDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="PODate" ColumnName="PODate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+                <ScalarProperty Name="ShipViaCode" ColumnName="ShipViaCode" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="POType" ColumnName="POType" />
+                <ScalarProperty Name="RefNum" ColumnName="RefNum" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
