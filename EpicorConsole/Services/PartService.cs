@@ -1,5 +1,6 @@
 ﻿using EpicorConsole.Data;
 using EpicorConsole.Epicor.PartSvc;
+using Hangfire;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace EpicorConsole.Services
             partClient = GetClient<PartSvcContractClient, PartSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             partClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
-
+        
+        [DisableConcurrentExecution(100000)]
         public async Task SyncParts()
         {
             Console.WriteLine("Syncing Parts...");

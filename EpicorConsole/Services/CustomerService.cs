@@ -1,5 +1,6 @@
 ﻿using EpicorConsole.Data;
 using EpicorConsole.Epicor.CustomerSvc;
+using Hangfire;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace EpicorConsole.Services
             customerClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
 
+        [DisableConcurrentExecution(100000)]
         public async Task SyncCustomers()
         {
             Console.WriteLine("Syncing Customers...");

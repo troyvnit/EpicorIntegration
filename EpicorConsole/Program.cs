@@ -26,9 +26,6 @@ namespace EpicorConsole
 
             Console.WriteLine("Logged in");
 
-            var partService = new PartService(sessionId);
-            var priceService = new PriceService(sessionId);
-            var customerService = new CustomerService(sessionId);
             var poService = new POService(sessionId);
 
             var connectionString = ConfigurationManager.ConnectionStrings["EpicorHangfire"].ConnectionString;
@@ -38,13 +35,37 @@ namespace EpicorConsole
             {
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
 
-                //RecurringJob.AddOrUpdate(() => partService.SyncParts().Wait(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate(() => priceService.SyncPrices().Wait(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate(() => customerService.SyncCustomers().Wait(), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => poService.SyncPOs().Wait(), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => DoSyncPart(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => DoSyncPrice(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => DoSyncCustomer(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate(() => DoSyncPO(sessionId), Cron.Minutely);
 
                 Console.ReadKey();
             }
+        }
+
+        public static async Task DoSyncPart(Guid sessionId)
+        {
+            var partService = new PartService(sessionId);
+            await partService.SyncParts();
+        }
+
+        public static async Task DoSyncPrice(Guid sessionId)
+        {
+            var priceService = new PriceService(sessionId);
+            await priceService.SyncPrices();
+        }
+
+        public static async Task DoSyncCustomer(Guid sessionId)
+        {
+            var customerService = new CustomerService(sessionId);
+            await customerService.SyncCustomers();
+        }
+
+        public static async Task DoSyncPO(Guid sessionId)
+        {
+            var poService = new POService(sessionId);
+            await poService.SyncPOs();
         }
     }
 }
