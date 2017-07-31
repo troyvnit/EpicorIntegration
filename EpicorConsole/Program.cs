@@ -41,13 +41,17 @@ namespace EpicorConsole
                 RecurringJob.RemoveIfExists("DoSyncCustomer");
                 RecurringJob.RemoveIfExists("DoSyncPO");
                 RecurringJob.RemoveIfExists("DoSyncPart");
+                RecurringJob.RemoveIfExists("DoSyncCustBalance");
+                RecurringJob.RemoveIfExists("DoSyncCustOverDue");
 
                 //Add or update
                 //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.MinuteInterval(5));
+                //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.MinuteInterval(5));
+                RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
 
                 Console.ReadKey();
             }
@@ -81,6 +85,18 @@ namespace EpicorConsole
         {
             var arInvoiceService = new ARInvoiceService(sessionId);
             await arInvoiceService.SyncARInvoices();
+        }
+
+        public static async Task DoSyncCustBalance()
+        {
+            var custBalanceService = new CustBalanceService();
+            await custBalanceService.SyncCustBalances();
+        }
+
+        public static async Task DoSyncCustOverDue()
+        {
+            var custOverDueService = new CustOverDueService();
+            await custOverDueService.SyncCustOverDues();
         }
     }
 }

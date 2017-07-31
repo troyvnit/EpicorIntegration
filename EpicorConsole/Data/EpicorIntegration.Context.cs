@@ -32,5 +32,7 @@ namespace EpicorConsole.Data
         public virtual DbSet<PO_HEADER> PO_HEADER { get; set; }
         public virtual DbSet<ARINVOICE_HEADER> ARINVOICE_HEADER { get; set; }
         public virtual DbSet<ARINVOICE_DETAIL> ARINVOICE_DETAIL { get; set; }
+        public virtual DbSet<CUST_BALANCE> CUST_BALANCE { get; set; }
+        public virtual DbSet<CUST_OVER_DUE> CUST_OVER_DUE { get; set; }
     }
 }

@@ -12,6 +12,8 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_HEADER" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.ARINVOICE_HEADER" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.ARINVOICE_DETAIL" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.CUST_BALANCE" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.CUST_OVER_DUE" Width="1.5" PointX="9.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
