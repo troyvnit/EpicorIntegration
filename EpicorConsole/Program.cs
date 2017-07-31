@@ -35,10 +35,19 @@ namespace EpicorConsole
             {
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
 
-                RecurringJob.AddOrUpdate(() => DoSyncPart(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => DoSyncPrice(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => DoSyncCustomer(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate(() => DoSyncPO(sessionId), Cron.Minutely);
+                //Remove if exists
+                RecurringJob.RemoveIfExists("DoSyncPart");
+                RecurringJob.RemoveIfExists("DoSyncPrice");
+                RecurringJob.RemoveIfExists("DoSyncCustomer");
+                RecurringJob.RemoveIfExists("DoSyncPO");
+                RecurringJob.RemoveIfExists("DoSyncPart");
+
+                //Add or update
+                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.MinuteInterval(5));
 
                 Console.ReadKey();
             }
@@ -66,6 +75,12 @@ namespace EpicorConsole
         {
             var poService = new POService(sessionId);
             await poService.SyncPOs();
+        }
+
+        public static async Task DoSyncARInvoice(Guid sessionId)
+        {
+            var arInvoiceService = new ARInvoiceService(sessionId);
+            await arInvoiceService.SyncARInvoices();
         }
     }
 }

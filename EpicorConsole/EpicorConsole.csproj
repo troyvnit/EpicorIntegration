@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomMessageInspector.cs" />
+    <Compile Include="Data\ARINVOICE_DETAIL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ARINVOICE_HEADER.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\CUSTOMER.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -110,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Epicor.ARInvoiceSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Epicor.CustomerSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +147,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\ARInvoiceService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\PriceService.cs" />
@@ -203,6 +215,626 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Epicor.AbcCodeSvc\EpicorConsole.Epicor.AbcCodeSvc.UpdExtABCCodeTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.wsdl" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoiceSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvcDtlPackTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetDepTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetDropShipTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetFSContTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetLinesTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetMilestoneTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetPBTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetRecInvSourceTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetRMATableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvGetShipTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvoiceTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvPaySchedTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvRemindersTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.AssignLegalNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.BOUpdErrorTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CalculateCOIFRS_PVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ChangeIncomeTaxCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ChangeMYIndustryCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckAmortSchedulesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckCommodityCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckGroupIsLockedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckISRCodeDefinitionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckLtrOfCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CheckVATFormatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CopyInvoiceLinesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CreateCorrectionInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CreateInvFromDepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.CurrSymbolByInvcNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.DeleteAmortizationScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.DeleteMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.EnableARDatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ETCAddrValidationTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ETCValidateAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GenerateAmortizationScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GenerateRebateInvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetAvailNOEInvoiceTranDocTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetDefaultAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetDropShipmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetFSCallsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetInvcRecurrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetLegalNumGenOptsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetMilestoneBillingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewDepositTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcChrgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcDtlAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcDtlRASchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcDtlTGLCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcHeadAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcHeadBOEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcHeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcHeadTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcMiscResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvcTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetNewInvoiceManualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetPaymentDataForViewingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetPBInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRecurBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRecurringInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRMACreditsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRowsContactTrackerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRowsCustomerTrackerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetRowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetShipmentsConsolidatedPSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetShipmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.GetvalidEADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.InvcCustTrkTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.InvcHeadListTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.LegalNumGenOptsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.MassGenerateBOEInvcDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.MXDigitalTaxRcptTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeAllocatedDepositAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeARLOCIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeBlockedFinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeBOEStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeCycleCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeDeferredPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeDueDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeHoldReasonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeInvDtlUseOTSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeLineDefRevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeLineDspWithholdAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeLineInvoiceRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfAmortDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofApplyDateExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofApplyDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofChrgAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofCurrencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofDepAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofDepositResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofExchangeRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofFixedAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofFOBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfImmaterialAdjustmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofInvDateExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofInvDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofInvoiceAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofInvoiceRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofIsRevisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineAdvBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineDescResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineDiscAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineDiscPercResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineExtPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineInvoiceLineRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineOrderLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineOrderReleaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLinePartNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLinePricePerCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineProdCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineRevNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineSalesUMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineShipDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfLineShipToCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineShipToNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineShipViaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineTaxCatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineTaxExemptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineTaxRgnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLineUnitPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLinkedInvcUnitPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofLockRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofManualTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofMiscAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofMiscCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofMiscPrcntResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofMXPartPmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofOrderNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPayMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPaySchedAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPaySchedDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPEChargesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPECommissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPEDischargeAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPEInterestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPENoPayPenaltyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPlantResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofPrepDepositResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfRACodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofRateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofRateGrpCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofRetInvoiceNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfRevisionDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofRevisionNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofSalesRepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofShipDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofSoldToCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxLockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxPDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxRateDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxRateGrpCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxReportAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTaxRgnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofTermsCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeOfTransApplyDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeofUseSOCCDefaultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangePartiallyDeferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeReclassCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeReclassReasonCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeReclassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeRecurringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeTranDocTypeIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeUnrecognizedAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChangeUseAltBillToResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.OnChooseofPaySchedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.PEDetractionsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.PopulateInvcHeadTransferListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.PrePostBOEChangeStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.PrePostBOEInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RebateInvTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RecalcAmortAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RecalcAmortPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RecalcDeferredTotalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RecurringInvTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.RestoreAmortizationScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.SetReadyToCalcExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.SetReadyToCalcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.TransferSelectedInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateBOEStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateMasterUsingPasteInsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateofPaySchedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdatePEInvcTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdatePEInvcTaxSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.Update_ttInvcHeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdExtARInvoiceTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Epicor.CustomerSvc\Customer.wsdl" />
@@ -1304,6 +1936,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Epicor.AbcCodeSvc\" />
+    <WCFMetadataStorage Include="Service References\Epicor.ARInvoiceSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.CustomerSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.PartSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.POSvc\" />
@@ -1366,6 +1999,13 @@
       <DependentUpon>EpicorIntegration.edmx</DependentUpon>
       <LastGenOutput>EpicorIntegration.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\Epicor.ARInvoiceSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Epicor.ARInvoiceSvc\configuration.svcinfo" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\configuration91.svcinfo" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.disco" />
     <None Include="Service References\Epicor.POSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

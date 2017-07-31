@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b4d8c680-73f0-4f50-99c9-fb0b4254a14e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/ARInvoice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ARInvoice.disco" MetadataType="Disco" ID="3528b985-fdd6-4920-bf03-6b4a76dc3232" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?disco" />
+    <MetadataFile FileName="ARInvoice.xsd" MetadataType="Schema" ID="45190951-4f1b-4c84-9ae6-86cd42afb939" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd4" />
+    <MetadataFile FileName="ARInvoice1.xsd" MetadataType="Schema" ID="53f6b6ed-6f04-4e83-94b3-59f0e7663274" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd5" />
+    <MetadataFile FileName="ARInvoice.wsdl" MetadataType="Wsdl" ID="ee70bb6d-de60-417e-85f9-673eee3332fb" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ARInvoiceSvcFacade.wsdl" MetadataType="Wsdl" ID="cf92f2e5-5ab6-4737-8dec-ffdcc6719a15" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?wsdl" />
+    <MetadataFile FileName="ARInvoice2.xsd" MetadataType="Schema" ID="36c81550-1412-4a4a-8a1d-dbc09f5cda88" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd3" />
+    <MetadataFile FileName="ARInvoice3.xsd" MetadataType="Schema" ID="187e1ef3-b1b0-4fce-b786-2eed0ce27cd8" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd2" />
+    <MetadataFile FileName="ARInvoice4.xsd" MetadataType="Schema" ID="477e62fc-9e14-4a67-a455-6f3b3e1c6d8e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd1" />
+    <MetadataFile FileName="ARInvoice5.xsd" MetadataType="Schema" ID="43677d41-a8a9-4d71-8f82-966d6976e73f" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd0" />
+    <MetadataFile FileName="ARInvoice6.xsd" MetadataType="Schema" ID="0c047ecb-0296-4390-b727-a9b147fe97f4" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd7" />
+    <MetadataFile FileName="ARInvoice7.xsd" MetadataType="Schema" ID="13149e0b-4c10-4da3-9bd0-15e8982bf3f0" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/ARInvoice.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -10,6 +10,8 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUSTOMER" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_DETAIL" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_HEADER" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.ARINVOICE_HEADER" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.ARINVOICE_DETAIL" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
