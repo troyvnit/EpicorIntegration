@@ -12,19 +12,18 @@ namespace EpicorConsole.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class PRICE_LIST
+    public partial class PDA_PAYMENT
     {
-        public short PriceListNum { get; set; }
-        public string PriceListName { get; set; }
-        public string ItemCode { get; set; }
-        public decimal Price { get; set; }
-        public string Currency { get; set; }
+        public string PaymentID { get; set; }
+        public string CustomerCode { get; set; }
+        public System.DateTime PayDate { get; set; }
+        public decimal PayAmount { get; set; }
+        public string Remarks { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
         public string LastUpdatedBy { get; set; }
         public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
-        public string ListCode { get; set; }
     }
 }

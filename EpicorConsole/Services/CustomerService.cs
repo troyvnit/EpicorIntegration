@@ -105,33 +105,16 @@ namespace EpicorConsole.Services
             row.Company = !string.IsNullOrEmpty(entity.CompanyCode) ? entity.CompanyCode : row.Company;
             row.CustID = !string.IsNullOrEmpty(entity.CustomerCode) ? entity.CustomerCode : row.CustID;
             row.Name = !string.IsNullOrEmpty(entity.CustomerName) ? entity.CustomerName : row.Name;
-            row.Address1 = !string.IsNullOrEmpty(entity.Address1) ? entity.Address1 : row.Address1;
-            row.Address2 = !string.IsNullOrEmpty(entity.Address2) ? entity.Address2 : row.Address2;
-            row.Address3 = !string.IsNullOrEmpty(entity.Address3) ? entity.Address3 : row.Address3;
+            row.Address1 = !string.IsNullOrEmpty(entity.Address) ? entity.Address : row.Address1;
             row.PhoneNum = !string.IsNullOrEmpty(entity.Phone1) ? entity.Phone1 : row.PhoneNum;
             row.FaxNum = !string.IsNullOrEmpty(entity.Fax) ? entity.Fax : row.FaxNum;
-            row.EMailAddress = !string.IsNullOrEmpty(entity.Email) ? entity.Email : row.EMailAddress;
             row.CreditLimit = entity.CreditLimit.HasValue ? entity.CreditLimit.Value : row.CreditLimit;
             row.CurrencyCode = !string.IsNullOrEmpty(entity.Currency) ? entity.Currency : row.CurrencyCode;
             row.Country = !string.IsNullOrEmpty(entity.Country) ? entity.Country : row.Country;
-            row.CountryNum = entity.CountryNum.HasValue ? entity.CountryNum.Value : row.CountryNum;
             row.TermsCode = !string.IsNullOrEmpty(entity.PaymentTerm) ? entity.PaymentTerm : row.TermsCode;
             row.TaxRegionCode = !string.IsNullOrEmpty(entity.GroupTax) ? entity.GroupTax : row.TaxRegionCode;
             row.ResaleID = !string.IsNullOrEmpty(entity.TaxCode) ? entity.TaxCode : row.ResaleID;
-            row.GroupCode = !string.IsNullOrEmpty(entity.GroupCode) ? entity.GroupCode : row.GroupCode;
-            row.ValidPayer = entity.ValidPayer;
-            row.ValidShipTo = entity.ValidShipTo;
-            row.ValidSoldTo = entity.ValidSoldTo;
-            row.LegalName = !string.IsNullOrEmpty(entity.LegalName) ? entity.LegalName : row.LegalName;
             row.CustomerType = !string.IsNullOrEmpty(entity.CustomerType) ? entity.CustomerType : row.CustomerType;
-            row.TerritoryID = !string.IsNullOrEmpty(entity.TerritoryCode) ? entity.TerritoryCode : row.TerritoryID;
-            row.SalesRepCode = !string.IsNullOrEmpty(entity.SalesRepCode) ? entity.SalesRepCode : row.SalesRepCode;
-            row.AllowShipTo3 = entity.AllowShipTo3;
-            row.AllowOTS = entity.AllowOTS;
-            row.PrintStatements = entity.PrintStatements;
-            row.CreditHold = entity.CreditHold;
-            row.EstDate = entity.EstablishedDate != null ? entity.EstablishedDate : row.EstDate;
-            row.ConsolidateSO = entity.ConsolidateSO;
         }
     }
 }

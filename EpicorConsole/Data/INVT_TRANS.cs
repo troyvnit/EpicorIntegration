@@ -12,19 +12,27 @@ namespace EpicorConsole.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class PRICE_LIST
+    public partial class INVT_TRANS
     {
-        public short PriceListNum { get; set; }
-        public string PriceListName { get; set; }
-        public string ItemCode { get; set; }
-        public decimal Price { get; set; }
-        public string Currency { get; set; }
+        public int Id { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
         public string LastUpdatedBy { get; set; }
         public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
-        public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
-        public string ListCode { get; set; }
+        public string Company { get; set; }
+        public string Site { get; set; }
+        public string PartDescription { get; set; }
+        public string PartNum { get; set; }
+        public string WareHouseCode { get; set; }
+        public Nullable<System.DateTime> TranDate { get; set; }
+        public Nullable<System.DateTime> SysDate { get; set; }
+        public int OrderNum { get; set; }
+        public string TranType { get; set; }
+        public int TranNum { get; set; }
+        public string TranClass { get; set; }
+        public Nullable<decimal> TranQty { get; set; }
+        public string LotNum { get; set; }
+        public string InvtyUOM { get; set; }
     }
 }

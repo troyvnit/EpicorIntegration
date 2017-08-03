@@ -12,31 +12,26 @@ namespace EpicorConsole.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCT
+    public partial class CUSTOMER_SHIPTO
     {
-        public string ItemCode { get; set; }
-        public string ItemName { get; set; }
-        public string ForeignName { get; set; }
-        public string BarCode { get; set; }
-        public string Status { get; set; }
-        public string SalesUnit { get; set; }
-        public decimal SalesItemsPerUnit { get; set; }
-        public Nullable<decimal> SalesUnitLength { get; set; }
-        public Nullable<decimal> SalesUnitWidth { get; set; }
-        public Nullable<decimal> SalesUnitHeight { get; set; }
-        public Nullable<decimal> SalesUnitVolume { get; set; }
-        public Nullable<decimal> SalesUnitWeight { get; set; }
-        public string SalesVATGroup { get; set; }
-        public string PurchaseUnit { get; set; }
-        public decimal PurchaseItemsPerUnit { get; set; }
-        public Nullable<decimal> PurchaseUnitLength { get; set; }
-        public Nullable<decimal> PurchaseUnitWidth { get; set; }
-        public Nullable<decimal> PurchaseUnitHeight { get; set; }
-        public Nullable<decimal> PurchaseUnitVolume { get; set; }
-        public Nullable<decimal> PurchaseUnitWeight { get; set; }
-        public string PurchaseVATGroup { get; set; }
-        public string InventoryUOM { get; set; }
-        public Nullable<decimal> MOQ { get; set; }
+        public string CompanyCode { get; set; }
+        public string CustomerCode { get; set; }
+        public string ShiptoCode { get; set; }
+        public string AddressName { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string Address3 { get; set; }
+        public string Country { get; set; }
+        public string DistrictCode { get; set; }
+        public string DistrictName { get; set; }
+        public string ProvinceCode { get; set; }
+        public string ProvinceName { get; set; }
+        public string RegionCode { get; set; }
+        public string RegionName { get; set; }
+        public string StreetCode { get; set; }
+        public string StreetName { get; set; }
+        public string WardCode { get; set; }
+        public string WardName { get; set; }
         public string AttrCode0 { get; set; }
         public string AttrName0 { get; set; }
         public string AttrCode1 { get; set; }
@@ -58,9 +53,9 @@ namespace EpicorConsole.Data
         public string AttrCode9 { get; set; }
         public string AttrName9 { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
+        public System.DateTime CreatedDateTime { get; set; }
         public string LastUpdatedBy { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
+        public System.DateTime LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
     }

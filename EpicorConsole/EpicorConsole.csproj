@@ -82,6 +82,9 @@
     <Compile Include="Data\CUSTOMER.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\CUSTOMER_SHIPTO.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\CUST_BALANCE.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -118,6 +121,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\INVT_TRANS.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\INVT_TRANS_DETAIL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\INVT_TRANS_HEADER.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PDA_PAYMENT.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\PO_DETAIL.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -128,6 +143,21 @@
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PRODUCT.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RPO_DETAIL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RPO_HEADER.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SO_DETAIL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SO_HEADER.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SO_HEADER_CONFIRM.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
@@ -173,9 +203,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Epicor.PartTranSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\ARInvoiceService.cs" />
     <Compile Include="Services\CustBalanceService.cs" />
+    <Compile Include="Services\PartTranService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\CustOverDueService.cs" />
@@ -1477,6 +1513,33 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Epicor.PartSvc\PartSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.BOUpdErrorTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.GetNewPartTranResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.GetRowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.PartTranListTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.PartTranTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.UpdateExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\EpicorConsole.Epicor.PartTranSvc.UpdExtPartTranTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Epicor.POSvc\EpicorConsole.Epicor.POSvc.BOUpdErrorTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1963,6 +2026,32 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Epicor.SessionModSvc\SessionModSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.PartTranSvc\PartTran.wsdl" />
+    <None Include="Service References\Epicor.PartTranSvc\PartTran.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTran7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\PartTranSvcFacade.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -1978,6 +2067,7 @@
     <WCFMetadataStorage Include="Service References\Epicor.POSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.PriceLstPartsSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.SessionModSvc\" />
+    <WCFMetadataStorage Include="Service References\Epicor.PartTranSvc\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Epicor.SessionModSvc\SessionMod.disco" />
@@ -2045,6 +2135,13 @@
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
       <LastGenOutput>ERPAPPTRAIN.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\Epicor.PartTranSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Epicor.PartTranSvc\configuration.svcinfo" />
+    <None Include="Service References\Epicor.PartTranSvc\configuration91.svcinfo" />
+    <None Include="Service References\Epicor.PartTranSvc\PartTran.disco" />
     <None Include="Service References\Epicor.ARInvoiceSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

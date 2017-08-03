@@ -68,7 +68,6 @@ namespace EpicorConsole.Services
             entity.ForeignName = row.PartDescription;
             entity.Status = row.InActive ? "I" : "A";
             entity.SalesUnit = row.SalesUM;
-            entity.SalesItemPerUnit = row.SellingFactor;
             entity.SalesVATGroup = row.TaxCatID;
             entity.PurchaseUnit = row.PUM;
             entity.PurchaseItemsPerUnit = row.PurchasingFactor;

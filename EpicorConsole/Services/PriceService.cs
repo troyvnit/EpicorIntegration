@@ -34,7 +34,7 @@ namespace EpicorConsole.Services
                 {
                     foreach (var priceLstPart in priceLstParts)
                     {
-                        var price = db.PRICE_LIST.FirstOrDefault(p => p.PriceListNum.ToString() == priceLstPart.ListCode && p.ItemCode == priceLstPart.PartNum);
+                        var price = db.PRICE_LIST.FirstOrDefault(p => p.ListCode == priceLstPart.ListCode && p.ItemCode == priceLstPart.PartNum);
                         if (price == null)
                         {
                             price = new PRICE_LIST();
@@ -63,8 +63,9 @@ namespace EpicorConsole.Services
 
         private void MapToEntity(PRICE_LIST entity, PriceLstPartsRow row)
         {
+            entity.PriceListName = row.ListCodeListDescription;
+            entity.ListCode = row.ListCode;
             entity.ItemCode = row.PartNum;
-            entity.PriceListNum = row.ListCode;
             entity.Price = decimal.Round(row.BasePrice, 0);
             entity.Currency = row.CurrencyCode;
             entity.CreatedBy = this.epicorUserID;
