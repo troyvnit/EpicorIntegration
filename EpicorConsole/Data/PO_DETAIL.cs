@@ -35,5 +35,6 @@ namespace EpicorConsole.Data
         public bool RcvInspectionReq { get; set; }
         public string BranchCode { get; set; }
         public string WhsCode { get; set; }
+        public Nullable<int> HeaderId { get; set; }
     }
 }

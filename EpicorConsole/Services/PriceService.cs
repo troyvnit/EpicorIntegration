@@ -68,6 +68,7 @@ namespace EpicorConsole.Services
             entity.ItemCode = row.PartNum;
             entity.Price = decimal.Round(row.BasePrice, 0);
             entity.Currency = row.CurrencyCode;
+            entity.CompanyCode = row.Company;
             entity.CreatedBy = this.epicorUserID;
             entity.LastUpdatedBy = this.epicorUserID;
             entity.CreatedDateTime = DateTime.Now;

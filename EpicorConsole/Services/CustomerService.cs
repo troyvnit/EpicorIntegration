@@ -91,6 +91,17 @@ namespace EpicorConsole.Services
             }
         }
 
+        public async Task<int> GetCustNum(string custId)
+        {
+            var customer = await customerClient.GetCustomerAsync(custId);
+            if (!customer.Customer.Any())
+            {
+                Console.WriteLine($"Customer {custId} not found!");
+                return 0;
+            }
+            return customer.Customer[0].CustNum;
+        }
+
         private void MapToEntity(CUSTOMER entity, CustomerRow row)
         {
             entity.Currency = row.CurrencyCode;
@@ -115,6 +126,8 @@ namespace EpicorConsole.Services
             row.TaxRegionCode = !string.IsNullOrEmpty(entity.GroupTax) ? entity.GroupTax : row.TaxRegionCode;
             row.ResaleID = !string.IsNullOrEmpty(entity.TaxCode) ? entity.TaxCode : row.ResaleID;
             row.CustomerType = !string.IsNullOrEmpty(entity.CustomerType) ? entity.CustomerType : row.CustomerType;
+
+            row.TerritoryID = "DEFAULT";
         }
     }
 }

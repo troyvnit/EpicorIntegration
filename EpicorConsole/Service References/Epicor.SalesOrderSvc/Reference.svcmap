@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5ddd87a1-42b3-4b7c-b39c-c0c13e83aff4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/SalesOrder.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SalesOrder.xsd" MetadataType="Schema" ID="1fdc411b-812e-4015-9155-40933112885a" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd4" />
+    <MetadataFile FileName="SalesOrder1.xsd" MetadataType="Schema" ID="5c84a535-f3cd-44b3-8e00-fbfa320976ec" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd5" />
+    <MetadataFile FileName="SalesOrder2.xsd" MetadataType="Schema" ID="ea526109-647d-4a0a-90b3-230a30307c2b" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd7" />
+    <MetadataFile FileName="SalesOrder.disco" MetadataType="Disco" ID="183af5b1-d40f-4530-bb1c-b0e87d6d2b1e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?disco" />
+    <MetadataFile FileName="SalesOrderSvcFacade.wsdl" MetadataType="Wsdl" ID="9f289743-0c01-466c-afe1-a6fe00167443" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?wsdl" />
+    <MetadataFile FileName="SalesOrder3.xsd" MetadataType="Schema" ID="b2ea437f-8608-457d-b866-b028b1dec847" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd6" />
+    <MetadataFile FileName="SalesOrder4.xsd" MetadataType="Schema" ID="c817895f-a92a-4a59-8277-a1f8d9ee55b3" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalesOrder5.xsd" MetadataType="Schema" ID="12075808-4dab-468a-9a59-0624131cc352" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalesOrder6.xsd" MetadataType="Schema" ID="72a53d4d-46f1-48f0-a59f-656949066bd5" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd3" />
+    <MetadataFile FileName="SalesOrder7.xsd" MetadataType="Schema" ID="b4f06088-9476-43f2-8da3-97dd0da50554" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalesOrder.wsdl" MetadataType="Wsdl" ID="0b210adb-e1f7-4454-8c07-19037619737e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

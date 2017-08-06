@@ -208,10 +208,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Epicor.SalesOrderSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\ARInvoiceService.cs" />
     <Compile Include="Services\CustBalanceService.cs" />
     <Compile Include="Services\PartTranService.cs" />
+    <Compile Include="Services\SOService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\CustOverDueService.cs" />
@@ -1982,6 +1988,498 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Epicor.PriceLstPartsSvc\PriceLstPartsSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CCClearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CCLoadTranDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CCProcessCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeBTCustIDMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCardNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCCAmountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCommissionableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeContractNumMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeContractNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCounterSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCreditExpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCurrencyCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangedCardNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeDiscBreakListCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeDiscountAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeDiscountPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeERSOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeHedOTSCountryNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeHedUseOTSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeKitPricingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeKitQtyPerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeMakeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeManualTaxCalcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeMiscAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeMiscCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeMiscPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeNeedByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeNewNeedByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeNewSellingQuantityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeODtlWarehouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderDtlPWContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelBuyToOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelDropShipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelMarkForNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelMFCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelPWContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelShipToContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelShipToCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelShipToResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelUseOTMFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOrderRelVendorIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeORelWarehouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOverrideDiscPriceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeOverridePriceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangePartNumMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangePartNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangePlantResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangePriceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangePricePerCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeQuickEntryOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeQuoteLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeQuoteQtyNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRelUseOTSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRenewalNbrMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRenewalNbrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRevisionNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRevNumMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeRMANumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSalesRepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSalesUOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSellingQtyMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSellingQuantityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSellingReqQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeShipToContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeShipToCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeShipToIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSoldToContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeSoldToIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeUnitPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeVendorChangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeWhseCodeMasterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ChangeXPartNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckCustomerCreditLimitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckCustomerCreditReleaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckCustOnCreditHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckLtrOfCrdtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckOrderHedChangesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckOrderHedDispatchReasonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckPartRevisionChangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckQuoteForCreditLimitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckRateGrpCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckSellingFactorDirectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CheckSONumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.chkCustomerCreditLimitForCopyOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CopyOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CreateGlbSugPOChgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CreateLineMiscChargesFromQuoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CreateLinesFromHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.CreateOrderDtlComplementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ECCUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ETCAddrValidationTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ETCValidateAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetBasePartForConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetGlbSugPOChgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetInventoryQuantitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetJobProdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetKitComponentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetListCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOHOrderMscResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderDtlAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderHedAttchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderHedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderHedUPSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderMscResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderRelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewOrderRelTaxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetNewSalesKitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetPayBTFlagDefaultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetQuoteQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetRowsCustomerTrackerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetRowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GetSmartStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GlbSugPOChgTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.GlbSugPOChgUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.MasterUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.NegativeInventoryTestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeARLOCIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeCreditCardOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeofBTConNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeofBTCustIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeOfFixedAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeOfMktgCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeOfMktgEvntResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeofPhaseIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeofSoldToCreditCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeOfTaxAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeOfTaxPercentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeofTaxRgnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeRateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeTaxableAmtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeTaxCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OnChangeTranDocTypeIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrdDtlQuoteQtyTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrderDtlGetNewContractsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrderDtlGetNewCounterSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrderDtlGetNewFromQuoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrderHedListTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.OrdRelJobProdTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.PhantomComponentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ProcessCounterSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ProcessQuickEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.RebuildShipUPSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SalesOrderTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SelectSerialNumbersParamsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SetReadyToCalcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SetUPSQVEnableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SOEntryUIParamsTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.SubmitNewOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.UpdateExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.UpdExtSalesOrderTableset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ValidateCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ValidateInvQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ValidateProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ValidateSNsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Epicor.SessionModSvc\EpicorConsole.Epicor.SessionModSvc.GetCurrentValuesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2052,6 +2550,32 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Epicor.PartTranSvc\PartTranSvcFacade.wsdl" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.wsdl" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrderSvcFacade.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -2068,6 +2592,7 @@
     <WCFMetadataStorage Include="Service References\Epicor.PriceLstPartsSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.SessionModSvc\" />
     <WCFMetadataStorage Include="Service References\Epicor.PartTranSvc\" />
+    <WCFMetadataStorage Include="Service References\Epicor.SalesOrderSvc\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Epicor.SessionModSvc\SessionMod.disco" />
@@ -2135,6 +2660,13 @@
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
       <LastGenOutput>ERPAPPTRAIN.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\Epicor.SalesOrderSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Epicor.SalesOrderSvc\configuration.svcinfo" />
+    <None Include="Service References\Epicor.SalesOrderSvc\configuration91.svcinfo" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.disco" />
     <None Include="Service References\Epicor.PartTranSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

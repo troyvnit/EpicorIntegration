@@ -45,8 +45,16 @@ namespace EpicorConsole.Services
                                 {
                                     MapToHeaderRow(poHeaderRow, poHeader);
                                     poClient.Update(ref poTableset);
+                                    poHeader.PONum = poTableset.POHeader[0].PONum;
                                     poHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added poHeader: #{poHeader.PONum} successfully!");
+
+                                    //Update PONum of Details
+                                    var poDetails = db.PO_DETAIL.Where(c => c.HeaderId == poHeader.Id);
+                                    foreach (var poDetail in poDetails)
+                                    {
+                                        poDetail.PONum = poHeader.PONum;
+                                    }
                                 }
                             }
                             catch (Exception e)
@@ -150,8 +158,8 @@ namespace EpicorConsole.Services
 
         private void MapToHeaderRow(POHeaderRow row, PO_HEADER entity)
         {
+            row.PONum = entity.PONum > 0 ? entity.PONum : row.PONum;
             row.Company = !string.IsNullOrEmpty(entity.CompanyCode) ? entity.CompanyCode : row.Company;
-            row.PONum = entity.PONum;
             row.EntryPerson = !string.IsNullOrEmpty(entity.EntryPerson) ? entity.EntryPerson : row.EntryPerson;
             row.POType = !string.IsNullOrEmpty(entity.POType) ? entity.POType : row.POType;
             row.OrderDate = entity.OrderDate != null ? entity.OrderDate : row.OrderDate;
@@ -164,7 +172,6 @@ namespace EpicorConsole.Services
             row.ApprovalStatus = !string.IsNullOrEmpty(entity.ApprovalStatus) ? entity.ApprovalStatus : row.ApprovalStatus;
             row.VendorNum = entity.VendorNumber;
             row.PostDate = entity.PostingDate;
-            row.OrderDate = entity.PODate;
             row.PromiseDate = entity.DeliveryDate;
         }
 

@@ -15,7 +15,7 @@ namespace EpicorConsole.Data
     public partial class SO_HEADER
     {
         public string CompanyCode { get; set; }
-        public string DocNum { get; set; }
+        public int DocNum { get; set; }
         public string BranchCode { get; set; }
         public string CustomerCode { get; set; }
         public string ShiptoCode { get; set; }
@@ -30,5 +30,8 @@ namespace EpicorConsole.Data
         public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
+        public string PaymentTerm { get; set; }
+        public string Currency { get; set; }
+        public int Id { get; set; }
     }
 }

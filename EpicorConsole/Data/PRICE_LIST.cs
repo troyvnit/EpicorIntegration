@@ -26,5 +26,6 @@ namespace EpicorConsole.Data
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
         public string ListCode { get; set; }
+        public string CompanyCode { get; set; }
     }
 }

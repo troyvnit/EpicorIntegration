@@ -34,15 +34,15 @@ namespace EpicorConsole.Data
         public virtual DbSet<PRODUCT> PRODUCTs { get; set; }
         public virtual DbSet<RPO_DETAIL> RPO_DETAIL { get; set; }
         public virtual DbSet<RPO_HEADER> RPO_HEADER { get; set; }
-        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
-        public virtual DbSet<SO_HEADER> SO_HEADER { get; set; }
         public virtual DbSet<SO_HEADER_CONFIRM> SO_HEADER_CONFIRM { get; set; }
         public virtual DbSet<ARINVOICE_DETAIL> ARINVOICE_DETAIL { get; set; }
         public virtual DbSet<ARINVOICE_HEADER> ARINVOICE_HEADER { get; set; }
         public virtual DbSet<CUST_BALANCE> CUST_BALANCE { get; set; }
         public virtual DbSet<CUST_OVER_DUE> CUST_OVER_DUE { get; set; }
         public virtual DbSet<PO_DETAIL> PO_DETAIL { get; set; }
-        public virtual DbSet<PO_HEADER> PO_HEADER { get; set; }
         public virtual DbSet<PRICE_LIST> PRICE_LIST { get; set; }
+        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
+        public virtual DbSet<SO_HEADER> SO_HEADER { get; set; }
+        public virtual DbSet<PO_HEADER> PO_HEADER { get; set; }
     }
 }
