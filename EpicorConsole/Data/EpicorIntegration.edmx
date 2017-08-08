@@ -455,6 +455,7 @@
           <Property Name="LineDesc" Type="nvarchar(max)" Nullable="false" />
           <Property Name="HeaderId" Type="int" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User01" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="SO_HEADER">
           <Key>
@@ -546,9 +547,9 @@
           <EntitySet Name="CUST_OVER_DUE" EntityType="EpicorIntegrationModel.CUST_OVER_DUE" />
           <EntitySet Name="PO_DETAIL" EntityType="EpicorIntegrationModel.PO_DETAIL" />
           <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
-          <EntitySet Name="SO_DETAIL" EntityType="EpicorIntegrationModel.SO_DETAIL" />
           <EntitySet Name="SO_HEADER" EntityType="EpicorIntegrationModel.SO_HEADER" />
           <EntitySet Name="PO_HEADER" EntityType="EpicorIntegrationModel.PO_HEADER" />
+          <EntitySet Name="SO_DETAIL" EntityType="EpicorIntegrationModel.SO_DETAIL" />
         </EntityContainer>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -967,31 +968,6 @@
           <Property Name="ListCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CompanyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="SO_DETAIL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="DocNum" Type="Int32" Nullable="false" />
-          <Property Name="LineNum" Type="Int32" Nullable="false" />
-          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="UoM" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="BranchCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="WhsCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="IUM" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="LineDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="HeaderId" Type="Int32" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
         <EntityType Name="SO_HEADER">
           <Key>
             <PropertyRef Name="Id" />
@@ -1048,6 +1024,32 @@
           <Property Name="EntryPerson" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="BuyerID" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="ExchangeRate" Type="Decimal" Precision="9" Scale="0" />
+        </EntityType>
+        <EntityType Name="SO_DETAIL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DocNum" Type="Int32" Nullable="false" />
+          <Property Name="LineNum" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="UoM" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BranchCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WhsCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IUM" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="LineDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HeaderId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User01" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1473,32 +1475,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SO_DETAIL">
-            <EntityTypeMapping TypeName="EpicorIntegrationModel.SO_DETAIL">
-              <MappingFragment StoreEntitySet="SO_DETAIL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
-                <ScalarProperty Name="LineDesc" ColumnName="LineDesc" />
-                <ScalarProperty Name="IUM" ColumnName="IUM" />
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
-                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-                <ScalarProperty Name="UoM" ColumnName="UoM" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
-                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SO_HEADER">
             <EntityTypeMapping TypeName="EpicorIntegrationModel.SO_HEADER">
               <MappingFragment StoreEntitySet="SO_HEADER">
@@ -1555,6 +1531,33 @@
                 <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SO_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.SO_DETAIL">
+              <MappingFragment StoreEntitySet="SO_DETAIL">
+                <ScalarProperty Name="User01" ColumnName="User01" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+                <ScalarProperty Name="LineDesc" ColumnName="LineDesc" />
+                <ScalarProperty Name="IUM" ColumnName="IUM" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="UoM" ColumnName="UoM" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

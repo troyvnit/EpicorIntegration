@@ -27,6 +27,8 @@ namespace EpicorConsole.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<PriceLst> PriceLsts { get; set; }
+        public virtual DbSet<PriceLstPart> PriceLstParts { get; set; }
     
         public virtual ObjectResult<sptyx_DMSCustBalance_Result> sptyx_DMSCustBalance()
         {

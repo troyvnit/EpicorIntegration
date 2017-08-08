@@ -4,7 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6cd2984fc8f7432ab69c3322c0528a00" Name="Diagram1" />
+      <Diagram DiagramId="6cd2984fc8f7432ab69c3322c0528a00" Name="Diagram1" >
+        <EntityTypeShape EntityType="ERPAPPTRAINModel.PriceLst" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ERPAPPTRAINModel.PriceLstPart" Width="1.5" PointX="2.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

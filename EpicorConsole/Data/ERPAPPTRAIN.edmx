@@ -4,18 +4,74 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERPAPPTRAINModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERPAPPTRAINModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PriceLst">
+          <Key>
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="ListCode" />
+          </Key>
+          <Property Name="Company" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="ListCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CurrencyCode" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ListDescription" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="WarehouseList" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GlobalPriceLst" Type="bit" Nullable="false" />
+          <Property Name="GlobalLock" Type="bit" Nullable="false" />
+          <Property Name="ListType" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="SysRowID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UseZeroPrice" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PriceLstParts">
+          <Key>
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="ListCode" />
+            <PropertyRef Name="PartNum" />
+            <PropertyRef Name="UOMCode" />
+          </Key>
+          <Property Name="Company" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="ListCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="PartNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BasePrice" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="DiscountPercent1" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="DiscountPercent2" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="DiscountPercent3" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="DiscountPercent4" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="DiscountPercent5" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="QtyBreak1" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+          <Property Name="QtyBreak2" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+          <Property Name="QtyBreak3" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+          <Property Name="QtyBreak4" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+          <Property Name="QtyBreak5" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+          <Property Name="UnitPrice1" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="UnitPrice2" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="UnitPrice3" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="UnitPrice4" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="UnitPrice5" Type="decimal" Precision="17" Scale="5" Nullable="false" />
+          <Property Name="CommentText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UOMCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="GlobalPriceLstParts" Type="bit" Nullable="false" />
+          <Property Name="GlobalLock" Type="bit" Nullable="false" />
+          <Property Name="SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="SysRowID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
         <Function Name="sptyx_DMSCustBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustOverDue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="ERPAPPTRAINModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
+          <EntitySet Name="PriceLst" EntityType="Self.PriceLst" Schema="Erp" store:Type="Tables" />
+          <EntitySet Name="PriceLstParts" EntityType="Self.PriceLstParts" Schema="Erp" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERPAPPTRAINModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ERPAPPTRAINEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="sptyx_DMSCustBalance" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustBalance_Result)" />
           <FunctionImport Name="sptyx_DMSCustOverDue" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustOverDue_Result)" />
+          <EntitySet Name="PriceLsts" EntityType="ERPAPPTRAINModel.PriceLst" />
+          <EntitySet Name="PriceLstParts" EntityType="ERPAPPTRAINModel.PriceLstPart" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -35,6 +91,58 @@
           <Property Type="Double" Name="OverDue" Nullable="true" />
           <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
         </ComplexType>
+        <EntityType Name="PriceLst">
+          <Key>
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="ListCode" />
+          </Key>
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ListCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCode" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="ListDescription" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="WarehouseList" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GlobalPriceLst" Type="Boolean" Nullable="false" />
+          <Property Name="GlobalLock" Type="Boolean" Nullable="false" />
+          <Property Name="ListType" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="SysRowID" Type="Guid" Nullable="false" />
+          <Property Name="UseZeroPrice" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PriceLstPart">
+          <Key>
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="ListCode" />
+            <PropertyRef Name="PartNum" />
+            <PropertyRef Name="UOMCode" />
+          </Key>
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ListCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PartNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="DiscountPercent1" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="DiscountPercent2" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="DiscountPercent3" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="DiscountPercent4" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="DiscountPercent5" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="QtyBreak1" Type="Decimal" Nullable="false" Precision="19" Scale="8" />
+          <Property Name="QtyBreak2" Type="Decimal" Nullable="false" Precision="19" Scale="8" />
+          <Property Name="QtyBreak3" Type="Decimal" Nullable="false" Precision="19" Scale="8" />
+          <Property Name="QtyBreak4" Type="Decimal" Nullable="false" Precision="19" Scale="8" />
+          <Property Name="QtyBreak5" Type="Decimal" Nullable="false" Precision="19" Scale="8" />
+          <Property Name="UnitPrice1" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="UnitPrice2" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="UnitPrice3" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="UnitPrice4" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="UnitPrice5" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="CommentText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UOMCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="GlobalPriceLstParts" Type="Boolean" Nullable="false" />
+          <Property Name="GlobalLock" Type="Boolean" Nullable="false" />
+          <Property Name="SysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="SysRowID" Type="Guid" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -67,6 +175,56 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="PriceLsts">
+            <EntityTypeMapping TypeName="ERPAPPTRAINModel.PriceLst">
+              <MappingFragment StoreEntitySet="PriceLst">
+                <ScalarProperty Name="UseZeroPrice" ColumnName="UseZeroPrice" />
+                <ScalarProperty Name="SysRowID" ColumnName="SysRowID" />
+                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
+                <ScalarProperty Name="ListType" ColumnName="ListType" />
+                <ScalarProperty Name="GlobalLock" ColumnName="GlobalLock" />
+                <ScalarProperty Name="GlobalPriceLst" ColumnName="GlobalPriceLst" />
+                <ScalarProperty Name="WarehouseList" ColumnName="WarehouseList" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ListDescription" ColumnName="ListDescription" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceLstParts">
+            <EntityTypeMapping TypeName="ERPAPPTRAINModel.PriceLstPart">
+              <MappingFragment StoreEntitySet="PriceLstParts">
+                <ScalarProperty Name="SysRowID" ColumnName="SysRowID" />
+                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
+                <ScalarProperty Name="GlobalLock" ColumnName="GlobalLock" />
+                <ScalarProperty Name="GlobalPriceLstParts" ColumnName="GlobalPriceLstParts" />
+                <ScalarProperty Name="UOMCode" ColumnName="UOMCode" />
+                <ScalarProperty Name="CommentText" ColumnName="CommentText" />
+                <ScalarProperty Name="UnitPrice5" ColumnName="UnitPrice5" />
+                <ScalarProperty Name="UnitPrice4" ColumnName="UnitPrice4" />
+                <ScalarProperty Name="UnitPrice3" ColumnName="UnitPrice3" />
+                <ScalarProperty Name="UnitPrice2" ColumnName="UnitPrice2" />
+                <ScalarProperty Name="UnitPrice1" ColumnName="UnitPrice1" />
+                <ScalarProperty Name="QtyBreak5" ColumnName="QtyBreak5" />
+                <ScalarProperty Name="QtyBreak4" ColumnName="QtyBreak4" />
+                <ScalarProperty Name="QtyBreak3" ColumnName="QtyBreak3" />
+                <ScalarProperty Name="QtyBreak2" ColumnName="QtyBreak2" />
+                <ScalarProperty Name="QtyBreak1" ColumnName="QtyBreak1" />
+                <ScalarProperty Name="DiscountPercent5" ColumnName="DiscountPercent5" />
+                <ScalarProperty Name="DiscountPercent4" ColumnName="DiscountPercent4" />
+                <ScalarProperty Name="DiscountPercent3" ColumnName="DiscountPercent3" />
+                <ScalarProperty Name="DiscountPercent2" ColumnName="DiscountPercent2" />
+                <ScalarProperty Name="DiscountPercent1" ColumnName="DiscountPercent1" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+                <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

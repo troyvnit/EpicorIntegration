@@ -139,6 +139,12 @@
     <Compile Include="Data\PO_HEADER.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\PriceLst.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PriceLstPart.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\PRICE_LIST.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>

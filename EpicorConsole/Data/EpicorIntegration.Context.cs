@@ -41,8 +41,8 @@ namespace EpicorConsole.Data
         public virtual DbSet<CUST_OVER_DUE> CUST_OVER_DUE { get; set; }
         public virtual DbSet<PO_DETAIL> PO_DETAIL { get; set; }
         public virtual DbSet<PRICE_LIST> PRICE_LIST { get; set; }
-        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
         public virtual DbSet<SO_HEADER> SO_HEADER { get; set; }
         public virtual DbSet<PO_HEADER> PO_HEADER { get; set; }
+        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace EpicorConsole.Services
     public class PriceService : BaseService
     {
         PriceLstPartsSvcContractClient priceClient;
+        List<PriceLst> priceLsts;
 
         public PriceService(Guid sessionId)
         {
@@ -27,32 +28,37 @@ namespace EpicorConsole.Services
             Console.WriteLine("Syncing Prices...");
             try
             {
-                var rs = await priceClient.GetRowsAsync(new Epicor.PriceLstPartsSvc.GetRowsRequest());
-                var result = rs.GetRowsResult;
-                var priceLstParts = result.PriceLstParts.ToArray();
-                using (var db = new EpicorIntegrationEntities())
+                //var rs = await priceClient.GetRowsAsync(new Epicor.PriceLstPartsSvc.GetRowsRequest());
+                //var result = rs.GetRowsResult;
+                //var priceLstParts = result.PriceLstParts.ToArray();
+                using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    foreach (var priceLstPart in priceLstParts)
+                    priceLsts = erpdb.PriceLsts.ToList();
+                    var priceLstParts = erpdb.PriceLstParts.ToList();
+                    using (var db = new EpicorIntegrationEntities())
                     {
-                        var price = db.PRICE_LIST.FirstOrDefault(p => p.ListCode == priceLstPart.ListCode && p.ItemCode == priceLstPart.PartNum);
-                        if (price == null)
+                        foreach (var priceLstPart in priceLstParts)
                         {
-                            price = new PRICE_LIST();
-                            price.DMSFlag = "N";
-                            MapToEntity(price, priceLstPart);
-                            db.PRICE_LIST.Add(price);
-                            Console.WriteLine($"Added price: #{priceLstPart.ListCode}");
+                            var price = db.PRICE_LIST.FirstOrDefault(p => p.ListCode == priceLstPart.ListCode && p.ItemCode == priceLstPart.PartNum && p.CompanyCode == priceLstPart.Company);
+                            if (price == null)
+                            {
+                                price = new PRICE_LIST();
+                                price.DMSFlag = "N";
+                                MapToEntity(price, priceLstPart);
+                                db.PRICE_LIST.Add(price);
+                                Console.WriteLine($"Added price: #{priceLstPart.ListCode}");
+                            }
+                            else
+                            {
+                                MapToEntity(price, priceLstPart);
+                                price.DMSFlag = "U";
+                                db.PRICE_LIST.Attach(price);
+                                db.Entry(price).State = System.Data.Entity.EntityState.Modified;
+                                Console.WriteLine($"Updated price: #{priceLstPart.ListCode}");
+                            }
                         }
-                        else
-                        {
-                            MapToEntity(price, priceLstPart);
-                            price.DMSFlag = "U";
-                            db.PRICE_LIST.Attach(price);
-                            db.Entry(price).State = System.Data.Entity.EntityState.Modified;
-                            Console.WriteLine($"Updated price: #{priceLstPart.ListCode}");
-                        }
+                        await db.SaveChangesAsync();
                     }
-                    await db.SaveChangesAsync();
                 }
             }
             catch (Exception e)
@@ -61,13 +67,17 @@ namespace EpicorConsole.Services
             }
         }
 
-        private void MapToEntity(PRICE_LIST entity, PriceLstPartsRow row)
+        private void MapToEntity(PRICE_LIST entity, PriceLstPart row)
         {
-            entity.PriceListName = row.ListCodeListDescription;
+            var priceList = priceLsts.FirstOrDefault(p => p.Company == row.Company && p.ListCode == row.ListCode);
+            if(priceList != null)
+            {
+                entity.PriceListName = priceList.ListDescription;
+                entity.Currency = priceList.CurrencyCode;
+            }
             entity.ListCode = row.ListCode;
             entity.ItemCode = row.PartNum;
             entity.Price = decimal.Round(row.BasePrice, 0);
-            entity.Currency = row.CurrencyCode;
             entity.CompanyCode = row.Company;
             entity.CreatedBy = this.epicorUserID;
             entity.LastUpdatedBy = this.epicorUserID;

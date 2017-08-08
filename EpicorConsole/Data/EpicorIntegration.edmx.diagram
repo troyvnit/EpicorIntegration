@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="65d6370582cb47a8ab6c183752a9e444" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="65d6370582cb47a8ab6c183752a9e444" Name="Diagram1" ZoomLevel="67">
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUSTOMER" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUSTOMER_SHIPTO" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.INVT_TRANS" Width="1.5" PointX="4.75" PointY="0.75" />
@@ -21,9 +21,9 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUST_OVER_DUE" Width="1.5" PointX="13.375" PointY="10.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_DETAIL" Width="1.5" PointX="7.375" PointY="14.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PRICE_LIST" Width="1.5" PointX="9.375" PointY="16.75" />
-        <EntityTypeShape EntityType="EpicorIntegrationModel.SO_DETAIL" Width="1.5" PointX="13.375" PointY="15.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="14.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_HEADER" Width="1.5" PointX="15.375" PointY="6.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.SO_DETAIL" Width="1.5" PointX="16.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

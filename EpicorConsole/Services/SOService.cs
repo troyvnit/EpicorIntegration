@@ -190,6 +190,7 @@ namespace EpicorConsole.Services
             row.SalesUM = entity.UoM;
             row.IUM = entity.IUM;
             row.SellingQuantity = entity.Quantity;
+            row.PlanUserID = entity.User01;
         }
     }
 }

@@ -40,8 +40,8 @@ namespace EpicorConsole
         public string EpicorUserId { get; set; }
 
         protected override void OnWriteHeaderContents(System.Xml.XmlDictionaryWriter writer, MessageVersion messageVersion) {
-            writer.WriteElementString("SessionID", @"http://schemas.datacontract .org/2004/07/Epicor.Hosting", SessionId.ToString());
-            writer.WriteElementString("UserID", @"http://schemas.datacontract.or g/2004/07/Epicor.Hosting", EpicorUserId);
+            writer.WriteElementString("SessionID", @"http://schemas.datacontract.org/2004/07/Epicor.Hosting", SessionId.ToString());
+            writer.WriteElementString("UserID", @"http://schemas.datacontract.org/2004/07/Epicor.Hosting", EpicorUserId);
         }
         public override string Name { get { return "SessionInfo"; } }
         public override string Namespace

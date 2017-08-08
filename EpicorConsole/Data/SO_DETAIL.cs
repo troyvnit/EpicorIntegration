@@ -34,5 +34,6 @@ namespace EpicorConsole.Data
         public string LineDesc { get; set; }
         public int HeaderId { get; set; }
         public int Id { get; set; }
+        public string User01 { get; set; }
     }
 }
