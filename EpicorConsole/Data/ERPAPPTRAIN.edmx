@@ -120,6 +120,7 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
         </EntityType>
         <Function Name="sptyx_DMSCustBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustOverDue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sptyx_DMSPriceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
           <EntitySet Name="PriceLst" EntityType="Self.PriceLst" Schema="Erp" store:Type="Tables" />
           <EntitySet Name="PriceLstParts" EntityType="Self.PriceLstParts" Schema="Erp" store:Type="Tables" />
@@ -174,6 +175,7 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <EntitySet Name="PriceLsts" EntityType="ERPAPPTRAINModel.PriceLst" />
           <EntitySet Name="PriceLstParts" EntityType="ERPAPPTRAINModel.PriceLstPart" />
           <EntitySet Name="xvtyx_DMSProduct" EntityType="ERPAPPTRAINModel.xvtyx_DMSProduct" />
+          <FunctionImport Name="sptyx_DMSPriceList" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSPriceList_Result)" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -304,6 +306,17 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <Property Name="sysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="UD_SysRevID" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
+        <ComplexType Name="sptyx_DMSPriceList_Result">
+          <Property Type="String" Name="Company" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PriceListNum" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PriceListDesc" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PartNum" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="BasePrice" Nullable="true" />
+          <Property Type="Int32" Name="BaseList" Nullable="true" />
+          <Property Type="String" Name="sysRevID" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -428,6 +441,21 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sptyx_DMSPriceList" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSPriceList" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSPriceList_Result">
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="BaseList" ColumnName="BaseList" />
+                <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

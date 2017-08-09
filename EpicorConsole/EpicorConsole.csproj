@@ -176,6 +176,9 @@
     <Compile Include="Data\sptyx_DMSCustOverDue_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\sptyx_DMSPriceList_Result.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\xvtyx_DMSProduct.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>

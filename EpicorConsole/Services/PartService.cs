@@ -17,9 +17,6 @@ namespace EpicorConsole.Services
         public PartService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "ERP101500/Erp/BO/Part.svc";
-            partClient = GetClient<PartSvcContractClient, PartSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            partClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
         
         [DisableConcurrentExecution(100000)]
@@ -60,10 +57,6 @@ namespace EpicorConsole.Services
             {
                 Console.WriteLine(e.GetBaseException().Message);
             }
-        }
-
-        private void MapToEntity(PRODUCT entity, xvtyx_DMSProduct row)
-        {
         }
     }
 }

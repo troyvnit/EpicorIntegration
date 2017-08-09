@@ -19,11 +19,11 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUST_BALANCE" Width="1.5" PointX="13.375" PointY="6.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.CUST_OVER_DUE" Width="1.5" PointX="13.375" PointY="10.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_DETAIL" Width="1.5" PointX="7.375" PointY="14.75" />
-        <EntityTypeShape EntityType="EpicorIntegrationModel.PRICE_LIST" Width="1.5" PointX="9.375" PointY="16.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="14.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_HEADER" Width="1.5" PointX="15.375" PointY="6.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_DETAIL" Width="1.5" PointX="16.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PRODUCT" Width="1.5" PointX="3.375" PointY="11.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.PRICE_LIST" Width="1.5" PointX="9.375" PointY="4.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

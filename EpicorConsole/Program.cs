@@ -26,6 +26,7 @@ namespace EpicorConsole
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<xvtyx_DMSProduct, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
+                cfg.CreateMap<sptyx_DMSPriceList_Result, PRICE_LIST>().ForMember(p => p.Id, o => o.UseDestinationValue());
             });
 
             var sessionModService = new SessionModService();
@@ -61,8 +62,8 @@ namespace EpicorConsole
                 }
 
                 //Add or update
-                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(sessionId), Cron.Minutely);

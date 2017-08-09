@@ -10,20 +10,17 @@
 namespace EpicorConsole.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class PRICE_LIST
+    public partial class sptyx_DMSPriceList_Result
     {
-        public int Id { get; set; }
         public string Company { get; set; }
         public string PriceListNum { get; set; }
         public string PriceListDesc { get; set; }
-        public Nullable<System.DateTime> Startdate { get; set; }
-        public Nullable<System.DateTime> Enddate { get; set; }
-        public string Partnum { get; set; }
-        public double BasePrice { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public string PartNum { get; set; }
+        public Nullable<double> BasePrice { get; set; }
         public Nullable<int> BaseList { get; set; }
-        public string SysRevID { get; set; }
-        public string DMSFlag { get; set; }
+        public string sysRevID { get; set; }
     }
 }
