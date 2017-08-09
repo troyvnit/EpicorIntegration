@@ -328,56 +328,49 @@
         </EntityType>
         <EntityType Name="PRODUCT">
           <Key>
-            <PropertyRef Name="ItemCode" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ItemName" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="ForeignName" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="BarCode" Type="nvarchar" MaxLength="200" />
-          <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="SalesUnit" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="SalesItemsPerUnit" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="SalesUnitLength" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SalesUnitWidth" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SalesUnitHeight" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SalesUnitVolume" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SalesUnitWeight" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SalesItemsPerUnit" Type="numeric" Precision="15" Scale="5" Nullable="false" />
+          <Property Name="SalesUnitLength" Type="numeric" Precision="15" Scale="5" />
+          <Property Name="SalesUnitWidth" Type="numeric" Precision="15" Scale="5" />
+          <Property Name="SalesUnitHeight" Type="numeric" Precision="15" Scale="5" />
+          <Property Name="SalesUnitVolume" Type="numeric" Precision="15" Scale="5" />
+          <Property Name="SalesUnitWeight" Type="numeric" Precision="15" Scale="5" />
           <Property Name="SalesVATGroup" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="PurchaseUnit" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="PurchaseItemsPerUnit" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="PurchaseUnitLength" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitWidth" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitHeight" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitVolume" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitWeight" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PurchaseVATGroup" Type="nvarchar" MaxLength="16" />
           <Property Name="InventoryUOM" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="MOQ" Type="numeric" Precision="18" Scale="0" />
           <Property Name="AttrCode0" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName0" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName0" Type="nvarchar(max)" />
           <Property Name="AttrCode1" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName1" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName1" Type="nvarchar(max)" />
           <Property Name="AttrCode2" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName2" Type="nvarchar(max)" />
           <Property Name="AttrCode3" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName3" Type="nvarchar(max)" />
           <Property Name="AttrCode4" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName4" Type="nvarchar(max)" />
           <Property Name="AttrCode5" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName5" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName5" Type="nvarchar(max)" />
           <Property Name="AttrCode6" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName6" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName6" Type="nvarchar(max)" />
           <Property Name="AttrCode7" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName7" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName7" Type="nvarchar(max)" />
           <Property Name="AttrCode8" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName8" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName8" Type="nvarchar(max)" />
           <Property Name="AttrCode9" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName9" Type="nvarchar" MaxLength="200" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="CreatedDateTime" Type="datetime" />
-          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="LastUpdatedDateTime" Type="datetime" />
-          <Property Name="SystemLog" Type="nvarchar" MaxLength="400" />
+          <Property Name="AttrName9" Type="nvarchar(max)" />
+          <Property Name="Option1" Type="nvarchar(max)" />
+          <Property Name="Option2" Type="nvarchar(max)" />
+          <Property Name="Option3" Type="nvarchar(max)" />
+          <Property Name="Option4" Type="nvarchar(max)" />
+          <Property Name="Option5" Type="nvarchar(max)" />
+          <Property Name="SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="RPO_DETAIL">
@@ -537,7 +530,6 @@
           <EntitySet Name="INVT_TRANS_DETAIL" EntityType="EpicorIntegrationModel.INVT_TRANS_DETAIL" />
           <EntitySet Name="INVT_TRANS_HEADER" EntityType="EpicorIntegrationModel.INVT_TRANS_HEADER" />
           <EntitySet Name="PDA_PAYMENT" EntityType="EpicorIntegrationModel.PDA_PAYMENT" />
-          <EntitySet Name="PRODUCTs" EntityType="EpicorIntegrationModel.PRODUCT" />
           <EntitySet Name="RPO_DETAIL" EntityType="EpicorIntegrationModel.RPO_DETAIL" />
           <EntitySet Name="RPO_HEADER" EntityType="EpicorIntegrationModel.RPO_HEADER" />
           <EntitySet Name="SO_HEADER_CONFIRM" EntityType="EpicorIntegrationModel.SO_HEADER_CONFIRM" />
@@ -550,6 +542,7 @@
           <EntitySet Name="SO_HEADER" EntityType="EpicorIntegrationModel.SO_HEADER" />
           <EntitySet Name="PO_HEADER" EntityType="EpicorIntegrationModel.PO_HEADER" />
           <EntitySet Name="SO_DETAIL" EntityType="EpicorIntegrationModel.SO_DETAIL" />
+          <EntitySet Name="PRODUCTs" EntityType="EpicorIntegrationModel.PRODUCT" />
         </EntityContainer>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -703,60 +696,6 @@
           <Property Name="PayDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="PayAmount" Type="Decimal" Nullable="false" Precision="19" Scale="6" />
           <Property Name="Remarks" Type="String" MaxLength="240" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-        </EntityType>
-        <EntityType Name="PRODUCT">
-          <Key>
-            <PropertyRef Name="ItemCode" />
-          </Key>
-          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ForeignName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="BarCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="SalesUnit" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="SalesItemsPerUnit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="SalesUnitLength" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SalesUnitWidth" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SalesUnitHeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SalesUnitVolume" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SalesUnitWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SalesVATGroup" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="PurchaseUnit" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="PurchaseItemsPerUnit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitLength" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitWidth" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitHeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitVolume" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PurchaseUnitWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PurchaseVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="InventoryUOM" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="MOQ" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
           <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -1051,6 +990,53 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User01" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="SalesUnit" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SalesItemsPerUnit" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
+          <Property Name="SalesUnitLength" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SalesUnitWidth" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SalesUnitHeight" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SalesUnitVolume" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SalesUnitWeight" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SalesVATGroup" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseUnit" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryUOM" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName0" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1211,61 +1197,6 @@
                 <ScalarProperty Name="PayDate" ColumnName="PayDate" />
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
                 <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PRODUCTs">
-            <EntityTypeMapping TypeName="EpicorIntegrationModel.PRODUCT">
-              <MappingFragment StoreEntitySet="PRODUCT">
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
-                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
-                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
-                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
-                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
-                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
-                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
-                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
-                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
-                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
-                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
-                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
-                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
-                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
-                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
-                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
-                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
-                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
-                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
-                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
-                <ScalarProperty Name="MOQ" ColumnName="MOQ" />
-                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
-                <ScalarProperty Name="PurchaseVATGroup" ColumnName="PurchaseVATGroup" />
-                <ScalarProperty Name="PurchaseUnitWeight" ColumnName="PurchaseUnitWeight" />
-                <ScalarProperty Name="PurchaseUnitVolume" ColumnName="PurchaseUnitVolume" />
-                <ScalarProperty Name="PurchaseUnitHeight" ColumnName="PurchaseUnitHeight" />
-                <ScalarProperty Name="PurchaseUnitWidth" ColumnName="PurchaseUnitWidth" />
-                <ScalarProperty Name="PurchaseUnitLength" ColumnName="PurchaseUnitLength" />
-                <ScalarProperty Name="PurchaseItemsPerUnit" ColumnName="PurchaseItemsPerUnit" />
-                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
-                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
-                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
-                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
-                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
-                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
-                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
-                <ScalarProperty Name="SalesItemsPerUnit" ColumnName="SalesItemsPerUnit" />
-                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
-                <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1558,6 +1489,54 @@
                 <ScalarProperty Name="LineNum" ColumnName="LineNum" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTs">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.PRODUCT">
+              <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
+                <ScalarProperty Name="Option5" ColumnName="Option5" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
+                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
+                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
+                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
+                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
+                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
+                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
+                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
+                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
+                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
+                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
+                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
+                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
+                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
+                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
+                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
+                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
+                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
+                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
+                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
+                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
+                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
+                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
+                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
+                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
+                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
+                <ScalarProperty Name="SalesItemsPerUnit" ColumnName="SalesItemsPerUnit" />
+                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

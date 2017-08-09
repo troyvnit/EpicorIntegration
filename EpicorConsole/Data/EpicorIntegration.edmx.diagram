@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.INVT_TRANS_DETAIL" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.INVT_TRANS_HEADER" Width="1.5" PointX="6.75" PointY="4.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PDA_PAYMENT" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EpicorIntegrationModel.PRODUCT" Width="1.5" PointX="4.75" PointY="8.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.RPO_DETAIL" Width="1.5" PointX="6.75" PointY="8.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.RPO_HEADER" Width="1.5" PointX="8.75" PointY="8.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_HEADER_CONFIRM" Width="1.5" PointX="10.75" PointY="10.75" />
@@ -24,6 +23,7 @@
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="14.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.PO_HEADER" Width="1.5" PointX="15.375" PointY="6.75" />
         <EntityTypeShape EntityType="EpicorIntegrationModel.SO_DETAIL" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EpicorIntegrationModel.PRODUCT" Width="1.5" PointX="3.375" PointY="11.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

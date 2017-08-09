@@ -12,20 +12,19 @@ namespace EpicorConsole.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCT
+    public partial class xvtyx_DMSProduct
     {
-        public int Id { get; set; }
-        public string ItemCode { get; set; }
         public string Company { get; set; }
+        public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public bool Status { get; set; }
         public string SalesUnit { get; set; }
-        public decimal SalesItemsPerUnit { get; set; }
-        public Nullable<decimal> SalesUnitLength { get; set; }
-        public Nullable<decimal> SalesUnitWidth { get; set; }
-        public Nullable<decimal> SalesUnitHeight { get; set; }
-        public Nullable<decimal> SalesUnitVolume { get; set; }
-        public Nullable<decimal> SalesUnitWeight { get; set; }
+        public int SalesItemsPerUnit { get; set; }
+        public decimal SalesUnitLength { get; set; }
+        public decimal SalesUnitWidth { get; set; }
+        public decimal SalesUnitHeight { get; set; }
+        public decimal SalesUnitVolume { get; set; }
+        public decimal SalesUnitWeight { get; set; }
         public string SalesVATGroup { get; set; }
         public string PurchaseUnit { get; set; }
         public string InventoryUOM { get; set; }
@@ -49,12 +48,7 @@ namespace EpicorConsole.Data
         public string AttrName8 { get; set; }
         public string AttrCode9 { get; set; }
         public string AttrName9 { get; set; }
-        public string Option1 { get; set; }
-        public string Option2 { get; set; }
-        public string Option3 { get; set; }
-        public string Option4 { get; set; }
-        public string Option5 { get; set; }
-        public byte[] SysRevID { get; set; }
-        public string DMSFlag { get; set; }
+        public byte[] sysRevID { get; set; }
+        public byte[] UD_SysRevID { get; set; }
     }
 }

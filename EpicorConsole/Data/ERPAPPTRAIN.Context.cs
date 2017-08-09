@@ -29,6 +29,7 @@ namespace EpicorConsole.Data
     
         public virtual DbSet<PriceLst> PriceLsts { get; set; }
         public virtual DbSet<PriceLstPart> PriceLstParts { get; set; }
+        public virtual DbSet<xvtyx_DMSProduct> xvtyx_DMSProduct { get; set; }
     
         public virtual ObjectResult<sptyx_DMSCustBalance_Result> sptyx_DMSCustBalance()
         {

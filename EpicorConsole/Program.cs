@@ -14,6 +14,8 @@ using System.Configuration;
 using EpicorConsole.Services;
 using Hangfire;
 using Hangfire.Common;
+using AutoMapper;
+using Hangfire.Storage;
 
 namespace EpicorConsole
 {
@@ -21,6 +23,11 @@ namespace EpicorConsole
     {
         static void Main(string[] args)
         {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<xvtyx_DMSProduct, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
+            });
+
             var sessionModService = new SessionModService();
             var sessionId = sessionModService.Login();
 
@@ -34,19 +41,28 @@ namespace EpicorConsole
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
 
                 //Remove if exists
-                RecurringJob.RemoveIfExists("DoSyncPart");
-                RecurringJob.RemoveIfExists("DoSyncPrice");
-                RecurringJob.RemoveIfExists("DoSyncCustomer");
-                RecurringJob.RemoveIfExists("DoSyncSO");
-                RecurringJob.RemoveIfExists("DoSyncPO");
-                RecurringJob.RemoveIfExists("DoSyncPart");
-                RecurringJob.RemoveIfExists("DoSyncCustBalance");
-                RecurringJob.RemoveIfExists("DoSyncCustOverDue");
-                RecurringJob.RemoveIfExists("DoSyncPartTran");
+                //RecurringJob.RemoveIfExists("DoSyncPart");
+                //RecurringJob.RemoveIfExists("DoSyncPrice");
+                //RecurringJob.RemoveIfExists("DoSyncCustomer");
+                //RecurringJob.RemoveIfExists("DoSyncSO");
+                //RecurringJob.RemoveIfExists("DoSyncPO");
+                //RecurringJob.RemoveIfExists("DoSyncPart");
+                //RecurringJob.RemoveIfExists("DoSyncCustBalance");
+                //RecurringJob.RemoveIfExists("DoSyncCustOverDue");
+                //RecurringJob.RemoveIfExists("DoSyncPartTran");
+
+                using (var connection = JobStorage.Current.GetConnection())
+                {
+                    foreach (var recurringJob in connection.GetRecurringJobs())
+                    {
+                        RecurringJob.RemoveIfExists(recurringJob.Id);
+                        Console.WriteLine("Removed Job: " + recurringJob.Id);
+                    }
+                }
 
                 //Add or update
-                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(sessionId), Cron.Minutely);

@@ -1,4 +1,5 @@
-﻿using EpicorConsole.Data;
+﻿using AutoMapper;
+using EpicorConsole.Data;
 using EpicorConsole.Epicor.PartSvc;
 using Hangfire;
 using System;
@@ -27,32 +28,32 @@ namespace EpicorConsole.Services
             Console.WriteLine("Syncing Parts...");
             try
             {
-                var rs = await partClient.GetRowsAsync(new Epicor.PartSvc.GetRowsRequest());
-                var result = rs.GetRowsResult;
-                var parts = result.Part.ToArray();
-                using (var db = new EpicorIntegrationEntities())
+                using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    foreach (var part in parts)
+                    var parts = erpdb.xvtyx_DMSProduct.ToList();
+                    using (var db = new EpicorIntegrationEntities())
                     {
-                        var product = db.PRODUCTs.FirstOrDefault(p => p.ItemCode == part.PartNum);
-                        if (product == null)
+                        foreach (var part in parts)
                         {
-                            product = new PRODUCT();
-                            product.DMSFlag = "N";
-                            MapToEntity(product, part);
-                            db.PRODUCTs.Add(product);
-                            Console.WriteLine($"Added product: #{part.PartNum}");
+                            var product = db.PRODUCTs.FirstOrDefault(p => p.ItemCode == part.ItemCode && p.Company == part.Company);
+                            if (product == null)
+                            {
+                                product = Mapper.Map<PRODUCT>(part);
+                                product.DMSFlag = "N";
+                                db.PRODUCTs.Add(product);
+                                Console.WriteLine($"Added product: #{part.ItemCode}");
+                            }
+                            else
+                            {
+                                Mapper.Map(part, product);
+                                product.DMSFlag = "U";
+                                db.PRODUCTs.Attach(product);
+                                db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                Console.WriteLine($"Updated product: #{part.ItemCode}");
+                            }
                         }
-                        else
-                        {
-                            MapToEntity(product, part);
-                            product.DMSFlag = "U";
-                            db.PRODUCTs.Attach(product);
-                            db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                            Console.WriteLine($"Updated product: #{part.PartNum}");
-                        }
+                        await db.SaveChangesAsync();
                     }
-                    await db.SaveChangesAsync();
                 }
             }
             catch (Exception e)
@@ -61,21 +62,8 @@ namespace EpicorConsole.Services
             }
         }
 
-        private void MapToEntity(PRODUCT entity, PartRow row)
+        private void MapToEntity(PRODUCT entity, xvtyx_DMSProduct row)
         {
-            entity.ItemCode = row.PartNum;
-            entity.ItemName = row.PartDescription;
-            entity.ForeignName = row.PartDescription;
-            entity.Status = row.InActive ? "I" : "A";
-            entity.SalesUnit = row.SalesUM;
-            entity.SalesVATGroup = row.TaxCatID;
-            entity.PurchaseUnit = row.PUM;
-            entity.PurchaseItemsPerUnit = row.PurchasingFactor;
-            entity.InventoryUOM = row.IUM;
-            entity.CreatedBy = this.epicorUserID;
-            entity.LastUpdatedBy = this.epicorUserID;
-            entity.CreatedDateTime = DateTime.Now;
-            entity.LastUpdatedDateTime = DateTime.Now;
         }
     }
 }

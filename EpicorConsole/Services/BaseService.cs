@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using EpicorConsole.Data;
+using System;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
