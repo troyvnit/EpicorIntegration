@@ -120,6 +120,27 @@
           <Property Name="SystemLog" Type="nvarchar" MaxLength="400" />
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="CUSTOMER_INFO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="nvarchar" MaxLength="10" />
+          <Property Name="Custnum" Type="int" />
+          <Property Name="CustID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreditLimit" Type="float" />
+          <Property Name="Balance" Type="float" />
+          <Property Name="ListCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="OverDue" Type="float" />
+          <Property Name="Option1" Type="nvarchar(max)" />
+          <Property Name="Option2" Type="nvarchar(max)" />
+          <Property Name="Option3" Type="nvarchar(max)" />
+          <Property Name="Option4" Type="nvarchar(max)" />
+          <Property Name="Option5" Type="nvarchar(max)" />
+          <Property Name="PrcSysRevID" Type="nvarchar(max)" />
+          <Property Name="CusSysRevID" Type="nvarchar(max)" />
+          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
         <EntityType Name="CUSTOMER_SHIPTO">
           <Key>
             <PropertyRef Name="CompanyCode" />
@@ -502,6 +523,7 @@
           <EntitySet Name="CUST_BALANCE" EntityType="Self.CUST_BALANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUST_OVER_DUE" EntityType="Self.CUST_OVER_DUE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUSTOMER_INFO" EntityType="Self.CUSTOMER_INFO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER_SHIPTO" EntityType="Self.CUSTOMER_SHIPTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="INVT_TRANS" EntityType="Self.INVT_TRANS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="INVT_TRANS_DETAIL" EntityType="Self.INVT_TRANS_DETAIL" Schema="dbo" store:Type="Tables" />
@@ -541,6 +563,7 @@
           <EntitySet Name="SO_DETAIL" EntityType="EpicorIntegrationModel.SO_DETAIL" />
           <EntitySet Name="PRODUCTs" EntityType="EpicorIntegrationModel.PRODUCT" />
           <EntitySet Name="PRICE_LIST" EntityType="EpicorIntegrationModel.PRICE_LIST" />
+          <EntitySet Name="CUSTOMER_INFO" EntityType="EpicorIntegrationModel.CUSTOMER_INFO" />
         </EntityContainer>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -1031,6 +1054,27 @@
           <Property Name="BasePrice" Type="Double" Nullable="false" />
           <Property Name="BaseList" Type="Int32" />
           <Property Name="SysRevID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER_INFO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Custnum" Type="Int32" />
+          <Property Name="CustID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreditLimit" Type="Double" />
+          <Property Name="Balance" Type="Double" />
+          <Property Name="ListCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OverDue" Type="Double" />
+          <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrcSysRevID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CusSysRevID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         </Schema>
@@ -1529,6 +1573,28 @@
                 <ScalarProperty Name="Startdate" ColumnName="Startdate" />
                 <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
                 <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMER_INFO">
+            <EntityTypeMapping TypeName="EpicorIntegrationModel.CUSTOMER_INFO">
+              <MappingFragment StoreEntitySet="CUSTOMER_INFO">
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="CusSysRevID" ColumnName="CusSysRevID" />
+                <ScalarProperty Name="PrcSysRevID" ColumnName="PrcSysRevID" />
+                <ScalarProperty Name="Option5" ColumnName="Option5" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="OverDue" ColumnName="OverDue" />
+                <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="Custnum" ColumnName="Custnum" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

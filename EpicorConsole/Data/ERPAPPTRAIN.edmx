@@ -119,6 +119,7 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <Property Name="UD_SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <Function Name="sptyx_DMSCustBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sptyx_DMSCustInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustOverDue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSPriceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
@@ -176,6 +177,7 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <EntitySet Name="PriceLstParts" EntityType="ERPAPPTRAINModel.PriceLstPart" />
           <EntitySet Name="xvtyx_DMSProduct" EntityType="ERPAPPTRAINModel.xvtyx_DMSProduct" />
           <FunctionImport Name="sptyx_DMSPriceList" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSPriceList_Result)" />
+          <FunctionImport Name="sptyx_DMSCustInfo" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustInfo_Result)" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -317,6 +319,22 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <Property Type="Int32" Name="BaseList" Nullable="true" />
           <Property Type="String" Name="sysRevID" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="sptyx_DMSCustInfo_Result">
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="Custid" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="Custnum" Nullable="false" />
+          <Property Type="Decimal" Name="CreditLimit" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="Double" Name="Balance" Nullable="true" />
+          <Property Type="Double" Name="OverDue" Nullable="true" />
+          <Property Type="String" Name="ListCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CusSysRevID" Nullable="true" />
+          <Property Type="String" Name="PrcSysRevID" Nullable="true" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option5" Nullable="false" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -453,6 +471,26 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
                 <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
                 <ScalarProperty Name="BaseList" ColumnName="BaseList" />
                 <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sptyx_DMSCustInfo" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSCustInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSCustInfo_Result">
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Custid" ColumnName="Custid" />
+                <ScalarProperty Name="Custnum" ColumnName="Custnum" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="OverDue" ColumnName="OverDue" />
+                <ScalarProperty Name="ListCode" ColumnName="ListCode" />
+                <ScalarProperty Name="CusSysRevID" ColumnName="CusSysRevID" />
+                <ScalarProperty Name="PrcSysRevID" ColumnName="PrcSysRevID" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Option5" ColumnName="Option5" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

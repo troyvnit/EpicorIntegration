@@ -86,6 +86,9 @@
     <Compile Include="Data\CUSTOMER.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\CUSTOMER_INFO.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\CUSTOMER_SHIPTO.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -173,6 +176,9 @@
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\sptyx_DMSCustInfo_Result.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\sptyx_DMSCustOverDue_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
@@ -232,6 +238,7 @@
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\ARInvoiceService.cs" />
     <Compile Include="Services\CustBalanceService.cs" />
+    <Compile Include="Services\CustInfoService.cs" />
     <Compile Include="Services\PartTranService.cs" />
     <Compile Include="Services\SOService.cs" />
     <Compile Include="Services\POService.cs" />
