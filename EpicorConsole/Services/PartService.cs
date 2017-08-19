@@ -28,28 +28,48 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var parts = erpdb.xvtyx_DMSProduct.ToList();
-                    using (var db = new EpicorIntegrationEntities())
+                    using (var db = new ERPIntegrationEntities())
                     {
                         foreach (var part in parts)
                         {
                             var product = db.PRODUCTs.FirstOrDefault(p => p.ItemCode == part.ItemCode && p.Company == part.Company);
                             if (product == null)
                             {
-                                product = Mapper.Map<PRODUCT>(part);
-                                product.DMSFlag = "N";
-                                db.PRODUCTs.Add(product);
-                                Console.WriteLine($"Added product: #{part.ItemCode}");
+                                try
+                                {
+                                    product = Mapper.Map<PRODUCT>(part);
+                                    product.DMSFlag = "N";
+                                    db.PRODUCTs.Add(product);
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Added product: #{part.ItemCode}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed adding product: #{part.ItemCode}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                             else
                             {
-                                Mapper.Map(part, product);
-                                product.DMSFlag = "U";
-                                db.PRODUCTs.Attach(product);
-                                db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                                Console.WriteLine($"Updated product: #{part.ItemCode}");
+                                try
+                                {
+                                    Mapper.Map(part, product);
+                                    product.DMSFlag = "U";
+                                    db.PRODUCTs.Attach(product);
+                                    db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Updated product: #{part.ItemCode}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed updating product: #{part.ItemCode}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                         }
-                        await db.SaveChangesAsync();
+                        //await db.SaveChangesAsync();
                     }
                 }
             }

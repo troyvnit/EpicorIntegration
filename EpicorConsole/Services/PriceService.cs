@@ -32,28 +32,47 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var priceLstParts = erpdb.sptyx_DMSPriceList();
-                    using (var db = new EpicorIntegrationEntities())
+                    using (var db = new ERPIntegrationEntities())
                     {
                         foreach (var priceLstPart in priceLstParts)
                         {
                             var price = db.PRICE_LIST.FirstOrDefault(p => p.Company == priceLstPart.Company && p.PriceListNum == priceLstPart.PriceListNum && p.Partnum == priceLstPart.PartNum);
                             if (price == null)
                             {
-                                price = Mapper.Map<PRICE_LIST>(priceLstPart);
-                                price.DMSFlag = "N";
-                                db.PRICE_LIST.Add(price);
-                                Console.WriteLine($"Added price: #{priceLstPart.PriceListNum}");
+                                try
+                                {
+                                    price = Mapper.Map<PRICE_LIST>(priceLstPart);
+                                    price.DMSFlag = "N";
+                                    db.PRICE_LIST.Add(price);
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Added price: #{priceLstPart.PriceListNum}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed adding price: #{priceLstPart.PriceListNum}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                             else
                             {
-                                Mapper.Map(priceLstPart, price);
-                                price.DMSFlag = "U";
-                                db.PRICE_LIST.Attach(price);
-                                db.Entry(price).State = System.Data.Entity.EntityState.Modified;
-                                Console.WriteLine($"Updated price: #{priceLstPart.PriceListNum}");
+                                try
+                                {
+                                    Mapper.Map(priceLstPart, price);
+                                    price.DMSFlag = "U";
+                                    db.PRICE_LIST.Attach(price);
+                                    db.Entry(price).State = System.Data.Entity.EntityState.Modified;
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Updated price: #{priceLstPart.PriceListNum}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed updating price: #{priceLstPart.PriceListNum}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                         }
-                        await db.SaveChangesAsync();
                     }
                 }
             }

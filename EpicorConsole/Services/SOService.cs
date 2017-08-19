@@ -30,7 +30,7 @@ namespace EpicorConsole.Services
             Console.WriteLine("Syncing SOs...");
             try
             {
-                using (var db = new EpicorIntegrationEntities())
+                using (var db = new ERPIntegrationEntities())
                 {
                     //Header
                     var addedSOHeaders = db.SO_HEADER.Where(c => c.DMSFlag == "N");

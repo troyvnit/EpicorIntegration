@@ -24,7 +24,7 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var custOverDues = erpdb.sptyx_DMSCustOverDue();
-                    using (var db = new EpicorIntegrationEntities())
+                    using (var db = new ERPIntegrationEntities())
                     {
                         foreach (var custOverDue in custOverDues)
                         {

@@ -79,40 +79,25 @@
   <ItemGroup>
     <Compile Include="CustomMessageInspector.cs" />
     <Compile Include="Data\ARINVOICE_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\ARINVOICE_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CUSTOMER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CUSTOMER_INFO.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CUSTOMER_SHIPTO.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CUST_BALANCE.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CUST_OVER_DUE.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EpicorIntegration.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EpicorIntegration.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EpicorIntegration.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EpicorIntegration.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EpicorIntegration.edmx</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\ERPAPPTRAIN.Context.cs">
       <AutoGen>True</AutoGen>
@@ -129,23 +114,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\ERPIntegration.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPIntegration.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ERPIntegration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ERPIntegration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPIntegration.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Data\INVT_TRANS.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\INVT_TRANS_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\INVT_TRANS_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PDA_PAYMENT.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PO_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PO_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PriceLst.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
@@ -154,25 +154,25 @@
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PRICE_LIST.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PRODUCT.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\RPO_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\RPO_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\SO_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\SO_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\SO_HEADER_CONFIRM.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+      <DependentUpon>ERPIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
@@ -251,19 +251,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Data\EpicorIntegration.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EpicorIntegration.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data\EpicorIntegration.edmx.diagram">
-      <DependentUpon>EpicorIntegration.edmx</DependentUpon>
-    </None>
     <EntityDeploy Include="Data\ERPAPPTRAIN.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ERPAPPTRAIN.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Data\ERPAPPTRAIN.edmx.diagram">
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Data\ERPIntegration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ERPIntegration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\ERPIntegration.edmx.diagram">
+      <DependentUpon>ERPIntegration.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Service References\Epicor.AbcCodeSvc\ABCCode1.wsdl" />
@@ -2655,16 +2655,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\EpicorIntegration.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EpicorIntegration.edmx</DependentUpon>
-      <LastGenOutput>EpicorIntegration.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\EpicorIntegration.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EpicorIntegration.edmx</DependentUpon>
-      <LastGenOutput>EpicorIntegration.cs</LastGenOutput>
-    </Content>
     <Content Include="Data\ERPAPPTRAIN.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
@@ -2674,6 +2664,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
       <LastGenOutput>ERPAPPTRAIN.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\ERPIntegration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERPIntegration.edmx</DependentUpon>
+      <LastGenOutput>ERPIntegration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\ERPIntegration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERPIntegration.edmx</DependentUpon>
+      <LastGenOutput>ERPIntegration.cs</LastGenOutput>
     </Content>
     <None Include="Service References\Epicor.SessionModSvc\SessionMod1.disco" />
     <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder1.disco" />
