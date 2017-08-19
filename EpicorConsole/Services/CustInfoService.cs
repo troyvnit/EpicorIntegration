@@ -32,21 +32,40 @@ namespace EpicorConsole.Services
                             var cod = db.CUSTOMER_INFO.FirstOrDefault(p => p.Custnum == custInfo.Custnum && p.Company == custInfo.Company);
                             if (cod == null)
                             {
-                                cod = Mapper.Map<CUSTOMER_INFO>(custInfo);
-                                cod.DMSFlag = "N";
-                                db.CUSTOMER_INFO.Add(cod);
-                                Console.WriteLine($"Added Cust Over Due: #{custInfo.Custnum}");
+                                try
+                                {
+                                    cod = Mapper.Map<CUSTOMER_INFO>(custInfo);
+                                    cod.DMSFlag = "N";
+                                    db.CUSTOMER_INFO.Add(cod);
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Added Cust Info: #{custInfo.Custnum}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed adding Cust Info: #{custInfo.Custnum}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                             else
                             {
-                                Mapper.Map(custInfo, cod);
-                                cod.DMSFlag = "U";
-                                db.CUSTOMER_INFO.Attach(cod);
-                                db.Entry(cod).State = System.Data.Entity.EntityState.Modified;
-                                Console.WriteLine($"Updated Cust Over Due: #{custInfo.Custnum}");
+                                try
+                                {
+                                    Mapper.Map(custInfo, cod);
+                                    cod.DMSFlag = "U";
+                                    db.CUSTOMER_INFO.Attach(cod);
+                                    db.Entry(cod).State = System.Data.Entity.EntityState.Modified;
+                                    await db.SaveChangesAsync();
+                                    Console.WriteLine($"Updated Cust Info: #{custInfo.Custnum}");
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine($"Failed updating Cust Info: #{custInfo.Custnum}");
+                                    Console.WriteLine(e.GetBaseException().Message);
+                                    continue;
+                                }
                             }
                         }
-                        await db.SaveChangesAsync();
                     }
                 }
             }
