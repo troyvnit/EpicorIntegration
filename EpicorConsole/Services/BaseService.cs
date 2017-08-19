@@ -9,8 +9,8 @@ namespace EpicorConsole.Services
 {
     public class BaseService
     {
-        protected string epicorUserID = "dms.user03";
-        protected string epiorUserPassword = "tri@2017";
+        protected string epicorUserID = "manager";
+        protected string epiorUserPassword = "manager@GVN";
         protected UriBuilder builder;
         protected EndpointBindingType bindingType = EndpointBindingType.SOAPHttp;
         protected string scheme = "http";
@@ -19,7 +19,7 @@ namespace EpicorConsole.Services
         public BaseService()
         {
             ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return true; };
-            builder = new UriBuilder(scheme, "DMS_SERVER.greenvet.com");
+            builder = new UriBuilder(scheme, "ERP.greenvet.com");
         }
 
         public enum EndpointBindingType { SOAPHttp, BasicHttp }
@@ -73,6 +73,7 @@ namespace EpicorConsole.Services
                 client.ClientCredentials.UserName.UserName = username;
                 client.ClientCredentials.UserName.Password = password;
             }
+            client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
             return client;
         }
     }

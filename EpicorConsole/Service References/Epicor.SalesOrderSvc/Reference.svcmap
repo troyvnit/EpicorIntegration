@@ -19,20 +19,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/ERP101500/Erp/BO/SalesOrder.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101/Erp/BO/SalesOrder.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SalesOrder.xsd" MetadataType="Schema" ID="1fdc411b-812e-4015-9155-40933112885a" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd4" />
-    <MetadataFile FileName="SalesOrder1.xsd" MetadataType="Schema" ID="5c84a535-f3cd-44b3-8e00-fbfa320976ec" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd5" />
-    <MetadataFile FileName="SalesOrder2.xsd" MetadataType="Schema" ID="ea526109-647d-4a0a-90b3-230a30307c2b" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd7" />
-    <MetadataFile FileName="SalesOrder.disco" MetadataType="Disco" ID="183af5b1-d40f-4530-bb1c-b0e87d6d2b1e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?disco" />
-    <MetadataFile FileName="SalesOrderSvcFacade.wsdl" MetadataType="Wsdl" ID="9f289743-0c01-466c-afe1-a6fe00167443" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?wsdl" />
-    <MetadataFile FileName="SalesOrder3.xsd" MetadataType="Schema" ID="b2ea437f-8608-457d-b866-b028b1dec847" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd6" />
-    <MetadataFile FileName="SalesOrder4.xsd" MetadataType="Schema" ID="c817895f-a92a-4a59-8277-a1f8d9ee55b3" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd0" />
-    <MetadataFile FileName="SalesOrder5.xsd" MetadataType="Schema" ID="12075808-4dab-468a-9a59-0624131cc352" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd1" />
-    <MetadataFile FileName="SalesOrder6.xsd" MetadataType="Schema" ID="72a53d4d-46f1-48f0-a59f-656949066bd5" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd3" />
-    <MetadataFile FileName="SalesOrder7.xsd" MetadataType="Schema" ID="b4f06088-9476-43f2-8da3-97dd0da50554" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?xsd=xsd2" />
-    <MetadataFile FileName="SalesOrder.wsdl" MetadataType="Wsdl" ID="0b210adb-e1f7-4454-8c07-19037619737e" SourceId="1" SourceUrl="http://dms_server.greenvet.com/ERP101500/Erp/BO/SalesOrder.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SalesOrder8.xsd" MetadataType="Schema" ID="fe326254-e623-4864-88f3-c72c67c2ed4f" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd7" />
+    <MetadataFile FileName="SalesOrder81.xsd" MetadataType="Schema" ID="86c66953-1431-4f4a-8c87-d8c421f33804" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalesOrder82.xsd" MetadataType="Schema" ID="7829f3a5-d6a7-498e-9232-4016c7fdb89c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd5" />
+    <MetadataFile FileName="SalesOrder83.xsd" MetadataType="Schema" ID="710676c2-9fa8-4d1a-9512-30d98324346e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalesOrder84.xsd" MetadataType="Schema" ID="70b7ba5b-25ef-415f-8cc4-0b026b0df963" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd6" />
+    <MetadataFile FileName="SalesOrder1.disco" MetadataType="Disco" ID="953e8cd5-1f6d-44c6-8dbb-0f444bcc838a" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?disco" />
+    <MetadataFile FileName="SalesOrder1.wsdl" MetadataType="Wsdl" ID="fb73c43f-7b19-4e43-aeca-bdd3accf7268" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SalesOrderSvcFacade1.wsdl" MetadataType="Wsdl" ID="a2f7bdf1-2206-49bd-b60f-a225b0e5f056" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?wsdl" />
+    <MetadataFile FileName="SalesOrder85.xsd" MetadataType="Schema" ID="a0224961-d924-47dd-a782-26b04466c1d9" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalesOrder86.xsd" MetadataType="Schema" ID="9db0d4c4-883d-49cc-a10c-05de24d189a1" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd4" />
+    <MetadataFile FileName="SalesOrder87.xsd" MetadataType="Schema" ID="d8f5cde9-2bb6-4413-a68f-0731eda70bb8" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/SalesOrder.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

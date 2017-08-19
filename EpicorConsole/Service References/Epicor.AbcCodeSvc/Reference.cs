@@ -17,9 +17,9 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="IceTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.UpdExtABCCodeTableset))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeTableset))]
     public partial class IceTableset : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -42,29 +42,6 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.AbcCodeSvc.IceTableset {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTable BOUpdErrorField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTable BOUpdError {
-            get {
-                return this.BOUpdErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
-                    this.BOUpdErrorField = value;
-                    this.RaisePropertyChanged("BOUpdError");
-                }
             }
         }
     }
@@ -117,6 +94,29 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
+    [System.SerializableAttribute()]
+    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.AbcCodeSvc.IceTableset {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTable BOUpdErrorField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorTable BOUpdError {
+            get {
+                return this.BOUpdErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
+                    this.BOUpdErrorField = value;
+                    this.RaisePropertyChanged("BOUpdError");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ABCCodeTableset", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
     [System.SerializableAttribute()]
     public partial class ABCCodeTableset : EpicorConsole.Epicor.AbcCodeSvc.IceTableset {
@@ -147,93 +147,61 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ABCCodeListTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ABCCodeListRow")]
     [System.SerializableAttribute()]
-    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorRow> {
+    public class ABCCodeListTable : System.Collections.Generic.List<EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ABCCodeListRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
     [System.SerializableAttribute()]
-    public partial class BOUpdErrorRow : EpicorConsole.Epicor.AbcCodeSvc.IceRow {
+    public partial class ABCCodeListRow : EpicorConsole.Epicor.AbcCodeSvc.IceRow {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorLevelField;
+        private string ABCCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid ErrorSysRowIDField;
+        private EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRowColumnOrder ColumnNamesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TableNameField;
+        private string CompanyField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorLevel {
+        public string ABCCode {
             get {
-                return this.ErrorLevelField;
+                return this.ABCCodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
-                    this.ErrorLevelField = value;
-                    this.RaisePropertyChanged("ErrorLevel");
+                if ((object.ReferenceEquals(this.ABCCodeField, value) != true)) {
+                    this.ABCCodeField = value;
+                    this.RaisePropertyChanged("ABCCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ErrorSysRowID {
+        public EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRowColumnOrder ColumnNames {
             get {
-                return this.ErrorSysRowIDField;
+                return this.ColumnNamesField;
             }
             set {
-                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
-                    this.ErrorSysRowIDField = value;
-                    this.RaisePropertyChanged("ErrorSysRowID");
+                if ((this.ColumnNamesField.Equals(value) != true)) {
+                    this.ColumnNamesField = value;
+                    this.RaisePropertyChanged("ColumnNames");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorText {
+        public string Company {
             get {
-                return this.ErrorTextField;
+                return this.CompanyField;
             }
             set {
-                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
-                    this.ErrorTextField = value;
-                    this.RaisePropertyChanged("ErrorText");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorType {
-            get {
-                return this.ErrorTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
-                    this.ErrorTypeField = value;
-                    this.RaisePropertyChanged("ErrorType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TableName {
-            get {
-                return this.TableNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
-                    this.TableNameField = value;
-                    this.RaisePropertyChanged("TableName");
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
                 }
             }
         }
@@ -245,8 +213,8 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.IceRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow))]
     public partial class TempRowBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -277,8 +245,8 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     [System.Runtime.Serialization.DataContractAttribute(Name="IceRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow))]
     public partial class IceRow : EpicorConsole.Epicor.AbcCodeSvc.TempRowBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -595,54 +563,86 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ABCCodeListRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
-    public partial class ABCCodeListRow : EpicorConsole.Epicor.AbcCodeSvc.IceRow {
+    public partial class BOUpdErrorRow : EpicorConsole.Epicor.AbcCodeSvc.IceRow {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ABCCodeField;
+        private string ErrorLevelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRowColumnOrder ColumnNamesField;
+        private System.Guid ErrorSysRowIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
+        private string ErrorTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TableNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ABCCode {
+        public string ErrorLevel {
             get {
-                return this.ABCCodeField;
+                return this.ErrorLevelField;
             }
             set {
-                if ((object.ReferenceEquals(this.ABCCodeField, value) != true)) {
-                    this.ABCCodeField = value;
-                    this.RaisePropertyChanged("ABCCode");
+                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
+                    this.ErrorLevelField = value;
+                    this.RaisePropertyChanged("ErrorLevel");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRowColumnOrder ColumnNames {
+        public System.Guid ErrorSysRowID {
             get {
-                return this.ColumnNamesField;
+                return this.ErrorSysRowIDField;
             }
             set {
-                if ((this.ColumnNamesField.Equals(value) != true)) {
-                    this.ColumnNamesField = value;
-                    this.RaisePropertyChanged("ColumnNames");
+                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
+                    this.ErrorSysRowIDField = value;
+                    this.RaisePropertyChanged("ErrorSysRowID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Company {
+        public string ErrorText {
             get {
-                return this.CompanyField;
+                return this.ErrorTextField;
             }
             set {
-                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
-                    this.CompanyField = value;
-                    this.RaisePropertyChanged("Company");
+                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
+                    this.ErrorTextField = value;
+                    this.RaisePropertyChanged("ErrorText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorType {
+            get {
+                return this.ErrorTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
+                    this.ErrorTypeField = value;
+                    this.RaisePropertyChanged("ErrorType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName {
+            get {
+                return this.TableNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
+                    this.TableNameField = value;
+                    this.RaisePropertyChanged("TableName");
                 }
             }
         }
@@ -653,6 +653,26 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="UserDefinedColumns", Namespace="http://epicor.com/UserDefinedColumns", ItemName="Column", KeyName="Name", ValueName="Value")]
     [System.SerializableAttribute()]
     public class UserDefinedColumns : System.Collections.Generic.Dictionary<string, object> {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ABCCodeListRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    public enum ABCCodeListRowColumnOrder : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Company = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABCCode = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SysRowID = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RowMod = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SpecifiedProperties = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -711,31 +731,11 @@ namespace EpicorConsole.Epicor.AbcCodeSvc {
         SpecifiedProperties = 16,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ABCCodeListRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
-    public enum ABCCodeListRowColumnOrder : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Company = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABCCode = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SysRowID = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RowMod = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SpecifiedProperties = 4,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ABCCodeListTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ABCCodeListRow")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
     [System.SerializableAttribute()]
-    public class ABCCodeListTable : System.Collections.Generic.List<EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListRow> {
+    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.AbcCodeSvc.BOUpdErrorRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

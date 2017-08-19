@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="bC7r1Wgq3pEJ/xB7iY1z6ztWw0w=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="HwcOuZL4kafhyNX4LBrdyUfYCqU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ABCCodeSvcContract">
       <properties>
@@ -804,10 +804,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ABCCodeSvcContract" contract="Epicor.AbcCodeSvc.ABCCodeSvcContract" bindingType="basicHttpBinding" address="http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc" bindingConfiguration="BasicHttpBinding_ABCCodeSvcContract">
+    <endpoint name="BasicHttpBinding_ABCCodeSvcContract" contract="Epicor.AbcCodeSvc.ABCCodeSvcContract" bindingType="basicHttpBinding" address="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc" bindingConfiguration="BasicHttpBinding_ABCCodeSvcContract">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc</serializedValue>
+          <serializedValue>http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -889,10 +889,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="CustomBinding_ABCCodeSvcContract" contract="Epicor.AbcCodeSvc.ABCCodeSvcContract" bindingType="customBinding" address="net.tcp://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc" bindingConfiguration="CustomBinding_ABCCodeSvcContract">
+    <endpoint name="CustomBinding_ABCCodeSvcContract" contract="Epicor.AbcCodeSvc.ABCCodeSvcContract" bindingType="customBinding" address="net.tcp://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc" bindingConfiguration="CustomBinding_ABCCodeSvcContract">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://dms_server.greenvet.com/ERP101500/Erp/BO/ABCCode.svc</serializedValue>
+          <serializedValue>net.tcp://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

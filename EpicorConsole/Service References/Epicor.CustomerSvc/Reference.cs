@@ -17,12 +17,12 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="IceTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.UpdExtCustomerTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCAddrValidationTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BillToRefsTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustomerTableset))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerListTableset))]
     public partial class IceTableset : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -45,6 +45,29 @@ namespace EpicorConsole.Epicor.CustomerSvc {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
+    [System.SerializableAttribute()]
+    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.CustomerSvc.IceTableset {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTable BOUpdErrorField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTable BOUpdError {
+            get {
+                return this.BOUpdErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
+                    this.BOUpdErrorField = value;
+                    this.RaisePropertyChanged("BOUpdError");
+                }
             }
         }
     }
@@ -1270,29 +1293,6 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.CustomerSvc.IceTableset {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTable BOUpdErrorField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.CustomerSvc.BOUpdErrorTable BOUpdError {
-            get {
-                return this.BOUpdErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
-                    this.BOUpdErrorField = value;
-                    this.RaisePropertyChanged("BOUpdError");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerListTableset", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
     [System.SerializableAttribute()]
     public partial class CustomerListTableset : EpicorConsole.Epicor.CustomerSvc.IceTableset {
@@ -1323,240 +1323,656 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustBankTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustBankRow")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
     [System.SerializableAttribute()]
-    public class CustBankTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustBankRow> {
+    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustBillToTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustBillToRow")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
-    public class CustBillToTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustBillToRow> {
+    public partial class BOUpdErrorRow : EpicorConsole.Epicor.CustomerSvc.IceRow {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid ErrorSysRowIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TableNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorLevel {
+            get {
+                return this.ErrorLevelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
+                    this.ErrorLevelField = value;
+                    this.RaisePropertyChanged("ErrorLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ErrorSysRowID {
+            get {
+                return this.ErrorSysRowIDField;
+            }
+            set {
+                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
+                    this.ErrorSysRowIDField = value;
+                    this.RaisePropertyChanged("ErrorSysRowID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorText {
+            get {
+                return this.ErrorTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
+                    this.ErrorTextField = value;
+                    this.RaisePropertyChanged("ErrorText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorType {
+            get {
+                return this.ErrorTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
+                    this.ErrorTypeField = value;
+                    this.RaisePropertyChanged("ErrorType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName {
+            get {
+                return this.TableNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
+                    this.TableNameField = value;
+                    this.RaisePropertyChanged("TableName");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustChildTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustChildRow")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TempRowBase", Namespace="http://schemas.datacontract.org/2004/07/Epicor.Data")]
     [System.SerializableAttribute()]
-    public class CustChildTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustChildRow> {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.IceRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerListRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBankRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBillToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustChildRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustICRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMFBillRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMandateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.EntityGLCRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.MangCustRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.NAMemberRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PartnerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.TaxExemptRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCAddressRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCMessageRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BillToRefsRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustBillToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustomerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbShipToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow))]
+    public partial class TempRowBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustDfltDocTypeTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustDfltDocTypeRow")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IceRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
-    public class CustDfltDocTypeTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow> {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerListRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBankRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBillToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustChildRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustICRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMFBillRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMandateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.EntityGLCRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.MangCustRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.NAMemberRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PartnerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.TaxExemptRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCAddressRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCMessageRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BillToRefsRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustBillToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustomerRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbShipToRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow))]
+    public partial class IceRow : EpicorConsole.Epicor.CustomerSvc.TempRowBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowModField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] SpecifiedPropertiesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid SysRowIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.CustomerSvc.UserDefinedColumns UserDefinedColumnsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RowMod {
+            get {
+                return this.RowModField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowModField, value) != true)) {
+                    this.RowModField = value;
+                    this.RaisePropertyChanged("RowMod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] SpecifiedProperties {
+            get {
+                return this.SpecifiedPropertiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecifiedPropertiesField, value) != true)) {
+                    this.SpecifiedPropertiesField = value;
+                    this.RaisePropertyChanged("SpecifiedProperties");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid SysRowID {
+            get {
+                return this.SysRowIDField;
+            }
+            set {
+                if ((this.SysRowIDField.Equals(value) != true)) {
+                    this.SysRowIDField = value;
+                    this.RaisePropertyChanged("SysRowID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.CustomerSvc.UserDefinedColumns UserDefinedColumns {
+            get {
+                return this.UserDefinedColumnsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserDefinedColumnsField, value) != true)) {
+                    this.UserDefinedColumnsField = value;
+                    this.RaisePropertyChanged("UserDefinedColumns");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustICTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustICRow")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerListRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
     [System.SerializableAttribute()]
-    public class CustICTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustICRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustLabExpRateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustLabExpRateRow")]
-    [System.SerializableAttribute()]
-    public class CustLabExpRateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustMFBillTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustMFBillRow")]
-    [System.SerializableAttribute()]
-    public class CustMFBillTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustMFBillRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustMandateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustMandateRow")]
-    [System.SerializableAttribute()]
-    public class CustMandateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustMandateRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustRestrictionTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustRestrictionRow")]
-    [System.SerializableAttribute()]
-    public class CustRestrictionTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustUPSEmailTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustUPSEmailRow")]
-    [System.SerializableAttribute()]
-    public class CustUPSEmailTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomCrdPoolTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomCrdPoolRow")]
-    [System.SerializableAttribute()]
-    public class CustomCrdPoolTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerRow")]
-    [System.SerializableAttribute()]
-    public class CustomerTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerAttchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerAttchRow")]
-    [System.SerializableAttribute()]
-    public class CustomerAttchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDiscPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDiscPriceLstRow")]
-    [System.SerializableAttribute()]
-    public class CustomerDiscPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDocsTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDocsRow")]
-    [System.SerializableAttribute()]
-    public class CustomerDocsTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDocsSHTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDocsSHRow")]
-    [System.SerializableAttribute()]
-    public class CustomerDocsSHTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerFSPriceListTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerFSPriceListRow")]
-    [System.SerializableAttribute()]
-    public class CustomerFSPriceListTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerPriceLstRow")]
-    [System.SerializableAttribute()]
-    public class CustomerPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="EntityGLCTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="EntityGLCRow")]
-    [System.SerializableAttribute()]
-    public class EntityGLCTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.EntityGLCRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="GlbCustCredTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="GlbCustCredRow")]
-    [System.SerializableAttribute()]
-    public class GlbCustCredTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MangCustTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="MangCustRow")]
-    [System.SerializableAttribute()]
-    public class MangCustTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.MangCustRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="NAMemberTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="NAMemberRow")]
-    [System.SerializableAttribute()]
-    public class NAMemberTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.NAMemberRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PECustWhldHistTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="PECustWhldHistRow")]
-    [System.SerializableAttribute()]
-    public class PECustWhldHistTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PartnerTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="PartnerRow")]
-    [System.SerializableAttribute()]
-    public class PartnerTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.PartnerRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToRow")]
-    [System.SerializableAttribute()]
-    public class ShipToTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToAttchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToAttchRow")]
-    [System.SerializableAttribute()]
-    public class ShipToAttchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToDiscPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToDiscPriceLstRow")]
-    [System.SerializableAttribute()]
-    public class ShipToDiscPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToLabExpRateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToLabExpRateRow")]
-    [System.SerializableAttribute()]
-    public class ShipToLabExpRateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToMFBillTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToMFBillRow")]
-    [System.SerializableAttribute()]
-    public class ShipToMFBillTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToPriceLstRow")]
-    [System.SerializableAttribute()]
-    public class ShipToPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToRestrictionTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToRestrictionRow")]
-    [System.SerializableAttribute()]
-    public class ShipToRestrictionTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToSrchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToSrchRow")]
-    [System.SerializableAttribute()]
-    public class ShipToSrchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToUPSEmlTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToUPSEmlRow")]
-    [System.SerializableAttribute()]
-    public class ShipToUPSEmlTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="TaxExemptTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="TaxExemptRow")]
-    [System.SerializableAttribute()]
-    public class TaxExemptTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.TaxExemptRow> {
+    public partial class CustomerListRow : EpicorConsole.Epicor.CustomerSvc.IceRow {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowShipTo3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.CustomerSvc.CustomerListRowColumnOrder ColumnNamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountryNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool CreditHoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustGrupGroupDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustPartOptsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GroupCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasBankField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool NoContactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShipToNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TermsCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TerritoryIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TerritoryTerritoryDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowShipTo3 {
+            get {
+                return this.AllowShipTo3Field;
+            }
+            set {
+                if ((this.AllowShipTo3Field.Equals(value) != true)) {
+                    this.AllowShipTo3Field = value;
+                    this.RaisePropertyChanged("AllowShipTo3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.CustomerSvc.CustomerListRowColumnOrder ColumnNames {
+            get {
+                return this.ColumnNamesField;
+            }
+            set {
+                if ((this.ColumnNamesField.Equals(value) != true)) {
+                    this.ColumnNamesField = value;
+                    this.RaisePropertyChanged("ColumnNames");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CountryNum {
+            get {
+                return this.CountryNumField;
+            }
+            set {
+                if ((this.CountryNumField.Equals(value) != true)) {
+                    this.CountryNumField = value;
+                    this.RaisePropertyChanged("CountryNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool CreditHold {
+            get {
+                return this.CreditHoldField;
+            }
+            set {
+                if ((this.CreditHoldField.Equals(value) != true)) {
+                    this.CreditHoldField = value;
+                    this.RaisePropertyChanged("CreditHold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustGrupGroupDesc {
+            get {
+                return this.CustGrupGroupDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustGrupGroupDescField, value) != true)) {
+                    this.CustGrupGroupDescField = value;
+                    this.RaisePropertyChanged("CustGrupGroupDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustID {
+            get {
+                return this.CustIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustIDField, value) != true)) {
+                    this.CustIDField = value;
+                    this.RaisePropertyChanged("CustID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustNum {
+            get {
+                return this.CustNumField;
+            }
+            set {
+                if ((this.CustNumField.Equals(value) != true)) {
+                    this.CustNumField = value;
+                    this.RaisePropertyChanged("CustNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustPartOpts {
+            get {
+                return this.CustPartOptsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustPartOptsField, value) != true)) {
+                    this.CustPartOptsField = value;
+                    this.RaisePropertyChanged("CustPartOpts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerType {
+            get {
+                return this.CustomerTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerTypeField, value) != true)) {
+                    this.CustomerTypeField = value;
+                    this.RaisePropertyChanged("CustomerType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GroupCode {
+            get {
+                return this.GroupCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GroupCodeField, value) != true)) {
+                    this.GroupCodeField = value;
+                    this.RaisePropertyChanged("GroupCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasBank {
+            get {
+                return this.HasBankField;
+            }
+            set {
+                if ((this.HasBankField.Equals(value) != true)) {
+                    this.HasBankField = value;
+                    this.RaisePropertyChanged("HasBank");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool NoContact {
+            get {
+                return this.NoContactField;
+            }
+            set {
+                if ((this.NoContactField.Equals(value) != true)) {
+                    this.NoContactField = value;
+                    this.RaisePropertyChanged("NoContact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneNum {
+            get {
+                return this.PhoneNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
+                    this.PhoneNumField = value;
+                    this.RaisePropertyChanged("PhoneNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShipToNum {
+            get {
+                return this.ShipToNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShipToNumField, value) != true)) {
+                    this.ShipToNumField = value;
+                    this.RaisePropertyChanged("ShipToNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TermsCode {
+            get {
+                return this.TermsCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TermsCodeField, value) != true)) {
+                    this.TermsCodeField = value;
+                    this.RaisePropertyChanged("TermsCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TerritoryID {
+            get {
+                return this.TerritoryIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TerritoryIDField, value) != true)) {
+                    this.TerritoryIDField = value;
+                    this.RaisePropertyChanged("TerritoryID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TerritoryTerritoryDesc {
+            get {
+                return this.TerritoryTerritoryDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TerritoryTerritoryDescField, value) != true)) {
+                    this.TerritoryTerritoryDescField = value;
+                    this.RaisePropertyChanged("TerritoryTerritoryDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Zip {
+            get {
+                return this.ZipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipField, value) != true)) {
+                    this.ZipField = value;
+                    this.RaisePropertyChanged("Zip");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2265,566 +2681,6 @@ namespace EpicorConsole.Epicor.CustomerSvc {
                 if ((object.ReferenceEquals(this.TransPersonName5Field, value) != true)) {
                     this.TransPersonName5Field = value;
                     this.RaisePropertyChanged("TransPersonName5");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TempRowBase", Namespace="http://schemas.datacontract.org/2004/07/Epicor.Data")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.IceRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerListRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBillToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustChildRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustICRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMFBillRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMandateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.EntityGLCRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.MangCustRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.NAMemberRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PartnerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.TaxExemptRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCAddressRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCMessageRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BillToRefsRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustBillToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustomerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbShipToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBankRow))]
-    public partial class TempRowBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IceRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerListRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBillToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustChildRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustICRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMFBillRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustMandateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.EntityGLCRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.MangCustRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.NAMemberRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.PartnerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.TaxExemptRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCAddressRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.ETCMessageRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BillToRefsRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustBillToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbCustomerRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.GlbShipToRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.CustomerSvc.CustBankRow))]
-    public partial class IceRow : EpicorConsole.Epicor.CustomerSvc.TempRowBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowModField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] SpecifiedPropertiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid SysRowIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.CustomerSvc.UserDefinedColumns UserDefinedColumnsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RowMod {
-            get {
-                return this.RowModField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowModField, value) != true)) {
-                    this.RowModField = value;
-                    this.RaisePropertyChanged("RowMod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] SpecifiedProperties {
-            get {
-                return this.SpecifiedPropertiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SpecifiedPropertiesField, value) != true)) {
-                    this.SpecifiedPropertiesField = value;
-                    this.RaisePropertyChanged("SpecifiedProperties");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid SysRowID {
-            get {
-                return this.SysRowIDField;
-            }
-            set {
-                if ((this.SysRowIDField.Equals(value) != true)) {
-                    this.SysRowIDField = value;
-                    this.RaisePropertyChanged("SysRowID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.CustomerSvc.UserDefinedColumns UserDefinedColumns {
-            get {
-                return this.UserDefinedColumnsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserDefinedColumnsField, value) != true)) {
-                    this.UserDefinedColumnsField = value;
-                    this.RaisePropertyChanged("UserDefinedColumns");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerListRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
-    [System.SerializableAttribute()]
-    public partial class CustomerListRow : EpicorConsole.Epicor.CustomerSvc.IceRow {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AllowShipTo3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.CustomerSvc.CustomerListRowColumnOrder ColumnNamesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CountryNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool CreditHoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustGrupGroupDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CustNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustPartOptsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GroupCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool HasBankField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool NoContactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShipToNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TermsCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TerritoryIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TerritoryTerritoryDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZipField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool AllowShipTo3 {
-            get {
-                return this.AllowShipTo3Field;
-            }
-            set {
-                if ((this.AllowShipTo3Field.Equals(value) != true)) {
-                    this.AllowShipTo3Field = value;
-                    this.RaisePropertyChanged("AllowShipTo3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string City {
-            get {
-                return this.CityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityField, value) != true)) {
-                    this.CityField = value;
-                    this.RaisePropertyChanged("City");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.CustomerSvc.CustomerListRowColumnOrder ColumnNames {
-            get {
-                return this.ColumnNamesField;
-            }
-            set {
-                if ((this.ColumnNamesField.Equals(value) != true)) {
-                    this.ColumnNamesField = value;
-                    this.RaisePropertyChanged("ColumnNames");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Company {
-            get {
-                return this.CompanyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
-                    this.CompanyField = value;
-                    this.RaisePropertyChanged("Company");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Country {
-            get {
-                return this.CountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
-                    this.CountryField = value;
-                    this.RaisePropertyChanged("Country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CountryNum {
-            get {
-                return this.CountryNumField;
-            }
-            set {
-                if ((this.CountryNumField.Equals(value) != true)) {
-                    this.CountryNumField = value;
-                    this.RaisePropertyChanged("CountryNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool CreditHold {
-            get {
-                return this.CreditHoldField;
-            }
-            set {
-                if ((this.CreditHoldField.Equals(value) != true)) {
-                    this.CreditHoldField = value;
-                    this.RaisePropertyChanged("CreditHold");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustGrupGroupDesc {
-            get {
-                return this.CustGrupGroupDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustGrupGroupDescField, value) != true)) {
-                    this.CustGrupGroupDescField = value;
-                    this.RaisePropertyChanged("CustGrupGroupDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustID {
-            get {
-                return this.CustIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustIDField, value) != true)) {
-                    this.CustIDField = value;
-                    this.RaisePropertyChanged("CustID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustNum {
-            get {
-                return this.CustNumField;
-            }
-            set {
-                if ((this.CustNumField.Equals(value) != true)) {
-                    this.CustNumField = value;
-                    this.RaisePropertyChanged("CustNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustPartOpts {
-            get {
-                return this.CustPartOptsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustPartOptsField, value) != true)) {
-                    this.CustPartOptsField = value;
-                    this.RaisePropertyChanged("CustPartOpts");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustomerType {
-            get {
-                return this.CustomerTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerTypeField, value) != true)) {
-                    this.CustomerTypeField = value;
-                    this.RaisePropertyChanged("CustomerType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GroupCode {
-            get {
-                return this.GroupCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GroupCodeField, value) != true)) {
-                    this.GroupCodeField = value;
-                    this.RaisePropertyChanged("GroupCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool HasBank {
-            get {
-                return this.HasBankField;
-            }
-            set {
-                if ((this.HasBankField.Equals(value) != true)) {
-                    this.HasBankField = value;
-                    this.RaisePropertyChanged("HasBank");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool NoContact {
-            get {
-                return this.NoContactField;
-            }
-            set {
-                if ((this.NoContactField.Equals(value) != true)) {
-                    this.NoContactField = value;
-                    this.RaisePropertyChanged("NoContact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PhoneNum {
-            get {
-                return this.PhoneNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
-                    this.PhoneNumField = value;
-                    this.RaisePropertyChanged("PhoneNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShipToNum {
-            get {
-                return this.ShipToNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShipToNumField, value) != true)) {
-                    this.ShipToNumField = value;
-                    this.RaisePropertyChanged("ShipToNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TermsCode {
-            get {
-                return this.TermsCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TermsCodeField, value) != true)) {
-                    this.TermsCodeField = value;
-                    this.RaisePropertyChanged("TermsCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TerritoryID {
-            get {
-                return this.TerritoryIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TerritoryIDField, value) != true)) {
-                    this.TerritoryIDField = value;
-                    this.RaisePropertyChanged("TerritoryID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TerritoryTerritoryDesc {
-            get {
-                return this.TerritoryTerritoryDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TerritoryTerritoryDescField, value) != true)) {
-                    this.TerritoryTerritoryDescField = value;
-                    this.RaisePropertyChanged("TerritoryTerritoryDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Zip {
-            get {
-                return this.ZipField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZipField, value) != true)) {
-                    this.ZipField = value;
-                    this.RaisePropertyChanged("Zip");
                 }
             }
         }
@@ -32113,96 +31969,89 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    public partial class BOUpdErrorRow : EpicorConsole.Epicor.CustomerSvc.IceRow {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorLevelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid ErrorSysRowIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TableNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorLevel {
-            get {
-                return this.ErrorLevelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
-                    this.ErrorLevelField = value;
-                    this.RaisePropertyChanged("ErrorLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ErrorSysRowID {
-            get {
-                return this.ErrorSysRowIDField;
-            }
-            set {
-                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
-                    this.ErrorSysRowIDField = value;
-                    this.RaisePropertyChanged("ErrorSysRowID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorText {
-            get {
-                return this.ErrorTextField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
-                    this.ErrorTextField = value;
-                    this.RaisePropertyChanged("ErrorText");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorType {
-            get {
-                return this.ErrorTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
-                    this.ErrorTypeField = value;
-                    this.RaisePropertyChanged("ErrorType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TableName {
-            get {
-                return this.TableNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
-                    this.TableNameField = value;
-                    this.RaisePropertyChanged("TableName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="UserDefinedColumns", Namespace="http://epicor.com/UserDefinedColumns", ItemName="Column", KeyName="Name", ValueName="Value")]
     [System.SerializableAttribute()]
     public class UserDefinedColumns : System.Collections.Generic.Dictionary<string, object> {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerListRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    public enum CustomerListRowColumnOrder : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Company = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustID = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustNum = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Name = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        City = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        State = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Zip = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Country = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TerritoryID = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ShipToNum = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TermsCode = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TerritoryTerritoryDesc = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustGrupGroupDesc = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CreditHold = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GroupCode = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneNum = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CountryNum = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomerType = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoContact = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllowShipTo3 = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustPartOpts = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HasBank = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SysRowID = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RowMod = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SpecifiedProperties = 24,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -32346,86 +32195,6 @@ namespace EpicorConsole.Epicor.CustomerSvc {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SpecifiedProperties = 45,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerListRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
-    public enum CustomerListRowColumnOrder : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Company = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustID = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustNum = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Name = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        City = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        State = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Zip = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Country = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TerritoryID = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ShipToNum = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TermsCode = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TerritoryTerritoryDesc = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustGrupGroupDesc = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CreditHold = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GroupCode = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneNum = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CountryNum = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustomerType = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoContact = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllowShipTo3 = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustPartOpts = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HasBank = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SysRowID = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RowMod = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SpecifiedProperties = 24,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -38298,6 +38067,244 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustBankTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustBankRow")]
+    [System.SerializableAttribute()]
+    public class CustBankTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustBankRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustBillToTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustBillToRow")]
+    [System.SerializableAttribute()]
+    public class CustBillToTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustBillToRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustChildTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustChildRow")]
+    [System.SerializableAttribute()]
+    public class CustChildTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustChildRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustDfltDocTypeTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustDfltDocTypeRow")]
+    [System.SerializableAttribute()]
+    public class CustDfltDocTypeTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustDfltDocTypeRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustICTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustICRow")]
+    [System.SerializableAttribute()]
+    public class CustICTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustICRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustLabExpRateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustLabExpRateRow")]
+    [System.SerializableAttribute()]
+    public class CustLabExpRateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustLabExpRateRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustMFBillTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustMFBillRow")]
+    [System.SerializableAttribute()]
+    public class CustMFBillTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustMFBillRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustMandateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustMandateRow")]
+    [System.SerializableAttribute()]
+    public class CustMandateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustMandateRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustRestrictionTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustRestrictionRow")]
+    [System.SerializableAttribute()]
+    public class CustRestrictionTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustRestrictionRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustUPSEmailTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustUPSEmailRow")]
+    [System.SerializableAttribute()]
+    public class CustUPSEmailTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustUPSEmailRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomCrdPoolTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomCrdPoolRow")]
+    [System.SerializableAttribute()]
+    public class CustomCrdPoolTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomCrdPoolRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerRow")]
+    [System.SerializableAttribute()]
+    public class CustomerTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerAttchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerAttchRow")]
+    [System.SerializableAttribute()]
+    public class CustomerAttchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerAttchRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDiscPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDiscPriceLstRow")]
+    [System.SerializableAttribute()]
+    public class CustomerDiscPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDiscPriceLstRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDocsTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDocsRow")]
+    [System.SerializableAttribute()]
+    public class CustomerDocsTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDocsRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerDocsSHTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerDocsSHRow")]
+    [System.SerializableAttribute()]
+    public class CustomerDocsSHTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerDocsSHRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerFSPriceListTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerFSPriceListRow")]
+    [System.SerializableAttribute()]
+    public class CustomerFSPriceListTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerFSPriceListRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomerPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="CustomerPriceLstRow")]
+    [System.SerializableAttribute()]
+    public class CustomerPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.CustomerPriceLstRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="EntityGLCTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="EntityGLCRow")]
+    [System.SerializableAttribute()]
+    public class EntityGLCTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.EntityGLCRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="GlbCustCredTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="GlbCustCredRow")]
+    [System.SerializableAttribute()]
+    public class GlbCustCredTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.GlbCustCredRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MangCustTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="MangCustRow")]
+    [System.SerializableAttribute()]
+    public class MangCustTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.MangCustRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="NAMemberTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="NAMemberRow")]
+    [System.SerializableAttribute()]
+    public class NAMemberTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.NAMemberRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PECustWhldHistTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="PECustWhldHistRow")]
+    [System.SerializableAttribute()]
+    public class PECustWhldHistTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.PECustWhldHistRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PartnerTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="PartnerRow")]
+    [System.SerializableAttribute()]
+    public class PartnerTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.PartnerRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToRow")]
+    [System.SerializableAttribute()]
+    public class ShipToTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToAttchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToAttchRow")]
+    [System.SerializableAttribute()]
+    public class ShipToAttchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToAttchRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToDiscPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToDiscPriceLstRow")]
+    [System.SerializableAttribute()]
+    public class ShipToDiscPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToDiscPriceLstRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToLabExpRateTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToLabExpRateRow")]
+    [System.SerializableAttribute()]
+    public class ShipToLabExpRateTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToLabExpRateRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToMFBillTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToMFBillRow")]
+    [System.SerializableAttribute()]
+    public class ShipToMFBillTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToMFBillRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToPriceLstTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToPriceLstRow")]
+    [System.SerializableAttribute()]
+    public class ShipToPriceLstTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToPriceLstRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToRestrictionTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToRestrictionRow")]
+    [System.SerializableAttribute()]
+    public class ShipToRestrictionTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToRestrictionRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToSrchTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToSrchRow")]
+    [System.SerializableAttribute()]
+    public class ShipToSrchTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToSrchRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShipToUPSEmlTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ShipToUPSEmlRow")]
+    [System.SerializableAttribute()]
+    public class ShipToUPSEmlTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ShipToUPSEmlRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="TaxExemptTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="TaxExemptRow")]
+    [System.SerializableAttribute()]
+    public class TaxExemptTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.TaxExemptRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ETCAddressTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="ETCAddressRow")]
     [System.SerializableAttribute()]
     public class ETCAddressTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.ETCAddressRow> {
@@ -38336,13 +38343,6 @@ namespace EpicorConsole.Epicor.CustomerSvc {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="GlbShipToTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="GlbShipToRow")]
     [System.SerializableAttribute()]
     public class GlbShipToTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.GlbShipToRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
-    [System.SerializableAttribute()]
-    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.CustomerSvc.BOUpdErrorRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

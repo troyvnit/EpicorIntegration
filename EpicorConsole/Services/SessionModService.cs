@@ -12,7 +12,7 @@ namespace EpicorConsole.Services
 
         public SessionModService()
         {
-            builder.Path = "ERP101500/Ice/Lib/SessionMod.svc";
+            builder.Path = "Epicor101/Ice/Lib/SessionMod.svc";
             sessionModClient = GetClient<SessionModSvcContractClient, SessionModSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
         }
 

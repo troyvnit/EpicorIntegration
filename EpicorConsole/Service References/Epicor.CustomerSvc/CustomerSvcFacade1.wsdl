@@ -1,0 +1,3290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="Erp:BO:Customer" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomerSvcFacade" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_CustomerSvcContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="Erp:BO:Customer" location="http://erp.greenvet.com/Epicor101/Erp/BO/Customer.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_CustomerSvcContract" type="i0:CustomerSvcContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRows">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowID">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBySysRowID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowIDs">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBySysRowIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExt">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateExt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGlobalFields">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerGlobalFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToGlobalFields">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToGlobalFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustBillToGlobalFields">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustBillToGlobalFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AllowCustomerDetailUpdate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/AllowCustomerDetailUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustDfltInvoiceType">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustDfltInvoiceType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerChargeCode">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerChargeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerFinCharges">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerFinCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerReminderGroup">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerReminderGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDeferredRev">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeDeferredRev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAGIDDocTypeCode">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeAGIDDocTypeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeListCode">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeListCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMandateReference">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeMandateReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySearchIDs">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ModifySearchIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRACode">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeRACode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCreditHold">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckCreditHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDupCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckDupCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEFFieldLength">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckEFFieldLength" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRUC">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckRUC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckVATFormat">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckVATFormat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgBTCountry">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgBTCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgCountry">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgGlobalCust">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgGlobalCust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgICTrader">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgICTrader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBTAddress">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/DeleteBTAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ETCAfterAddrVal">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ETCAfterAddrVal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ETCValidateAddress">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ETCValidateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMandateReference">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GenerateMandateReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddrElementList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAddrElementList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAllShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAltShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAltShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBankAccountList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillDayList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBillDayList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillToRefs">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBillToRefs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetByCustID">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetByCustID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDataForMandate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCompanyDataForMandate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustBillToForLink">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustBillToForLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataForMandate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerDataForMandate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerForLink">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerForLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTerritory">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerTerritory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisabledFields">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetDisabledFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlbCustomerList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetGlbCustomerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCustom">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetListCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFromSelectedKeys">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetListFromSelectedKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAltShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewAltShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentCustInfo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetParentCustInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToForLink">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToForLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToTerritory">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToTerritory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GlbCustomersExist">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GlbCustomersExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbCustBillTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbCustBillTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOnePosition">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/MoveOnePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOnePositionDisc">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/MoveOnePositionDisc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeAltShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeAltShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCreditCardOrder">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCreditCardOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustBankPayMethod">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustBankPayMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustICPrimary">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustICPrimary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustomerTaxRegion">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustomerTaxRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofAltBT">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofAltBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofBankAccount">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofBankAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofCustomerAddr">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofCustomerAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofShipToAddr">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofShipToAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeShipToTaxRegion">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeShipToTaxRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeVendorID">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeVendorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateBankAccountChanging">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateBankAccountChanging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateDateChanging">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateDateChanging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateSignedDateChanging">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateSignedDateChanging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateStatusChanging">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateStatusChanging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbCustBillTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbCustBillTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ResetShipToIntl">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ResetShipToIntl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetUPSQVEnable">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SetUPSQVEnable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToETCAfterAddrVal">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToETCAfterAddrVal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToETCValAddr">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToETCValAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToTerrSelectChange">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToTerrSelectChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SkipGlbCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SkipGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnlinkGlbCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UnlinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditTotals">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateCreditTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGlobalLimits">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateGlobalLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCountry">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateNAParentCreditPrc">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateNAParentCreditPrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateNACreditSharedPrc">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateNACreditSharedPrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGlbNAParentCreditPrc">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateGlbNAParentCreditPrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGlbNACreditSharedPrc">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateGlbNACreditSharedPrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePayBTFlag">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidatePayBTFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerms">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetTerms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsLocal">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/IsLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDescList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCodeDescList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StorePartner">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/StorePartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCountryISOCode">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerCountryISOCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalCRMIntegrationIsEnabled">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetExternalCRMIntegrationIsEnabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustCntWithExternalCRMEnabled">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckCustCntWithExternalCRMEnabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrdersCreditOverride">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SetOrdersCreditOverride" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomer">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerAttch">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerAttch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPartner">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewPartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustBillTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustBillTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustBank">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustChild">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustDfltDocType">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustDfltDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustIC">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustIC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustLabExpRate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustLabExpRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustMandate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustMandate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDocs">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustRestriction">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustRestriction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustUPSEmail">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustUPSEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDiscPriceLst">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDiscPriceLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerFSPriceList">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerFSPriceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewGlbCustCred">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewGlbCustCred" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipTo">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToAttch">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToAttch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToRestriction">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToRestriction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToLabExpRate">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToLabExpRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDocsSH">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDocsSH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToDiscPriceLst">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToDiscPriceLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToMFBill">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToMFBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToPriceLst">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToPriceLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToUPSEml">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToUPSEml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustMFBill">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustMFBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMangCust">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewMangCust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerPriceLst">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerPriceLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewEntityGLC">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewEntityGLC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTaxExempt">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewTaxExempt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByID">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/DeleteByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetByID">
+      <soap:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_CustomerSvcContract" type="i0:CustomerSvcContract">
+    <wsp:PolicyReference URI="#CustomBinding_CustomerSvcContract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRows">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetRows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowID">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBySysRowID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowIDs">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBySysRowIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExt">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateExt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGlobalFields">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerGlobalFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToGlobalFields">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToGlobalFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustBillToGlobalFields">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustBillToGlobalFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AllowCustomerDetailUpdate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/AllowCustomerDetailUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustDfltInvoiceType">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustDfltInvoiceType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerChargeCode">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerChargeCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerFinCharges">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerFinCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomerReminderGroup">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeCustomerReminderGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDeferredRev">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeDeferredRev" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAGIDDocTypeCode">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeAGIDDocTypeCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeListCode">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeListCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMandateReference">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeMandateReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySearchIDs">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ModifySearchIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRACode">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChangeRACode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCreditHold">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckCreditHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDupCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckDupCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEFFieldLength">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckEFFieldLength" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRUC">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckRUC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckVATFormat">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckVATFormat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgBTCountry">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgBTCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgCountry">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgGlobalCust">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgGlobalCust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChgICTrader">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ChgICTrader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBTAddress">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/DeleteBTAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ETCAfterAddrVal">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ETCAfterAddrVal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ETCValidateAddress">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ETCValidateAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMandateReference">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GenerateMandateReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddrElementList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAddrElementList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAllShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAltShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetAltShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBankAccountList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillDayList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBillDayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillToRefs">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetBillToRefs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetByCustID">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetByCustID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDataForMandate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCompanyDataForMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustBillToForLink">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustBillToForLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataForMandate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerDataForMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerForLink">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerForLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTerritory">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerTerritory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisabledFields">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetDisabledFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlbCustomerList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetGlbCustomerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCustom">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetListCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFromSelectedKeys">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetListFromSelectedKeys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAltShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewAltShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentCustInfo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetParentCustInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToForLink">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToForLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToTerritory">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetShipToTerritory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GlbCustomersExist">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GlbCustomersExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbCustBillTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbCustBillTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkGlbShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/LinkGlbShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOnePosition">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/MoveOnePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOnePositionDisc">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/MoveOnePositionDisc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeAltShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeAltShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCreditCardOrder">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCreditCardOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustBankPayMethod">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustBankPayMethod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustICPrimary">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustICPrimary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeCustomerTaxRegion">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeCustomerTaxRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofAltBT">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofAltBT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofBankAccount">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofBankAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofCustomerAddr">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofCustomerAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeofShipToAddr">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeofShipToAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeShipToTaxRegion">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeShipToTaxRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnChangeVendorID">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnChangeVendorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateBankAccountChanging">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateBankAccountChanging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateDateChanging">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateDateChanging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateSignedDateChanging">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateSignedDateChanging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnMandateStatusChanging">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/OnMandateStatusChanging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbCustBillTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbCustBillTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PreLinkGlbShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/PreLinkGlbShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ResetShipToIntl">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ResetShipToIntl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetUPSQVEnable">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SetUPSQVEnable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToETCAfterAddrVal">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToETCAfterAddrVal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToETCValAddr">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToETCValAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ShipToTerrSelectChange">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ShipToTerrSelectChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SkipGlbCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SkipGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnlinkGlbCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UnlinkGlbCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditTotals">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateCreditTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGlobalLimits">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/UpdateGlobalLimits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCountry">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateNAParentCreditPrc">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateNAParentCreditPrc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateNACreditSharedPrc">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateNACreditSharedPrc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGlbNAParentCreditPrc">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateGlbNAParentCreditPrc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGlbNACreditSharedPrc">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidateGlbNACreditSharedPrc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePayBTFlag">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/ValidatePayBTFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerms">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetTerms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsLocal">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/IsLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDescList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCodeDescList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StorePartner">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/StorePartner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCountryISOCode">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetCustomerCountryISOCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalCRMIntegrationIsEnabled">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetExternalCRMIntegrationIsEnabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustCntWithExternalCRMEnabled">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/CheckCustCntWithExternalCRMEnabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrdersCreditOverride">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/SetOrdersCreditOverride" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomer">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerAttch">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerAttch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPartner">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewPartner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustBillTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustBillTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustBank">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustChild">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustChild" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustDfltDocType">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustDfltDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustIC">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustIC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustLabExpRate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustLabExpRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustMandate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDocs">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustRestriction">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustRestriction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustUPSEmail">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustUPSEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDiscPriceLst">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDiscPriceLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerFSPriceList">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerFSPriceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewGlbCustCred">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewGlbCustCred" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipTo">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToAttch">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToAttch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToRestriction">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToRestriction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToLabExpRate">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToLabExpRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerDocsSH">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerDocsSH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToDiscPriceLst">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToDiscPriceLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToMFBill">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToMFBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToPriceLst">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToPriceLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShipToUPSEml">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewShipToUPSEml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustMFBill">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustMFBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMangCust">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewMangCust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCustomerPriceLst">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewCustomerPriceLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewEntityGLC">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewEntityGLC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTaxExempt">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetNewTaxExempt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByID">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/DeleteByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetByID">
+      <soap12:operation soapAction="Erp:BO:Customer/CustomerSvcContract/GetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EpicorFaultDetailFault">
+        <soap12:fault use="literal" name="EpicorFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerSvcFacade">
+    <wsdl:port name="BasicHttpBinding_CustomerSvcContract" binding="tns:BasicHttpBinding_CustomerSvcContract">
+      <soap:address location="http://erp.greenvet.com/Epicor101/Erp/BO/Customer.svc" />
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_CustomerSvcContract" binding="tns:CustomBinding_CustomerSvcContract">
+      <soap12:address location="net.tcp://erp.greenvet.com/Epicor101/Erp/BO/Customer.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://erp.greenvet.com/Epicor101/Erp/BO/Customer.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>erpadmin@greenvet.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

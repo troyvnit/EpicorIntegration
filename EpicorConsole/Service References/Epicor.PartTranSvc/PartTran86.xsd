@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Erp:BO:PartTran" elementFormDefault="qualified" targetNamespace="Erp:BO:PartTran" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PartTran.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PartTran.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PartTran.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PartTran.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+  <xs:element name="GetNewPartTran">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q1:PartTranTableset" />
+        <xs:element minOccurs="0" name="sysDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sysTime" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewPartTranResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q2:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sysDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sysTime" type="xs:int" />
+        <xs:element minOccurs="0" name="tranNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByIDResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sysDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sysTime" type="xs:int" />
+        <xs:element minOccurs="0" name="tranNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="GetByIDResult" nillable="true" type="q3:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="whereClause" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="absolutePage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="GetListResult" nillable="true" type="q4:PartTranListTableset" />
+        <xs:element minOccurs="0" name="morePages" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRows">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="whereClausePartTran" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="absolutePage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="GetRowsResult" nillable="true" type="q5:PartTranTableset" />
+        <xs:element minOccurs="0" name="morePages" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBySysRowID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBySysRowIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="GetBySysRowIDResult" nillable="true" type="q7:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBySysRowIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q8:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBySysRowIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="GetBySysRowIDsResult" nillable="true" type="q9:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q10:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q11:PartTranTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q12:UpdExtPartTranTableset" />
+        <xs:element minOccurs="0" name="continueProcessingOnError" type="xs:boolean" />
+        <xs:element minOccurs="0" name="rollbackParentOnChildError" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ice" minOccurs="0" name="UpdateExtResult" nillable="true" type="q13:BOUpdErrorTableset" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Erp.Tablesets" minOccurs="0" name="ds" nillable="true" type="q14:UpdExtPartTranTableset" />
+        <xs:element minOccurs="0" name="errorsOccurred" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

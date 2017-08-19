@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Erp:BO:PriceLstParts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Erp:BO:PriceLstParts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Erp:BO:PriceLstParts/Imports">
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd0" namespace="Erp:BO:PriceLstParts" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Ice.Common" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Epicor.Data" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd5" namespace="http://epicor.com/UserDefinedColumns" />
+      <xsd:import schemaLocation="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PriceLstPartsSvcContract_GetListFromSelectedKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListFromSelectedKeys" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetListFromSelectedKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListFromSelectedKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetListFromSelectedKeys_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q1:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRowsFromSelectedKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowsFromSelectedKeys" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRowsFromSelectedKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowsFromSelectedKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRowsFromSelectedKeys_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q2:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetCurrencyCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyCode" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetCurrencyCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetCurrencyCode_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q3:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPriceLstParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPriceLstParts" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPriceLstParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPriceLstPartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPriceLstParts_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q4:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPLPartBrk_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPLPartBrk" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPLPartBrk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPLPartBrkResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetNewPLPartBrk_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q5:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_DeleteByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByID" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_DeleteByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_DeleteByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q6:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByID" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q7:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetList_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q8:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRows" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetRows_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q9:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowID" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q10:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDs" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySysRowIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_GetBySysRowIDs_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q11:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_Update_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q12:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_UpdateExt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExt" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_UpdateExt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="PriceLstPartsSvcContract_UpdateExt_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q13:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:portType name="PriceLstPartsSvcContract">
+    <wsdl:operation name="GetListFromSelectedKeys">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetListFromSelectedKeys" message="tns:PriceLstPartsSvcContract_GetListFromSelectedKeys_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetListFromSelectedKeysResponse" message="tns:PriceLstPartsSvcContract_GetListFromSelectedKeys_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetListFromSelectedKeysEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetListFromSelectedKeys_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsFromSelectedKeys">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRowsFromSelectedKeys" message="tns:PriceLstPartsSvcContract_GetRowsFromSelectedKeys_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRowsFromSelectedKeysResponse" message="tns:PriceLstPartsSvcContract_GetRowsFromSelectedKeys_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRowsFromSelectedKeysEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetRowsFromSelectedKeys_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyCode">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetCurrencyCode" message="tns:PriceLstPartsSvcContract_GetCurrencyCode_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetCurrencyCodeResponse" message="tns:PriceLstPartsSvcContract_GetCurrencyCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetCurrencyCodeEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetCurrencyCode_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPriceLstParts">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPriceLstParts" message="tns:PriceLstPartsSvcContract_GetNewPriceLstParts_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPriceLstPartsResponse" message="tns:PriceLstPartsSvcContract_GetNewPriceLstParts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPriceLstPartsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetNewPriceLstParts_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPLPartBrk">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPLPartBrk" message="tns:PriceLstPartsSvcContract_GetNewPLPartBrk_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPLPartBrkResponse" message="tns:PriceLstPartsSvcContract_GetNewPLPartBrk_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetNewPLPartBrkEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetNewPLPartBrk_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByID">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/DeleteByID" message="tns:PriceLstPartsSvcContract_DeleteByID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/DeleteByIDResponse" message="tns:PriceLstPartsSvcContract_DeleteByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/DeleteByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_DeleteByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByID">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetByID" message="tns:PriceLstPartsSvcContract_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetByIDResponse" message="tns:PriceLstPartsSvcContract_GetByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetList" message="tns:PriceLstPartsSvcContract_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetListResponse" message="tns:PriceLstPartsSvcContract_GetList_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetListEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetList_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRows">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRows" message="tns:PriceLstPartsSvcContract_GetRows_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRowsResponse" message="tns:PriceLstPartsSvcContract_GetRows_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetRowsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetRows_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowID">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowID" message="tns:PriceLstPartsSvcContract_GetBySysRowID_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowIDResponse" message="tns:PriceLstPartsSvcContract_GetBySysRowID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetBySysRowID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySysRowIDs">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowIDs" message="tns:PriceLstPartsSvcContract_GetBySysRowIDs_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowIDsResponse" message="tns:PriceLstPartsSvcContract_GetBySysRowIDs_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/GetBySysRowIDsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_GetBySysRowIDs_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/Update" message="tns:PriceLstPartsSvcContract_Update_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/UpdateResponse" message="tns:PriceLstPartsSvcContract_Update_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/UpdateEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_Update_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExt">
+      <wsdl:input wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/UpdateExt" message="tns:PriceLstPartsSvcContract_UpdateExt_InputMessage" />
+      <wsdl:output wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/UpdateExtResponse" message="tns:PriceLstPartsSvcContract_UpdateExt_OutputMessage" />
+      <wsdl:fault wsaw:Action="Erp:BO:PriceLstParts/PriceLstPartsSvcContract/UpdateExtEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:PriceLstPartsSvcContract_UpdateExt_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Ice:Lib:SessionMod" elementFormDefault="qualified" targetNamespace="Ice:Lib:SessionMod" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Ice.Tablesets" />
+  <xs:element name="GetSolutionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSolutionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="solutionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicense">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maxUsers" type="xs:int" />
+        <xs:element minOccurs="0" name="maxDCUsers" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="installationID" type="q1:guid" />
+        <xs:element minOccurs="0" name="evalExpires" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="editionNum" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModuleAccess">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModuleAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleAccessList" nillable="true" type="q3:ArrayOfKeyValueOfguidboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newCompany" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workstationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workstationDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="countryGroupCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenantID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDateFormat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateFormat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDateFormatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLanguage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="languageID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLanguageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPlant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newSite" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPlantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkstation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newWorkstationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkstationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workstationDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTaskClientID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="environmentUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTaskClientIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskClientID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Handshake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="clientVersion" nillable="true" type="q4:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandshakeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeedData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeedDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandshakeBaseVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="clientVersion" nillable="true" type="q5:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandshakeBaseVersionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientDateFormat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientComputerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientTerminalID" type="xs:int" />
+        <xs:element minOccurs="0" name="designMode" type="xs:boolean" />
+        <xs:element minOccurs="0" name="clientUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="appserver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="replicatedDatabase" type="xs:boolean" />
+        <xs:element minOccurs="0" name="taskClientID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="LoginResult" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLanguageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InMobileConnect">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InMobileConnectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InMobileConnectResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsValidSessionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatchLevel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatchLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetPatchLevelResult" nillable="true" type="q7:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatchLevelApp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatchLevelAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetPatchLevelAppResult" nillable="true" type="q8:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequiredDBVersionApp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequiredDBVersionAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetRequiredDBVersionAppResult" nillable="true" type="q9:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemCodeApp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemCodeAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSystemCodeAppResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseLevel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetBaseLevelResult" nillable="true" type="q10:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseLevelApp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseLevelAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetBaseLevelAppResult" nillable="true" type="q11:Version" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ice.Tablesets" minOccurs="0" name="GetServerInfoResult" nillable="true" type="q12:SessionModTableset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentValues">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workstationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workstationDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="countryGroupCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenantID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
