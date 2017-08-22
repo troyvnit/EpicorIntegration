@@ -43,7 +43,7 @@ namespace EpicorConsole.Services
                     var result = rs.GetRowsResult;
                     more = rs.morePages;
 
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         //Header
                         var invcHeads = result.InvcHead.ToArray();

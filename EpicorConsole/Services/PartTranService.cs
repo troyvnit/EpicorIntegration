@@ -45,7 +45,7 @@ namespace EpicorConsole.Services
                     var partTrans = result.PartTran.ToArray();
                     more = rs.morePages;
 
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         foreach (var partTran in partTrans)
                         {

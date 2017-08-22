@@ -27,7 +27,7 @@ namespace EpicorConsole.Services
             Console.WriteLine("Syncing Customers...");
             try
             {
-                using (var db = new ERPIntegrationEntities())
+                using (var db = new EpicorIntergrationEntities())
                 {
                     var addedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "N");
                     var updatedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "U");

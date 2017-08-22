@@ -13,10 +13,10 @@ namespace EpicorConsole.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ERPIntegrationEntities : DbContext
+    public partial class EpicorIntergrationEntities : DbContext
     {
-        public ERPIntegrationEntities()
-            : base("name=ERPIntegrationEntities")
+        public EpicorIntergrationEntities()
+            : base("name=EpicorIntergrationEntities")
         {
         }
     

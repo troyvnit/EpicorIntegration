@@ -27,7 +27,7 @@ namespace EpicorConsole.Services
             Console.WriteLine("Syncing POs...");
             try
             {
-                using (var db = new ERPIntegrationEntities())
+                using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
                     var addedPOHeaders = db.PO_HEADER.Where(c => c.DMSFlag == "N");

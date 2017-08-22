@@ -53,8 +53,8 @@ namespace EpicorConsole
                 }
 
                 //Add or update
-                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(sessionId), Cron.Minutely);

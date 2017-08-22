@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERPIntegrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EpicorIntergrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARINVOICE_DETAIL">
           <Key>
             <PropertyRef Name="Id" />
@@ -364,25 +364,25 @@
           <Property Name="SalesVATGroup" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="PurchaseUnit" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="InventoryUOM" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="AttrCode0" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode0" Type="nvarchar(max)" />
           <Property Name="AttrName0" Type="nvarchar(max)" />
-          <Property Name="AttrCode1" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode1" Type="nvarchar(max)" />
           <Property Name="AttrName1" Type="nvarchar(max)" />
-          <Property Name="AttrCode2" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode2" Type="nvarchar(max)" />
           <Property Name="AttrName2" Type="nvarchar(max)" />
-          <Property Name="AttrCode3" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode3" Type="nvarchar(max)" />
           <Property Name="AttrName3" Type="nvarchar(max)" />
-          <Property Name="AttrCode4" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode4" Type="nvarchar(max)" />
           <Property Name="AttrName4" Type="nvarchar(max)" />
-          <Property Name="AttrCode5" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode5" Type="nvarchar(max)" />
           <Property Name="AttrName5" Type="nvarchar(max)" />
-          <Property Name="AttrCode6" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode6" Type="nvarchar(max)" />
           <Property Name="AttrName6" Type="nvarchar(max)" />
-          <Property Name="AttrCode7" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode7" Type="nvarchar(max)" />
           <Property Name="AttrName7" Type="nvarchar(max)" />
-          <Property Name="AttrCode8" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode8" Type="nvarchar(max)" />
           <Property Name="AttrName8" Type="nvarchar(max)" />
-          <Property Name="AttrCode9" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttrCode9" Type="nvarchar(max)" />
           <Property Name="AttrName9" Type="nvarchar(max)" />
           <Property Name="Option1" Type="nvarchar(max)" />
           <Property Name="Option2" Type="nvarchar(max)" />
@@ -517,7 +517,7 @@
           <Property Name="SystemLog" Type="nvarchar" MaxLength="400" />
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ERPIntegrationModelStoreContainer">
+        <EntityContainer Name="EpicorIntergrationModelStoreContainer">
           <EntitySet Name="ARINVOICE_DETAIL" EntityType="Self.ARINVOICE_DETAIL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARINVOICE_HEADER" EntityType="Self.ARINVOICE_HEADER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUST_BALANCE" EntityType="Self.CUST_BALANCE" Schema="dbo" store:Type="Tables" />
@@ -543,7 +543,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ERPIntegrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EpicorIntergrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ARINVOICE_DETAIL">
           <Key>
             <PropertyRef Name="Id" />
@@ -903,25 +903,25 @@
           <Property Name="SalesVATGroup" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PurchaseUnit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InventoryUOM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode0" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName0" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttrCode9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AttrName9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1056,7 +1056,7 @@
           <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ERPIntegrationEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EpicorIntergrationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARINVOICE_DETAIL" EntityType="Self.ARINVOICE_DETAIL" />
           <EntitySet Name="ARINVOICE_HEADER" EntityType="Self.ARINVOICE_HEADER" />
           <EntitySet Name="CUST_BALANCE" EntityType="Self.CUST_BALANCE" />
@@ -1083,9 +1083,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ERPIntegrationModelStoreContainer" CdmEntityContainer="ERPIntegrationEntities">
+        <EntityContainerMapping StorageEntityContainer="EpicorIntergrationModelStoreContainer" CdmEntityContainer="EpicorIntergrationEntities">
           <EntitySetMapping Name="ARINVOICE_DETAIL">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.ARINVOICE_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_DETAIL">
               <MappingFragment StoreEntitySet="ARINVOICE_DETAIL">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1111,7 +1111,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ARINVOICE_HEADER">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.ARINVOICE_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_HEADER">
               <MappingFragment StoreEntitySet="ARINVOICE_HEADER">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1136,7 +1136,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CUST_BALANCE">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.CUST_BALANCE">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUST_BALANCE">
               <MappingFragment StoreEntitySet="CUST_BALANCE">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1153,7 +1153,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CUST_OVER_DUE">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.CUST_OVER_DUE">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUST_OVER_DUE">
               <MappingFragment StoreEntitySet="CUST_OVER_DUE">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1173,7 +1173,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CUSTOMERs">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.CUSTOMER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER">
               <MappingFragment StoreEntitySet="CUSTOMER">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
@@ -1204,7 +1204,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CUSTOMER_INFO">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.CUSTOMER_INFO">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER_INFO">
               <MappingFragment StoreEntitySet="CUSTOMER_INFO">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
@@ -1226,7 +1226,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CUSTOMER_SHIPTO">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.CUSTOMER_SHIPTO">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER_SHIPTO">
               <MappingFragment StoreEntitySet="CUSTOMER_SHIPTO">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
@@ -1276,7 +1276,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="INVT_TRANS">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.INVT_TRANS">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.INVT_TRANS">
               <MappingFragment StoreEntitySet="INVT_TRANS">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1302,7 +1302,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="INVT_TRANS_DETAIL">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.INVT_TRANS_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.INVT_TRANS_DETAIL">
               <MappingFragment StoreEntitySet="INVT_TRANS_DETAIL">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1318,7 +1318,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="INVT_TRANS_HEADER">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.INVT_TRANS_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.INVT_TRANS_HEADER">
               <MappingFragment StoreEntitySet="INVT_TRANS_HEADER">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1335,7 +1335,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PDA_PAYMENT">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.PDA_PAYMENT">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PDA_PAYMENT">
               <MappingFragment StoreEntitySet="PDA_PAYMENT">
                 <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
@@ -1352,7 +1352,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PO_DETAIL">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.PO_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PO_DETAIL">
               <MappingFragment StoreEntitySet="PO_DETAIL">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1380,7 +1380,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PO_HEADER">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.PO_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PO_HEADER">
               <MappingFragment StoreEntitySet="PO_HEADER">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -1414,7 +1414,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PRICE_LIST">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.PRICE_LIST">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PRICE_LIST">
               <MappingFragment StoreEntitySet="PRICE_LIST">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
@@ -1431,7 +1431,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PRODUCTs">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.PRODUCT">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PRODUCT">
               <MappingFragment StoreEntitySet="PRODUCT">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
@@ -1479,7 +1479,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RPO_DETAIL">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.RPO_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.RPO_DETAIL">
               <MappingFragment StoreEntitySet="RPO_DETAIL">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1502,7 +1502,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RPO_HEADER">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.RPO_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.RPO_HEADER">
               <MappingFragment StoreEntitySet="RPO_HEADER">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1527,7 +1527,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SO_DETAIL">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.SO_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.SO_DETAIL">
               <MappingFragment StoreEntitySet="SO_DETAIL">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1554,7 +1554,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SO_HEADER">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.SO_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.SO_HEADER">
               <MappingFragment StoreEntitySet="SO_HEADER">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
@@ -1579,7 +1579,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SO_HEADER_CONFIRM">
-            <EntityTypeMapping TypeName="ERPIntegrationModel.SO_HEADER_CONFIRM">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.SO_HEADER_CONFIRM">
               <MappingFragment StoreEntitySet="SO_HEADER_CONFIRM">
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />

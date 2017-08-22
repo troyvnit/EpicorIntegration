@@ -28,7 +28,7 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var parts = erpdb.xvtyx_DMSProduct.ToList();
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         foreach (var part in parts)
                         {
@@ -40,7 +40,7 @@ namespace EpicorConsole.Services
                                     product = Mapper.Map<PRODUCT>(part);
                                     product.DMSFlag = "N";
                                     db.PRODUCTs.Add(product);
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Added product: #{part.ItemCode}");
                                 }
                                 catch (Exception e)
@@ -58,7 +58,7 @@ namespace EpicorConsole.Services
                                     product.DMSFlag = "U";
                                     db.PRODUCTs.Attach(product);
                                     db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Updated product: #{part.ItemCode}");
                                 }
                                 catch (Exception e)
@@ -69,7 +69,7 @@ namespace EpicorConsole.Services
                                 }
                             }
                         }
-                        //await db.SaveChangesAsync();
+                        await db.SaveChangesAsync();
                     }
                 }
             }

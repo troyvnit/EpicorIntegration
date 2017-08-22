@@ -32,7 +32,7 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var priceLstParts = erpdb.sptyx_DMSPriceList();
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         foreach (var priceLstPart in priceLstParts)
                         {
@@ -44,7 +44,7 @@ namespace EpicorConsole.Services
                                     price = Mapper.Map<PRICE_LIST>(priceLstPart);
                                     price.DMSFlag = "N";
                                     db.PRICE_LIST.Add(price);
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Added price: #{priceLstPart.PriceListNum}");
                                 }
                                 catch (Exception e)
@@ -62,7 +62,7 @@ namespace EpicorConsole.Services
                                     price.DMSFlag = "U";
                                     db.PRICE_LIST.Attach(price);
                                     db.Entry(price).State = System.Data.Entity.EntityState.Modified;
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Updated price: #{priceLstPart.PriceListNum}");
                                 }
                                 catch (Exception e)
@@ -73,6 +73,7 @@ namespace EpicorConsole.Services
                                 }
                             }
                         }
+                        await db.SaveChangesAsync();
                     }
                 }
             }

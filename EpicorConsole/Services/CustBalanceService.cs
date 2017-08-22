@@ -24,7 +24,7 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var custBalances = erpdb.sptyx_DMSCustBalance();
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         foreach (var custBalance in custBalances)
                         {

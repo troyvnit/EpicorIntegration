@@ -25,7 +25,7 @@ namespace EpicorConsole.Services
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     var custInfos = erpdb.sptyx_DMSCustInfo();
-                    using (var db = new ERPIntegrationEntities())
+                    using (var db = new EpicorIntergrationEntities())
                     {
                         foreach (var custInfo in custInfos)
                         {
@@ -37,7 +37,7 @@ namespace EpicorConsole.Services
                                     cod = Mapper.Map<CUSTOMER_INFO>(custInfo);
                                     cod.DMSFlag = "N";
                                     db.CUSTOMER_INFO.Add(cod);
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Added Cust Info: #{custInfo.Custnum}");
                                 }
                                 catch (Exception e)
@@ -55,7 +55,7 @@ namespace EpicorConsole.Services
                                     cod.DMSFlag = "U";
                                     db.CUSTOMER_INFO.Attach(cod);
                                     db.Entry(cod).State = System.Data.Entity.EntityState.Modified;
-                                    await db.SaveChangesAsync();
+                                    //await db.SaveChangesAsync();
                                     Console.WriteLine($"Updated Cust Info: #{custInfo.Custnum}");
                                 }
                                 catch (Exception e)
@@ -66,6 +66,8 @@ namespace EpicorConsole.Services
                                 }
                             }
                         }
+
+                        await db.SaveChangesAsync();
                     }
                 }
             }
