@@ -29,7 +29,6 @@ namespace EpicorConsole.Data
     
         public virtual DbSet<PriceLst> PriceLsts { get; set; }
         public virtual DbSet<PriceLstPart> PriceLstParts { get; set; }
-        public virtual DbSet<xvtyx_DMSProduct> xvtyx_DMSProduct { get; set; }
     
         public virtual ObjectResult<sptyx_DMSCustBalance_Result> sptyx_DMSCustBalance()
         {
@@ -44,6 +43,19 @@ namespace EpicorConsole.Data
         public virtual ObjectResult<sptyx_DMSPriceList_Result> sptyx_DMSPriceList()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
+        }
+    
+        public virtual ObjectResult<sptyx_DMSProduct_Result> sptyx_DMSProduct(string sysRevID, string uD_SysRevID)
+        {
+            var sysRevIDParameter = sysRevID != null ?
+                new ObjectParameter("SysRevID", sysRevID) :
+                new ObjectParameter("SysRevID", typeof(string));
+    
+            var uD_SysRevIDParameter = uD_SysRevID != null ?
+                new ObjectParameter("UD_SysRevID", uD_SysRevID) :
+                new ObjectParameter("UD_SysRevID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSProduct_Result>("sptyx_DMSProduct", sysRevIDParameter, uD_SysRevIDParameter);
         }
     
         public virtual ObjectResult<sptyx_DMSCustInfo_Result> sptyx_DMSCustInfo()

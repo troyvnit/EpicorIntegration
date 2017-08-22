@@ -10,9 +10,8 @@
 namespace EpicorConsole.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class xvtyx_DMSProduct
+    public partial class sptyx_DMSProduct_Result
     {
         public string Company { get; set; }
         public string ItemCode { get; set; }

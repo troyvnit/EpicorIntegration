@@ -25,13 +25,13 @@ namespace EpicorConsole
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<xvtyx_DMSProduct, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
+                cfg.CreateMap<sptyx_DMSProduct_Result, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
                 cfg.CreateMap<sptyx_DMSPriceList_Result, PRICE_LIST>().ForMember(p => p.Id, o => o.UseDestinationValue());
                 cfg.CreateMap<sptyx_DMSCustInfo_Result, CUSTOMER_INFO>().ForMember(p => p.Id, o => o.UseDestinationValue());
             });
 
             var sessionModService = new SessionModService();
-            var sessionId = sessionModService.Login();
+            //var sessionId = sessionModService.Login();
 
             Console.WriteLine("Logged in");
 
@@ -53,7 +53,7 @@ namespace EpicorConsole
                 }
 
                 //Add or update
-                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
@@ -61,7 +61,7 @@ namespace EpicorConsole
                 //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.MinuteInterval(5));
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(sessionId), Cron.Minutely);
 
                 Console.ReadKey();
@@ -117,6 +117,7 @@ namespace EpicorConsole
             await custOverDueService.SyncCustOverDues();
         }
 
+        [DisableConcurrentExecution(100000)]
         public static async Task DoSyncCustInfo()
         {
             var custInfoService = new CustInfoService();

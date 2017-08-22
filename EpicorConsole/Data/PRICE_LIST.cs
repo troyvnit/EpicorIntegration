@@ -21,9 +21,9 @@ namespace EpicorConsole.Data
         public Nullable<System.DateTime> Startdate { get; set; }
         public Nullable<System.DateTime> Enddate { get; set; }
         public string Partnum { get; set; }
-        public double BasePrice { get; set; }
         public Nullable<int> BaseList { get; set; }
         public string SysRevID { get; set; }
         public string DMSFlag { get; set; }
+        public Nullable<decimal> BasePrice { get; set; }
     }
 }

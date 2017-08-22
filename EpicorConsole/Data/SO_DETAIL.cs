@@ -15,13 +15,18 @@ namespace EpicorConsole.Data
     public partial class SO_DETAIL
     {
         public string CompanyCode { get; set; }
-        public int DocNum { get; set; }
-        public int LineNum { get; set; }
+        public string DocNum { get; set; }
+        public string LineNum { get; set; }
         public string ProductCode { get; set; }
+        public string LineDesc { get; set; }
         public decimal Quantity { get; set; }
         public decimal Price { get; set; }
+        public Nullable<decimal> DiscAmount { get; set; }
+        public string FreeItem { get; set; }
+        public string PromotionCode { get; set; }
         public decimal Amount { get; set; }
-        public string UoM { get; set; }
+        public string IUM { get; set; }
+        public string SaleUM { get; set; }
         public string BranchCode { get; set; }
         public string WhsCode { get; set; }
         public string CreatedBy { get; set; }
@@ -30,10 +35,5 @@ namespace EpicorConsole.Data
         public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
-        public string IUM { get; set; }
-        public string LineDesc { get; set; }
-        public int HeaderId { get; set; }
-        public int Id { get; set; }
-        public string User01 { get; set; }
     }
 }

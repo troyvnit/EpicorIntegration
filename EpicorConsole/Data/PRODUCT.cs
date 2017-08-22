@@ -54,7 +54,8 @@ namespace EpicorConsole.Data
         public string Option3 { get; set; }
         public string Option4 { get; set; }
         public string Option5 { get; set; }
-        public byte[] SysRevID { get; set; }
         public string DMSFlag { get; set; }
+        public string UD_SysRevID { get; set; }
+        public string SysRevID { get; set; }
     }
 }

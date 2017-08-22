@@ -57,114 +57,15 @@
           <Property Name="SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="SysRowID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="xvtyx_DMSProduct">
-          <Key>
-            <PropertyRef Name="Company" />
-            <PropertyRef Name="ItemCode" />
-            <PropertyRef Name="ItemName" />
-            <PropertyRef Name="Status" />
-            <PropertyRef Name="SalesUnit" />
-            <PropertyRef Name="SalesItemsPerUnit" />
-            <PropertyRef Name="SalesUnitLength" />
-            <PropertyRef Name="SalesUnitWidth" />
-            <PropertyRef Name="SalesUnitHeight" />
-            <PropertyRef Name="SalesUnitVolume" />
-            <PropertyRef Name="SalesUnitWeight" />
-            <PropertyRef Name="SalesVATGroup" />
-            <PropertyRef Name="PurchaseUnit" />
-            <PropertyRef Name="InventoryUOM" />
-            <PropertyRef Name="AttrCode0" />
-            <PropertyRef Name="AttrCode1" />
-            <PropertyRef Name="AttrCode9" />
-            <PropertyRef Name="AttrName9" />
-            <PropertyRef Name="sysRevID" />
-          </Key>
-          <Property Name="Company" Type="nvarchar" MaxLength="8" Nullable="false" />
-          <Property Name="ItemCode" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Status" Type="bit" Nullable="false" />
-          <Property Name="SalesUnit" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="SalesItemsPerUnit" Type="int" Nullable="false" />
-          <Property Name="SalesUnitLength" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="SalesUnitWidth" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="SalesUnitHeight" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="SalesUnitVolume" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="SalesUnitWeight" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="SalesVATGroup" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="PurchaseUnit" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="InventoryUOM" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="AttrCode0" Type="nvarchar" MaxLength="8" Nullable="false" />
-          <Property Name="AttrName0" Type="nvarchar" MaxLength="30" />
-          <Property Name="AttrCode1" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="AttrName1" Type="nvarchar" MaxLength="30" />
-          <Property Name="AttrCode2" Type="nvarchar" MaxLength="50" />
-          <Property Name="AttrName2" Type="nvarchar(max)" />
-          <Property Name="AttrCode3" Type="nvarchar(max)" />
-          <Property Name="AttrName3" Type="nvarchar(max)" />
-          <Property Name="AttrCode4" Type="nvarchar(max)" />
-          <Property Name="AttrName4" Type="nvarchar(max)" />
-          <Property Name="AttrCode5" Type="nvarchar(max)" />
-          <Property Name="AttrName5" Type="nvarchar(max)" />
-          <Property Name="AttrCode6" Type="nvarchar(max)" />
-          <Property Name="AttrName6" Type="nvarchar(max)" />
-          <Property Name="AttrCode7" Type="nvarchar" MaxLength="50" />
-          <Property Name="AttrName7" Type="nvarchar(max)" />
-          <Property Name="AttrCode8" Type="nvarchar" MaxLength="50" />
-          <Property Name="AttrName8" Type="nvarchar(max)" />
-          <Property Name="AttrCode9" Type="varchar" MaxLength="1" Nullable="false" />
-          <Property Name="AttrName9" Type="varchar" MaxLength="1" Nullable="false" />
-          <Property Name="sysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-          <Property Name="UD_SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <Function Name="sptyx_DMSCustBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustOverDue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sptyx_DMSPriceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sptyx_DMSProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SysRevID" Type="varchar" Mode="In" />
+          <Parameter Name="UD_SysRevID" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
           <EntitySet Name="PriceLst" EntityType="Self.PriceLst" Schema="Erp" store:Type="Tables" />
           <EntitySet Name="PriceLstParts" EntityType="Self.PriceLstParts" Schema="Erp" store:Type="Tables" />
-          <EntitySet Name="xvtyx_DMSProduct" EntityType="Self.xvtyx_DMSProduct" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [xvtyx_DMSProduct].[Company] AS [Company], 
-    [xvtyx_DMSProduct].[ItemCode] AS [ItemCode], 
-    [xvtyx_DMSProduct].[ItemName] AS [ItemName], 
-    [xvtyx_DMSProduct].[Status] AS [Status], 
-    [xvtyx_DMSProduct].[SalesUnit] AS [SalesUnit], 
-    [xvtyx_DMSProduct].[SalesItemsPerUnit] AS [SalesItemsPerUnit], 
-    [xvtyx_DMSProduct].[SalesUnitLength] AS [SalesUnitLength], 
-    [xvtyx_DMSProduct].[SalesUnitWidth] AS [SalesUnitWidth], 
-    [xvtyx_DMSProduct].[SalesUnitHeight] AS [SalesUnitHeight], 
-    [xvtyx_DMSProduct].[SalesUnitVolume] AS [SalesUnitVolume], 
-    [xvtyx_DMSProduct].[SalesUnitWeight] AS [SalesUnitWeight], 
-    [xvtyx_DMSProduct].[SalesVATGroup] AS [SalesVATGroup], 
-    [xvtyx_DMSProduct].[PurchaseUnit] AS [PurchaseUnit], 
-    [xvtyx_DMSProduct].[InventoryUOM] AS [InventoryUOM], 
-    [xvtyx_DMSProduct].[AttrCode0] AS [AttrCode0], 
-    [xvtyx_DMSProduct].[AttrName0] AS [AttrName0], 
-    [xvtyx_DMSProduct].[AttrCode1] AS [AttrCode1], 
-    [xvtyx_DMSProduct].[AttrName1] AS [AttrName1], 
-    [xvtyx_DMSProduct].[AttrCode2] AS [AttrCode2], 
-    [xvtyx_DMSProduct].[AttrName2] AS [AttrName2], 
-    [xvtyx_DMSProduct].[AttrCode3] AS [AttrCode3], 
-    [xvtyx_DMSProduct].[AttrName3] AS [AttrName3], 
-    [xvtyx_DMSProduct].[AttrCode4] AS [AttrCode4], 
-    [xvtyx_DMSProduct].[AttrName4] AS [AttrName4], 
-    [xvtyx_DMSProduct].[AttrCode5] AS [AttrCode5], 
-    [xvtyx_DMSProduct].[AttrName5] AS [AttrName5], 
-    [xvtyx_DMSProduct].[AttrCode6] AS [AttrCode6], 
-    [xvtyx_DMSProduct].[AttrName6] AS [AttrName6], 
-    [xvtyx_DMSProduct].[AttrCode7] AS [AttrCode7], 
-    [xvtyx_DMSProduct].[AttrName7] AS [AttrName7], 
-    [xvtyx_DMSProduct].[AttrCode8] AS [AttrCode8], 
-    [xvtyx_DMSProduct].[AttrName8] AS [AttrName8], 
-    [xvtyx_DMSProduct].[AttrCode9] AS [AttrCode9], 
-    [xvtyx_DMSProduct].[AttrName9] AS [AttrName9], 
-    [xvtyx_DMSProduct].[sysRevID] AS [sysRevID], 
-    [xvtyx_DMSProduct].[UD_SysRevID] AS [UD_SysRevID]
-    FROM [dbo].[xvtyx_DMSProduct] AS [xvtyx_DMSProduct]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -175,8 +76,11 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <FunctionImport Name="sptyx_DMSCustOverDue" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustOverDue_Result)" />
           <EntitySet Name="PriceLsts" EntityType="ERPAPPTRAINModel.PriceLst" />
           <EntitySet Name="PriceLstParts" EntityType="ERPAPPTRAINModel.PriceLstPart" />
-          <EntitySet Name="xvtyx_DMSProduct" EntityType="ERPAPPTRAINModel.xvtyx_DMSProduct" />
           <FunctionImport Name="sptyx_DMSPriceList" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSPriceList_Result)" />
+          <FunctionImport Name="sptyx_DMSProduct" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSProduct_Result)">
+            <Parameter Name="SysRevID" Mode="In" Type="String" />
+            <Parameter Name="UD_SysRevID" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sptyx_DMSCustInfo" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustInfo_Result)" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
@@ -249,65 +153,6 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <Property Name="SysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="SysRowID" Type="Guid" Nullable="false" />
         </EntityType>
-        <EntityType Name="xvtyx_DMSProduct">
-          <Key>
-            <PropertyRef Name="Company" />
-            <PropertyRef Name="ItemCode" />
-            <PropertyRef Name="ItemName" />
-            <PropertyRef Name="Status" />
-            <PropertyRef Name="SalesUnit" />
-            <PropertyRef Name="SalesItemsPerUnit" />
-            <PropertyRef Name="SalesUnitLength" />
-            <PropertyRef Name="SalesUnitWidth" />
-            <PropertyRef Name="SalesUnitHeight" />
-            <PropertyRef Name="SalesUnitVolume" />
-            <PropertyRef Name="SalesUnitWeight" />
-            <PropertyRef Name="SalesVATGroup" />
-            <PropertyRef Name="PurchaseUnit" />
-            <PropertyRef Name="InventoryUOM" />
-            <PropertyRef Name="AttrCode0" />
-            <PropertyRef Name="AttrCode1" />
-            <PropertyRef Name="AttrCode9" />
-            <PropertyRef Name="AttrName9" />
-            <PropertyRef Name="sysRevID" />
-          </Key>
-          <Property Name="Company" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
-          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="Boolean" Nullable="false" />
-          <Property Name="SalesUnit" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SalesItemsPerUnit" Type="Int32" Nullable="false" />
-          <Property Name="SalesUnitLength" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
-          <Property Name="SalesUnitWidth" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
-          <Property Name="SalesUnitHeight" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
-          <Property Name="SalesUnitVolume" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
-          <Property Name="SalesUnitWeight" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
-          <Property Name="SalesVATGroup" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="PurchaseUnit" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="InventoryUOM" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode0" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName0" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode1" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode9" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="AttrName9" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="sysRevID" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="UD_SysRevID" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-        </EntityType>
         <ComplexType Name="sptyx_DMSPriceList_Result">
           <Property Type="String" Name="Company" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="PriceListNum" Nullable="true" MaxLength="10" />
@@ -335,24 +180,82 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
           <Property Type="String" Name="Option4" Nullable="false" MaxLength="1" />
           <Property Type="String" Name="Option5" Nullable="false" MaxLength="1" />
         </ComplexType>
+        <ComplexType Name="sptyx_DMSProduct_Result">
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="ItemCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ItemName" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="String" Name="SalesUnit" Nullable="false" MaxLength="6" />
+          <Property Type="Int32" Name="SalesItemsPerUnit" Nullable="false" />
+          <Property Type="Decimal" Name="SalesUnitLength" Nullable="false" Precision="15" Scale="5" />
+          <Property Type="Decimal" Name="SalesUnitWidth" Nullable="false" Precision="15" Scale="5" />
+          <Property Type="Decimal" Name="SalesUnitHeight" Nullable="false" Precision="15" Scale="5" />
+          <Property Type="Decimal" Name="SalesUnitVolume" Nullable="false" Precision="15" Scale="5" />
+          <Property Type="Decimal" Name="SalesUnitWeight" Nullable="false" Precision="15" Scale="5" />
+          <Property Type="String" Name="SalesVATGroup" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="PurchaseUnit" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="InventoryUOM" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="AttrCode0" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="AttrName0" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AttrCode1" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="AttrName1" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AttrCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AttrName2" Nullable="true" />
+          <Property Type="String" Name="AttrCode3" Nullable="true" />
+          <Property Type="String" Name="AttrName3" Nullable="true" />
+          <Property Type="String" Name="AttrCode4" Nullable="true" />
+          <Property Type="String" Name="AttrName4" Nullable="true" />
+          <Property Type="String" Name="AttrCode5" Nullable="true" />
+          <Property Type="String" Name="AttrName5" Nullable="true" />
+          <Property Type="String" Name="AttrCode6" Nullable="true" />
+          <Property Type="String" Name="AttrName6" Nullable="true" />
+          <Property Type="String" Name="AttrCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AttrName7" Nullable="true" />
+          <Property Type="String" Name="AttrCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AttrName8" Nullable="true" />
+          <Property Type="String" Name="AttrCode9" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="AttrName9" Nullable="false" MaxLength="1" />
+          <Property Type="Binary" Name="sysRevID" Nullable="false" MaxLength="8" />
+          <Property Type="Binary" Name="UD_SysRevID" Nullable="true" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sptyx_DMSCustInfo1_Result">
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="Custid" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="Custnum" Nullable="false" />
+          <Property Type="Decimal" Name="CreditLimit" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="Double" Name="Balance" Nullable="true" />
+          <Property Type="Double" Name="OverDue" Nullable="true" />
+          <Property Type="String" Name="ListCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CusSysRevID" Nullable="true" />
+          <Property Type="String" Name="PrcSysRevID" Nullable="true" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option5" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="sptyx_DMSCustInfo_Result1">
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="Custid" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="Custnum" Nullable="false" />
+          <Property Type="Decimal" Name="CreditLimit" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="Double" Name="Balance" Nullable="true" />
+          <Property Type="Double" Name="OverDue" Nullable="true" />
+          <Property Type="String" Name="ListCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CusSysRevID" Nullable="true" />
+          <Property Type="String" Name="PrcSysRevID" Nullable="true" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Option5" Nullable="false" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ERPAPPTRAINModelStoreContainer" CdmEntityContainer="ERPAPPTRAINEntities" >
-          <FunctionImportMapping FunctionImportName="sptyx_DMSCustBalance" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSCustBalance">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSCustBalance_Result">
-                <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="Custnum" ColumnName="Custnum" />
-                <ScalarProperty Name="CustID" ColumnName="CustID" />
-                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
-                <ScalarProperty Name="Balance" ColumnName="Balance" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sptyx_DMSCustOverDue" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSCustOverDue">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSCustOverDue_Result">
@@ -417,65 +320,50 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="xvtyx_DMSProduct">
-            <EntityTypeMapping TypeName="ERPAPPTRAINModel.xvtyx_DMSProduct">
-              <MappingFragment StoreEntitySet="xvtyx_DMSProduct">
-                <ScalarProperty Name="UD_SysRevID" ColumnName="UD_SysRevID" />
-                <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
-                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
-                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
-                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
-                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
-                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
-                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
-                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
-                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
-                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
-                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
-                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
-                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
-                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
-                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
-                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
-                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
-                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
-                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
-                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
-                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
-                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
-                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
-                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
-                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
-                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
-                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
-                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
-                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
-                <ScalarProperty Name="SalesItemsPerUnit" ColumnName="SalesItemsPerUnit" />
-                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
-                <ScalarProperty Name="Company" ColumnName="Company" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sptyx_DMSPriceList" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSPriceList" >
+          <FunctionImportMapping FunctionImportName="sptyx_DMSProduct" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSProduct">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSPriceList_Result">
+              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSProduct_Result">
                 <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
-                <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
-                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
-                <ScalarProperty Name="BaseList" ColumnName="BaseList" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+                <ScalarProperty Name="SalesItemsPerUnit" ColumnName="SalesItemsPerUnit" />
+                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
+                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
+                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
+                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
+                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
+                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
+                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
+                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
+                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
+                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
+                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
+                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
+                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
+                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
+                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
+                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
+                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
+                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
+                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
+                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
+                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
+                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
+                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
+                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
+                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
+                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
                 <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
+                <ScalarProperty Name="UD_SysRevID" ColumnName="UD_SysRevID" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sptyx_DMSCustInfo" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSCustInfo">
-            <ResultMapping>
+          <ResultMapping>
               <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSCustInfo_Result">
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="Custid" ColumnName="Custid" />
@@ -494,7 +382,7 @@ warning 6002: The table/view 'ERPAPPTRAIN.dbo.xvtyx_DMSProduct' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

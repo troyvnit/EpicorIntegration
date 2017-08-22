@@ -223,7 +223,7 @@
     <Compile Include="Data\sptyx_DMSPriceList_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\xvtyx_DMSProduct.cs">
+    <Compile Include="Data\sptyx_DMSProduct_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -287,7 +287,9 @@
     <Compile Include="Services\SessionModService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="Data\ERPAPPTRAIN.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ERPAPPTRAIN.Designer.cs</LastGenOutput>

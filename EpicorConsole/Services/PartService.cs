@@ -25,9 +25,9 @@ namespace EpicorConsole.Services
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    var parts = erpdb.xvtyx_DMSProduct.ToList();
                     using (var db = new EpicorIntergrationEntities())
                     {
+                        var parts = erpdb.sptyx_DMSProduct(db.PRODUCTs.Max(p => p.SysRevID), db.PRODUCTs.Max(p => p.UD_SysRevID)).ToList();
                         foreach (var part in parts)
                         {
                             var product = db.PRODUCTs.FirstOrDefault(p => p.ItemCode == part.ItemCode && p.Company == part.Company);
