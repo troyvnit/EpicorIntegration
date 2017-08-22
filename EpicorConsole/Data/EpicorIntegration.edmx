@@ -965,9 +965,9 @@
           <EntitySet Name="RPO_HEADER" EntityType="Self.RPO_HEADER" />
           <EntitySet Name="SO_HEADER_CONFIRM" EntityType="Self.SO_HEADER_CONFIRM" />
           <EntitySet Name="PRODUCTs" EntityType="EpicorIntergrationModel.PRODUCT" />
+          <EntitySet Name="PRICE_LIST" EntityType="EpicorIntergrationModel.PRICE_LIST" />
           <EntitySet Name="SO_DETAIL" EntityType="EpicorIntergrationModel.SO_DETAIL" />
           <EntitySet Name="SO_HEADER" EntityType="EpicorIntergrationModel.SO_HEADER" />
-          <EntitySet Name="PRICE_LIST" EntityType="EpicorIntergrationModel.PRICE_LIST" />
         </EntityContainer>
         <EntityType Name="PRODUCT">
           <Key>
@@ -1016,6 +1016,22 @@
           <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="UD_SysRevID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SysRevID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PRICE_LIST">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PriceListDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Startdate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="Partnum" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BaseList" Type="Int32" />
+          <Property Name="SysRevID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BasePrice" Type="Decimal" Precision="19" Scale="6" />
         </EntityType>
         <EntityType Name="SO_DETAIL">
           <Key>
@@ -1070,22 +1086,6 @@
           <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
           <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-        </EntityType>
-        <EntityType Name="PRICE_LIST">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Company" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="PriceListNum" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="PriceListDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Startdate" Type="DateTime" Precision="3" />
-          <Property Name="Enddate" Type="DateTime" Precision="3" />
-          <Property Name="Partnum" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="BaseList" Type="Int32" />
-          <Property Name="SysRevID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="BasePrice" Type="Decimal" Precision="19" Scale="6" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1542,6 +1542,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_LIST">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.PRICE_LIST">
+              <MappingFragment StoreEntitySet="PRICE_LIST">
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
+                <ScalarProperty Name="BaseList" ColumnName="BaseList" />
+                <ScalarProperty Name="Partnum" ColumnName="Partnum" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+                <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
+                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SO_DETAIL">
             <EntityTypeMapping TypeName="EpicorIntergrationModel.SO_DETAIL">
               <MappingFragment StoreEntitySet="SO_DETAIL">
@@ -1592,23 +1609,6 @@
                 <ScalarProperty Name="Ordernum" ColumnName="Ordernum" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PRICE_LIST">
-            <EntityTypeMapping TypeName="EpicorIntergrationModel.PRICE_LIST">
-              <MappingFragment StoreEntitySet="PRICE_LIST">
-                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
-                <ScalarProperty Name="BaseList" ColumnName="BaseList" />
-                <ScalarProperty Name="Partnum" ColumnName="Partnum" />
-                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
-                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-                <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
-                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
-                <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

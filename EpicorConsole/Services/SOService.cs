@@ -45,8 +45,8 @@ namespace EpicorConsole.Services
                                 if (soHeaderRow != null)
                                 {
                                     MapToHeaderRow(soHeaderRow, soHeader);
-                                    await MapToHeaderRowAsync(soHeaderRow, soHeader);
                                     soClient.Update(ref soTableset);
+                                    soHeader.Ordernum = soHeaderRow.OrderNum;
                                     soHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added soHeader: #{soHeader.DocNum} successfully!");
 
@@ -97,33 +97,25 @@ namespace EpicorConsole.Services
 
         private void MapToHeaderRow(OrderHedRow row, SO_HEADER entity)
         {
-            row.Company = !string.IsNullOrEmpty(entity.CompanyCode) ? entity.CompanyCode : row.Company;
+            row.Company = entity.CompanyCode;
             row.TermsCode = entity.TermCode;
             row.CurrencyCode = entity.CurrencyCode;
-            row.CustomerCustID = !string.IsNullOrEmpty(entity.CustomerCode) ? entity.CustomerCode : row.CustomerCustID;
-            //row.BTCustID = !string.IsNullOrEmpty(entity.CustomerCode) ? entity.CustomerCode : row.BTCustID;
-            //row.ShipToCustId = !string.IsNullOrEmpty(entity.ShiptoCode) ? entity.ShiptoCode : row.ShipToCustId;
-            //row.OrderDate = entity.CreatedDateTime != null ? entity.CreatedDateTime : row.OrderDate;
-        }
-
-        private async Task MapToHeaderRowAsync(OrderHedRow row, SO_HEADER entity)
-        {
-            //row.CustNum = await customerService.GetCustNum(entity.CustomerCode);
-            //row.BTCustNum = await customerService.GetCustNum(entity.CustomerCode);
-            //row.ShipToCustNum = await customerService.GetCustNum(entity.ShiptoCode);
+            row.CustomerCustID = entity.Custnum;
+            row.BTCustID = entity.BTCustnum;
+            row.ShipToCustId = entity.ShiptoCustnum;
+            row.OrderDate = entity.DeliveryDate;
+            row.TermsCode = entity.TermCode;
         }
 
         private void MapToDetailRow(OrderDtlRow row, SO_DETAIL entity)
         {
-            row.Company = !string.IsNullOrEmpty(entity.CompanyCode) ? entity.CompanyCode : row.Company;
-            //row.OrderNum = entity.DocNum;
-            //row.OrderLine = entity.LineNum;
-            //row.LineDesc = entity.LineDesc;
-            //row.PartNum = entity.ProductCode != null ? entity.ProductCode : row.PartNum;
-            //row.SalesUM = entity.UoM;
-            //row.IUM = entity.IUM;
-            //row.SellingQuantity = entity.Quantity;
-            //row.PlanUserID = entity.User01;
+            row.Company = entity.CompanyCode;
+            row.LineDesc = entity.LineDesc;
+            row.PartNum = entity.ProductCode;
+            row.SalesUM = entity.SaleUM;
+            row.IUM = entity.IUM;
+            row.SellingQuantity = entity.Quantity;
+            row.WarehouseCode = entity.WhsCode;
         }
     }
 }

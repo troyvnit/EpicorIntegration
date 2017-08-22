@@ -31,7 +31,7 @@ namespace EpicorConsole
             });
 
             var sessionModService = new SessionModService();
-            //var sessionId = sessionModService.Login();
+            var sessionId = sessionModService.Login();
 
             Console.WriteLine("Logged in");
 
