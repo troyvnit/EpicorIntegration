@@ -68,6 +68,7 @@ namespace EpicorConsole
             }
         }
 
+        [DisableConcurrentExecution(100000)]
         public static async Task DoSyncPart(Guid sessionId)
         {
             var partService = new PartService(sessionId);

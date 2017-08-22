@@ -20,11 +20,10 @@ namespace EpicorConsole.Services
             poClient = GetClient<POSvcContractClient, POSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             poClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncPOs()
         {
-            Console.WriteLine("Syncing POs...");
+            log.Information("Syncing POs...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())

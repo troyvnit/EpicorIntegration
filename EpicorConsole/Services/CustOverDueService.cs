@@ -14,11 +14,10 @@ namespace EpicorConsole.Services
         public CustOverDueService()
         {
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncCustOverDues()
         {
-            Console.WriteLine("Syncing CustOverDues...");
+            log.Information("Syncing CustOverDues...");
             try
             {
                 using (var erpdb = new ERPAPPTRAINEntities())

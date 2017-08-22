@@ -23,11 +23,10 @@ namespace EpicorConsole.Services
 
             customerService = new CustomerService(sessionId);
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncSOs()
         {
-            Console.WriteLine("Syncing SOs...");
+            log.Information("Syncing SOs...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())

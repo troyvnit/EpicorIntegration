@@ -12,18 +12,14 @@ namespace EpicorConsole.Services
 {
     public class PriceService : BaseService
     {
-        PriceLstPartsSvcContractClient priceClient;
-        List<PriceLst> priceLsts;
-
         public PriceService(Guid sessionId)
         {
             this.sessionId = sessionId;
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncPrices()
         {
-            Console.WriteLine("Syncing Prices...");
+            log.Information("Syncing Prices...");
             try
             {
                 //var rs = await priceClient.GetRowsAsync(new Epicor.PriceLstPartsSvc.GetRowsRequest());
@@ -49,7 +45,8 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
-                                    Console.WriteLine($"Failed adding price: #{priceLstPart.PriceListNum}");
+                                    log.Error($"Failed adding price: #{priceLstPart.Company}/{priceLstPart.PriceListNum}/{priceLstPart.PartNum} - {e.GetBaseException().Message}", e.GetBaseException());
+                                    Console.WriteLine($"Failed adding price: #{priceLstPart.Company}/{priceLstPart.PriceListNum}/{priceLstPart.PartNum}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
                                 }
@@ -67,6 +64,7 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
+                                    log.Error($"Failed updating price: #{priceLstPart.Company}/{priceLstPart.PriceListNum}/{priceLstPart.PartNum} - {e.GetBaseException().Message}", e.GetBaseException());
                                     Console.WriteLine($"Failed updating price: #{priceLstPart.PriceListNum}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
@@ -79,6 +77,7 @@ namespace EpicorConsole.Services
             }
             catch (Exception e)
             {
+                log.Error($"System error: {e.GetBaseException().Message}", e.GetBaseException());
                 Console.WriteLine(e.GetBaseException().Message);
             }
         }

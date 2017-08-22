@@ -2,6 +2,7 @@
 using EpicorConsole.Data;
 using EpicorConsole.Epicor.PartSvc;
 using Hangfire;
+using Hangfire.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +13,14 @@ namespace EpicorConsole.Services
 {
     public class PartService : BaseService
     {
-        PartSvcContractClient partClient; 
-
         public PartService(Guid sessionId)
         {
             this.sessionId = sessionId;
         }
         
-        [DisableConcurrentExecution(100000)]
         public async Task SyncParts()
         {
-            Console.WriteLine("Syncing Parts...");
+            log.Information("Syncing Parts...");
             try
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
@@ -45,6 +43,7 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
+                                    log.Error($"Failed adding product: #{part.ItemCode} - {e.GetBaseException().Message}", e.GetBaseException());
                                     Console.WriteLine($"Failed adding product: #{part.ItemCode}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
@@ -63,6 +62,7 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
+                                    log.Error($"Failed updating product: #{part.ItemCode} - {e.GetBaseException().Message}", e.GetBaseException());
                                     Console.WriteLine($"Failed updating product: #{part.ItemCode}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
@@ -75,6 +75,7 @@ namespace EpicorConsole.Services
             }
             catch (Exception e)
             {
+                log.Error($"System error: {e.GetBaseException().Message}", e.GetBaseException());
                 Console.WriteLine(e.GetBaseException().Message);
             }
         }

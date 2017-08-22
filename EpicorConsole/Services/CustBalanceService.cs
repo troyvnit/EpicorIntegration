@@ -14,11 +14,10 @@ namespace EpicorConsole.Services
         public CustBalanceService()
         {
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncCustBalances()
         {
-            Console.WriteLine("Syncing CustBalances...");
+            log.Information("Syncing CustBalances...");
             try
             {
                 using (var erpdb = new ERPAPPTRAINEntities())

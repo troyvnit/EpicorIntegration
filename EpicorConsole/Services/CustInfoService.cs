@@ -15,11 +15,10 @@ namespace EpicorConsole.Services
         public CustInfoService()
         {
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncCustInfos()
         {
-            Console.WriteLine("Syncing CustInfos...");
+            log.Information("Syncing CustInfos...");
             try
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
@@ -42,6 +41,7 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
+                                    log.Error($"Failed adding Cust Info: #{custInfo.Company}/{custInfo.Custnum}", e.GetBaseException());
                                     Console.WriteLine($"Failed adding Cust Info: #{custInfo.Custnum}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
@@ -60,7 +60,8 @@ namespace EpicorConsole.Services
                                 }
                                 catch (Exception e)
                                 {
-                                    Console.WriteLine($"Failed updating Cust Info: #{custInfo.Custnum}");
+                                    log.Error($"Failed updating Cust Info: #{custInfo.Company}/{custInfo.Custnum}", e.GetBaseException());
+                                    Console.WriteLine($"Failed updating Cust Info: #{custInfo.Company}/{custInfo.Custnum}");
                                     Console.WriteLine(e.GetBaseException().Message);
                                     continue;
                                 }
@@ -73,6 +74,7 @@ namespace EpicorConsole.Services
             }
             catch (Exception e)
             {
+                log.Error($"System error: {e.GetBaseException().Message}", e.GetBaseException());
                 Console.WriteLine(e.GetBaseException().Message);
             }
         }

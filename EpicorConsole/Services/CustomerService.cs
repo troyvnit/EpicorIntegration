@@ -20,11 +20,10 @@ namespace EpicorConsole.Services
             customerClient = GetClient<CustomerSvcContractClient, CustomerSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             customerClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncCustomers()
         {
-            Console.WriteLine("Syncing Customers...");
+            log.Information("Syncing Customers...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())

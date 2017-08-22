@@ -4,6 +4,10 @@ using System;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using Serilog.Sinks;
+using Serilog.Sinks.MSSqlServer;
+using Serilog;
+using System.Configuration;
 
 namespace EpicorConsole.Services
 {
@@ -15,9 +19,12 @@ namespace EpicorConsole.Services
         protected EndpointBindingType bindingType = EndpointBindingType.SOAPHttp;
         protected string scheme = "http";
         protected Guid sessionId;
+        protected ILogger log;
 
         public BaseService()
         {
+            var connectionString = ConfigurationManager.ConnectionStrings["EpicorHangfire"].ConnectionString;
+            log = new LoggerConfiguration().WriteTo.MSSqlServer(connectionString, "Logs", autoCreateSqlTable: true).CreateLogger();
             ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return true; };
             builder = new UriBuilder(scheme, "ERP.greenvet.com");
         }

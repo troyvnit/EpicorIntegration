@@ -20,11 +20,10 @@ namespace EpicorConsole.Services
             arInvoiceClient = GetClient<ARInvoiceSvcContractClient, ARInvoiceSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             arInvoiceClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
-
-        [DisableConcurrentExecution(100000)]
+        
         public async Task SyncARInvoices()
         {
-            Console.WriteLine("Syncing ARInvoices...");
+            log.Information("Syncing ARInvoices...");
             try
             {
                 bool more = true;
