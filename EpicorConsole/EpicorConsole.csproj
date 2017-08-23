@@ -214,7 +214,13 @@
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\sptyx_DMSCustInfo1_Result.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\sptyx_DMSCustInfo_Result.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sptyx_DMSCustInfo_Result1.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sptyx_DMSCustOverDue_Result.cs">

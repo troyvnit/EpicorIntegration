@@ -20,6 +20,7 @@ namespace EpicorConsole.Services
         public async Task SyncPrices()
         {
             log.Information("Syncing Prices...");
+            Console.WriteLine("Syncing Prices...");
             try
             {
                 //var rs = await priceClient.GetRowsAsync(new Epicor.PriceLstPartsSvc.GetRowsRequest());

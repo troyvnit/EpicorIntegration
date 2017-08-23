@@ -27,6 +27,7 @@ namespace EpicorConsole.Services
         public async Task SyncSOs()
         {
             log.Information("Syncing SOs...");
+            Console.WriteLine($"Syncing SOs...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())

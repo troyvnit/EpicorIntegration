@@ -40,11 +40,6 @@ namespace EpicorConsole.Data
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustOverDue_Result>("sptyx_DMSCustOverDue");
         }
     
-        public virtual ObjectResult<sptyx_DMSPriceList_Result> sptyx_DMSPriceList()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
-        }
-    
         public virtual ObjectResult<sptyx_DMSProduct_Result> sptyx_DMSProduct(string sysRevID, string uD_SysRevID)
         {
             var sysRevIDParameter = sysRevID != null ?
@@ -61,6 +56,11 @@ namespace EpicorConsole.Data
         public virtual ObjectResult<sptyx_DMSCustInfo_Result> sptyx_DMSCustInfo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustInfo_Result>("sptyx_DMSCustInfo");
+        }
+    
+        public virtual ObjectResult<sptyx_DMSPriceList_Result> sptyx_DMSPriceList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
         }
     }
 }
