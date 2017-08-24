@@ -16,7 +16,7 @@ namespace EpicorConsole.Services
         public ARInvoiceService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "ERP101500/Erp/BO/ARInvoice.svc";
+            builder.Path = $"{environment}/Erp/BO/ARInvoice.svc";
             arInvoiceClient = GetClient<ARInvoiceSvcContractClient, ARInvoiceSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             arInvoiceClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }

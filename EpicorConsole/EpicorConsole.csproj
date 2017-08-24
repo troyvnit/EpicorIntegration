@@ -214,13 +214,7 @@
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\sptyx_DMSCustInfo1_Result.cs">
-      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\sptyx_DMSCustInfo_Result.cs">
-      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sptyx_DMSCustInfo_Result1.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sptyx_DMSCustOverDue_Result.cs">
@@ -311,32 +305,32 @@
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode1.wsdl" />
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode8.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode.wsdl" />
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode81.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode82.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode83.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode84.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode85.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode86.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode87.xsd">
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCodeSvcFacade1.wsdl" />
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCodeSvcFacade.wsdl" />
     <None Include="Service References\Epicor.AbcCodeSvc\EpicorConsole.Epicor.AbcCodeSvc.ABCCodeListTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -364,32 +358,32 @@
     <None Include="Service References\Epicor.AbcCodeSvc\EpicorConsole.Epicor.AbcCodeSvc.UpdExtABCCodeTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice1.wsdl" />
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice8.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.wsdl" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice81.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice82.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice83.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice84.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice85.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice86.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice87.xsd">
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoiceSvcFacade1.wsdl" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoiceSvcFacade.wsdl" />
     <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.ARInvcDtlPackTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -984,32 +978,32 @@
     <None Include="Service References\Epicor.ARInvoiceSvc\EpicorConsole.Epicor.ARInvoiceSvc.UpdExtARInvoiceTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer1.wsdl" />
-    <None Include="Service References\Epicor.CustomerSvc\Customer8.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer.wsdl" />
+    <None Include="Service References\Epicor.CustomerSvc\Customer.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer81.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer82.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer83.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer84.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer85.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer86.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\Customer87.xsd">
+    <None Include="Service References\Epicor.CustomerSvc\Customer7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.CustomerSvc\CustomerSvcFacade1.wsdl" />
+    <None Include="Service References\Epicor.CustomerSvc\CustomerSvcFacade.wsdl" />
     <None Include="Service References\Epicor.CustomerSvc\EpicorConsole.Epicor.CustomerSvc.BillToRefsTableset.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2575,32 +2569,32 @@
     <None Include="Service References\Epicor.SalesOrderSvc\EpicorConsole.Epicor.SalesOrderSvc.ValidateSNsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder1.wsdl" />
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder8.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.wsdl" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder81.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder82.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder83.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder84.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder85.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder86.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder87.xsd">
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrderSvcFacade1.wsdl" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrderSvcFacade.wsdl" />
     <None Include="Service References\Epicor.SessionModSvc\EpicorConsole.Epicor.SessionModSvc.GetCurrentValuesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2616,35 +2610,35 @@
     <None Include="Service References\Epicor.SessionModSvc\EpicorConsole.Epicor.SessionModSvc.SyncResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod1.wsdl" />
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod9.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod.wsdl" />
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod91.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod92.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod93.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod94.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod95.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod96.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod97.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod98.xsd">
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Epicor.SessionModSvc\SessionModSvcFacade1.wsdl" />
+    <None Include="Service References\Epicor.SessionModSvc\SessionModSvcFacade.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -2720,15 +2714,15 @@
       <DependentUpon>ERPAPPTRAIN.edmx</DependentUpon>
       <LastGenOutput>ERPAPPTRAIN.cs</LastGenOutput>
     </Content>
-    <None Include="Service References\Epicor.SessionModSvc\SessionMod1.disco" />
-    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder1.disco" />
+    <None Include="Service References\Epicor.SalesOrderSvc\SalesOrder.disco" />
+    <None Include="Service References\Epicor.SessionModSvc\SessionMod.disco" />
+    <None Include="Service References\Epicor.CustomerSvc\Customer.disco" />
+    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice.disco" />
+    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode.disco" />
     <None Include="Service References\Epicor.PriceLstPartsSvc\PriceLstParts1.disco" />
     <None Include="Service References\Epicor.POSvc\PO1.disco" />
     <None Include="Service References\Epicor.PartTranSvc\PartTran1.disco" />
     <None Include="Service References\Epicor.PartSvc\Part1.disco" />
-    <None Include="Service References\Epicor.CustomerSvc\Customer1.disco" />
-    <None Include="Service References\Epicor.ARInvoiceSvc\ARInvoice1.disco" />
-    <None Include="Service References\Epicor.AbcCodeSvc\ABCCode1.disco" />
     <None Include="Service References\Epicor.SalesOrderSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

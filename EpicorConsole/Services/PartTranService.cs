@@ -16,7 +16,7 @@ namespace EpicorConsole.Services
         public PartTranService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "ERP101500/Erp/BO/PartTran.svc";
+            builder.Path = $"{environment}/Erp/BO/PartTran.svc";
             partTranClient = GetClient<PartTranSvcContractClient, PartTranSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             partTranClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }

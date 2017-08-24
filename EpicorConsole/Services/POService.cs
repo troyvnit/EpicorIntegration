@@ -16,7 +16,7 @@ namespace EpicorConsole.Services
         public POService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "ERP101500/Erp/BO/PO.svc";
+            builder.Path = $"{environment}/Erp/BO/PO.svc";
             poClient = GetClient<POSvcContractClient, POSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             poClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }

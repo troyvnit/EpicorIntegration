@@ -19,20 +19,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.10.10/Epicor101/Erp/BO/ARInvoice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101Train/Erp/BO/ARInvoice.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ARInvoice8.xsd" MetadataType="Schema" ID="24ee1bc1-cd5b-4ca2-a67c-7ca36534848d" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd3" />
-    <MetadataFile FileName="ARInvoice81.xsd" MetadataType="Schema" ID="e9eccda7-bfea-42d6-a575-21182b7e92cd" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd0" />
-    <MetadataFile FileName="ARInvoice82.xsd" MetadataType="Schema" ID="6f88ad09-482d-426e-b54d-a2cf0309a0f8" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd6" />
-    <MetadataFile FileName="ARInvoice1.disco" MetadataType="Disco" ID="54159d49-7e74-43db-8b1d-fc0acb4f14ea" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?disco" />
-    <MetadataFile FileName="ARInvoice83.xsd" MetadataType="Schema" ID="43a49fa5-e0cc-49ae-be23-7f052bbd9077" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd5" />
-    <MetadataFile FileName="ARInvoiceSvcFacade1.wsdl" MetadataType="Wsdl" ID="cce274a8-2b97-4ac8-96c4-6fab76070da2" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?wsdl" />
-    <MetadataFile FileName="ARInvoice84.xsd" MetadataType="Schema" ID="095a2cb6-87da-49da-98ef-27f02e9a2107" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd2" />
-    <MetadataFile FileName="ARInvoice85.xsd" MetadataType="Schema" ID="74859fe5-06a0-44fc-a449-49c08e1710ab" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd4" />
-    <MetadataFile FileName="ARInvoice1.wsdl" MetadataType="Wsdl" ID="567483d7-8c5e-4c49-b2e9-1f0a548b4955" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ARInvoice86.xsd" MetadataType="Schema" ID="51c81988-b7d5-405c-b3a8-97cc7650c109" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd7" />
-    <MetadataFile FileName="ARInvoice87.xsd" MetadataType="Schema" ID="747555f5-514d-4139-ad28-579432c80041" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ARInvoice.svc?xsd=xsd1" />
+    <MetadataFile FileName="ARInvoice.xsd" MetadataType="Schema" ID="433b640f-23cc-4231-a3e4-5701accbfe17" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd6" />
+    <MetadataFile FileName="ARInvoice.wsdl" MetadataType="Wsdl" ID="139d1e9d-c2e6-414d-8df7-2610b0ee5c8b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ARInvoice1.xsd" MetadataType="Schema" ID="428e22ad-442b-4e31-b14e-1e568986b6f6" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd4" />
+    <MetadataFile FileName="ARInvoice2.xsd" MetadataType="Schema" ID="15abbf02-8ba5-471b-b623-d386e3fa9630" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd3" />
+    <MetadataFile FileName="ARInvoice3.xsd" MetadataType="Schema" ID="00685d57-6008-4905-a30b-ccc766ecb4a4" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd1" />
+    <MetadataFile FileName="ARInvoice4.xsd" MetadataType="Schema" ID="25cef5fc-7c93-4f3c-8c37-7decf40e992c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd7" />
+    <MetadataFile FileName="ARInvoice.disco" MetadataType="Disco" ID="4cc0ffb8-f3e8-4cf9-9fc1-526b7b4cd75d" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?disco" />
+    <MetadataFile FileName="ARInvoiceSvcFacade.wsdl" MetadataType="Wsdl" ID="22d9427d-767a-4067-8aca-bc5a10f1e2ba" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?wsdl" />
+    <MetadataFile FileName="ARInvoice5.xsd" MetadataType="Schema" ID="78e83b7a-023a-4451-8152-67dd7a05592b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd2" />
+    <MetadataFile FileName="ARInvoice6.xsd" MetadataType="Schema" ID="d0083457-4d34-4901-9d4d-bca94d6d5541" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd5" />
+    <MetadataFile FileName="ARInvoice7.xsd" MetadataType="Schema" ID="11b8630e-392a-4637-9396-196761b83dc6" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ARInvoice.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -19,21 +19,21 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.10.10/Epicor101/ICE/Lib/SessionMod.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101Train/ICE/Lib/SessionMod.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SessionModSvcFacade1.wsdl" MetadataType="Wsdl" ID="6d3dfd99-35eb-4e4d-b89e-0e385429f747" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?wsdl" />
-    <MetadataFile FileName="SessionMod9.xsd" MetadataType="Schema" ID="bf0aeae4-25f3-4c0e-b227-7aef27b4d750" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd7" />
-    <MetadataFile FileName="SessionMod91.xsd" MetadataType="Schema" ID="99fa1454-426b-4fb2-b112-efa27958a62f" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd6" />
-    <MetadataFile FileName="SessionMod92.xsd" MetadataType="Schema" ID="a9eb00c5-7db9-4ffb-ae29-735a71b8adbe" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd5" />
-    <MetadataFile FileName="SessionMod93.xsd" MetadataType="Schema" ID="6b5c8169-7f77-42e3-9d20-e7f08081878a" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd4" />
-    <MetadataFile FileName="SessionMod94.xsd" MetadataType="Schema" ID="99d920b0-c443-4604-9b1f-753144a7cc74" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd3" />
-    <MetadataFile FileName="SessionMod95.xsd" MetadataType="Schema" ID="1c54722b-2ff4-40a1-81e3-3d65c1a7ef49" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd2" />
-    <MetadataFile FileName="SessionMod96.xsd" MetadataType="Schema" ID="ff9d3cbd-6b93-4069-adbe-7d40d84e3d07" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd1" />
-    <MetadataFile FileName="SessionMod97.xsd" MetadataType="Schema" ID="b0971d71-f56c-42b7-8f0a-2f719ae8a482" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd0" />
-    <MetadataFile FileName="SessionMod1.wsdl" MetadataType="Wsdl" ID="475543da-899c-4e6d-893e-3f5ebc9795ef" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="SessionMod98.xsd" MetadataType="Schema" ID="dc2e8af9-8d13-44ca-af62-5cfe030463e7" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?xsd=xsd8" />
-    <MetadataFile FileName="SessionMod1.disco" MetadataType="Disco" ID="57ccc727-e4ec-43ae-b26b-1d7de4731a19" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Ice/Lib/SessionMod.svc?disco" />
+    <MetadataFile FileName="SessionMod.xsd" MetadataType="Schema" ID="ae6c43a7-dc5b-4223-80ce-25b6329d01cd" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd0" />
+    <MetadataFile FileName="SessionMod1.xsd" MetadataType="Schema" ID="4f01b9a9-081e-45c6-9483-66af18b6ec27" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd4" />
+    <MetadataFile FileName="SessionMod2.xsd" MetadataType="Schema" ID="154deb4a-4f19-4be4-a827-71bcd7d7c134" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd8" />
+    <MetadataFile FileName="SessionMod.wsdl" MetadataType="Wsdl" ID="6bf57290-f7c0-4d50-808e-887d1bd680c6" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SessionModSvcFacade.wsdl" MetadataType="Wsdl" ID="5320d2ab-5465-475d-b4d3-ae50c7774a78" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?wsdl" />
+    <MetadataFile FileName="SessionMod3.xsd" MetadataType="Schema" ID="1511fc0a-713e-41f7-83b7-fa2c3c745f36" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd3" />
+    <MetadataFile FileName="SessionMod4.xsd" MetadataType="Schema" ID="30445157-4466-49b5-b96b-c962465ffeab" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd7" />
+    <MetadataFile FileName="SessionMod.disco" MetadataType="Disco" ID="9afb93d2-0490-4f31-bf1e-f4dff438f806" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?disco" />
+    <MetadataFile FileName="SessionMod5.xsd" MetadataType="Schema" ID="b37bf0a2-5fca-442f-9d55-ccd547d03aa0" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd2" />
+    <MetadataFile FileName="SessionMod6.xsd" MetadataType="Schema" ID="035b8110-1b58-4555-bc64-807cb1ff8191" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd6" />
+    <MetadataFile FileName="SessionMod7.xsd" MetadataType="Schema" ID="0ac3e27c-6308-4465-a16f-a22cfad7e0ce" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd1" />
+    <MetadataFile FileName="SessionMod8.xsd" MetadataType="Schema" ID="26f007a5-b481-4c6c-9f7f-249b3f33a394" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

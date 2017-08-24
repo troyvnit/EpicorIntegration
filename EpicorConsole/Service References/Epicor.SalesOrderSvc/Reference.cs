@@ -17,6 +17,7 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="IceTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SelectSerialNumbersParamsTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SOEntryUIParamsTableset))]
@@ -27,7 +28,6 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SaveOTSParamsTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.ETCAddrValidationTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrdRelJobProdTableset))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTableset))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrdDtlQuoteQtyTableset))]
     public partial class IceTableset : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -50,6 +50,29 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
+    [System.SerializableAttribute()]
+    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.SalesOrderSvc.IceTableset {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTable BOUpdErrorField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTable BOUpdError {
+            get {
+                return this.BOUpdErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
+                    this.BOUpdErrorField = value;
+                    this.RaisePropertyChanged("BOUpdError");
+                }
             }
         }
     }
@@ -782,29 +805,6 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorTableset", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    public partial class BOUpdErrorTableset : EpicorConsole.Epicor.SalesOrderSvc.IceTableset {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTable BOUpdErrorField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorTable BOUpdError {
-            get {
-                return this.BOUpdErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BOUpdErrorField, value) != true)) {
-                    this.BOUpdErrorField = value;
-                    this.RaisePropertyChanged("BOUpdError");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrdDtlQuoteQtyTableset", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
     [System.SerializableAttribute()]
     public partial class OrdDtlQuoteQtyTableset : EpicorConsole.Epicor.SalesOrderSvc.IceTableset {
@@ -835,749 +835,93 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="OrderCustTrkTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="OrderCustTrkRow")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
     [System.SerializableAttribute()]
-    public class OrderCustTrkTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow> {
+    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderCustTrkRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
-    public partial class OrderCustTrkRow : EpicorConsole.Epicor.SalesOrderSvc.IceRow {
+    public partial class BOUpdErrorRow : EpicorConsole.Epicor.SalesOrderSvc.IceRow {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTAddressListField;
+        private string ErrorLevelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int BTConNumField;
+        private System.Guid ErrorSysRowIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTContactFaxNumField;
+        private string ErrorTextField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTContactNameField;
+        private string ErrorTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTContactPhoneNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTCustIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int BTCustNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BTCustomerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRowColumnOrder ColumnNamesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool CreditOverrideField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CurrencyCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CustNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal DocUnitPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LineDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool OnCreditHoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool OpenLineField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool OpenOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> OrderDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> OrderDtlNeedByDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> OrderDtlRequestDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> OrderHedNeedByDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> OrderHedRequestDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool OrderHeldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderLineField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string POLineField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string POLineRefField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PONumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PrcConNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProdCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProdCodeDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RevisionNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SalesUMField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal SellingQuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShipToNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShipToNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ShpConNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SoldToCustIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SoldToCustNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool WebOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string XPartNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string XRevisionNumField;
+        private string TableNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTAddressList {
+        public string ErrorLevel {
             get {
-                return this.BTAddressListField;
+                return this.ErrorLevelField;
             }
             set {
-                if ((object.ReferenceEquals(this.BTAddressListField, value) != true)) {
-                    this.BTAddressListField = value;
-                    this.RaisePropertyChanged("BTAddressList");
+                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
+                    this.ErrorLevelField = value;
+                    this.RaisePropertyChanged("ErrorLevel");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int BTConNum {
+        public System.Guid ErrorSysRowID {
             get {
-                return this.BTConNumField;
+                return this.ErrorSysRowIDField;
             }
             set {
-                if ((this.BTConNumField.Equals(value) != true)) {
-                    this.BTConNumField = value;
-                    this.RaisePropertyChanged("BTConNum");
+                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
+                    this.ErrorSysRowIDField = value;
+                    this.RaisePropertyChanged("ErrorSysRowID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTContactFaxNum {
+        public string ErrorText {
             get {
-                return this.BTContactFaxNumField;
+                return this.ErrorTextField;
             }
             set {
-                if ((object.ReferenceEquals(this.BTContactFaxNumField, value) != true)) {
-                    this.BTContactFaxNumField = value;
-                    this.RaisePropertyChanged("BTContactFaxNum");
+                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
+                    this.ErrorTextField = value;
+                    this.RaisePropertyChanged("ErrorText");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTContactName {
+        public string ErrorType {
             get {
-                return this.BTContactNameField;
+                return this.ErrorTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.BTContactNameField, value) != true)) {
-                    this.BTContactNameField = value;
-                    this.RaisePropertyChanged("BTContactName");
+                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
+                    this.ErrorTypeField = value;
+                    this.RaisePropertyChanged("ErrorType");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTContactPhoneNum {
+        public string TableName {
             get {
-                return this.BTContactPhoneNumField;
+                return this.TableNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.BTContactPhoneNumField, value) != true)) {
-                    this.BTContactPhoneNumField = value;
-                    this.RaisePropertyChanged("BTContactPhoneNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTCustID {
-            get {
-                return this.BTCustIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BTCustIDField, value) != true)) {
-                    this.BTCustIDField = value;
-                    this.RaisePropertyChanged("BTCustID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int BTCustNum {
-            get {
-                return this.BTCustNumField;
-            }
-            set {
-                if ((this.BTCustNumField.Equals(value) != true)) {
-                    this.BTCustNumField = value;
-                    this.RaisePropertyChanged("BTCustNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BTCustomerName {
-            get {
-                return this.BTCustomerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BTCustomerNameField, value) != true)) {
-                    this.BTCustomerNameField = value;
-                    this.RaisePropertyChanged("BTCustomerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRowColumnOrder ColumnNames {
-            get {
-                return this.ColumnNamesField;
-            }
-            set {
-                if ((this.ColumnNamesField.Equals(value) != true)) {
-                    this.ColumnNamesField = value;
-                    this.RaisePropertyChanged("ColumnNames");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Company {
-            get {
-                return this.CompanyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
-                    this.CompanyField = value;
-                    this.RaisePropertyChanged("Company");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool CreditOverride {
-            get {
-                return this.CreditOverrideField;
-            }
-            set {
-                if ((this.CreditOverrideField.Equals(value) != true)) {
-                    this.CreditOverrideField = value;
-                    this.RaisePropertyChanged("CreditOverride");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CurrencyCode {
-            get {
-                return this.CurrencyCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrencyCodeField, value) != true)) {
-                    this.CurrencyCodeField = value;
-                    this.RaisePropertyChanged("CurrencyCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustID {
-            get {
-                return this.CustIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustIDField, value) != true)) {
-                    this.CustIDField = value;
-                    this.RaisePropertyChanged("CustID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustNum {
-            get {
-                return this.CustNumField;
-            }
-            set {
-                if ((this.CustNumField.Equals(value) != true)) {
-                    this.CustNumField = value;
-                    this.RaisePropertyChanged("CustNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustomerName {
-            get {
-                return this.CustomerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
-                    this.CustomerNameField = value;
-                    this.RaisePropertyChanged("CustomerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal DocUnitPrice {
-            get {
-                return this.DocUnitPriceField;
-            }
-            set {
-                if ((this.DocUnitPriceField.Equals(value) != true)) {
-                    this.DocUnitPriceField = value;
-                    this.RaisePropertyChanged("DocUnitPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LineDesc {
-            get {
-                return this.LineDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LineDescField, value) != true)) {
-                    this.LineDescField = value;
-                    this.RaisePropertyChanged("LineDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool OnCreditHold {
-            get {
-                return this.OnCreditHoldField;
-            }
-            set {
-                if ((this.OnCreditHoldField.Equals(value) != true)) {
-                    this.OnCreditHoldField = value;
-                    this.RaisePropertyChanged("OnCreditHold");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool OpenLine {
-            get {
-                return this.OpenLineField;
-            }
-            set {
-                if ((this.OpenLineField.Equals(value) != true)) {
-                    this.OpenLineField = value;
-                    this.RaisePropertyChanged("OpenLine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool OpenOrder {
-            get {
-                return this.OpenOrderField;
-            }
-            set {
-                if ((this.OpenOrderField.Equals(value) != true)) {
-                    this.OpenOrderField = value;
-                    this.RaisePropertyChanged("OpenOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> OrderDate {
-            get {
-                return this.OrderDateField;
-            }
-            set {
-                if ((this.OrderDateField.Equals(value) != true)) {
-                    this.OrderDateField = value;
-                    this.RaisePropertyChanged("OrderDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> OrderDtlNeedByDate {
-            get {
-                return this.OrderDtlNeedByDateField;
-            }
-            set {
-                if ((this.OrderDtlNeedByDateField.Equals(value) != true)) {
-                    this.OrderDtlNeedByDateField = value;
-                    this.RaisePropertyChanged("OrderDtlNeedByDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> OrderDtlRequestDate {
-            get {
-                return this.OrderDtlRequestDateField;
-            }
-            set {
-                if ((this.OrderDtlRequestDateField.Equals(value) != true)) {
-                    this.OrderDtlRequestDateField = value;
-                    this.RaisePropertyChanged("OrderDtlRequestDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> OrderHedNeedByDate {
-            get {
-                return this.OrderHedNeedByDateField;
-            }
-            set {
-                if ((this.OrderHedNeedByDateField.Equals(value) != true)) {
-                    this.OrderHedNeedByDateField = value;
-                    this.RaisePropertyChanged("OrderHedNeedByDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> OrderHedRequestDate {
-            get {
-                return this.OrderHedRequestDateField;
-            }
-            set {
-                if ((this.OrderHedRequestDateField.Equals(value) != true)) {
-                    this.OrderHedRequestDateField = value;
-                    this.RaisePropertyChanged("OrderHedRequestDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool OrderHeld {
-            get {
-                return this.OrderHeldField;
-            }
-            set {
-                if ((this.OrderHeldField.Equals(value) != true)) {
-                    this.OrderHeldField = value;
-                    this.RaisePropertyChanged("OrderHeld");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderLine {
-            get {
-                return this.OrderLineField;
-            }
-            set {
-                if ((this.OrderLineField.Equals(value) != true)) {
-                    this.OrderLineField = value;
-                    this.RaisePropertyChanged("OrderLine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderNum {
-            get {
-                return this.OrderNumField;
-            }
-            set {
-                if ((this.OrderNumField.Equals(value) != true)) {
-                    this.OrderNumField = value;
-                    this.RaisePropertyChanged("OrderNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string POLine {
-            get {
-                return this.POLineField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.POLineField, value) != true)) {
-                    this.POLineField = value;
-                    this.RaisePropertyChanged("POLine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string POLineRef {
-            get {
-                return this.POLineRefField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.POLineRefField, value) != true)) {
-                    this.POLineRefField = value;
-                    this.RaisePropertyChanged("POLineRef");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PONum {
-            get {
-                return this.PONumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PONumField, value) != true)) {
-                    this.PONumField = value;
-                    this.RaisePropertyChanged("PONum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartNum {
-            get {
-                return this.PartNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartNumField, value) != true)) {
-                    this.PartNumField = value;
-                    this.RaisePropertyChanged("PartNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PrcConNum {
-            get {
-                return this.PrcConNumField;
-            }
-            set {
-                if ((this.PrcConNumField.Equals(value) != true)) {
-                    this.PrcConNumField = value;
-                    this.RaisePropertyChanged("PrcConNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProdCode {
-            get {
-                return this.ProdCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProdCodeField, value) != true)) {
-                    this.ProdCodeField = value;
-                    this.RaisePropertyChanged("ProdCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProdCodeDescription {
-            get {
-                return this.ProdCodeDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProdCodeDescriptionField, value) != true)) {
-                    this.ProdCodeDescriptionField = value;
-                    this.RaisePropertyChanged("ProdCodeDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RevisionNum {
-            get {
-                return this.RevisionNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RevisionNumField, value) != true)) {
-                    this.RevisionNumField = value;
-                    this.RaisePropertyChanged("RevisionNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SalesUM {
-            get {
-                return this.SalesUMField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalesUMField, value) != true)) {
-                    this.SalesUMField = value;
-                    this.RaisePropertyChanged("SalesUM");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal SellingQuantity {
-            get {
-                return this.SellingQuantityField;
-            }
-            set {
-                if ((this.SellingQuantityField.Equals(value) != true)) {
-                    this.SellingQuantityField = value;
-                    this.RaisePropertyChanged("SellingQuantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShipToName {
-            get {
-                return this.ShipToNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShipToNameField, value) != true)) {
-                    this.ShipToNameField = value;
-                    this.RaisePropertyChanged("ShipToName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShipToNum {
-            get {
-                return this.ShipToNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShipToNumField, value) != true)) {
-                    this.ShipToNumField = value;
-                    this.RaisePropertyChanged("ShipToNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ShpConNum {
-            get {
-                return this.ShpConNumField;
-            }
-            set {
-                if ((this.ShpConNumField.Equals(value) != true)) {
-                    this.ShpConNumField = value;
-                    this.RaisePropertyChanged("ShpConNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SoldToCustID {
-            get {
-                return this.SoldToCustIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SoldToCustIDField, value) != true)) {
-                    this.SoldToCustIDField = value;
-                    this.RaisePropertyChanged("SoldToCustID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SoldToCustName {
-            get {
-                return this.SoldToCustNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SoldToCustNameField, value) != true)) {
-                    this.SoldToCustNameField = value;
-                    this.RaisePropertyChanged("SoldToCustName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool WebOrder {
-            get {
-                return this.WebOrderField;
-            }
-            set {
-                if ((this.WebOrderField.Equals(value) != true)) {
-                    this.WebOrderField = value;
-                    this.RaisePropertyChanged("WebOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string XPartNum {
-            get {
-                return this.XPartNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.XPartNumField, value) != true)) {
-                    this.XPartNumField = value;
-                    this.RaisePropertyChanged("XPartNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string XRevisionNum {
-            get {
-                return this.XRevisionNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.XRevisionNumField, value) != true)) {
-                    this.XRevisionNumField = value;
-                    this.RaisePropertyChanged("XRevisionNum");
+                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
+                    this.TableNameField = value;
+                    this.RaisePropertyChanged("TableName");
                 }
             }
         }
@@ -1589,6 +933,7 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.IceRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.QuoteQtyRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SelectSerialNumbersParamsRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SOEntryUIParamsRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.GlbSugPOChgRow))]
@@ -1614,7 +959,6 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.ETCMessageRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.JobProdRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow))]
     public partial class TempRowBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -1645,6 +989,7 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.Runtime.Serialization.DataContractAttribute(Name="IceRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.QuoteQtyRow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SelectSerialNumbersParamsRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.SOEntryUIParamsRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.GlbSugPOChgRow))]
@@ -1670,7 +1015,6 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.ETCMessageRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.JobProdRow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorRow))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow))]
     public partial class IceRow : EpicorConsole.Epicor.SalesOrderSvc.TempRowBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3324,6 +2668,749 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
                 if ((this.WQUnitPriceField.Equals(value) != true)) {
                     this.WQUnitPriceField = value;
                     this.RaisePropertyChanged("WQUnitPrice");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderCustTrkRow", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    [System.SerializableAttribute()]
+    public partial class OrderCustTrkRow : EpicorConsole.Epicor.SalesOrderSvc.IceRow {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTAddressListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BTConNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTContactFaxNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTContactNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTContactPhoneNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTCustIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BTCustNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BTCustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRowColumnOrder ColumnNamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool CreditOverrideField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DocUnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LineDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool OnCreditHoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool OpenLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool OpenOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> OrderDtlNeedByDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> OrderDtlRequestDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> OrderHedNeedByDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> OrderHedRequestDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool OrderHeldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POLineRefField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PONumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PrcConNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProdCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProdCodeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RevisionNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SalesUMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SellingQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShipToNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShipToNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ShpConNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SoldToCustIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SoldToCustNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool WebOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XPartNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XRevisionNumField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTAddressList {
+            get {
+                return this.BTAddressListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTAddressListField, value) != true)) {
+                    this.BTAddressListField = value;
+                    this.RaisePropertyChanged("BTAddressList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BTConNum {
+            get {
+                return this.BTConNumField;
+            }
+            set {
+                if ((this.BTConNumField.Equals(value) != true)) {
+                    this.BTConNumField = value;
+                    this.RaisePropertyChanged("BTConNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTContactFaxNum {
+            get {
+                return this.BTContactFaxNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTContactFaxNumField, value) != true)) {
+                    this.BTContactFaxNumField = value;
+                    this.RaisePropertyChanged("BTContactFaxNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTContactName {
+            get {
+                return this.BTContactNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTContactNameField, value) != true)) {
+                    this.BTContactNameField = value;
+                    this.RaisePropertyChanged("BTContactName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTContactPhoneNum {
+            get {
+                return this.BTContactPhoneNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTContactPhoneNumField, value) != true)) {
+                    this.BTContactPhoneNumField = value;
+                    this.RaisePropertyChanged("BTContactPhoneNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTCustID {
+            get {
+                return this.BTCustIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTCustIDField, value) != true)) {
+                    this.BTCustIDField = value;
+                    this.RaisePropertyChanged("BTCustID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BTCustNum {
+            get {
+                return this.BTCustNumField;
+            }
+            set {
+                if ((this.BTCustNumField.Equals(value) != true)) {
+                    this.BTCustNumField = value;
+                    this.RaisePropertyChanged("BTCustNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BTCustomerName {
+            get {
+                return this.BTCustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BTCustomerNameField, value) != true)) {
+                    this.BTCustomerNameField = value;
+                    this.RaisePropertyChanged("BTCustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRowColumnOrder ColumnNames {
+            get {
+                return this.ColumnNamesField;
+            }
+            set {
+                if ((this.ColumnNamesField.Equals(value) != true)) {
+                    this.ColumnNamesField = value;
+                    this.RaisePropertyChanged("ColumnNames");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool CreditOverride {
+            get {
+                return this.CreditOverrideField;
+            }
+            set {
+                if ((this.CreditOverrideField.Equals(value) != true)) {
+                    this.CreditOverrideField = value;
+                    this.RaisePropertyChanged("CreditOverride");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyCode {
+            get {
+                return this.CurrencyCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyCodeField, value) != true)) {
+                    this.CurrencyCodeField = value;
+                    this.RaisePropertyChanged("CurrencyCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustID {
+            get {
+                return this.CustIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustIDField, value) != true)) {
+                    this.CustIDField = value;
+                    this.RaisePropertyChanged("CustID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustNum {
+            get {
+                return this.CustNumField;
+            }
+            set {
+                if ((this.CustNumField.Equals(value) != true)) {
+                    this.CustNumField = value;
+                    this.RaisePropertyChanged("CustNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerName {
+            get {
+                return this.CustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
+                    this.CustomerNameField = value;
+                    this.RaisePropertyChanged("CustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal DocUnitPrice {
+            get {
+                return this.DocUnitPriceField;
+            }
+            set {
+                if ((this.DocUnitPriceField.Equals(value) != true)) {
+                    this.DocUnitPriceField = value;
+                    this.RaisePropertyChanged("DocUnitPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LineDesc {
+            get {
+                return this.LineDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LineDescField, value) != true)) {
+                    this.LineDescField = value;
+                    this.RaisePropertyChanged("LineDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool OnCreditHold {
+            get {
+                return this.OnCreditHoldField;
+            }
+            set {
+                if ((this.OnCreditHoldField.Equals(value) != true)) {
+                    this.OnCreditHoldField = value;
+                    this.RaisePropertyChanged("OnCreditHold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool OpenLine {
+            get {
+                return this.OpenLineField;
+            }
+            set {
+                if ((this.OpenLineField.Equals(value) != true)) {
+                    this.OpenLineField = value;
+                    this.RaisePropertyChanged("OpenLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool OpenOrder {
+            get {
+                return this.OpenOrderField;
+            }
+            set {
+                if ((this.OpenOrderField.Equals(value) != true)) {
+                    this.OpenOrderField = value;
+                    this.RaisePropertyChanged("OpenOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderDtlNeedByDate {
+            get {
+                return this.OrderDtlNeedByDateField;
+            }
+            set {
+                if ((this.OrderDtlNeedByDateField.Equals(value) != true)) {
+                    this.OrderDtlNeedByDateField = value;
+                    this.RaisePropertyChanged("OrderDtlNeedByDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderDtlRequestDate {
+            get {
+                return this.OrderDtlRequestDateField;
+            }
+            set {
+                if ((this.OrderDtlRequestDateField.Equals(value) != true)) {
+                    this.OrderDtlRequestDateField = value;
+                    this.RaisePropertyChanged("OrderDtlRequestDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderHedNeedByDate {
+            get {
+                return this.OrderHedNeedByDateField;
+            }
+            set {
+                if ((this.OrderHedNeedByDateField.Equals(value) != true)) {
+                    this.OrderHedNeedByDateField = value;
+                    this.RaisePropertyChanged("OrderHedNeedByDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderHedRequestDate {
+            get {
+                return this.OrderHedRequestDateField;
+            }
+            set {
+                if ((this.OrderHedRequestDateField.Equals(value) != true)) {
+                    this.OrderHedRequestDateField = value;
+                    this.RaisePropertyChanged("OrderHedRequestDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool OrderHeld {
+            get {
+                return this.OrderHeldField;
+            }
+            set {
+                if ((this.OrderHeldField.Equals(value) != true)) {
+                    this.OrderHeldField = value;
+                    this.RaisePropertyChanged("OrderHeld");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderLine {
+            get {
+                return this.OrderLineField;
+            }
+            set {
+                if ((this.OrderLineField.Equals(value) != true)) {
+                    this.OrderLineField = value;
+                    this.RaisePropertyChanged("OrderLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderNum {
+            get {
+                return this.OrderNumField;
+            }
+            set {
+                if ((this.OrderNumField.Equals(value) != true)) {
+                    this.OrderNumField = value;
+                    this.RaisePropertyChanged("OrderNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string POLine {
+            get {
+                return this.POLineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POLineField, value) != true)) {
+                    this.POLineField = value;
+                    this.RaisePropertyChanged("POLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string POLineRef {
+            get {
+                return this.POLineRefField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POLineRefField, value) != true)) {
+                    this.POLineRefField = value;
+                    this.RaisePropertyChanged("POLineRef");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PONum {
+            get {
+                return this.PONumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PONumField, value) != true)) {
+                    this.PONumField = value;
+                    this.RaisePropertyChanged("PONum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNum {
+            get {
+                return this.PartNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumField, value) != true)) {
+                    this.PartNumField = value;
+                    this.RaisePropertyChanged("PartNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PrcConNum {
+            get {
+                return this.PrcConNumField;
+            }
+            set {
+                if ((this.PrcConNumField.Equals(value) != true)) {
+                    this.PrcConNumField = value;
+                    this.RaisePropertyChanged("PrcConNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProdCode {
+            get {
+                return this.ProdCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProdCodeField, value) != true)) {
+                    this.ProdCodeField = value;
+                    this.RaisePropertyChanged("ProdCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProdCodeDescription {
+            get {
+                return this.ProdCodeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProdCodeDescriptionField, value) != true)) {
+                    this.ProdCodeDescriptionField = value;
+                    this.RaisePropertyChanged("ProdCodeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RevisionNum {
+            get {
+                return this.RevisionNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RevisionNumField, value) != true)) {
+                    this.RevisionNumField = value;
+                    this.RaisePropertyChanged("RevisionNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SalesUM {
+            get {
+                return this.SalesUMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SalesUMField, value) != true)) {
+                    this.SalesUMField = value;
+                    this.RaisePropertyChanged("SalesUM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal SellingQuantity {
+            get {
+                return this.SellingQuantityField;
+            }
+            set {
+                if ((this.SellingQuantityField.Equals(value) != true)) {
+                    this.SellingQuantityField = value;
+                    this.RaisePropertyChanged("SellingQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShipToName {
+            get {
+                return this.ShipToNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShipToNameField, value) != true)) {
+                    this.ShipToNameField = value;
+                    this.RaisePropertyChanged("ShipToName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShipToNum {
+            get {
+                return this.ShipToNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShipToNumField, value) != true)) {
+                    this.ShipToNumField = value;
+                    this.RaisePropertyChanged("ShipToNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ShpConNum {
+            get {
+                return this.ShpConNumField;
+            }
+            set {
+                if ((this.ShpConNumField.Equals(value) != true)) {
+                    this.ShpConNumField = value;
+                    this.RaisePropertyChanged("ShpConNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SoldToCustID {
+            get {
+                return this.SoldToCustIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SoldToCustIDField, value) != true)) {
+                    this.SoldToCustIDField = value;
+                    this.RaisePropertyChanged("SoldToCustID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SoldToCustName {
+            get {
+                return this.SoldToCustNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SoldToCustNameField, value) != true)) {
+                    this.SoldToCustNameField = value;
+                    this.RaisePropertyChanged("SoldToCustName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool WebOrder {
+            get {
+                return this.WebOrderField;
+            }
+            set {
+                if ((this.WebOrderField.Equals(value) != true)) {
+                    this.WebOrderField = value;
+                    this.RaisePropertyChanged("WebOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string XPartNum {
+            get {
+                return this.XPartNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XPartNumField, value) != true)) {
+                    this.XPartNumField = value;
+                    this.RaisePropertyChanged("XPartNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string XRevisionNum {
+            get {
+                return this.XRevisionNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XRevisionNumField, value) != true)) {
+                    this.XRevisionNumField = value;
+                    this.RaisePropertyChanged("XRevisionNum");
                 }
             }
         }
@@ -29707,245 +29794,9 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BOUpdErrorRow", Namespace="http://schemas.datacontract.org/2004/07/Ice")]
-    [System.SerializableAttribute()]
-    public partial class BOUpdErrorRow : EpicorConsole.Epicor.SalesOrderSvc.IceRow {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorLevelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid ErrorSysRowIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TableNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorLevel {
-            get {
-                return this.ErrorLevelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorLevelField, value) != true)) {
-                    this.ErrorLevelField = value;
-                    this.RaisePropertyChanged("ErrorLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ErrorSysRowID {
-            get {
-                return this.ErrorSysRowIDField;
-            }
-            set {
-                if ((this.ErrorSysRowIDField.Equals(value) != true)) {
-                    this.ErrorSysRowIDField = value;
-                    this.RaisePropertyChanged("ErrorSysRowID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorText {
-            get {
-                return this.ErrorTextField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorTextField, value) != true)) {
-                    this.ErrorTextField = value;
-                    this.RaisePropertyChanged("ErrorText");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorType {
-            get {
-                return this.ErrorTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorTypeField, value) != true)) {
-                    this.ErrorTypeField = value;
-                    this.RaisePropertyChanged("ErrorType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TableName {
-            get {
-                return this.TableNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
-                    this.TableNameField = value;
-                    this.RaisePropertyChanged("TableName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="UserDefinedColumns", Namespace="http://epicor.com/UserDefinedColumns", ItemName="Column", KeyName="Name", ValueName="Value")]
     [System.SerializableAttribute()]
     public class UserDefinedColumns : System.Collections.Generic.Dictionary<string, object> {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderCustTrkRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
-    public enum OrderCustTrkRowColumnOrder : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderNum = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpenOrder = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Company = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderHeld = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PONum = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustNum = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ShipToNum = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ShpConNum = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PrcConNum = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderDate = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderHedNeedByDate = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderHedRequestDate = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CurrencyCode = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderLine = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpenLine = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        POLine = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PartNum = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LineDesc = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SellingQuantity = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesUM = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DocUnitPrice = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProdCode = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProdCodeDescription = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderDtlNeedByDate = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OrderDtlRequestDate = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WebOrder = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OnCreditHold = 26,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevisionNum = 27,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XPartNum = 28,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XRevisionNum = 29,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTCustNum = 30,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTCustID = 31,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTCustomerName = 32,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTAddressList = 33,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTContactFaxNum = 34,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTContactPhoneNum = 35,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTContactName = 36,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BTConNum = 37,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CreditOverride = 38,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SoldToCustID = 39,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SoldToCustName = 40,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustomerName = 41,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ShipToName = 42,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustID = 43,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        POLineRef = 44,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SysRowID = 45,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RowMod = 46,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SpecifiedProperties = 47,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -30254,6 +30105,155 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SpecifiedProperties = 100,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderCustTrkRowColumnOrder", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets")]
+    public enum OrderCustTrkRowColumnOrder : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderNum = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OpenOrder = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Company = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderHeld = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PONum = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustNum = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ShipToNum = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ShpConNum = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PrcConNum = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderDate = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderHedNeedByDate = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderHedRequestDate = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CurrencyCode = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderLine = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OpenLine = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        POLine = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PartNum = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LineDesc = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SellingQuantity = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalesUM = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DocUnitPrice = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProdCode = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProdCodeDescription = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderDtlNeedByDate = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderDtlRequestDate = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WebOrder = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OnCreditHold = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RevisionNum = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        XPartNum = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        XRevisionNum = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTCustNum = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTCustID = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTCustomerName = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTAddressList = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTContactFaxNum = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTContactPhoneNum = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTContactName = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BTConNum = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CreditOverride = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SoldToCustID = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SoldToCustName = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomerName = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ShipToName = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustID = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        POLineRef = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SysRowID = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RowMod = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SpecifiedProperties = 47,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -35436,6 +35436,13 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="OrderCustTrkTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="OrderCustTrkRow")]
+    [System.SerializableAttribute()]
+    public class OrderCustTrkTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.OrderCustTrkRow> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SelectSerialNumbersParamsTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="SelectSerialNumbersParamsRow")]
     [System.SerializableAttribute()]
     public class SelectSerialNumbersParamsTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.SelectSerialNumbersParamsRow> {
@@ -35600,13 +35607,6 @@ namespace EpicorConsole.Epicor.SalesOrderSvc {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="JobProdTable", Namespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets", ItemName="JobProdRow")]
     [System.SerializableAttribute()]
     public class JobProdTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.JobProdRow> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BOUpdErrorTable", Namespace="http://schemas.datacontract.org/2004/07/Ice", ItemName="BOUpdErrorRow")]
-    [System.SerializableAttribute()]
-    public class BOUpdErrorTable : System.Collections.Generic.List<EpicorConsole.Epicor.SalesOrderSvc.BOUpdErrorRow> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

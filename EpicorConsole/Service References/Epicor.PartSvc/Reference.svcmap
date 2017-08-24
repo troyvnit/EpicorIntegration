@@ -19,20 +19,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.10.10/Epicor101/Erp/BO/Part.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101Train/Erp/BO/Part.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Part1.disco" MetadataType="Disco" ID="97d580be-9c99-4590-aed1-5e252ffa521b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?disco" />
-    <MetadataFile FileName="Part8.xsd" MetadataType="Schema" ID="2d377928-985c-487f-89c9-485690b994e2" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd3" />
-    <MetadataFile FileName="Part81.xsd" MetadataType="Schema" ID="e7d07cd6-32f0-4acf-8d9a-e12f4b288abf" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd2" />
-    <MetadataFile FileName="Part82.xsd" MetadataType="Schema" ID="9b09e2cf-449a-4622-9b74-63c68768b453" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd1" />
-    <MetadataFile FileName="Part83.xsd" MetadataType="Schema" ID="e08a9bc1-1e8a-49da-bc1b-946ab7dec4d0" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd0" />
-    <MetadataFile FileName="Part84.xsd" MetadataType="Schema" ID="3c2f4dc3-0351-46fb-abad-2c88a570735c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd7" />
-    <MetadataFile FileName="PartSvcFacade1.wsdl" MetadataType="Wsdl" ID="ea7d53ce-de32-46c7-b1c2-50e8eaa79e91" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?wsdl" />
-    <MetadataFile FileName="Part85.xsd" MetadataType="Schema" ID="4d766262-def0-4db3-a131-4121185d1bfe" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd5" />
-    <MetadataFile FileName="Part86.xsd" MetadataType="Schema" ID="03255918-b784-48df-a466-519a541aad1e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd4" />
-    <MetadataFile FileName="Part1.wsdl" MetadataType="Wsdl" ID="693fe0ba-707b-499a-902c-d92e37fa956e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="Part87.xsd" MetadataType="Schema" ID="b161c9e8-f668-4e19-b03b-1e39310e5089" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/Part.svc?xsd=xsd6" />
+    <MetadataFile FileName="Part87.xsd" MetadataType="Schema" ID="b161c9e8-f668-4e19-b03b-1e39310e5089" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd6" />
+    <MetadataFile FileName="Part82.xsd" MetadataType="Schema" ID="9b09e2cf-449a-4622-9b74-63c68768b453" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd1" />
+    <MetadataFile FileName="Part84.xsd" MetadataType="Schema" ID="3c2f4dc3-0351-46fb-abad-2c88a570735c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd7" />
+    <MetadataFile FileName="Part8.xsd" MetadataType="Schema" ID="2d377928-985c-487f-89c9-485690b994e2" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd3" />
+    <MetadataFile FileName="Part81.xsd" MetadataType="Schema" ID="e7d07cd6-32f0-4acf-8d9a-e12f4b288abf" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd2" />
+    <MetadataFile FileName="Part86.xsd" MetadataType="Schema" ID="03255918-b784-48df-a466-519a541aad1e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd4" />
+    <MetadataFile FileName="Part83.xsd" MetadataType="Schema" ID="e08a9bc1-1e8a-49da-bc1b-946ab7dec4d0" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd0" />
+    <MetadataFile FileName="Part85.xsd" MetadataType="Schema" ID="4d766262-def0-4db3-a131-4121185d1bfe" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?xsd=xsd5" />
+    <MetadataFile FileName="Part1.disco" MetadataType="Disco" ID="97d580be-9c99-4590-aed1-5e252ffa521b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?disco" />
+    <MetadataFile FileName="PartSvcFacade1.wsdl" MetadataType="Wsdl" ID="ea7d53ce-de32-46c7-b1c2-50e8eaa79e91" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?wsdl" />
+    <MetadataFile FileName="Part1.wsdl" MetadataType="Wsdl" ID="693fe0ba-707b-499a-902c-d92e37fa956e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/Part.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

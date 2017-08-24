@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ice.Tablesets" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ice.Tablesets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101Train/Ice/Lib/SessionMod.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+  <xs:complexType name="SessionModTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ice" base="q1:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SessionMod" nillable="true" type="tns:SessionModTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionModTableset" nillable="true" type="tns:SessionModTableset" />
+  <xs:complexType name="SessionModTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SessionModRow" nillable="true" type="tns:SessionModRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionModTable" nillable="true" type="tns:SessionModTable" />
+  <xs:complexType name="SessionModRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ice" base="q2:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:SessionModRowColumnOrder" />
+          <xs:element minOccurs="0" name="ParamDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParamValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionModRow" nillable="true" type="tns:SessionModRow" />
+  <xs:simpleType name="SessionModRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ParamDesc" />
+      <xs:enumeration value="ParamName" />
+      <xs:enumeration value="ParamValue" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SessionModRowColumnOrder" nillable="true" type="tns:SessionModRowColumnOrder" />
+</xs:schema>

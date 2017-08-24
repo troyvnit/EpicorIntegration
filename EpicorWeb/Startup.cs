@@ -19,7 +19,7 @@ namespace EpicorWeb
             app.UseHangfireServer();
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<xvtyx_DMSProduct, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
+                cfg.CreateMap<sptyx_DMSProduct_Result, PRODUCT>().ForMember(p => p.Id, o => o.UseDestinationValue());
                 cfg.CreateMap<sptyx_DMSPriceList_Result, PRICE_LIST>().ForMember(p => p.Id, o => o.UseDestinationValue());
                 cfg.CreateMap<sptyx_DMSCustInfo_Result, CUSTOMER_INFO>().ForMember(p => p.Id, o => o.UseDestinationValue());
             });

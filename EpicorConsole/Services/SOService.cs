@@ -17,7 +17,7 @@ namespace EpicorConsole.Services
         public SOService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "Epicor101/Erp/BO/SalesOrder.svc";
+            builder.Path = $"{environment}/Erp/BO/SalesOrder.svc";
             soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
 
@@ -33,7 +33,7 @@ namespace EpicorConsole.Services
                 using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
-                    var addedSOHeaders = db.SO_HEADER.Where(c => c.DMSFlag == "A");
+                    var addedSOHeaders = db.SO_HEADER.Where(c => c.DMSFlag == "A" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                     if (addedSOHeaders.Any())
                     {
                         foreach (var soHeader in addedSOHeaders)
@@ -50,10 +50,10 @@ namespace EpicorConsole.Services
                                     var orderNum = soTableset.OrderHed[0].OrderNum;
                                     soHeader.Ordernum = orderNum;
                                     soHeader.DMSFlag = "S";
-                                    Console.WriteLine($"Added soHeader: #{soHeader.DocNum} successfully!");
+                                    Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
 
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "A");
+                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "A" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
@@ -65,12 +65,13 @@ namespace EpicorConsole.Services
                                                 MapToDetailRow(soDetailRow, soDetail);
                                                 soClient.Update(ref soTableset);
                                                 soDetail.DMSFlag = "S";
-                                                Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} successfully!");
+                                                Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                             }
                                         }
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
+                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
@@ -81,6 +82,7 @@ namespace EpicorConsole.Services
                             catch (Exception e)
                             {
                                 soHeader.DMSFlag = "F";
+                                log.Error($"Added soHeader: #{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                 Console.WriteLine($"Added soHeader: #{soHeader.DocNum} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
@@ -106,6 +108,11 @@ namespace EpicorConsole.Services
             row.BTCustNum = int.Parse(entity.BTCustnum);
             row.ShipToCustNum = int.Parse(entity.ShiptoCustnum);
             row.OrderDate = entity.DeliveryDate;
+            row.RequestDate = entity.DeliveryDate;
+            row.NeedByDate = entity.DeliveryDate;
+            row.ShipViaCode = "VAN";
+            row.SalesRepList = "";
+            row.TaxRegionCode = "";
         }
 
         private void MapToDetailRow(OrderDtlRow row, SO_DETAIL entity)
@@ -117,7 +124,10 @@ namespace EpicorConsole.Services
             row.IUM = entity.IUM;
             row.SellingQuantity = entity.Quantity;
             row.WarehouseCode = entity.WhsCode;
-            row.DocUnitPrice = entity.Price;
+            row.DocUnitPrice = entity.Price;            
+            row.LineStatus = "OPEN";
+            row.DiscountPercent = 7;
+            row.TaxCatID = "K0";
         }
     }
 }

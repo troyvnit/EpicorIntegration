@@ -19,20 +19,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.10.10/Epicor101/Erp/BO/PriceLstParts.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101Train/Erp/BO/PriceLstParts.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PriceLstParts8.xsd" MetadataType="Schema" ID="167990a8-c700-4ab2-8b5d-199982a1bf30" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd7" />
-    <MetadataFile FileName="PriceLstParts81.xsd" MetadataType="Schema" ID="c051c60c-f932-439d-97f0-3beed58cf4a4" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd1" />
-    <MetadataFile FileName="PriceLstParts82.xsd" MetadataType="Schema" ID="a3e3df7b-7014-4da1-a207-2cc0cd2a825a" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd4" />
-    <MetadataFile FileName="PriceLstParts83.xsd" MetadataType="Schema" ID="e75263a2-453d-47b6-a8ef-5e200eb5918b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd6" />
-    <MetadataFile FileName="PriceLstParts84.xsd" MetadataType="Schema" ID="4e995d04-5d08-4413-a1c4-256c737aa0a6" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd0" />
-    <MetadataFile FileName="PriceLstParts1.wsdl" MetadataType="Wsdl" ID="4f802fce-a9db-42f7-b753-e19cfd9baa45" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="PriceLstParts85.xsd" MetadataType="Schema" ID="80a1407c-c51d-47bf-9c8b-4a1ac0842271" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd3" />
-    <MetadataFile FileName="PriceLstPartsSvcFacade1.wsdl" MetadataType="Wsdl" ID="65610fa2-a926-4849-880c-a3d5c8b80fe1" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?wsdl" />
-    <MetadataFile FileName="PriceLstParts86.xsd" MetadataType="Schema" ID="8e9b6c7b-5c58-41f1-8442-80160439e6f8" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd2" />
-    <MetadataFile FileName="PriceLstParts1.disco" MetadataType="Disco" ID="f7ba5503-9c03-4024-b9fc-8794d0a4a8d3" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?disco" />
-    <MetadataFile FileName="PriceLstParts87.xsd" MetadataType="Schema" ID="d8c25fa7-0fec-47cf-b1f7-9ab7904f4ce3" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/PriceLstParts.svc?xsd=xsd5" />
+    <MetadataFile FileName="PriceLstParts84.xsd" MetadataType="Schema" ID="4e995d04-5d08-4413-a1c4-256c737aa0a6" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd0" />
+    <MetadataFile FileName="PriceLstParts1.wsdl" MetadataType="Wsdl" ID="4f802fce-a9db-42f7-b753-e19cfd9baa45" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PriceLstParts87.xsd" MetadataType="Schema" ID="d8c25fa7-0fec-47cf-b1f7-9ab7904f4ce3" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd5" />
+    <MetadataFile FileName="PriceLstParts8.xsd" MetadataType="Schema" ID="167990a8-c700-4ab2-8b5d-199982a1bf30" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd7" />
+    <MetadataFile FileName="PriceLstPartsSvcFacade1.wsdl" MetadataType="Wsdl" ID="65610fa2-a926-4849-880c-a3d5c8b80fe1" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?wsdl" />
+    <MetadataFile FileName="PriceLstParts83.xsd" MetadataType="Schema" ID="e75263a2-453d-47b6-a8ef-5e200eb5918b" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd6" />
+    <MetadataFile FileName="PriceLstParts85.xsd" MetadataType="Schema" ID="80a1407c-c51d-47bf-9c8b-4a1ac0842271" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd3" />
+    <MetadataFile FileName="PriceLstParts1.disco" MetadataType="Disco" ID="f7ba5503-9c03-4024-b9fc-8794d0a4a8d3" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?disco" />
+    <MetadataFile FileName="PriceLstParts81.xsd" MetadataType="Schema" ID="c051c60c-f932-439d-97f0-3beed58cf4a4" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd1" />
+    <MetadataFile FileName="PriceLstParts82.xsd" MetadataType="Schema" ID="a3e3df7b-7014-4da1-a207-2cc0cd2a825a" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd4" />
+    <MetadataFile FileName="PriceLstParts86.xsd" MetadataType="Schema" ID="8e9b6c7b-5c58-41f1-8442-80160439e6f8" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/PriceLstParts.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

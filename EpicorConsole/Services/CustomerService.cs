@@ -16,7 +16,7 @@ namespace EpicorConsole.Services
         public CustomerService(Guid sessionId)
         {
             this.sessionId = sessionId;
-            builder.Path = "ERP101500/Erp/BO/Customer.svc";
+            builder.Path = $"{environment}/Erp/BO/Customer.svc";
             customerClient = GetClient<CustomerSvcContractClient, CustomerSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             customerClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }

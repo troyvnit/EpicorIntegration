@@ -19,20 +19,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.10.10/Epicor101/Erp/BO/AbcCode.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.10.10/Epicor101Train/Erp/BO/AbcCode.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ABCCode8.xsd" MetadataType="Schema" ID="d63de6d2-5f9c-43db-832a-44251ca9272e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd0" />
-    <MetadataFile FileName="ABCCode81.xsd" MetadataType="Schema" ID="24d7f767-4066-403d-a8d0-aeb845a8adcd" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd1" />
-    <MetadataFile FileName="ABCCode82.xsd" MetadataType="Schema" ID="67b68e88-9101-41be-95a1-fd21ee430afc" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd2" />
-    <MetadataFile FileName="ABCCode83.xsd" MetadataType="Schema" ID="6fac4e72-8a0d-4519-b6f0-e74a65106dea" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd3" />
-    <MetadataFile FileName="ABCCode84.xsd" MetadataType="Schema" ID="3a96cd36-28f9-4e03-ac09-5017fa70d40e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd4" />
-    <MetadataFile FileName="ABCCodeSvcFacade1.wsdl" MetadataType="Wsdl" ID="fb33c890-5ca9-461a-8c95-0b6a91b7e781" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?wsdl" />
-    <MetadataFile FileName="ABCCode85.xsd" MetadataType="Schema" ID="167c50d1-92b5-4739-99d1-32d5482ff7c3" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd6" />
-    <MetadataFile FileName="ABCCode86.xsd" MetadataType="Schema" ID="b07849ad-58fc-45d5-8e38-f3b1f0ea846d" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd5" />
-    <MetadataFile FileName="ABCCode1.wsdl" MetadataType="Wsdl" ID="85dcaabf-7490-424e-9469-f4acf35fc54e" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ABCCode87.xsd" MetadataType="Schema" ID="cd616dfc-63c4-4870-912c-808f3a6d3b52" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?xsd=xsd7" />
-    <MetadataFile FileName="ABCCode1.disco" MetadataType="Disco" ID="05189b1b-5b0b-4a72-839c-8fe767608212" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101/Erp/BO/ABCCode.svc?disco" />
+    <MetadataFile FileName="ABCCode.disco" MetadataType="Disco" ID="a17e9a5f-e698-4d5d-b5e2-6b72fabf1d93" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?disco" />
+    <MetadataFile FileName="ABCCode.xsd" MetadataType="Schema" ID="1390ce2f-8654-4f00-8bbf-52ec11e0fd6c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd5" />
+    <MetadataFile FileName="ABCCode1.xsd" MetadataType="Schema" ID="cdca6984-650a-4878-8a6c-a5f15c1011ff" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd4" />
+    <MetadataFile FileName="ABCCode2.xsd" MetadataType="Schema" ID="2e744a6c-404f-4b44-bcd9-aefa5a44ab33" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd7" />
+    <MetadataFile FileName="ABCCodeSvcFacade.wsdl" MetadataType="Wsdl" ID="66531327-0a68-4b35-b4b5-dd39486ecc25" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?wsdl" />
+    <MetadataFile FileName="ABCCode3.xsd" MetadataType="Schema" ID="7d06a72f-efde-4a2d-8435-8e39009aa6ce" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd1" />
+    <MetadataFile FileName="ABCCode4.xsd" MetadataType="Schema" ID="6c03c2c4-3db6-450f-bdd3-6a99d2cd0181" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd0" />
+    <MetadataFile FileName="ABCCode5.xsd" MetadataType="Schema" ID="16205afc-4a8f-4b01-a560-f777189c7f54" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd3" />
+    <MetadataFile FileName="ABCCode6.xsd" MetadataType="Schema" ID="72d2d2d6-1155-47f0-9c3e-74b4cf66017c" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd2" />
+    <MetadataFile FileName="ABCCode7.xsd" MetadataType="Schema" ID="54bf2e03-69ca-4912-a362-9841521df9fd" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd6" />
+    <MetadataFile FileName="ABCCode.wsdl" MetadataType="Wsdl" ID="3bc0f695-5e99-4947-8298-fc75383bb78d" SourceId="1" SourceUrl="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

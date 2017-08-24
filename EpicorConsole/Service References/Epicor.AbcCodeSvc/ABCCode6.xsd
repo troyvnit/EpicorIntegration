@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Erp.Tablesets" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Erp.Tablesets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp.greenvet.com/Epicor101Train/Erp/BO/ABCCode.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+  <xs:complexType name="ABCCodeTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ice" base="q1:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABCCode" nillable="true" type="tns:ABCCodeTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ABCCodeTableset" nillable="true" type="tns:ABCCodeTableset" />
+  <xs:complexType name="ABCCodeTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ABCCodeRow" nillable="true" type="tns:ABCCodeRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ABCCodeTable" nillable="true" type="tns:ABCCodeTable" />
+  <xs:complexType name="ABCCodeRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ice" base="q2:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABCCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="CalcPcnt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CalcQty" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CalcValue" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ABCCodeRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountFreq" type="xs:int" />
+          <xs:element minOccurs="0" name="ExcludeFromCC" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PcntTolerance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="QtyTolerance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ShipToCustNum" type="xs:int" />
+          <xs:element minOccurs="0" name="StockValPcnt" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="ValueTolerance" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ABCCodeRow" nillable="true" type="tns:ABCCodeRow" />
+  <xs:simpleType name="ABCCodeRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="ABCCode" />
+      <xs:enumeration value="CountFreq" />
+      <xs:enumeration value="ExcludeFromCC" />
+      <xs:enumeration value="StockValPcnt" />
+      <xs:enumeration value="PcntTolerance" />
+      <xs:enumeration value="CalcPcnt" />
+      <xs:enumeration value="CalcQty" />
+      <xs:enumeration value="CalcValue" />
+      <xs:enumeration value="QtyTolerance" />
+      <xs:enumeration value="ValueTolerance" />
+      <xs:enumeration value="ShipToCustNum" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ABCCodeRowColumnOrder" nillable="true" type="tns:ABCCodeRowColumnOrder" />
+  <xs:complexType name="ABCCodeListTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Ice" base="q3:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABCCodeList" nillable="true" type="tns:ABCCodeListTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ABCCodeListTableset" nillable="true" type="tns:ABCCodeListTableset" />
+  <xs:complexType name="ABCCodeListTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ABCCodeListRow" nillable="true" type="tns:ABCCodeListRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ABCCodeListTable" nillable="true" type="tns:ABCCodeListTable" />
+  <xs:complexType name="ABCCodeListRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Ice" base="q4:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABCCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ABCCodeListRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ABCCodeListRow" nillable="true" type="tns:ABCCodeListRow" />
+  <xs:simpleType name="ABCCodeListRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="ABCCode" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ABCCodeListRowColumnOrder" nillable="true" type="tns:ABCCodeListRowColumnOrder" />
+  <xs:complexType name="UpdExtABCCodeTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Ice" base="q5:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABCCode" nillable="true" type="tns:ABCCodeTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdExtABCCodeTableset" nillable="true" type="tns:UpdExtABCCodeTableset" />
+</xs:schema>
