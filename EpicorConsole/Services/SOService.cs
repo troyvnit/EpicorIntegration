@@ -77,6 +77,26 @@ namespace EpicorConsole.Services
                                             continue;
                                         }
                                     }
+                                    
+                                    int ln = 0;
+                                    foreach (var soDetail in soDetails)
+                                    {
+                                        try
+                                        {
+                                            ln++;
+                                            soClient.GetNewOrderRelTax(ref soTableset, orderNum, ln, 1, "05", "05");
+                                            soClient.ChangeManualTaxCalc(orderNum, ln, 1, "05", "05", ref soTableset);
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            soDetail.DMSFlag = "F";
+                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            Console.WriteLine(e.GetBaseException().Message);
+                                            continue;
+                                        }
+                                    }
+                                    soClient.Update(ref soTableset);
                                 }
                             }
                             catch (Exception e)
@@ -126,8 +146,8 @@ namespace EpicorConsole.Services
             row.WarehouseCode = entity.WhsCode;
             row.DocUnitPrice = entity.Price;            
             row.LineStatus = "OPEN";
-            row.DiscountPercent = 7;
-            row.TaxCatID = "K0";
+            //row.DiscountPercent = 7;
+            //row.TaxCatID = entity.VATGroup;
         }
     }
 }
