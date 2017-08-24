@@ -35,5 +35,7 @@ namespace EpicorConsole.Data
         public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
+        public string VATGroup { get; set; }
+        public Nullable<decimal> LineVat { get; set; }
     }
 }

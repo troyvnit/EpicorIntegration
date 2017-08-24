@@ -43,7 +43,7 @@ namespace EpicorConsole.Data
         public virtual DbSet<SO_HEADER_CONFIRM> SO_HEADER_CONFIRM { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTs { get; set; }
         public virtual DbSet<PRICE_LIST> PRICE_LIST { get; set; }
-        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
         public virtual DbSet<SO_HEADER> SO_HEADER { get; set; }
+        public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
     }
 }
