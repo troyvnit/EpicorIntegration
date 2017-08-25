@@ -49,7 +49,7 @@ namespace EpicorConsole.Services
                                     soClient.Update(ref soTableset);
                                     var orderNum = soTableset.OrderHed[0].OrderNum;
                                     soHeader.Ordernum = orderNum;
-                                    soHeader.DMSFlag = "S";
+                                    //soHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
 
                                     //Details
@@ -64,20 +64,20 @@ namespace EpicorConsole.Services
                                             {
                                                 MapToDetailRow(soDetailRow, soDetail);
                                                 soClient.Update(ref soTableset);
-                                                soDetail.DMSFlag = "S";
+                                                //soDetail.DMSFlag = "S";
                                                 Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                             }
                                         }
                                         catch (Exception e)
                                         {
-                                            soDetail.DMSFlag = "F";
+                                            //soDetail.DMSFlag = "F";
                                             log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
                                     }
-                                    
+
                                     int ln = 0;
                                     foreach (var soDetail in soDetails)
                                     {
@@ -89,7 +89,7 @@ namespace EpicorConsole.Services
                                         }
                                         catch (Exception e)
                                         {
-                                            soDetail.DMSFlag = "F";
+                                            //soDetail.DMSFlag = "F";
                                             log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
@@ -97,11 +97,27 @@ namespace EpicorConsole.Services
                                         }
                                     }
                                     soClient.Update(ref soTableset);
+
+                                    soTableset.OrderHed[0].ReadyToCalc = false;
+                                    soTableset.OrderHed[0].RowMod = "U";
+                                    soClient.Update(ref soTableset);
+                                    foreach (var soDetail in soTableset.OrderDtl)
+                                    {
+                                        try
+                                        {
+                                            soDetail.TaxCatID = "VAT5";
+                                            soDetail.RowMod = "U";
+                                        }
+                                        catch (Exception e)
+                                        {
+                                        }
+                                    }
+                                    soClient.Update(ref soTableset);
                                 }
                             }
                             catch (Exception e)
                             {
-                                soHeader.DMSFlag = "F";
+                                //soHeader.DMSFlag = "F";
                                 log.Error($"Added soHeader: #{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                 Console.WriteLine($"Added soHeader: #{soHeader.DocNum} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
@@ -124,6 +140,7 @@ namespace EpicorConsole.Services
             row.Company = entity.CompanyCode;
             row.TermsCode = entity.TermCode;
             row.CurrencyCode = entity.CurrencyCode;
+            row.BaseCurrencyID = "VND";
             row.CustNum = int.Parse(entity.Custnum);
             row.BTCustNum = int.Parse(entity.BTCustnum);
             row.ShipToCustNum = int.Parse(entity.ShiptoCustnum);
@@ -132,7 +149,7 @@ namespace EpicorConsole.Services
             row.NeedByDate = entity.DeliveryDate;
             row.ShipViaCode = "VAN";
             row.SalesRepList = "";
-            row.TaxRegionCode = "";
+            row.TaxRegionCode = "VAT";
         }
 
         private void MapToDetailRow(OrderDtlRow row, SO_DETAIL entity)
@@ -146,8 +163,10 @@ namespace EpicorConsole.Services
             row.WarehouseCode = entity.WhsCode;
             row.DocUnitPrice = entity.Price;            
             row.LineStatus = "OPEN";
-            //row.DiscountPercent = 7;
-            //row.TaxCatID = entity.VATGroup;
+            row.DiscountPercent = 7;
+            row.PriceListCode = "GEN1701";
+            row.BreakListCode = "PL0002";
+            row.ProdCode = "THUOC";
         }
     }
 }
