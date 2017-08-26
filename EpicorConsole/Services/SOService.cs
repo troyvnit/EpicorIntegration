@@ -65,6 +65,7 @@ namespace EpicorConsole.Services
                                                 MapToDetailRow(soDetailRow, soDetail);
                                                 soClient.Update(ref soTableset);
                                                 soDetail.LineNum = soTableset.OrderDtl.Max(d => d.OrderLine).ToString();
+                                                db.Entry(soDetail).Property(x => x.LineNum).IsModified = false;
                                                 //soDetail.DMSFlag = "S";
                                                 Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                             }
@@ -113,6 +114,10 @@ namespace EpicorConsole.Services
                                         }
                                         catch (Exception e)
                                         {
+                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            Console.WriteLine(e.GetBaseException().Message);
+                                            continue;
                                         }
                                     }
 
