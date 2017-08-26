@@ -37,5 +37,12 @@ namespace EpicorConsole.Data
         public string DMSFlag { get; set; }
         public string VATGroup { get; set; }
         public Nullable<decimal> LineVat { get; set; }
+        public Nullable<decimal> DiscountPercent { get; set; }
+        public string PriceListCode { get; set; }
+        public string BreakListCode { get; set; }
+        public string DisBreakListCode { get; set; }
+        public string ProdCode { get; set; }
+        public string TaxCode { get; set; }
+        public string RateCode { get; set; }
     }
 }

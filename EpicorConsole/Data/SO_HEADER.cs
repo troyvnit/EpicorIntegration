@@ -22,6 +22,7 @@ namespace EpicorConsole.Data
         public string TermCode { get; set; }
         public string CurrencyCode { get; set; }
         public string Custnum { get; set; }
+        public string SaleID { get; set; }
         public string BTCustnum { get; set; }
         public string ShiptoCustnum { get; set; }
         public System.DateTime DeliveryDate { get; set; }

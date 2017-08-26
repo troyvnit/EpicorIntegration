@@ -25,5 +25,6 @@ namespace EpicorConsole.Data
         public string SysRevID { get; set; }
         public string DMSFlag { get; set; }
         public Nullable<decimal> BasePrice { get; set; }
+        public Nullable<int> Discount { get; set; }
     }
 }

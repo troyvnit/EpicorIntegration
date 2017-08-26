@@ -84,8 +84,8 @@ namespace EpicorConsole.Services
                                         try
                                         {
                                             ln++;
-                                            soClient.GetNewOrderRelTax(ref soTableset, orderNum, ln, 1, "05", "05");
-                                            soClient.ChangeManualTaxCalc(orderNum, ln, 1, "05", "05", ref soTableset);
+                                            soClient.GetNewOrderRelTax(ref soTableset, orderNum, ln, 1, soDetail.TaxCode, soDetail.RateCode);
+                                            soClient.ChangeManualTaxCalc(orderNum, ln, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
                                         }
                                         catch (Exception e)
                                         {
@@ -101,17 +101,22 @@ namespace EpicorConsole.Services
                                     soTableset.OrderHed[0].ReadyToCalc = false;
                                     soTableset.OrderHed[0].RowMod = "U";
                                     soClient.Update(ref soTableset);
-                                    foreach (var soDetail in soTableset.OrderDtl)
+                                    
+                                    foreach (var soDetail in soDetails.Where(d => d.VATGroup != null))
                                     {
                                         try
                                         {
-                                            soDetail.TaxCatID = "VAT5";
-                                            soDetail.RowMod = "U";
+                                            var lineNum = int.Parse(soDetail.LineNum);
+                                            soTableset.OrderDtl[lineNum].TaxCatID = soDetail.VATGroup;
+                                            soTableset.OrderDtl[lineNum].RowMod = "U";
                                         }
                                         catch (Exception e)
                                         {
                                         }
                                     }
+
+                                    soTableset.OrderHed[0].ReadyToCalc = true;
+                                    soTableset.OrderHed[0].RowMod = "U";
                                     soClient.Update(ref soTableset);
                                 }
                             }
@@ -140,7 +145,7 @@ namespace EpicorConsole.Services
             row.Company = entity.CompanyCode;
             row.TermsCode = entity.TermCode;
             row.CurrencyCode = entity.CurrencyCode;
-            row.BaseCurrencyID = "VND";
+            row.BaseCurrencyID = entity.CurrencyCode;
             row.CustNum = int.Parse(entity.Custnum);
             row.BTCustNum = int.Parse(entity.BTCustnum);
             row.ShipToCustNum = int.Parse(entity.ShiptoCustnum);
@@ -148,7 +153,7 @@ namespace EpicorConsole.Services
             row.RequestDate = entity.DeliveryDate;
             row.NeedByDate = entity.DeliveryDate;
             row.ShipViaCode = "VAN";
-            row.SalesRepList = "";
+            row.SalesRepList = entity.SaleID;
             row.TaxRegionCode = "VAT";
         }
 
@@ -161,12 +166,12 @@ namespace EpicorConsole.Services
             row.IUM = entity.IUM;
             row.SellingQuantity = entity.Quantity;
             row.WarehouseCode = entity.WhsCode;
-            row.DocUnitPrice = entity.Price;            
-            row.LineStatus = "OPEN";
-            row.DiscountPercent = 7;
-            row.PriceListCode = "GEN1701";
-            row.BreakListCode = "PL0002";
-            row.ProdCode = "THUOC";
+            row.DocUnitPrice = entity.Price;      
+            row.DiscountPercent = entity.DiscountPercent.HasValue ? entity.DiscountPercent.Value : 0;
+            row.PriceListCode = entity.PriceListCode;
+            row.BreakListCode = entity.BreakListCode;
+            row.DiscBreakListCode = entity.DisBreakListCode;
+            row.ProdCode = entity.ProdCode;
         }
     }
 }

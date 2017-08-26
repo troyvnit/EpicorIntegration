@@ -57,5 +57,7 @@ namespace EpicorConsole.Data
         public string DMSFlag { get; set; }
         public string UD_SysRevID { get; set; }
         public string SysRevID { get; set; }
+        public string TaxCode { get; set; }
+        public string RateCode { get; set; }
     }
 }

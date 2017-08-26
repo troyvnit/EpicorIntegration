@@ -207,6 +207,8 @@
           <Property Type="String" Name="AttrName9" Nullable="false" MaxLength="1" />
           <Property Type="Binary" Name="sysRevID" Nullable="false" MaxLength="8" />
           <Property Type="Binary" Name="UD_SysRevID" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="TaxCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="RateCode" Nullable="true" MaxLength="10" />
         </ComplexType>
         <ComplexType Name="sptyx_DMSPriceList_Result">
           <Property Type="String" Name="Company" Nullable="true" MaxLength="10" />
@@ -218,6 +220,7 @@
           <Property Type="Double" Name="BasePrice" Nullable="true" />
           <Property Type="Int32" Name="BaseList" Nullable="true" />
           <Property Type="String" Name="sysRevID" Nullable="true" />
+          <Property Type="Int32" Name="Discount" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -328,6 +331,8 @@
                 <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
                 <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
                 <ScalarProperty Name="UD_SysRevID" ColumnName="UD_SysRevID" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="RateCode" ColumnName="RateCode" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -363,6 +368,7 @@
                 <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
                 <ScalarProperty Name="BaseList" ColumnName="BaseList" />
                 <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

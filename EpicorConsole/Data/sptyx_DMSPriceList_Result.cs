@@ -22,5 +22,6 @@ namespace EpicorConsole.Data
         public Nullable<double> BasePrice { get; set; }
         public Nullable<int> BaseList { get; set; }
         public string sysRevID { get; set; }
+        public Nullable<int> Discount { get; set; }
     }
 }

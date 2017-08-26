@@ -21,10 +21,10 @@
         <EntityTypeShape EntityType="EpicorIntergrationModel.RPO_DETAIL" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.RPO_HEADER" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_HEADER_CONFIRM" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EpicorIntergrationModel.PRICE_LIST" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.PRODUCT" Width="1.5" PointX="15.375" PointY="12.75" />
-        <EntityTypeShape EntityType="EpicorIntergrationModel.PRICE_LIST" Width="1.5" PointX="15.375" PointY="0.75" />
-        <EntityTypeShape EntityType="EpicorIntergrationModel.SO_HEADER" Width="1.5" PointX="11.375" PointY="16.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_DETAIL" Width="1.5" PointX="3.375" PointY="13.75" />
+        <EntityTypeShape EntityType="EpicorIntergrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

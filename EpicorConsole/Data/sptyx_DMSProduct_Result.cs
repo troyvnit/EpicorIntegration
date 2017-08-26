@@ -49,5 +49,7 @@ namespace EpicorConsole.Data
         public string AttrName9 { get; set; }
         public byte[] sysRevID { get; set; }
         public byte[] UD_SysRevID { get; set; }
+        public string TaxCode { get; set; }
+        public string RateCode { get; set; }
     }
 }
