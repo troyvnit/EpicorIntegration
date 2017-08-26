@@ -64,6 +64,7 @@ namespace EpicorConsole.Services
                                             {
                                                 MapToDetailRow(soDetailRow, soDetail);
                                                 soClient.Update(ref soTableset);
+                                                soDetail.LineNum = soTableset.OrderDtl.Max(d => d.OrderLine).ToString();
                                                 //soDetail.DMSFlag = "S";
                                                 Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                             }
@@ -77,15 +78,14 @@ namespace EpicorConsole.Services
                                             continue;
                                         }
                                     }
-
-                                    int ln = 0;
+                                    
                                     foreach (var soDetail in soDetails)
                                     {
                                         try
                                         {
-                                            ln++;
-                                            soClient.GetNewOrderRelTax(ref soTableset, orderNum, ln, 1, soDetail.TaxCode, soDetail.RateCode);
-                                            soClient.ChangeManualTaxCalc(orderNum, ln, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
+                                            var lineNum = int.Parse(soDetail.LineNum);
+                                            soClient.GetNewOrderRelTax(ref soTableset, orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode);
+                                            soClient.ChangeManualTaxCalc(orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
                                         }
                                         catch (Exception e)
                                         {
@@ -107,8 +107,9 @@ namespace EpicorConsole.Services
                                         try
                                         {
                                             var lineNum = int.Parse(soDetail.LineNum);
-                                            soTableset.OrderDtl[lineNum].TaxCatID = soDetail.VATGroup;
-                                            soTableset.OrderDtl[lineNum].RowMod = "U";
+                                            var soDetailRow = soTableset.OrderDtl.FirstOrDefault(d => d.OrderLine == lineNum);
+                                            soDetailRow.TaxCatID = soDetail.VATGroup;
+                                            soDetailRow.RowMod = "U";
                                         }
                                         catch (Exception e)
                                         {
@@ -153,8 +154,14 @@ namespace EpicorConsole.Services
             row.RequestDate = entity.DeliveryDate;
             row.NeedByDate = entity.DeliveryDate;
             row.ShipViaCode = "VAN";
-            row.SalesRepList = entity.SaleID;
             row.TaxRegionCode = "VAT";
+            row.UserChar1 = entity.DocNum;
+            var salesRepList = entity.SaleID.Split('~');
+            row.SalesRepCode1 = salesRepList.Length > 0 ? salesRepList[0] : null;
+            row.SalesRepCode2 = salesRepList.Length > 1 ? salesRepList[1] : null;
+            row.SalesRepCode3 = salesRepList.Length > 2 ? salesRepList[2] : null;
+            row.SalesRepCode4 = salesRepList.Length > 3 ? salesRepList[3] : null;
+            row.SalesRepCode5 = salesRepList.Length > 4 ? salesRepList[4] : null;
         }
 
         private void MapToDetailRow(OrderDtlRow row, SO_DETAIL entity)
