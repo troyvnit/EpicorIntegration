@@ -18,7 +18,7 @@ namespace EpicorConsole.Services
         protected UriBuilder builder;
         protected EndpointBindingType bindingType = EndpointBindingType.SOAPHttp;
         protected string scheme = "http";
-        protected string environment = "Epicor101Train";
+        protected string environment = "Epicor101";
         protected Guid sessionId;
         protected ILogger log;
 

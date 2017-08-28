@@ -3,6 +3,7 @@ using EpicorConsole.Epicor.SalesOrderSvc;
 using Hangfire;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace EpicorConsole.Services
                 using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
-                    var addedSOHeaders = db.SO_HEADER.Where(c => c.DMSFlag == "A" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                    var addedSOHeaders = db.SO_HEADER.Where(c => /*c.DMSFlag == "A"*/ c.DMSFlag == "N" || c.DMSFlag == "U");
                     if (addedSOHeaders.Any())
                     {
                         foreach (var soHeader in addedSOHeaders)
@@ -49,11 +50,11 @@ namespace EpicorConsole.Services
                                     soClient.Update(ref soTableset);
                                     var orderNum = soTableset.OrderHed[0].OrderNum;
                                     soHeader.Ordernum = orderNum;
-                                    //soHeader.DMSFlag = "S";
+                                    soHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
 
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "A" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && /*c.DMSFlag == "A"*/ c.DMSFlag == "N" || c.DMSFlag == "U");
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
@@ -64,15 +65,14 @@ namespace EpicorConsole.Services
                                             {
                                                 MapToDetailRow(soDetailRow, soDetail);
                                                 soClient.Update(ref soTableset);
-                                                soDetail.LineNum = soTableset.OrderDtl.Max(d => d.OrderLine).ToString();
-                                                db.Entry(soDetail).Property(x => x.LineNum).IsModified = false;
-                                                //soDetail.DMSFlag = "S";
+                                                soDetail.CreatedBy = soTableset.OrderDtl.Max(d => d.OrderLine).ToString();
+                                                soDetail.DMSFlag = "S";
                                                 Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                             }
                                         }
                                         catch (Exception e)
                                         {
-                                            //soDetail.DMSFlag = "F";
+                                            soDetail.DMSFlag = "F";
                                             log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
@@ -84,13 +84,13 @@ namespace EpicorConsole.Services
                                     {
                                         try
                                         {
-                                            var lineNum = int.Parse(soDetail.LineNum);
+                                            var lineNum = int.Parse(soDetail.CreatedBy);
                                             soClient.GetNewOrderRelTax(ref soTableset, orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode);
                                             soClient.ChangeManualTaxCalc(orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
                                         }
                                         catch (Exception e)
                                         {
-                                            //soDetail.DMSFlag = "F";
+                                            soDetail.DMSFlag = "F";
                                             log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
@@ -107,7 +107,7 @@ namespace EpicorConsole.Services
                                     {
                                         try
                                         {
-                                            var lineNum = int.Parse(soDetail.LineNum);
+                                            var lineNum = int.Parse(soDetail.CreatedBy);
                                             var soDetailRow = soTableset.OrderDtl.FirstOrDefault(d => d.OrderLine == lineNum);
                                             soDetailRow.TaxCatID = soDetail.VATGroup;
                                             soDetailRow.RowMod = "U";
@@ -128,7 +128,7 @@ namespace EpicorConsole.Services
                             }
                             catch (Exception e)
                             {
-                                //soHeader.DMSFlag = "F";
+                                soHeader.DMSFlag = "F";
                                 log.Error($"Added soHeader: #{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                 Console.WriteLine($"Added soHeader: #{soHeader.DocNum} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
