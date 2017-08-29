@@ -211,6 +211,9 @@
     <Compile Include="Data\SO_HEADER_CONFIRM.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\sptyx_DMSARInvoice_Result.cs">
+      <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\sptyx_DMSCustBalance_Result.cs">
       <DependentUpon>ERPAPPTRAIN.tt</DependentUpon>
     </Compile>

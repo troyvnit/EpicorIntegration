@@ -10,27 +10,28 @@
 namespace EpicorConsole.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ARINVOICE_HEADER
+    public partial class sptyx_DMSARInvoice_Result
     {
-        public string CompanyCode { get; set; }
-        public string DocNum { get; set; }
+        public string Company { get; set; }
+        public int Docnum { get; set; }
         public string CustomerCode { get; set; }
-        public Nullable<int> ShiptoCode { get; set; }
-        public string BranchCode { get; set; }
         public string SalesmanCode { get; set; }
-        public string Status { get; set; }
         public decimal TotalAmount { get; set; }
-        public string Type { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
+        public int Type { get; set; }
         public string Remarks { get; set; }
-        public string SO_DocNum { get; set; }
-        public string CreditMemoDraft_DocNum { get; set; }
+        public string SO_Docnum { get; set; }
+        public int Linenum { get; set; }
+        public string Productcode { get; set; }
+        public string UOM { get; set; }
+        public decimal OurShipQty { get; set; }
+        public decimal Price { get; set; }
+        public decimal Discount_Percent { get; set; }
+        public decimal Discount_Amount { get; set; }
+        public Nullable<decimal> Amount { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public string LastUpdatedBy { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
+        public System.Guid SysRowID { get; set; }
         public string ARINVOICE_DMSFLAG { get; set; }
     }
 }

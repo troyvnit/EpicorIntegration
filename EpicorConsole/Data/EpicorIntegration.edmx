@@ -7,18 +7,14 @@
     <Schema Namespace="EpicorIntergrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARINVOICE_DETAIL">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="DocNum" />
+            <PropertyRef Name="LineNum" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
-          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
-          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="InvoiceNum" Type="int" Nullable="false" />
-          <Property Name="InvoiceLine" Type="int" Nullable="false" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="DocNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LineNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="WhsCode" Type="nvarchar" MaxLength="40" />
-          <Property Name="CompanyCode" Type="nvarchar" MaxLength="40" />
           <Property Name="BranchCode" Type="nvarchar" MaxLength="40" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
           <Property Name="UoM" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -27,32 +23,34 @@
           <Property Name="Discount_Amount" Type="numeric" Precision="17" Scale="5" Nullable="false" />
           <Property Name="Discount_Percent" Type="numeric" Precision="17" Scale="5" Nullable="false" />
           <Property Name="Amount" Type="numeric" Precision="17" Scale="5" />
-          <Property Name="SO_DocNum" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="CreditMemoDraft_DocNum" Type="nvarchar" MaxLength="40" />
-        </EntityType>
-        <EntityType Name="ARINVOICE_HEADER">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
           <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
           <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
-          <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="InvoiceNum" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARINVOICE_HEADER">
+          <Key>
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="DocNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CustomerCode" Type="nvarchar" MaxLength="40" />
-          <Property Name="ShiptoCode" Type="nvarchar" MaxLength="40" />
-          <Property Name="CompanyCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="ShiptoCode" Type="int" />
           <Property Name="BranchCode" Type="nvarchar" MaxLength="40" />
-          <Property Name="Status" Type="nvarchar" MaxLength="40" />
           <Property Name="SalesmanCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="Status" Type="nvarchar" MaxLength="40" />
           <Property Name="TotalAmount" Type="numeric" Precision="17" Scale="5" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="3" Nullable="false" />
-          <Property Name="InvoiceDate" Type="datetime2" Precision="7" />
+          <Property Name="InvoiceDate" Type="datetime" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="510" />
           <Property Name="SO_DocNum" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="CreditMemoDraft_DocNum" Type="nvarchar" MaxLength="40" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="ARINVOICE_DMSFLAG" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="CUST_BALANCE">
           <Key>
@@ -561,55 +559,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EpicorIntergrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ARINVOICE_DETAIL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
-          <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="InvoiceNum" Type="Int32" Nullable="false" />
-          <Property Name="InvoiceLine" Type="Int32" Nullable="false" />
-          <Property Name="WhsCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="BranchCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="UoM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Quantity" Type="Decimal" Precision="17" Scale="5" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="17" Scale="5" Nullable="false" />
-          <Property Name="Discount_Amount" Type="Decimal" Precision="17" Scale="5" Nullable="false" />
-          <Property Name="Discount_Percent" Type="Decimal" Precision="17" Scale="5" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Precision="17" Scale="5" />
-          <Property Name="SO_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreditMemoDraft_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ARINVOICE_HEADER">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
-          <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="InvoiceNum" Type="Int32" Nullable="false" />
-          <Property Name="CustomerCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="ShiptoCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="BranchCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="SalesmanCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="TotalAmount" Type="Decimal" Precision="17" Scale="5" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="InvoiceDate" Type="DateTime" Precision="7" />
-          <Property Name="Remarks" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
-          <Property Name="SO_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreditMemoDraft_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="CUST_BALANCE">
           <Key>
             <PropertyRef Name="Id" />
@@ -961,8 +910,6 @@
           <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="EpicorIntergrationEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ARINVOICE_DETAIL" EntityType="Self.ARINVOICE_DETAIL" />
-          <EntitySet Name="ARINVOICE_HEADER" EntityType="Self.ARINVOICE_HEADER" />
           <EntitySet Name="CUST_BALANCE" EntityType="Self.CUST_BALANCE" />
           <EntitySet Name="CUST_OVER_DUE" EntityType="Self.CUST_OVER_DUE" />
           <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
@@ -981,6 +928,8 @@
           <EntitySet Name="PRODUCTs" EntityType="EpicorIntergrationModel.PRODUCT" />
           <EntitySet Name="SO_DETAIL" EntityType="EpicorIntergrationModel.SO_DETAIL" />
           <EntitySet Name="SO_HEADER" EntityType="EpicorIntergrationModel.SO_HEADER" />
+          <EntitySet Name="ARINVOICE_DETAIL" EntityType="EpicorIntergrationModel.ARINVOICE_DETAIL" />
+          <EntitySet Name="ARINVOICE_HEADER" EntityType="EpicorIntergrationModel.ARINVOICE_HEADER" />
         </EntityContainer>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -1113,63 +1062,59 @@
           <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="ARINVOICE_DETAIL">
+          <Key>
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="DocNum" />
+            <PropertyRef Name="LineNum" />
+          </Key>
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DocNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LineNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WhsCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BranchCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="UoM" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="Discount_Amount" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="Discount_Percent" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="Amount" Type="Decimal" Precision="17" Scale="5" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="ARINVOICE_HEADER">
+          <Key>
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DocNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ShiptoCode" Type="Int32" />
+          <Property Name="BranchCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SalesmanCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="17" Scale="5" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+          <Property Name="SO_DocNum" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CreditMemoDraft_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="ARINVOICE_DMSFLAG" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EpicorIntergrationModelStoreContainer" CdmEntityContainer="EpicorIntergrationEntities">
-          <EntitySetMapping Name="ARINVOICE_DETAIL">
-            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_DETAIL">
-              <MappingFragment StoreEntitySet="ARINVOICE_DETAIL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
-                <ScalarProperty Name="InvoiceLine" ColumnName="InvoiceLine" />
-                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="UoM" ColumnName="UoM" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Discount_Amount" ColumnName="Discount_Amount" />
-                <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="SO_DocNum" ColumnName="SO_DocNum" />
-                <ScalarProperty Name="CreditMemoDraft_DocNum" ColumnName="CreditMemoDraft_DocNum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ARINVOICE_HEADER">
-            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_HEADER">
-              <MappingFragment StoreEntitySet="ARINVOICE_HEADER">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
-                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
-                <ScalarProperty Name="ShiptoCode" ColumnName="ShiptoCode" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="SO_DocNum" ColumnName="SO_DocNum" />
-                <ScalarProperty Name="CreditMemoDraft_DocNum" ColumnName="CreditMemoDraft_DocNum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CUST_BALANCE">
             <EntityTypeMapping TypeName="EpicorIntergrationModel.CUST_BALANCE">
               <MappingFragment StoreEntitySet="CUST_BALANCE">
@@ -1646,6 +1591,52 @@
                 <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
                 <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
                 <ScalarProperty Name="Ordernum" ColumnName="Ordernum" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARINVOICE_DETAIL">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_DETAIL">
+              <MappingFragment StoreEntitySet="ARINVOICE_DETAIL">
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
+                <ScalarProperty Name="Discount_Amount" ColumnName="Discount_Amount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UoM" ColumnName="UoM" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARINVOICE_HEADER">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.ARINVOICE_HEADER">
+              <MappingFragment StoreEntitySet="ARINVOICE_HEADER">
+                <ScalarProperty Name="ARINVOICE_DMSFLAG" ColumnName="ARINVOICE_DMSFLAG" />
+                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreditMemoDraft_DocNum" ColumnName="CreditMemoDraft_DocNum" />
+                <ScalarProperty Name="SO_DocNum" ColumnName="SO_DocNum" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="ShiptoCode" ColumnName="ShiptoCode" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
                 <ScalarProperty Name="DocNum" ColumnName="DocNum" />
                 <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
               </MappingFragment>

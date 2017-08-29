@@ -57,13 +57,8 @@
           <Property Name="SysRevID" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="SysRowID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <Function Name="sptyx_DMSCustInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sptyx_DMSARInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sptyx_DMSCustOverDue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sptyx_DMSPriceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sptyx_DMSProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SysRevID" Type="varchar" Mode="In" />
-          <Parameter Name="UD_SysRevID" Type="varchar" Mode="In" />
-        </Function>
         <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
           <EntitySet Name="PriceLst" EntityType="Self.PriceLst" Schema="Erp" store:Type="Tables" />
           <EntitySet Name="PriceLstParts" EntityType="Self.PriceLstParts" Schema="Erp" store:Type="Tables" />
@@ -83,6 +78,7 @@
           </FunctionImport>
           <FunctionImport Name="sptyx_DMSCustInfo" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSCustInfo_Result)" />
           <FunctionImport Name="sptyx_DMSPriceList" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSPriceList_Result)" />
+          <FunctionImport Name="sptyx_DMSARInvoice" ReturnType="Collection(ERPAPPTRAINModel.sptyx_DMSARInvoice_Result)" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -222,6 +218,28 @@
           <Property Type="String" Name="sysRevID" Nullable="true" />
           <Property Type="Int32" Name="Discount" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="sptyx_DMSARInvoice_Result">
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="Docnum" Nullable="false" />
+          <Property Type="String" Name="CustomerCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="SalesmanCode" Nullable="true" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="17" Scale="3" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="String" Name="Remarks" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="SO_Docnum" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Linenum" Nullable="false" />
+          <Property Type="String" Name="Productcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UOM" Nullable="false" MaxLength="6" />
+          <Property Type="Decimal" Name="OurShipQty" Nullable="false" Precision="22" Scale="8" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="17" Scale="5" />
+          <Property Type="Decimal" Name="Discount_Percent" Nullable="false" Precision="6" Scale="2" />
+          <Property Type="Decimal" Name="Discount_Amount" Nullable="false" Precision="17" Scale="3" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="38" Scale="11" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="75" />
+          <Property Type="Guid" Name="SysRowID" Nullable="false" />
+          <Property Type="String" Name="ARINVOICE_DMSFLAG" Nullable="false" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -292,83 +310,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sptyx_DMSProduct" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSProduct">
+          <FunctionImportMapping FunctionImportName="sptyx_DMSARInvoice" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSARInvoice">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSProduct_Result">
+              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSARInvoice_Result">
                 <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
-                <ScalarProperty Name="SalesItemsPerUnit" ColumnName="SalesItemsPerUnit" />
-                <ScalarProperty Name="SalesUnitLength" ColumnName="SalesUnitLength" />
-                <ScalarProperty Name="SalesUnitWidth" ColumnName="SalesUnitWidth" />
-                <ScalarProperty Name="SalesUnitHeight" ColumnName="SalesUnitHeight" />
-                <ScalarProperty Name="SalesUnitVolume" ColumnName="SalesUnitVolume" />
-                <ScalarProperty Name="SalesUnitWeight" ColumnName="SalesUnitWeight" />
-                <ScalarProperty Name="SalesVATGroup" ColumnName="SalesVATGroup" />
-                <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
-                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
-                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
-                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
-                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
-                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
-                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
-                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
-                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
-                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
-                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
-                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
-                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
-                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
-                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
-                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
-                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
-                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
-                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
-                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
-                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
-                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
-                <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
-                <ScalarProperty Name="UD_SysRevID" ColumnName="UD_SysRevID" />
-                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
-                <ScalarProperty Name="RateCode" ColumnName="RateCode" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sptyx_DMSCustInfo" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSCustInfo">
-          <ResultMapping>
-              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSCustInfo_Result">
-                <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="Custid" ColumnName="Custid" />
-                <ScalarProperty Name="Custnum" ColumnName="Custnum" />
-                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
-                <ScalarProperty Name="Balance" ColumnName="Balance" />
-                <ScalarProperty Name="OverDue" ColumnName="OverDue" />
-                <ScalarProperty Name="ListCode" ColumnName="ListCode" />
-                <ScalarProperty Name="CusSysRevID" ColumnName="CusSysRevID" />
-                <ScalarProperty Name="PrcSysRevID" ColumnName="PrcSysRevID" />
-                <ScalarProperty Name="Option1" ColumnName="Option1" />
-                <ScalarProperty Name="Option2" ColumnName="Option2" />
-                <ScalarProperty Name="Option3" ColumnName="Option3" />
-                <ScalarProperty Name="Option4" ColumnName="Option4" />
-                <ScalarProperty Name="Option5" ColumnName="Option5" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sptyx_DMSPriceList" FunctionName="ERPAPPTRAINModel.Store.sptyx_DMSPriceList">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ERPAPPTRAINModel.sptyx_DMSPriceList_Result">
-                <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
-                <ScalarProperty Name="PriceListDesc" ColumnName="PriceListDesc" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
-                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
-                <ScalarProperty Name="BaseList" ColumnName="BaseList" />
-                <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Docnum" ColumnName="Docnum" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="SO_Docnum" ColumnName="SO_Docnum" />
+                <ScalarProperty Name="Linenum" ColumnName="Linenum" />
+                <ScalarProperty Name="Productcode" ColumnName="Productcode" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="OurShipQty" ColumnName="OurShipQty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
+                <ScalarProperty Name="Discount_Amount" ColumnName="Discount_Amount" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SysRowID" ColumnName="SysRowID" />
+                <ScalarProperty Name="ARINVOICE_DMSFLAG" ColumnName="ARINVOICE_DMSFLAG" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

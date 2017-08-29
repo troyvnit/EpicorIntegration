@@ -62,5 +62,10 @@ namespace EpicorConsole.Data
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
         }
+    
+        public virtual ObjectResult<sptyx_DMSARInvoice_Result> sptyx_DMSARInvoice()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSARInvoice_Result>("sptyx_DMSARInvoice");
+        }
     }
 }

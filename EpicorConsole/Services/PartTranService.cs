@@ -11,7 +11,7 @@ namespace EpicorConsole.Services
 {
     public class PartTranService : BaseService
     {
-        PartTranSvcContractClient partTranClient; 
+        PartTranSvcContractClient partTranClient;
 
         public PartTranService(Guid sessionId)
         {
@@ -20,32 +20,31 @@ namespace EpicorConsole.Services
             partTranClient = GetClient<PartTranSvcContractClient, PartTranSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             partTranClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
-        
+
         public async Task SyncPartTrans()
         {
             log.Information("Syncing PartTrans...");
             try
             {
-                
-                bool more = true;
-                int page = 0;
-                DateTime expired = DateTime.Now.AddMinutes(10);
-                while (more && expired >= DateTime.Now)
+                using (var db = new EpicorIntergrationEntities())
                 {
-                    page++;
-                    Console.WriteLine($"Working on PartTran page: #{page}");
-                    var rs = await partTranClient.GetRowsAsync(new Epicor.PartTranSvc.GetRowsRequest()
+                    bool more = true;
+                    int page = 0;
+                    DateTime expired = DateTime.Now.AddMinutes(10);
+                    while (more && expired >= DateTime.Now)
                     {
-                        pageSize = 5,
-                        absolutePage = page,
-                        whereClausePartTran = "TranType = 'STK-UKN' OR TranType = 'PUR-STK'"
-                    });
-                    var result = rs.GetRowsResult;
-                    var partTrans = result.PartTran.ToArray();
-                    more = rs.morePages;
+                        page++;
+                        Console.WriteLine($"Working on PartTran page: #{page}");
+                        var rs = await partTranClient.GetRowsAsync(new Epicor.PartTranSvc.GetRowsRequest()
+                        {
+                            pageSize = 5,
+                            absolutePage = page,
+                            whereClausePartTran = "TranType = 'STK-UKN' OR TranType = 'PUR-STK'"
+                        });
+                        var result = rs.GetRowsResult;
+                        var partTrans = result.PartTran.ToArray();
+                        more = rs.morePages;
 
-                    using (var db = new EpicorIntergrationEntities())
-                    {
                         foreach (var partTran in partTrans)
                         {
                             var invtTrans = db.INVT_TRANS.FirstOrDefault(p => p.TranNum == partTran.TranNum);
@@ -57,17 +56,17 @@ namespace EpicorConsole.Services
                                 db.INVT_TRANS.Add(invtTrans);
                                 Console.WriteLine($"Added invt trans: #{partTran.TranNum}");
                             }
-                            else
-                            {
-                                MapToEntity(invtTrans, partTran);
-                                invtTrans.DMSFlag = "U";
-                                db.INVT_TRANS.Attach(invtTrans);
-                                db.Entry(invtTrans).State = System.Data.Entity.EntityState.Modified;
-                                Console.WriteLine($"Updated invt trans: #{partTran.TranNum}");
-                            }
+                            //else
+                            //{
+                            //    MapToEntity(invtTrans, partTran);
+                            //    invtTrans.DMSFlag = "U";
+                            //    db.INVT_TRANS.Attach(invtTrans);
+                            //    db.Entry(invtTrans).State = System.Data.Entity.EntityState.Modified;
+                            //    Console.WriteLine($"Updated invt trans: #{partTran.TranNum}");
+                            //}
                         }
-                        await db.SaveChangesAsync();
                     }
+                    await db.SaveChangesAsync();
                 }
             }
             catch (Exception e)

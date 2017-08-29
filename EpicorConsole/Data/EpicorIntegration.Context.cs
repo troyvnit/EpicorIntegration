@@ -25,8 +25,6 @@ namespace EpicorConsole.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ARINVOICE_DETAIL> ARINVOICE_DETAIL { get; set; }
-        public virtual DbSet<ARINVOICE_HEADER> ARINVOICE_HEADER { get; set; }
         public virtual DbSet<CUST_BALANCE> CUST_BALANCE { get; set; }
         public virtual DbSet<CUST_OVER_DUE> CUST_OVER_DUE { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
@@ -45,5 +43,7 @@ namespace EpicorConsole.Data
         public virtual DbSet<PRODUCT> PRODUCTs { get; set; }
         public virtual DbSet<SO_DETAIL> SO_DETAIL { get; set; }
         public virtual DbSet<SO_HEADER> SO_HEADER { get; set; }
+        public virtual DbSet<ARINVOICE_DETAIL> ARINVOICE_DETAIL { get; set; }
+        public virtual DbSet<ARINVOICE_HEADER> ARINVOICE_HEADER { get; set; }
     }
 }
