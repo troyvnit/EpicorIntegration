@@ -13,8 +13,8 @@ namespace EpicorConsole.Services
 {
     public class BaseService
     {
-        protected string epicorUserID = "manager";
-        protected string epiorUserPassword = "manager@GVN";
+        protected string epicorUserID = "dms";
+        protected string epiorUserPassword = "dmsgreenvet";
         protected UriBuilder builder;
         protected EndpointBindingType bindingType = EndpointBindingType.SOAPHttp;
         protected string scheme = "http";
