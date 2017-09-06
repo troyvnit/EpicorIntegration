@@ -25,6 +25,8 @@ namespace EpicorConsole.Data
         public decimal SalesUnitVolume { get; set; }
         public decimal SalesUnitWeight { get; set; }
         public string SalesVATGroup { get; set; }
+        public string TaxCode { get; set; }
+        public string RateCode { get; set; }
         public string PurchaseUnit { get; set; }
         public string InventoryUOM { get; set; }
         public string AttrCode0 { get; set; }
@@ -49,7 +51,5 @@ namespace EpicorConsole.Data
         public string AttrName9 { get; set; }
         public byte[] sysRevID { get; set; }
         public byte[] UD_SysRevID { get; set; }
-        public string TaxCode { get; set; }
-        public string RateCode { get; set; }
     }
 }

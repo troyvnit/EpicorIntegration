@@ -22,31 +22,31 @@ namespace EpicorConsole.Services
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    var custBalances = erpdb.sptyx_DMSCustBalance();
-                    using (var db = new EpicorIntergrationEntities())
-                    {
-                        foreach (var custBalance in custBalances)
-                        {
-                            var cb = db.CUST_BALANCE.FirstOrDefault(p => p.CustomerCode == custBalance.CustID);
-                            if (cb == null)
-                            {
-                                cb = new CUST_BALANCE();
-                                cb.DMSFlag = "N";
-                                MapToEntity(cb, custBalance);
-                                db.CUST_BALANCE.Add(cb);
-                                Console.WriteLine($"Added Cust Balance: #{custBalance.CustID}");
-                            }
-                            else
-                            {
-                                MapToEntity(cb, custBalance);
-                                cb.DMSFlag = "U";
-                                db.CUST_BALANCE.Attach(cb);
-                                db.Entry(cb).State = System.Data.Entity.EntityState.Modified;
-                                Console.WriteLine($"Updated Cust Balance: #{custBalance.CustID}");
-                            }
-                        }
-                        await db.SaveChangesAsync();
-                    }
+                    //var custBalances = erpdb.sptyx_DMSCustBalance();
+                    //using (var db = new EpicorIntergrationEntities())
+                    //{
+                    //    foreach (var custBalance in custBalances)
+                    //    {
+                    //        var cb = db.CUST_BALANCE.FirstOrDefault(p => p.CustomerCode == custBalance.CustID);
+                    //        if (cb == null)
+                    //        {
+                    //            cb = new CUST_BALANCE();
+                    //            cb.DMSFlag = "N";
+                    //            MapToEntity(cb, custBalance);
+                    //            db.CUST_BALANCE.Add(cb);
+                    //            Console.WriteLine($"Added Cust Balance: #{custBalance.CustID}");
+                    //        }
+                    //        else
+                    //        {
+                    //            MapToEntity(cb, custBalance);
+                    //            cb.DMSFlag = "U";
+                    //            db.CUST_BALANCE.Attach(cb);
+                    //            db.Entry(cb).State = System.Data.Entity.EntityState.Modified;
+                    //            Console.WriteLine($"Updated Cust Balance: #{custBalance.CustID}");
+                    //        }
+                    //    }
+                    //    await db.SaveChangesAsync();
+                    //}
                 }
             }
             catch (Exception e)

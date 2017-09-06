@@ -30,14 +30,24 @@ namespace EpicorConsole.Data
         public virtual DbSet<PriceLst> PriceLsts { get; set; }
         public virtual DbSet<PriceLstPart> PriceLstParts { get; set; }
     
-        public virtual ObjectResult<sptyx_DMSCustBalance_Result> sptyx_DMSCustBalance()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustBalance_Result>("sptyx_DMSCustBalance");
-        }
-    
         public virtual ObjectResult<sptyx_DMSCustOverDue_Result> sptyx_DMSCustOverDue()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustOverDue_Result>("sptyx_DMSCustOverDue");
+        }
+    
+        public virtual ObjectResult<sptyx_DMSARInvoice_Result> sptyx_DMSARInvoice()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSARInvoice_Result>("sptyx_DMSARInvoice");
+        }
+    
+        public virtual ObjectResult<sptyx_DMSCustInfo_Result> sptyx_DMSCustInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustInfo_Result>("sptyx_DMSCustInfo");
+        }
+    
+        public virtual ObjectResult<sptyx_DMSPriceList_Result> sptyx_DMSPriceList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
         }
     
         public virtual ObjectResult<sptyx_DMSProduct_Result> sptyx_DMSProduct(string sysRevID, string uD_SysRevID)
@@ -51,21 +61,6 @@ namespace EpicorConsole.Data
                 new ObjectParameter("UD_SysRevID", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSProduct_Result>("sptyx_DMSProduct", sysRevIDParameter, uD_SysRevIDParameter);
-        }
-    
-        public virtual ObjectResult<sptyx_DMSCustInfo_Result> sptyx_DMSCustInfo()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSCustInfo_Result>("sptyx_DMSCustInfo");
-        }
-    
-        public virtual ObjectResult<sptyx_DMSPriceList_Result> sptyx_DMSPriceList()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSPriceList_Result>("sptyx_DMSPriceList");
-        }
-    
-        public virtual ObjectResult<sptyx_DMSARInvoice_Result> sptyx_DMSARInvoice()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSARInvoice_Result>("sptyx_DMSARInvoice");
         }
     }
 }
