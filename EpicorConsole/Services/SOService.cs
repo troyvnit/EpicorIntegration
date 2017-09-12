@@ -1,5 +1,6 @@
 ﻿using EpicorConsole.Data;
 using EpicorConsole.Epicor.SalesOrderSvc;
+using EpicorConsole.Epicor.SessionModSvc;
 using Hangfire;
 using System;
 using System.Collections.Generic;
@@ -13,28 +14,29 @@ namespace EpicorConsole.Services
     public class SOService : BaseService
     {
         SalesOrderSvcContractClient soClient;
-        CustomerService customerService;
+        SessionModSvcContractClient sessionModClient;
 
-        public SOService(Guid sessionId)
+        public SOService(string userID, string password)
         {
-            this.sessionId = sessionId;
+            builder.Path = $"{environment}/Ice/Lib/SessionMod.svc";
+            sessionModClient = GetClient<SessionModSvcContractClient, SessionModSvcContract>(builder.Uri.ToString(), userID, password, bindingType);
             builder.Path = $"{environment}/Erp/BO/SalesOrder.svc";
-            soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
-
-            customerService = new CustomerService(sessionId);
+            soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), userID, password, bindingType);
+            var sessionId = sessionModClient.Login();
+            sessionModClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, userID));
+            soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, userID));
         }
         
-        public async Task SyncSOs()
+        public async Task SyncSOs(string company)
         {
             log.Information("Syncing SOs...");
-            Console.WriteLine($"Syncing SOs...");
+            Console.WriteLine($"Syncing {company} SOs...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
-                    var addedSOHeaders = db.SO_HEADER.Where(c => /*c.DMSFlag == "A"*/ c.DMSFlag == "N" || c.DMSFlag == "U");
+                    var addedSOHeaders = db.SO_HEADER.Where(c => c.CompanyCode == company && c.DMSFlag == "P" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                     if (addedSOHeaders.Any())
                     {
                         foreach (var soHeader in addedSOHeaders)
@@ -54,7 +56,7 @@ namespace EpicorConsole.Services
                                     Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
 
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && /*c.DMSFlag == "A"*/ c.DMSFlag == "N" || c.DMSFlag == "U");
+                                    var soDetails = db.SO_DETAIL.Where(c => c.CompanyCode == company && c.DocNum == soHeader.DocNum && c.DMSFlag == "P"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
