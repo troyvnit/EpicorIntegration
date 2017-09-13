@@ -36,7 +36,7 @@ namespace EpicorConsole.Services
                 using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
-                    var addedSOHeaders = db.SO_HEADER.Where(c => c.CompanyCode == company && c.DMSFlag == "P" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                    var addedSOHeaders = db.SO_HEADER.Where(c => c.CompanyCode == company && c.DMSFlag == "N" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                     if (addedSOHeaders.Any())
                     {
                         foreach (var soHeader in addedSOHeaders)
@@ -55,8 +55,12 @@ namespace EpicorConsole.Services
                                     soHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
 
+                                    soTableset.OrderHed[0].ReadyToCalc = false;
+                                    soTableset.OrderHed[0].RowMod = "U";
+                                    soClient.Update(ref soTableset);
+
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.CompanyCode == company && c.DocNum == soHeader.DocNum && c.DMSFlag == "P"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                                    var soDetails = db.SO_DETAIL.Where(c => c.CompanyCode == company && c.DocNum == soHeader.DocNum && c.DMSFlag == "N"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
@@ -82,13 +86,14 @@ namespace EpicorConsole.Services
                                         }
                                     }
                                     
-                                    foreach (var soDetail in soDetails)
+                                    foreach (var soDetail in soDetails.Where(d => d.DMSFlag != "F"))
                                     {
                                         try
                                         {
                                             var lineNum = int.Parse(soDetail.CreatedBy);
                                             soClient.GetNewOrderRelTax(ref soTableset, orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode);
                                             soClient.ChangeManualTaxCalc(orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
+                                            Console.WriteLine($"Calculate tax soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                         }
                                         catch (Exception e)
                                         {
@@ -100,12 +105,8 @@ namespace EpicorConsole.Services
                                         }
                                     }
                                     soClient.Update(ref soTableset);
-
-                                    soTableset.OrderHed[0].ReadyToCalc = false;
-                                    soTableset.OrderHed[0].RowMod = "U";
-                                    soClient.Update(ref soTableset);
                                     
-                                    foreach (var soDetail in soDetails.Where(d => d.VATGroup != null))
+                                    foreach (var soDetail in soDetails.Where(d => d.VATGroup != null && d.DMSFlag != "F"))
                                     {
                                         try
                                         {
@@ -113,6 +114,7 @@ namespace EpicorConsole.Services
                                             var soDetailRow = soTableset.OrderDtl.FirstOrDefault(d => d.OrderLine == lineNum);
                                             soDetailRow.TaxCatID = soDetail.VATGroup;
                                             soDetailRow.RowMod = "U";
+                                            Console.WriteLine($"Updated VATGroup soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
                                         }
                                         catch (Exception e)
                                         {
