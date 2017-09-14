@@ -16,33 +16,41 @@ namespace EpicorConsole.Services
         SalesOrderSvcContractClient soClient;
         SessionModSvcContractClient sessionModClient;
 
-        public SOService(string userID, string password)
+        public SOService(Guid sessionId, SessionModSvcContractClient sessionModClient)
         {
-            builder.Path = $"{environment}/Ice/Lib/SessionMod.svc";
-            sessionModClient = GetClient<SessionModSvcContractClient, SessionModSvcContract>(builder.Uri.ToString(), userID, password, bindingType);
+            this.sessionId = sessionId;
+            this.sessionModClient = sessionModClient;
             builder.Path = $"{environment}/Erp/BO/SalesOrder.svc";
-            soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), userID, password, bindingType);
-            var sessionId = sessionModClient.Login();
-            sessionModClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, userID));
-            soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, userID));
+            soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
+            soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
         
-        public async Task SyncSOs(string company)
+        public async Task SyncSOs()
         {
             log.Information("Syncing SOs...");
-            Console.WriteLine($"Syncing {company} SOs...");
+            Console.WriteLine($"Syncing SOs...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())
                 {
                     //Header
-                    var addedSOHeaders = db.SO_HEADER.Where(c => c.CompanyCode == company && c.DMSFlag == "N" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                    var addedSOHeaders = db.SO_HEADER.Where(c => c.DMSFlag == "N" /*c.DMSFlag == "N" || c.DMSFlag == "U"*/).OrderBy(h => h.CompanyCode);
                     if (addedSOHeaders.Any())
                     {
                         foreach (var soHeader in addedSOHeaders)
                         {
                             try
                             {
+                                string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
+
+                                var currentCompany = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
+
+                                if(currentCompany != soHeader.CompanyCode)
+                                {
+                                    sessionModClient.SetCompany(soHeader.CompanyCode, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
+                                }
+
+                                //company = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
                                 SalesOrderTableset soTableset = new SalesOrderTableset();
                                 soClient.GetNewOrderHed(ref soTableset);
                                 var soHeaderRow = soTableset.OrderHed.Where(p => p.RowMod == "A").FirstOrDefault();
@@ -53,14 +61,14 @@ namespace EpicorConsole.Services
                                     var orderNum = soTableset.OrderHed[0].OrderNum;
                                     soHeader.Ordernum = orderNum;
                                     soHeader.DMSFlag = "S";
-                                    Console.WriteLine($"Added soHeader: #{orderNum} successfully!");
+                                    Console.WriteLine($"Added soHeader: [{soHeader.CompanyCode}]#{orderNum} successfully!");
 
                                     soTableset.OrderHed[0].ReadyToCalc = false;
                                     soTableset.OrderHed[0].RowMod = "U";
                                     soClient.Update(ref soTableset);
 
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.CompanyCode == company && c.DocNum == soHeader.DocNum && c.DMSFlag == "N"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/);
+                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "N"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/);
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
@@ -73,14 +81,14 @@ namespace EpicorConsole.Services
                                                 soClient.Update(ref soTableset);
                                                 soDetail.CreatedBy = soTableset.OrderDtl.Max(d => d.OrderLine).ToString();
                                                 soDetail.DMSFlag = "S";
-                                                Console.WriteLine($"Added soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
+                                                Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{orderNum}/{soDetail.LineNum} successfully!");
                                             }
                                         }
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
-                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                            Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            log.Error($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
@@ -93,13 +101,13 @@ namespace EpicorConsole.Services
                                             var lineNum = int.Parse(soDetail.CreatedBy);
                                             soClient.GetNewOrderRelTax(ref soTableset, orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode);
                                             soClient.ChangeManualTaxCalc(orderNum, lineNum, 1, soDetail.TaxCode, soDetail.RateCode, ref soTableset);
-                                            Console.WriteLine($"Calculate tax soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
+                                            Console.WriteLine($"Calculate tax soDetail: [{soHeader.CompanyCode}]#{orderNum}/{soDetail.LineNum} successfully!");
                                         }
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
-                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                            Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            log.Error($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
@@ -114,12 +122,13 @@ namespace EpicorConsole.Services
                                             var soDetailRow = soTableset.OrderDtl.FirstOrDefault(d => d.OrderLine == lineNum);
                                             soDetailRow.TaxCatID = soDetail.VATGroup;
                                             soDetailRow.RowMod = "U";
-                                            Console.WriteLine($"Updated VATGroup soDetail: #{orderNum}/{soDetail.LineNum} successfully!");
+                                            Console.WriteLine($"Updated VATGroup soDetail: [{soHeader.CompanyCode}]#{orderNum}/{soDetail.LineNum} successfully!");
                                         }
                                         catch (Exception e)
                                         {
-                                            log.Error($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                            Console.WriteLine($"Added soDetail: #{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            soDetail.DMSFlag = "F";
+                                            log.Error($"Added soDetail:[{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
@@ -133,8 +142,8 @@ namespace EpicorConsole.Services
                             catch (Exception e)
                             {
                                 soHeader.DMSFlag = "F";
-                                log.Error($"Added soHeader: #{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                Console.WriteLine($"Added soHeader: #{soHeader.DocNum} failed! - {e.Message}");
+                                log.Error($"Added soHeader: [{soHeader.CompanyCode}]#{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                Console.WriteLine($"Added soHeader: [{soHeader.CompanyCode}]#{soHeader.DocNum} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
                             }

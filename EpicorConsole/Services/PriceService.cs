@@ -12,9 +12,8 @@ namespace EpicorConsole.Services
 {
     public class PriceService : BaseService
     {
-        public PriceService(Guid sessionId)
+        public PriceService()
         {
-            this.sessionId = sessionId;
         }
         
         public async Task SyncPrices()

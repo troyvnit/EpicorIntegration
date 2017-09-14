@@ -30,8 +30,8 @@ namespace EpicorConsole
                 cfg.CreateMap<sptyx_DMSCustInfo_Result, CUSTOMER_INFO>().ForMember(p => p.Id, o => o.UseDestinationValue());
             });
 
-            //var sessionModService = new SessionModService();
-            //var sessionId = sessionModService.Login();
+            var sessionModService = new SessionModService();
+            var sessionId = sessionModService.Login();
 
             Console.WriteLine("Logged in");
 
@@ -54,16 +54,18 @@ namespace EpicorConsole
 
                 //Add or update
                 // RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
-                // RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(sessionId), Cron.Minutely);
+                // RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.HourInterval(6));
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(sessionId, sessionModService.sessionModClient), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                // RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Minutely);
+                 //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.HourInterval(6));
                 //  RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(sessionId), Cron.Minutely);
-                DoSyncSO().Wait();
+                //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
+                //DoSyncPrice().Wait();
+                //DoSyncCustInfo().Wait();
                 Console.ReadKey();
             }
         }
@@ -76,9 +78,9 @@ namespace EpicorConsole
         }
 
         [DisableConcurrentExecution(100000)]
-        public static async Task DoSyncPrice(Guid sessionId)
+        public static async Task DoSyncPrice()
         {
-            var priceService = new PriceService(sessionId);
+            var priceService = new PriceService();
             await priceService.SyncPrices();
         }
 
@@ -95,14 +97,10 @@ namespace EpicorConsole
         }
 
         [DisableConcurrentExecution(100000)]
-        public static async Task DoSyncSO()
+        public static async Task DoSyncSO(Guid sessionId, SessionModSvcContractClient sessionModClient)
         {
-            var users = new string[] { "dms-pmn", "dms-pms", "dms-gvn", "dms-gvs", "dms-gvc", "dms-gbn", "dms-grv" };
-            foreach(var user in users)
-            {
-                var soService = new SOService(user, "dmsgreenvet");
-                await soService.SyncSOs(user.Split('-')[1].ToUpper());
-            }
+            var soService = new SOService(sessionId, sessionModClient);
+            await soService.SyncSOs();
         }
 
         [DisableConcurrentExecution(100000)]
