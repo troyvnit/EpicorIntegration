@@ -30,9 +30,6 @@ namespace EpicorConsole
                 cfg.CreateMap<sptyx_DMSCustInfo_Result, CUSTOMER_INFO>().ForMember(p => p.Id, o => o.UseDestinationValue());
             });
 
-            var sessionModService = new SessionModService();
-            var sessionId = sessionModService.Login();
-
             Console.WriteLine("Logged in");
 
             var connectionString = ConfigurationManager.ConnectionStrings["EpicorHangfire"].ConnectionString;
@@ -57,7 +54,7 @@ namespace EpicorConsole
                 // RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.HourInterval(6));
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(sessionId, sessionModService.sessionModClient), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
@@ -97,9 +94,9 @@ namespace EpicorConsole
         }
 
         [DisableConcurrentExecution(100000)]
-        public static async Task DoSyncSO(Guid sessionId, SessionModSvcContractClient sessionModClient)
+        public static async Task DoSyncSO()
         {
-            var soService = new SOService(sessionId, sessionModClient);
+            var soService = new SOService();
             await soService.SyncSOs();
         }
 

@@ -16,10 +16,12 @@ namespace EpicorConsole.Services
         SalesOrderSvcContractClient soClient;
         SessionModSvcContractClient sessionModClient;
 
-        public SOService(Guid sessionId, SessionModSvcContractClient sessionModClient)
+        public SOService()
         {
+            var sessionModService = new SessionModService();
+            var sessionId = sessionModService.Login();
             this.sessionId = sessionId;
-            this.sessionModClient = sessionModClient;
+            this.sessionModClient = sessionModService.sessionModClient;
             builder.Path = $"{environment}/Erp/BO/SalesOrder.svc";
             soClient = GetClient<SalesOrderSvcContractClient, SalesOrderSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             soClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
