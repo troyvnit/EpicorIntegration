@@ -49,7 +49,8 @@ namespace EpicorConsole.Data
         public string AttrName8 { get; set; }
         public string AttrCode9 { get; set; }
         public string AttrName9 { get; set; }
-        public byte[] sysRevID { get; set; }
-        public byte[] UD_SysRevID { get; set; }
+        public string UD_SysRevID { get; set; }
+        public string SysRevID { get; set; }
+        public string DMSFlag { get; set; }
     }
 }

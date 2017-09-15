@@ -13,21 +13,23 @@ namespace EpicorConsole.Services
 {
     public class PartService : BaseService
     {
-        public PartService(Guid sessionId)
+        public PartService()
         {
-            this.sessionId = sessionId;
         }
         
         public async Task SyncParts()
         {
             log.Information("Syncing Parts...");
+            Console.WriteLine("Syncing Parts...");
             try
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
                     using (var db = new EpicorIntergrationEntities())
                     {
-                        var parts = erpdb.sptyx_DMSProduct(db.PRODUCTs.Max(p => p.SysRevID), db.PRODUCTs.Max(p => p.UD_SysRevID)).ToList();
+                        var sysRevID = db.PRODUCTs.Max(p => p.SysRevID);
+                        var ud_SysRevID = db.PRODUCTs.Max(p => p.UD_SysRevID);
+                        var parts = erpdb.sptyx_DMSProduct(sysRevID, ud_SysRevID).ToList();
                         foreach (var part in parts)
                         {
                             var product = db.PRODUCTs.FirstOrDefault(p => p.ItemCode == part.ItemCode && p.Company == part.Company);

@@ -54,23 +54,24 @@ namespace EpicorConsole
                 // RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.HourInterval(6));
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                 //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.HourInterval(6));
+                //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.HourInterval(6));
                 //  RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(sessionId), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
-                //DoSyncPrice().Wait();
-                //DoSyncCustInfo().Wait();
+                DoSyncPrice().Wait();
+                DoSyncCustInfo().Wait();
+                //DoSyncPart().Wait();
                 Console.ReadKey();
             }
         }
 
         [DisableConcurrentExecution(100000)]
-        public static async Task DoSyncPart(Guid sessionId)
+        public static async Task DoSyncPart()
         {
-            var partService = new PartService(sessionId);
+            var partService = new PartService();
             await partService.SyncParts();
         }
 

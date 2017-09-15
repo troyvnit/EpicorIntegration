@@ -23,11 +23,14 @@ namespace EpicorConsole.Services
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    var custInfos = erpdb.sptyx_DMSCustInfo();
+                    var custInfos = erpdb.sptyx_DMSCustInfo().ToList();
+                    var totalRow = custInfos.Count();
                     using (var db = new EpicorIntergrationEntities())
                     {
+                        int runningRow = 0;
                         foreach (var custInfo in custInfos)
                         {
+                            runningRow++;
                             var cod = db.CUSTOMER_INFO.FirstOrDefault(p => p.Custnum == custInfo.Custnum && p.Company == custInfo.Company);
                             if (cod == null)
                             {
@@ -37,7 +40,7 @@ namespace EpicorConsole.Services
                                     cod.DMSFlag = "N";
                                     db.CUSTOMER_INFO.Add(cod);
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Added Cust Info: #{custInfo.Custnum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Added Cust Info: #{custInfo.Company}/{custInfo.Custnum}");
                                 }
                                 catch (Exception e)
                                 {
@@ -56,7 +59,7 @@ namespace EpicorConsole.Services
                                     db.CUSTOMER_INFO.Attach(cod);
                                     db.Entry(cod).State = System.Data.Entity.EntityState.Modified;
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Updated Cust Info: #{custInfo.Custnum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Updated Cust Info: #{custInfo.Company}/{custInfo.Custnum}");
                                 }
                                 catch (Exception e)
                                 {

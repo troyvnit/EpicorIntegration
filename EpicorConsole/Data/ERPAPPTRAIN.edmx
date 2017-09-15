@@ -242,8 +242,9 @@
           <Property Type="String" Name="AttrName8" Nullable="true" />
           <Property Type="String" Name="AttrCode9" Nullable="false" MaxLength="1" />
           <Property Type="String" Name="AttrName9" Nullable="false" MaxLength="1" />
-          <Property Type="Binary" Name="sysRevID" Nullable="false" MaxLength="8" />
-          <Property Type="Binary" Name="UD_SysRevID" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="UD_SysRevID" Nullable="true" />
+          <Property Type="String" Name="SysRevID" Nullable="true" />
+          <Property Type="String" Name="DMSFlag" Nullable="false" MaxLength="1" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -416,8 +417,9 @@
                 <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
                 <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
                 <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
-                <ScalarProperty Name="sysRevID" ColumnName="sysRevID" />
                 <ScalarProperty Name="UD_SysRevID" ColumnName="UD_SysRevID" />
+                <ScalarProperty Name="SysRevID" ColumnName="SysRevID" />
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

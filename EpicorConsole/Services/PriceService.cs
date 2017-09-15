@@ -27,11 +27,14 @@ namespace EpicorConsole.Services
                 //var priceLstParts = result.PriceLstParts.ToArray();
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    var priceLstParts = erpdb.sptyx_DMSPriceList();
+                    var priceLstParts = erpdb.sptyx_DMSPriceList().ToList();
+                    var totalRow = priceLstParts.Count();
                     using (var db = new EpicorIntergrationEntities())
                     {
+                        int runningRow = 0;
                         foreach (var priceLstPart in priceLstParts)
                         {
+                            runningRow++;
                             var price = db.PRICE_LIST.FirstOrDefault(p => p.Company == priceLstPart.Company && p.PriceListNum == priceLstPart.PriceListNum && p.Partnum == priceLstPart.PartNum);
                             if (price == null)
                             {
@@ -41,7 +44,7 @@ namespace EpicorConsole.Services
                                     price.DMSFlag = "N";
                                     db.PRICE_LIST.Add(price);
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Added price: #{priceLstPart.PriceListNum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Added price: #{priceLstPart.Company}/{priceLstPart.PriceListNum}/{priceLstPart.PartNum}");
                                 }
                                 catch (Exception e)
                                 {
@@ -60,7 +63,7 @@ namespace EpicorConsole.Services
                                     db.PRICE_LIST.Attach(price);
                                     db.Entry(price).State = System.Data.Entity.EntityState.Modified;
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Updated price: #{priceLstPart.PriceListNum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Updated price: #{priceLstPart.Company}/{priceLstPart.PriceListNum}/{priceLstPart.PartNum}");
                                 }
                                 catch (Exception e)
                                 {
