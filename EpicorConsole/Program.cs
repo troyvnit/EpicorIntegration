@@ -50,16 +50,16 @@ namespace EpicorConsole
                 //}
 
                 //Add or update
-                // RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(sessionId), Cron.Minutely);
-                // RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.HourInterval(6));
+                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(), Cron.Daily(21));
+                RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.Daily(21));
+                RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Daily(21));
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.HourInterval(6));
-                RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
                 //DoSyncPrice().Wait();
                 //DoSyncCustInfo().Wait();
@@ -97,8 +97,12 @@ namespace EpicorConsole
         [DisableConcurrentExecution(100000)]
         public static async Task DoSyncSO()
         {
-            var soService = new SOService();
-            await soService.SyncSOs();
+            var hour = DateTime.Now.Hour;
+            if (hour >= 8 && hour <= 20)
+            {
+                var soService = new SOService();
+                await soService.SyncSOs();
+            }
         }
 
         [DisableConcurrentExecution(100000)]
