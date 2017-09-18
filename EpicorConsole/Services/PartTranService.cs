@@ -1,5 +1,6 @@
 ﻿using EpicorConsole.Data;
 using EpicorConsole.Epicor.PartTranSvc;
+using EpicorConsole.Epicor.SessionModSvc;
 using Hangfire;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,14 @@ namespace EpicorConsole.Services
     public class PartTranService : BaseService
     {
         PartTranSvcContractClient partTranClient;
+        SessionModSvcContractClient sessionModClient;
 
-        public PartTranService(Guid sessionId)
+        public PartTranService()
         {
+            var sessionModService = new SessionModService();
+            var sessionId = sessionModService.Login();
             this.sessionId = sessionId;
+            this.sessionModClient = sessionModService.sessionModClient;
             builder.Path = $"{environment}/Erp/BO/PartTran.svc";
             partTranClient = GetClient<PartTranSvcContractClient, PartTranSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             partTranClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));

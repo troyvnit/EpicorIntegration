@@ -55,14 +55,14 @@ namespace EpicorConsole
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.HourInterval(6));
-                //  RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(sessionId), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
-                DoSyncPrice().Wait();
-                DoSyncCustInfo().Wait();
+                //DoSyncPrice().Wait();
+                //DoSyncCustInfo().Wait();
                 //DoSyncPart().Wait();
                 Console.ReadKey();
             }
@@ -102,9 +102,9 @@ namespace EpicorConsole
         }
 
         [DisableConcurrentExecution(100000)]
-        public static async Task DoSyncARInvoice(Guid sessionId)
+        public static async Task DoSyncARInvoice()
         {
-            var arInvoiceService = new ARInvoiceService(sessionId);
+            var arInvoiceService = new ARInvoiceService();
             await arInvoiceService.SyncARInvoices();
         }
 
@@ -127,9 +127,9 @@ namespace EpicorConsole
             await custInfoService.SyncCustInfos();
         }
 
-        public static async Task DoSyncPartTran(Guid sessionId)
+        public static async Task DoSyncPartTran()
         {
-            var partTranService = new PartTranService(sessionId);
+            var partTranService = new PartTranService();
             await partTranService.SyncPartTrans();
         }
     }

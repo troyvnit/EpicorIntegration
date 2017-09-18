@@ -12,14 +12,8 @@ namespace EpicorConsole.Services
 {
     public class ARInvoiceService : BaseService
     {
-        ARInvoiceSvcContractClient arInvoiceClient;
-
-        public ARInvoiceService(Guid sessionId)
+        public ARInvoiceService()
         {
-            this.sessionId = sessionId;
-            //builder.Path = $"{environment}/Erp/BO/ARInvoice.svc";
-            //arInvoiceClient = GetClient<ARInvoiceSvcContractClient, ARInvoiceSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
-            //arInvoiceClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
         
         public async Task SyncARInvoices()
@@ -29,13 +23,16 @@ namespace EpicorConsole.Services
             {
                 using (var erpdb = new ERPAPPTRAINEntities())
                 {
-                    var arInvoices = erpdb.sptyx_DMSARInvoice();
+                    var arInvoices = erpdb.sptyx_DMSARInvoice().ToList();
+                    var totalRow = arInvoices.Count();
                     using (var db = new EpicorIntergrationEntities())
                     {
+                        int runningRow = 0;
                         var addedARInvoiceHeaders = new List<ARINVOICE_HEADER>();
                         var addedARInvoiceDetails = new List<ARINVOICE_DETAIL>();
                         foreach (var arInvoice in arInvoices)
                         {
+                            runningRow++;
                             if (!db.ARINVOICE_HEADER.Any(p => p.CompanyCode == arInvoice.Company && p.DocNum == arInvoice.Docnum.ToString())
                                 && !addedARInvoiceHeaders.Any(p => p.CompanyCode == arInvoice.Company && p.DocNum == arInvoice.Docnum.ToString()))
                             {
@@ -46,7 +43,7 @@ namespace EpicorConsole.Services
                                     arInvoiceHeader.ARINVOICE_DMSFLAG = "N";
                                     addedARInvoiceHeaders.Add(arInvoiceHeader);
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Added arInvoiceHeader: #{arInvoice.Docnum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Added arInvoiceHeader: #{arInvoice.Docnum}");
                                 }
                                 catch (Exception e)
                                 {
@@ -66,7 +63,7 @@ namespace EpicorConsole.Services
                                     MapDetailToEntity(arInvoiceDetail, arInvoice);
                                     addedARInvoiceDetails.Add(arInvoiceDetail);
                                     //await db.SaveChangesAsync();
-                                    Console.WriteLine($"Added arInvoiceDetail: #{arInvoice.Docnum}");
+                                    Console.WriteLine($"[{runningRow}/{totalRow}]Added arInvoiceDetail: #{arInvoice.Docnum}");
                                 }
                                 catch (Exception e)
                                 {
