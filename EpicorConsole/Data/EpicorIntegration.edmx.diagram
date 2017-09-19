@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_DETAIL" Width="1.5" PointX="3.375" PointY="13.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.ARINVOICE_DETAIL" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EpicorIntergrationModel.ARINVOICE_HEADER" Width="1.5" PointX="11.75" PointY="16.75" />
+        <EntityTypeShape EntityType="EpicorIntergrationModel.ARINVOICE_HEADER" Width="1.5" PointX="11.375" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

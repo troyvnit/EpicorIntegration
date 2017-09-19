@@ -89,6 +89,7 @@ namespace EpicorConsole.Services
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
+                                            soDetail.SystemLog = $"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}";
                                             log.Error($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                             Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
@@ -108,8 +109,9 @@ namespace EpicorConsole.Services
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
-                                            log.Error($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                            Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            soDetail.SystemLog = $"Calculate tax soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}";
+                                            log.Error($"Calculate tax soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Calculate tax soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
@@ -129,8 +131,9 @@ namespace EpicorConsole.Services
                                         catch (Exception e)
                                         {
                                             soDetail.DMSFlag = "F";
-                                            log.Error($"Added soDetail:[{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
-                                            Console.WriteLine($"Added soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
+                                            soDetail.SystemLog = $"Updated VATGroup soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}";
+                                            log.Error($"Updated VATGroup soDetail:[{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
+                                            Console.WriteLine($"Updated VATGroup soDetail: [{soHeader.CompanyCode}]#{soDetail.DocNum}/{soDetail.LineNum} failed! - {e.Message}");
                                             Console.WriteLine(e.GetBaseException().Message);
                                             continue;
                                         }
@@ -144,6 +147,7 @@ namespace EpicorConsole.Services
                             catch (Exception e)
                             {
                                 soHeader.DMSFlag = "F";
+                                soHeader.SystemLog = $"Added soHeader: [{soHeader.CompanyCode}]#{soHeader.DocNum} failed! - {e.GetBaseException().Message}";
                                 log.Error($"Added soHeader: [{soHeader.CompanyCode}]#{soHeader.DocNum} failed! - {e.GetBaseException().Message}", e.GetBaseException());
                                 Console.WriteLine($"Added soHeader: [{soHeader.CompanyCode}]#{soHeader.DocNum} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);

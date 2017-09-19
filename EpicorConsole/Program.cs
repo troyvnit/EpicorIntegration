@@ -56,14 +56,16 @@ namespace EpicorConsole
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
                 //DoSyncPrice().Wait();
                 //DoSyncCustInfo().Wait();
                 //DoSyncPart().Wait();
+                //DoSyncARInvoice().Wait();
+                //DoSyncPartTran().Wait();
                 Console.ReadKey();
             }
         }
@@ -108,8 +110,12 @@ namespace EpicorConsole
         [DisableConcurrentExecution(100000)]
         public static async Task DoSyncARInvoice()
         {
-            var arInvoiceService = new ARInvoiceService();
-            await arInvoiceService.SyncARInvoices();
+            var hour = DateTime.Now.Hour;
+            if (hour >= 8 && hour <= 20)
+            {
+                var arInvoiceService = new ARInvoiceService();
+                await arInvoiceService.SyncARInvoices();
+            }
         }
 
         public static async Task DoSyncCustBalance()
@@ -133,8 +139,16 @@ namespace EpicorConsole
 
         public static async Task DoSyncPartTran()
         {
-            var partTranService = new PartTranService();
-            await partTranService.SyncPartTrans();
+            var hour = DateTime.Now.Hour;
+            if (hour >= 8 && hour <= 20)
+            {
+                var users = new string[] { "pmn", "pms", "gvn", "gvs", "gvc", "gbn", "grv" };
+                foreach (var user in users)
+                {
+                    var partTranService = new PartTranService();
+                    await partTranService.SyncPartTrans(user.ToUpper());
+                }
+            }
         }
     }
 }

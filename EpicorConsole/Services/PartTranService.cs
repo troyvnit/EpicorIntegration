@@ -26,13 +26,17 @@ namespace EpicorConsole.Services
             partTranClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
         }
 
-        public async Task SyncPartTrans()
+        public async Task SyncPartTrans(string company)
         {
             log.Information("Syncing PartTrans...");
+            Console.WriteLine($"Syncing {company} PartTrans...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())
                 {
+                    string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
+                    sessionModClient.SetCompany(company, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
+
                     bool more = true;
                     int page = 0;
                     DateTime expired = DateTime.Now.AddMinutes(10);

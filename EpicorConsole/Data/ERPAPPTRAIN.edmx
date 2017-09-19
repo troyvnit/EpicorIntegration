@@ -163,19 +163,18 @@
           <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="17" Scale="3" />
           <Property Type="DateTime" Name="InvoiceDate" Nullable="true" />
           <Property Type="Int32" Name="Type" Nullable="false" />
-          <Property Type="String" Name="Remarks" Nullable="false" MaxLength="1" />
           <Property Type="String" Name="SO_Docnum" Nullable="true" MaxLength="30" />
           <Property Type="Int32" Name="Linenum" Nullable="false" />
           <Property Type="String" Name="Productcode" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="UOM" Nullable="false" MaxLength="6" />
-          <Property Type="Decimal" Name="OurShipQty" Nullable="false" Precision="22" Scale="8" />
-          <Property Type="Decimal" Name="Price" Nullable="false" Precision="17" Scale="5" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="17" Scale="3" />
           <Property Type="Decimal" Name="Discount_Percent" Nullable="false" Precision="6" Scale="2" />
           <Property Type="Decimal" Name="Discount_Amount" Nullable="false" Precision="17" Scale="3" />
-          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="38" Scale="11" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="38" Scale="9" />
           <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="75" />
-          <Property Type="Guid" Name="SysRowID" Nullable="false" />
           <Property Type="String" Name="ARINVOICE_DMSFLAG" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Remarks" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="OurShipQty" Nullable="false" Precision="22" Scale="8" />
         </ComplexType>
         <ComplexType Name="sptyx_DMSCustInfo_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -326,19 +325,18 @@
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="SO_Docnum" ColumnName="SO_Docnum" />
                 <ScalarProperty Name="Linenum" ColumnName="Linenum" />
                 <ScalarProperty Name="Productcode" ColumnName="Productcode" />
                 <ScalarProperty Name="UOM" ColumnName="UOM" />
-                <ScalarProperty Name="OurShipQty" ColumnName="OurShipQty" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
                 <ScalarProperty Name="Discount_Amount" ColumnName="Discount_Amount" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="SysRowID" ColumnName="SysRowID" />
                 <ScalarProperty Name="ARINVOICE_DMSFLAG" ColumnName="ARINVOICE_DMSFLAG" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="OurShipQty" ColumnName="OurShipQty" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

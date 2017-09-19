@@ -44,7 +44,7 @@
           <Property Name="Type" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="InvoiceDate" Type="datetime" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="510" />
-          <Property Name="SO_DocNum" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SO_DocNum" Type="nvarchar" MaxLength="40" />
           <Property Name="CreditMemoDraft_DocNum" Type="nvarchar" MaxLength="40" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedDateTime" Type="datetime2" Precision="7" />
@@ -1101,7 +1101,7 @@
           <Property Name="Type" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
           <Property Name="Remarks" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
-          <Property Name="SO_DocNum" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SO_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="CreditMemoDraft_DocNum" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDateTime" Type="DateTime" Precision="7" />

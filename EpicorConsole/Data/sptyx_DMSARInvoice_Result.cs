@@ -20,18 +20,17 @@ namespace EpicorConsole.Data
         public decimal TotalAmount { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
         public int Type { get; set; }
-        public string Remarks { get; set; }
         public string SO_Docnum { get; set; }
         public int Linenum { get; set; }
         public string Productcode { get; set; }
         public string UOM { get; set; }
-        public decimal OurShipQty { get; set; }
         public decimal Price { get; set; }
         public decimal Discount_Percent { get; set; }
         public decimal Discount_Amount { get; set; }
         public Nullable<decimal> Amount { get; set; }
         public string CreatedBy { get; set; }
-        public System.Guid SysRowID { get; set; }
         public string ARINVOICE_DMSFLAG { get; set; }
+        public string Remarks { get; set; }
+        public decimal OurShipQty { get; set; }
     }
 }
