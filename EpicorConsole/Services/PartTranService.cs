@@ -48,7 +48,7 @@ namespace EpicorConsole.Services
                         {
                             pageSize = 5,
                             absolutePage = page,
-                            whereClausePartTran = "TranType = 'STK-UKN' OR TranType = 'PUR-STK'"
+                            whereClausePartTran = "(TranType = 'STK-UKN' OR TranType = 'PUR-STK') AND TranDate >= '2017-9-1'"
                         });
                         var result = rs.GetRowsResult;
                         var partTrans = result.PartTran.ToArray();
