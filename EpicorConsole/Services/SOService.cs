@@ -70,7 +70,7 @@ namespace EpicorConsole.Services
                                     soClient.Update(ref soTableset);
 
                                     //Details
-                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "N"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/).OrderBy(c => c.LineNum).ToList();
+                                    var soDetails = db.SO_DETAIL.Where(c => c.DocNum == soHeader.DocNum && c.DMSFlag == "N"/* c.DMSFlag == "N" || c.DMSFlag == "U"*/).ToList().OrderBy(c => int.Parse(c.LineNum));
                                     foreach(var soDetail in soDetails)
                                     {
                                         try
