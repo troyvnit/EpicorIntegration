@@ -65,6 +65,7 @@
           <Parameter Name="SysRevID" Type="varchar" Mode="In" />
           <Parameter Name="UD_SysRevID" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sptyx_SOCancel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ERPAPPTRAINModelStoreContainer">
           <EntitySet Name="PriceLst" EntityType="Self.PriceLst" Schema="Erp" store:Type="Tables" />
           <EntitySet Name="PriceLstParts" EntityType="Self.PriceLstParts" Schema="Erp" store:Type="Tables" />
@@ -84,6 +85,7 @@
             <Parameter Name="SysRevID" Mode="In" Type="String" />
             <Parameter Name="UD_SysRevID" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sptyx_SOCancel" />
         </EntityContainer>
         <ComplexType Name="sptyx_DMSCustBalance_Result">
           <Property Type="String" Name="Company" Nullable="false" MaxLength="8" />
@@ -421,6 +423,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sptyx_SOCancel" FunctionName="ERPAPPTRAINModel.Store.sptyx_SOCancel" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

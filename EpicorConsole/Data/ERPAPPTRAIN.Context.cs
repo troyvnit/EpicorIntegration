@@ -62,5 +62,10 @@ namespace EpicorConsole.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sptyx_DMSProduct_Result>("sptyx_DMSProduct", sysRevIDParameter, uD_SysRevIDParameter);
         }
+    
+        public virtual int sptyx_SOCancel()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sptyx_SOCancel");
+        }
     }
 }

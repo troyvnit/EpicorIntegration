@@ -72,7 +72,7 @@ namespace EpicorWeb.Services
         [DisableConcurrentExecution(100000)]
         public async Task DoSyncCustBalance()
         {
-            var custBalanceService = new CustBalanceService();
+            var custBalanceService = new SOCancelService();
             await custBalanceService.SyncCustBalances();
         }
 

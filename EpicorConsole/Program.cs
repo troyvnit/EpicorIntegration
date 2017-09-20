@@ -57,7 +57,7 @@ namespace EpicorConsole
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
                 RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
                 RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
-                //RecurringJob.AddOrUpdate("DoSyncCustBalance", () => DoSyncCustBalance(), Cron.Minutely);
+                RecurringJob.AddOrUpdate("DoSyncSOCancel", () => DoSyncSOCancel(), Cron.MinuteInterval(15));
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
                 RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
@@ -118,10 +118,15 @@ namespace EpicorConsole
             }
         }
 
-        public static async Task DoSyncCustBalance()
+        [DisableConcurrentExecution(100000)]
+        public static async Task DoSyncSOCancel()
         {
-            var custBalanceService = new CustBalanceService();
-            await custBalanceService.SyncCustBalances();
+            var hour = DateTime.Now.Hour;
+            if (hour >= 8 && hour <= 20)
+            {
+                var soCancelService = new SOCancelService();
+                await soCancelService.SyncSOCancels();
+            }
         }
 
         public static async Task DoSyncCustOverDue()
