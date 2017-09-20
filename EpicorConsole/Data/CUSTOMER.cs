@@ -24,7 +24,7 @@ namespace EpicorConsole.Data
         public string Fax { get; set; }
         public string ContactPerson { get; set; }
         public Nullable<decimal> CreditLimit { get; set; }
-        public short PriceListNum { get; set; }
+        public string PriceListNum { get; set; }
         public string Currency { get; set; }
         public string Country { get; set; }
         public string PaymentTerm { get; set; }

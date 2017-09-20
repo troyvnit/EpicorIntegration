@@ -12,23 +12,16 @@ namespace EpicorConsole.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class SO_HEADER_CONFIRM
+    public partial class SO_CANCEL
     {
-        public string CompanyCode { get; set; }
-        public string DocNum { get; set; }
-        public string ExtDocNum { get; set; }
-        public string BranchCode { get; set; }
-        public string CustomerCode { get; set; }
-        public string ShiptoCode { get; set; }
-        public string SalesmanCode { get; set; }
-        public System.DateTime DeliveryDate { get; set; }
-        public decimal TotalAmount { get; set; }
-        public string Remarks { get; set; }
+        public string Companycode { get; set; }
+        public string Docnum { get; set; }
+        public int Ordernum { get; set; }
         public string Status { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
         public string LastUpdatedBy { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
+        public Nullable<System.DateTime> LastUpdateDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
     }

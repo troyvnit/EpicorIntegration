@@ -1,5 +1,6 @@
 ﻿using EpicorConsole.Data;
 using EpicorConsole.Epicor.CustomerSvc;
+using EpicorConsole.Epicor.SessionModSvc;
 using Hangfire;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,14 @@ namespace EpicorConsole.Services
     public class CustomerService : BaseService
     {
         CustomerSvcContractClient customerClient;
+        SessionModSvcContractClient sessionModClient;
 
-        public CustomerService(Guid sessionId)
+        public CustomerService()
         {
+            var sessionModService = new SessionModService();
+            var sessionId = sessionModService.Login();
             this.sessionId = sessionId;
+            this.sessionModClient = sessionModService.sessionModClient;
             builder.Path = $"{environment}/Erp/BO/Customer.svc";
             customerClient = GetClient<CustomerSvcContractClient, CustomerSvcContract>(builder.Uri.ToString(), epicorUserID, epiorUserPassword, bindingType);
             customerClient.Endpoint.EndpointBehaviors.Add(new HookServiceBehavior(sessionId, epicorUserID));
@@ -23,7 +28,7 @@ namespace EpicorConsole.Services
         
         public async Task SyncCustomers()
         {
-            log.Information("Syncing Customers...");
+            Console.WriteLine("Syncing Customers...");
             try
             {
                 using (var db = new EpicorIntergrationEntities())
@@ -36,6 +41,14 @@ namespace EpicorConsole.Services
                         {
                             try
                             {
+                                string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
+
+                                var currentCompany = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
+
+                                if (currentCompany != customer.CompanyCode)
+                                {
+                                    sessionModClient.SetCompany(customer.CompanyCode, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
+                                }
                                 CustomerTableset customerTableset = new CustomerTableset();
                                 customerClient.GetNewCustomer(ref customerTableset);
                                 var customerRow = customerTableset.Customer.Where(p => p.RowMod == "A").FirstOrDefault();
@@ -49,7 +62,7 @@ namespace EpicorConsole.Services
                             }
                             catch (Exception e)
                             {
-                                customer.DMSFlag = "F";
+                                //customer.DMSFlag = "F";
                                 Console.WriteLine($"Added customer: #{customer.CustomerCode} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
@@ -60,6 +73,14 @@ namespace EpicorConsole.Services
                         {
                             try
                             {
+                                string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
+
+                                var currentCompany = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
+
+                                if (currentCompany != customer.CompanyCode)
+                                {
+                                    sessionModClient.SetCompany(customer.CompanyCode, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
+                                }
                                 CustomerTableset customerTableset = customerClient.GetByCustID(customer.CustomerCode, true);
                                 var customerRow = customerTableset.Customer.FirstOrDefault();
                                 if (customerRow != null)
@@ -73,7 +94,7 @@ namespace EpicorConsole.Services
                             }
                             catch (Exception e)
                             {
-                                customer.DMSFlag = "F";
+                                //customer.DMSFlag = "F";
                                 Console.WriteLine($"Updated customer: #{customer.CustomerCode} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
@@ -125,7 +146,7 @@ namespace EpicorConsole.Services
             row.TaxRegionCode = !string.IsNullOrEmpty(entity.GroupTax) ? entity.GroupTax : row.TaxRegionCode;
             row.ResaleID = !string.IsNullOrEmpty(entity.TaxCode) ? entity.TaxCode : row.ResaleID;
             row.CustomerType = !string.IsNullOrEmpty(entity.CustomerType) ? entity.CustomerType : row.CustomerType;
-
+           
             row.TerritoryID = "DEFAULT";
         }
     }

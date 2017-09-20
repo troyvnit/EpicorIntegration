@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -158,12 +158,6 @@
     <Compile Include="Data\CUSTOMER_SHIPTO.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\CUST_BALANCE.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\CUST_OVER_DUE.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\EpicorIntegration.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,12 +191,6 @@
     <Compile Include="Data\INVT_TRANS.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\INVT_TRANS_DETAIL.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\INVT_TRANS_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\PDA_PAYMENT.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
@@ -230,13 +218,13 @@
     <Compile Include="Data\RPO_HEADER.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\SO_CANCEL.cs">
+      <DependentUpon>EpicorIntegration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\SO_DETAIL.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\SO_HEADER.cs">
-      <DependentUpon>EpicorIntegration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\SO_HEADER_CONFIRM.cs">
       <DependentUpon>EpicorIntegration.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sptyx_DMSARInvoice_Result.cs">
@@ -312,7 +300,6 @@
     <Compile Include="Services\SOService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\CustomerService.cs" />
-    <Compile Include="Services\CustOverDueService.cs" />
     <Compile Include="Services\PriceService.cs" />
     <Compile Include="Services\PartService.cs" />
     <Compile Include="Services\SessionModService.cs" />
