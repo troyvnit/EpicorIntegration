@@ -16,27 +16,36 @@ namespace EpicorConsole.Data
     {
         public string CompanyCode { get; set; }
         public string CustomerCode { get; set; }
+        public string CustomerType { get; set; }
         public string CustomerName { get; set; }
-        public string ForeignName { get; set; }
+        public string FullAddress { get; set; }
         public string Address { get; set; }
-        public string Phone1 { get; set; }
-        public string Phone2 { get; set; }
-        public string Fax { get; set; }
-        public string ContactPerson { get; set; }
-        public Nullable<decimal> CreditLimit { get; set; }
-        public string PriceListNum { get; set; }
-        public string Currency { get; set; }
+        public string Ward { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
         public string Country { get; set; }
-        public string PaymentTerm { get; set; }
+        public string SalesRepCode { get; set; }
+        public string Phone1 { get; set; }
+        public string Fax { get; set; }
         public string GroupTax { get; set; }
         public string TaxCode { get; set; }
+        public string Currency { get; set; }
         public string BusinessRegistrationCertificate { get; set; }
-        public string CustomerType { get; set; }
-        public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public string LastUpdatedBy { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
-        public string Status { get; set; }
+        public string ShipViaCode { get; set; }
+        public string ContactPerson { get; set; }
+        public decimal CreditLimit { get; set; }
+        public string PaymentTerm { get; set; }
+        public string TerritoryID { get; set; }
+        public string AttrName0 { get; set; }
+        public string AttrName1 { get; set; }
+        public string AttrName2 { get; set; }
+        public string AttrName3 { get; set; }
+        public string AttrName4 { get; set; }
+        public string AttrName5 { get; set; }
+        public string AttrName6 { get; set; }
+        public string AttrName7 { get; set; }
+        public string AttrName8 { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
     }

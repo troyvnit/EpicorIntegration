@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d5391297ff254bbdb85d84332af046c6" Name="Diagram1" ZoomLevel="80">
         <EntityTypeShape EntityType="EpicorIntergrationModel.CUSTOMER_INFO" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EpicorIntergrationModel.CUSTOMER_SHIPTO" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.INVT_TRANS" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.PDA_PAYMENT" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.PO_DETAIL" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
@@ -19,9 +18,10 @@
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_HEADER" Width="1.5" PointX="15.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.ARINVOICE_DETAIL" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.ARINVOICE_HEADER" Width="1.5" PointX="11.375" PointY="16.75" />
-        <EntityTypeShape EntityType="EpicorIntergrationModel.CUSTOMER" Width="1.5" PointX="17.375" PointY="0.75" />
         <EntityTypeShape EntityType="EpicorIntergrationModel.SO_CANCEL" Width="1.5" PointX="17.375" PointY="7.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="EpicorIntergrationModel.CUSTOMER" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EpicorIntergrationModel.CUSTOMER_SHIPTO" Width="1.5" PointX="5.375" PointY="0.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

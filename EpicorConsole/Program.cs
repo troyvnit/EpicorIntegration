@@ -50,23 +50,23 @@ namespace EpicorConsole
                 //}
 
                 //Add or update
-                RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(), Cron.Daily(21));
-                RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.Daily(21));
-                RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Daily(21));
+                //RecurringJob.AddOrUpdate("DoSyncPart", () => DoSyncPart(), Cron.Daily(21));
+                //RecurringJob.AddOrUpdate("DoSyncPrice", () => DoSyncPrice(), Cron.Daily(21));
+                //RecurringJob.AddOrUpdate("DoSyncCustInfo", () => DoSyncCustInfo(), Cron.Daily(21));
                 //RecurringJob.AddOrUpdate("DoSyncCustomer", () => DoSyncCustomer(sessionId), Cron.Minutely);
                 //RecurringJob.AddOrUpdate("DoSyncPO", () => DoSyncPO(sessionId), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncSOCancel", () => DoSyncSOCancel(), Cron.MinuteInterval(15));
+                //RecurringJob.AddOrUpdate("DoSyncSO", () => DoSyncSO(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncARInvoice", () => DoSyncARInvoice(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncSOCancel", () => DoSyncSOCancel(), Cron.MinuteInterval(15));
                 //RecurringJob.AddOrUpdate("DoSyncCustOverDue", () => DoSyncCustOverDue(), Cron.Minutely);
-                RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
+                //RecurringJob.AddOrUpdate("DoSyncPartTran", () => DoSyncPartTran(), Cron.Minutely);
                 //DoSyncSO(sessionId, sessionModService.sessionModClient).Wait();
                 //DoSyncPrice().Wait();
                 //DoSyncCustInfo().Wait();
                 //DoSyncPart().Wait();
                 //DoSyncARInvoice().Wait();
                 //DoSyncPartTran().Wait();
-                //DoSyncCustomer().Wait();
+                DoSyncCustomer().Wait();
                 Console.ReadKey();
             }
         }
@@ -85,12 +85,14 @@ namespace EpicorConsole
             await priceService.SyncPrices();
         }
 
+        [DisableConcurrentExecution(100000)]
         public static async Task DoSyncCustomer()
         {
             var customerService = new CustomerService();
             await customerService.SyncCustomers();
         }
 
+        [DisableConcurrentExecution(100000)]
         public static async Task DoSyncPO(Guid sessionId)
         {
             var poService = new POService(sessionId);
@@ -137,6 +139,7 @@ namespace EpicorConsole
             await custInfoService.SyncCustInfos();
         }
 
+        [DisableConcurrentExecution(100000)]
         public static async Task DoSyncPartTran()
         {
             var hour = DateTime.Now.Hour;

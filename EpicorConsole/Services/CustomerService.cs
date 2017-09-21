@@ -34,8 +34,8 @@ namespace EpicorConsole.Services
                 using (var db = new EpicorIntergrationEntities())
                 {
                     var addedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "N");
-                    var updatedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "U");
-                    if (addedCustomers.Any() || updatedCustomers.Any())
+                    //var updatedCustomers = db.CUSTOMERs.Where(c => c.DMSFlag == "U");
+                    if (addedCustomers.Any()/* || updatedCustomers.Any()*/)
                     {
                         foreach (var customer in addedCustomers)
                         {
@@ -54,8 +54,21 @@ namespace EpicorConsole.Services
                                 var customerRow = customerTableset.Customer.Where(p => p.RowMod == "A").FirstOrDefault();
                                 if (customerRow != null)
                                 {
-                                    MapToRow(customerRow, customer);
+                                    MapToCustomerRow(customerRow, customer);
                                     customerClient.Update(ref customerTableset);
+                                    var custNum = customerTableset.Customer[0].CustNum;
+                                    customerClient.GetNewShipTo(ref customerTableset, custNum);
+                                    var shipToRow = customerTableset.ShipTo.FirstOrDefault(s => s.RowMod == "A");
+                                    if(shipToRow != null)
+                                    {
+                                        var customerShipTo = db.CUSTOMER_SHIPTO.FirstOrDefault(cst => cst.CustomerCode == customer.CustomerCode);
+                                        if(customerShipTo != null)
+                                        {
+                                            MapToShipToRow(shipToRow, customerShipTo);
+                                            customerClient.Update(ref customerTableset);
+                                            Console.WriteLine($"Added customer ship to: #{customer.CustomerCode} successfully!");
+                                        }
+                                    }
                                     customer.DMSFlag = "S";
                                     Console.WriteLine($"Added customer: #{customer.CustomerCode} successfully!");
                                 }
@@ -63,46 +76,49 @@ namespace EpicorConsole.Services
                             catch (Exception e)
                             {
                                 //customer.DMSFlag = "F";
+                                customer.SystemLog = $"Added customer: #{customer.CustomerCode} failed! - {e.Message}";
                                 Console.WriteLine($"Added customer: #{customer.CustomerCode} failed! - {e.Message}");
                                 Console.WriteLine(e.GetBaseException().Message);
                                 continue;
                             }
                         }
 
-                        foreach(var customer in updatedCustomers)
-                        {
-                            try
-                            {
-                                string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
+                        //foreach(var customer in updatedCustomers)
+                        //{
+                        //    try
+                        //    {
+                        //        string siteID, siteName, workstationID, workstationDescription, employeeID, countryGroupCode, countryCode, tenantID, companyName, systemCode;
 
-                                var currentCompany = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
+                        //        var currentCompany = sessionModClient.GetCurrentValues(out companyName, out siteID, out siteName, out employeeID, out workstationID, out workstationDescription, out systemCode, out countryGroupCode, out countryCode, out tenantID);
 
-                                if (currentCompany != customer.CompanyCode)
-                                {
-                                    sessionModClient.SetCompany(customer.CompanyCode, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
-                                }
-                                CustomerTableset customerTableset = customerClient.GetByCustID(customer.CustomerCode, true);
-                                var customerRow = customerTableset.Customer.FirstOrDefault();
-                                if (customerRow != null)
-                                {
-                                    customerRow.RowMod = "U";
-                                    MapToRow(customerRow, customer);
-                                    customerClient.Update(ref customerTableset);
-                                    customer.DMSFlag = "S";
-                                    Console.WriteLine($"Updated customer: #{customer.CustomerCode} successfully!");
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                //customer.DMSFlag = "F";
-                                Console.WriteLine($"Updated customer: #{customer.CustomerCode} failed! - {e.Message}");
-                                Console.WriteLine(e.GetBaseException().Message);
-                                continue;
-                            }
-                        }
+                        //        if (currentCompany != customer.CompanyCode)
+                        //        {
+                        //            sessionModClient.SetCompany(customer.CompanyCode, out siteID, out siteName, out workstationID, out workstationDescription, out employeeID, out countryGroupCode, out countryCode, out tenantID);
+                        //        }
+                        //        CustomerTableset customerTableset = customerClient.GetByCustID(customer.CustomerCode, true);
+                        //        var customerRow = customerTableset.Customer.FirstOrDefault();
+                        //        if (customerRow != null)
+                        //        {
+                        //            customerRow.RowMod = "U";
+                        //            MapToCustomerRow(customerRow, customer);
+                        //            customerClient.Update(ref customerTableset);
+                        //            customer.DMSFlag = "S";
+                        //            Console.WriteLine($"Updated customer: #{customer.CustomerCode} successfully!");
+                        //        }
+                        //    }
+                        //    catch (Exception e)
+                        //    {
+                        //        //customer.DMSFlag = "F";
+                        //        Console.WriteLine($"Updated customer: #{customer.CustomerCode} failed! - {e.Message}");
+                        //        Console.WriteLine(e.GetBaseException().Message);
+                        //        continue;
+                        //    }
+                        //}
 
                         await db.SaveChangesAsync();
                     }
+
+                    sessionModClient.Logout();
                 }
             }
             catch (Exception e)
@@ -111,43 +127,66 @@ namespace EpicorConsole.Services
             }
         }
 
-        public async Task<int> GetCustNum(string custId)
+        private void MapToShipToRow(ShipToRow row, CUSTOMER_SHIPTO entity)
         {
-            var customer = await customerClient.GetCustomerAsync(custId);
-            if (!customer.Customer.Any())
-            {
-                Console.WriteLine($"Customer {custId} not found!");
-                return 0;
-            }
-            return customer.Customer[0].CustNum;
+            row.Company = entity.CompanyCode;
+            row.ShipToNum = entity.ShiptoCode;
+            row.Address1 = entity.Address;
+            row.Address2 = entity.Ward;
+            row.Address3 = entity.District;
+            row.City = entity.City;
+            row.State = entity.Region;
+            row.Country = entity.Country;
+            row.PhoneNum = entity.Phone1;
+            row.FaxNum = entity.Fax;
+            row.SalesRepCode = entity.SalesRepCode;
+            row.TaxRegionCode = entity.GroupTax;
+            row.ShipViaCode = entity.ShipViaCode;
+            row.TerritoryID = entity.TerritoryID;
+            row.UserDefinedColumns["Character01"] = entity.AttrName0;
+            row.UserDefinedColumns["Character02"] = entity.AttrName1;
+            row.UserDefinedColumns["Character03"] = entity.AttrName2;
+            row.UserDefinedColumns["Character04"] = entity.AttrName3;
+            row.UserDefinedColumns["Character05"] = entity.AttrName4;
+            row.UserDefinedColumns["ShortChar01"] = entity.AttrName5;
+            row.UserDefinedColumns["ShortChar02"] = entity.AttrName6;
+            row.UserDefinedColumns["ShortChar03"] = entity.AttrName7;
+            row.UserDefinedColumns["ShortChar04"] = entity.AttrName8;
         }
 
-        private void MapToEntity(CUSTOMER entity, CustomerRow row)
+        private void MapToCustomerRow(CustomerRow row, CUSTOMER entity)
         {
-            entity.Currency = row.CurrencyCode;
-            entity.CreatedBy = this.epicorUserID;
-            entity.LastUpdatedBy = this.epicorUserID;
-            entity.CreatedDateTime = DateTime.Now;
-            entity.LastUpdatedDateTime = DateTime.Now;
-        }
-
-        private void MapToRow(CustomerRow row, CUSTOMER entity)
-        {
-            row.Company = !string.IsNullOrEmpty(entity.CompanyCode) ? entity.CompanyCode : row.Company;
-            row.CustID = !string.IsNullOrEmpty(entity.CustomerCode) ? entity.CustomerCode : row.CustID;
-            row.Name = !string.IsNullOrEmpty(entity.CustomerName) ? entity.CustomerName : row.Name;
-            row.Address1 = !string.IsNullOrEmpty(entity.Address) ? entity.Address : row.Address1;
-            row.PhoneNum = !string.IsNullOrEmpty(entity.Phone1) ? entity.Phone1 : row.PhoneNum;
-            row.FaxNum = !string.IsNullOrEmpty(entity.Fax) ? entity.Fax : row.FaxNum;
-            row.CreditLimit = entity.CreditLimit.HasValue ? entity.CreditLimit.Value : row.CreditLimit;
-            row.CurrencyCode = !string.IsNullOrEmpty(entity.Currency) ? entity.Currency : row.CurrencyCode;
-            row.Country = !string.IsNullOrEmpty(entity.Country) ? entity.Country : row.Country;
-            row.TermsCode = !string.IsNullOrEmpty(entity.PaymentTerm) ? entity.PaymentTerm : row.TermsCode;
-            row.TaxRegionCode = !string.IsNullOrEmpty(entity.GroupTax) ? entity.GroupTax : row.TaxRegionCode;
-            row.ResaleID = !string.IsNullOrEmpty(entity.TaxCode) ? entity.TaxCode : row.ResaleID;
-            row.CustomerType = !string.IsNullOrEmpty(entity.CustomerType) ? entity.CustomerType : row.CustomerType;
-           
-            row.TerritoryID = "DEFAULT";
+            row.Company = entity.CompanyCode;
+            row.CustID = entity.CustomerCode;
+            row.CustomerType = entity.CustomerType;
+            row.Name = entity.CustomerName;
+            row.UserDefinedColumns["Character01"] = entity.FullAddress;
+            row.Address1 = entity.Address;
+            row.Address2 = entity.Ward;
+            row.Address3 = entity.District;
+            row.City = entity.City;
+            row.State = entity.Region;
+            row.Country = entity.Country;
+            row.SalesRepCode = entity.SalesRepCode;
+            row.PhoneNum = entity.Phone1;
+            row.FaxNum = entity.Fax;
+            row.TaxRegionCode = entity.GroupTax;
+            row.ResaleID = entity.TaxCode;
+            row.CurrencyCode = entity.Currency;
+            row.FederalID = entity.BusinessRegistrationCertificate;
+            row.ShipViaCode = entity.ShipViaCode;
+            row.CreditLimit = entity.CreditLimit;
+            row.TermsCode = entity.PaymentTerm;
+            row.TerritoryID = entity.TerritoryID;
+            row.UserDefinedColumns["Character01"] = entity.AttrName0;
+            row.UserDefinedColumns["Character02"] = entity.AttrName1;
+            row.UserDefinedColumns["Character03"] = entity.AttrName2;
+            row.UserDefinedColumns["Character04"] = entity.AttrName3;
+            row.UserDefinedColumns["Character05"] = entity.AttrName4;
+            row.UserDefinedColumns["ShortChar01"] = entity.AttrName5;
+            row.UserDefinedColumns["ShortChar02"] = entity.AttrName6;
+            row.UserDefinedColumns["ShortChar03"] = entity.AttrName7;
+            row.UserDefinedColumns["ShortChar04"] = entity.AttrName8;
         }
     }
 }

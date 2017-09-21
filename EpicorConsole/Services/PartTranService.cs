@@ -77,6 +77,8 @@ namespace EpicorConsole.Services
                     }
                     await db.SaveChangesAsync();
                 }
+
+                sessionModClient.Logout();
             }
             catch (Exception e)
             {

@@ -59,27 +59,36 @@
           </Key>
           <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="CustomerCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="CustomerType" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="ForeignName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Address" Type="nvarchar" MaxLength="200" />
-          <Property Name="Phone1" Type="nvarchar" MaxLength="40" />
-          <Property Name="Phone2" Type="nvarchar" MaxLength="40" />
-          <Property Name="Fax" Type="nvarchar" MaxLength="40" />
-          <Property Name="ContactPerson" Type="nvarchar" MaxLength="180" />
-          <Property Name="CreditLimit" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="PriceListNum" Type="nvarchar" MaxLength="50" />
-          <Property Name="Currency" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="FullAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Country" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="GroupTax" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="TaxCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="BusinessRegistrationCertificate" Type="nvarchar" MaxLength="100" />
-          <Property Name="CustomerType" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="CreatedDateTime" Type="datetime" />
-          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
-          <Property Name="LastUpdatedDateTime" Type="datetime" />
-          <Property Name="Status" Type="char" MaxLength="1" />
+          <Property Name="SalesRepCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="GroupTax" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="BusinessRegistrationCertificate" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ShipViaCode" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreditLimit" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="AttrName0" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName1" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName5" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName6" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName7" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttrName8" Type="nvarchar" MaxLength="200" />
           <Property Name="SystemLog" Type="nvarchar" MaxLength="400" />
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
@@ -113,45 +122,27 @@
           <Property Name="CompanyCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="CustomerCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ShiptoCode" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="AddressName" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Address1" Type="nvarchar" MaxLength="100" />
-          <Property Name="Address2" Type="nvarchar" MaxLength="100" />
-          <Property Name="Address3" Type="nvarchar" MaxLength="100" />
-          <Property Name="Country" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="DistrictCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="DistrictName" Type="nvarchar" MaxLength="200" />
-          <Property Name="ProvinceCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="ProvinceName" Type="nvarchar" MaxLength="200" />
-          <Property Name="RegionCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="RegionName" Type="nvarchar" MaxLength="200" />
-          <Property Name="StreetCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="StreetName" Type="nvarchar" MaxLength="200" />
-          <Property Name="WardCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="WardName" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode0" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Region" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SalesRepCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="GroupTax" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ShipViaCode" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="8" Nullable="false" />
           <Property Name="AttrName0" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode1" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName1" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode2" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName2" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode3" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName3" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode4" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName4" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode5" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName5" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode6" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName6" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode7" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName7" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode8" Type="nvarchar" MaxLength="100" />
           <Property Name="AttrName8" Type="nvarchar" MaxLength="200" />
-          <Property Name="AttrCode9" Type="nvarchar" MaxLength="100" />
-          <Property Name="AttrName9" Type="nvarchar" MaxLength="200" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
-          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="LastUpdatedDateTime" Type="datetime" Nullable="false" />
           <Property Name="SystemLog" Type="nvarchar" MaxLength="400" />
           <Property Name="DMSFlag" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
@@ -513,57 +504,6 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
           <Property Name="CusSysRevID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="CUSTOMER_SHIPTO">
-          <Key>
-            <PropertyRef Name="CompanyCode" />
-            <PropertyRef Name="CustomerCode" />
-            <PropertyRef Name="ShiptoCode" />
-          </Key>
-          <Property Name="CompanyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CustomerCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ShiptoCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AddressName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Address3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DistrictCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DistrictName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ProvinceCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ProvinceName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="RegionCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RegionName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="StreetCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="StreetName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="WardCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="WardName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode0" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="AttrCode9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AttrName9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityType Name="INVT_TRANS">
           <Key>
             <PropertyRef Name="Id" />
@@ -718,7 +658,6 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
         </EntityType>
         <EntityContainer Name="EpicorIntergrationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CUSTOMER_INFO" EntityType="Self.CUSTOMER_INFO" />
-          <EntitySet Name="CUSTOMER_SHIPTO" EntityType="Self.CUSTOMER_SHIPTO" />
           <EntitySet Name="INVT_TRANS" EntityType="Self.INVT_TRANS" />
           <EntitySet Name="PDA_PAYMENT" EntityType="Self.PDA_PAYMENT" />
           <EntitySet Name="PO_DETAIL" EntityType="Self.PO_DETAIL" />
@@ -731,8 +670,9 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
           <EntitySet Name="SO_HEADER" EntityType="EpicorIntergrationModel.SO_HEADER" />
           <EntitySet Name="ARINVOICE_DETAIL" EntityType="EpicorIntergrationModel.ARINVOICE_DETAIL" />
           <EntitySet Name="ARINVOICE_HEADER" EntityType="EpicorIntergrationModel.ARINVOICE_HEADER" />
-          <EntitySet Name="CUSTOMERs" EntityType="EpicorIntergrationModel.CUSTOMER" />
           <EntitySet Name="SO_CANCEL" EntityType="EpicorIntergrationModel.SO_CANCEL" />
+          <EntitySet Name="CUSTOMERs" EntityType="EpicorIntergrationModel.CUSTOMER" />
+          <EntitySet Name="CUSTOMER_SHIPTO" EntityType="EpicorIntergrationModel.CUSTOMER_SHIPTO" />
         </EntityContainer>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -912,37 +852,6 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
           <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="7" />
           <Property Name="ARINVOICE_DMSFLAG" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityType Name="CUSTOMER">
-          <Key>
-            <PropertyRef Name="CompanyCode" />
-            <PropertyRef Name="CustomerCode" />
-          </Key>
-          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ForeignName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Phone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Phone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Fax" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="ContactPerson" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
-          <Property Name="CreditLimit" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PriceListNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Currency" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="PaymentTerm" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GroupTax" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="TaxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="BusinessRegistrationCertificate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="LastUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
-          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-        </EntityType>
         <EntityType Name="SO_CANCEL">
           <Key>
             <PropertyRef Name="Companycode" />
@@ -959,6 +868,79 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
           <Property Name="LastUpdateDateTime" Type="DateTime" Precision="3" />
           <Property Name="SystemLog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DMSFlag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="CustomerCode" />
+          </Key>
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerType" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FullAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ward" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SalesRepCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="GroupTax" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessRegistrationCertificate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ShipViaCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreditLimit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PaymentTerm" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TerritoryID" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER_SHIPTO">
+          <Key>
+            <PropertyRef Name="CompanyCode" />
+            <PropertyRef Name="CustomerCode" />
+            <PropertyRef Name="ShiptoCode" />
+          </Key>
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ShiptoCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ward" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SalesRepCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="GroupTax" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="ShipViaCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="TerritoryID" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName0" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttrName8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SystemLog" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="DMSFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -984,56 +966,6 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
                 <ScalarProperty Name="Option5" ColumnName="Option5" />
                 <ScalarProperty Name="PrcSysRevID" ColumnName="PrcSysRevID" />
                 <ScalarProperty Name="CusSysRevID" ColumnName="CusSysRevID" />
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CUSTOMER_SHIPTO">
-            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER_SHIPTO">
-              <MappingFragment StoreEntitySet="CUSTOMER_SHIPTO">
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
-                <ScalarProperty Name="ShiptoCode" ColumnName="ShiptoCode" />
-                <ScalarProperty Name="AddressName" ColumnName="AddressName" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="Address3" ColumnName="Address3" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
-                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
-                <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
-                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
-                <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
-                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
-                <ScalarProperty Name="StreetCode" ColumnName="StreetCode" />
-                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
-                <ScalarProperty Name="WardCode" ColumnName="WardCode" />
-                <ScalarProperty Name="WardName" ColumnName="WardName" />
-                <ScalarProperty Name="AttrCode0" ColumnName="AttrCode0" />
-                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
-                <ScalarProperty Name="AttrCode1" ColumnName="AttrCode1" />
-                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
-                <ScalarProperty Name="AttrCode2" ColumnName="AttrCode2" />
-                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
-                <ScalarProperty Name="AttrCode3" ColumnName="AttrCode3" />
-                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
-                <ScalarProperty Name="AttrCode4" ColumnName="AttrCode4" />
-                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
-                <ScalarProperty Name="AttrCode5" ColumnName="AttrCode5" />
-                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
-                <ScalarProperty Name="AttrCode6" ColumnName="AttrCode6" />
-                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
-                <ScalarProperty Name="AttrCode7" ColumnName="AttrCode7" />
-                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
-                <ScalarProperty Name="AttrCode8" ColumnName="AttrCode8" />
-                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
-                <ScalarProperty Name="AttrCode9" ColumnName="AttrCode9" />
-                <ScalarProperty Name="AttrName9" ColumnName="AttrName9" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
                 <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1369,37 +1301,6 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CUSTOMERs">
-            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER">
-              <MappingFragment StoreEntitySet="CUSTOMER">
-                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
-                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
-                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
-                <ScalarProperty Name="BusinessRegistrationCertificate" ColumnName="BusinessRegistrationCertificate" />
-                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
-                <ScalarProperty Name="GroupTax" ColumnName="GroupTax" />
-                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="Currency" ColumnName="Currency" />
-                <ScalarProperty Name="PriceListNum" ColumnName="PriceListNum" />
-                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
-                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
-                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="ForeignName" ColumnName="ForeignName" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SO_CANCEL">
             <EntityTypeMapping TypeName="EpicorIntergrationModel.SO_CANCEL">
               <MappingFragment StoreEntitySet="SO_CANCEL">
@@ -1416,7 +1317,79 @@ warning 6002: The table/view 'EpicorIntergration.dbo.SO_CANCEL' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
+                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
+                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
+                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
+                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
+                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
+                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
+                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
+                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
+                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="ShipViaCode" ColumnName="ShipViaCode" />
+                <ScalarProperty Name="BusinessRegistrationCertificate" ColumnName="BusinessRegistrationCertificate" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="GroupTax" ColumnName="GroupTax" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMER_SHIPTO">
+            <EntityTypeMapping TypeName="EpicorIntergrationModel.CUSTOMER_SHIPTO">
+              <MappingFragment StoreEntitySet="CUSTOMER_SHIPTO">
+                <ScalarProperty Name="DMSFlag" ColumnName="DMSFlag" />
+                <ScalarProperty Name="SystemLog" ColumnName="SystemLog" />
+                <ScalarProperty Name="AttrName8" ColumnName="AttrName8" />
+                <ScalarProperty Name="AttrName7" ColumnName="AttrName7" />
+                <ScalarProperty Name="AttrName6" ColumnName="AttrName6" />
+                <ScalarProperty Name="AttrName5" ColumnName="AttrName5" />
+                <ScalarProperty Name="AttrName4" ColumnName="AttrName4" />
+                <ScalarProperty Name="AttrName3" ColumnName="AttrName3" />
+                <ScalarProperty Name="AttrName2" ColumnName="AttrName2" />
+                <ScalarProperty Name="AttrName1" ColumnName="AttrName1" />
+                <ScalarProperty Name="AttrName0" ColumnName="AttrName0" />
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="ShipViaCode" ColumnName="ShipViaCode" />
+                <ScalarProperty Name="GroupTax" ColumnName="GroupTax" />
+                <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShiptoCode" ColumnName="ShiptoCode" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

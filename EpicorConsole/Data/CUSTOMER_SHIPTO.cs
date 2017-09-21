@@ -17,45 +17,27 @@ namespace EpicorConsole.Data
         public string CompanyCode { get; set; }
         public string CustomerCode { get; set; }
         public string ShiptoCode { get; set; }
-        public string AddressName { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string Address3 { get; set; }
+        public string Address { get; set; }
+        public string Ward { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
         public string Country { get; set; }
-        public string DistrictCode { get; set; }
-        public string DistrictName { get; set; }
-        public string ProvinceCode { get; set; }
-        public string ProvinceName { get; set; }
-        public string RegionCode { get; set; }
-        public string RegionName { get; set; }
-        public string StreetCode { get; set; }
-        public string StreetName { get; set; }
-        public string WardCode { get; set; }
-        public string WardName { get; set; }
-        public string AttrCode0 { get; set; }
+        public string Phone1 { get; set; }
+        public string Fax { get; set; }
+        public string SalesRepCode { get; set; }
+        public string GroupTax { get; set; }
+        public string ShipViaCode { get; set; }
+        public string TerritoryID { get; set; }
         public string AttrName0 { get; set; }
-        public string AttrCode1 { get; set; }
         public string AttrName1 { get; set; }
-        public string AttrCode2 { get; set; }
         public string AttrName2 { get; set; }
-        public string AttrCode3 { get; set; }
         public string AttrName3 { get; set; }
-        public string AttrCode4 { get; set; }
         public string AttrName4 { get; set; }
-        public string AttrCode5 { get; set; }
         public string AttrName5 { get; set; }
-        public string AttrCode6 { get; set; }
         public string AttrName6 { get; set; }
-        public string AttrCode7 { get; set; }
         public string AttrName7 { get; set; }
-        public string AttrCode8 { get; set; }
         public string AttrName8 { get; set; }
-        public string AttrCode9 { get; set; }
-        public string AttrName9 { get; set; }
-        public string CreatedBy { get; set; }
-        public System.DateTime CreatedDateTime { get; set; }
-        public string LastUpdatedBy { get; set; }
-        public System.DateTime LastUpdatedDateTime { get; set; }
         public string SystemLog { get; set; }
         public string DMSFlag { get; set; }
     }
