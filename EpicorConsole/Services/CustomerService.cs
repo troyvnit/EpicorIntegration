@@ -57,19 +57,34 @@ namespace EpicorConsole.Services
                                     MapToCustomerRow(customerRow, customer);
                                     customerClient.Update(ref customerTableset);
                                     var custNum = customerTableset.Customer[0].CustNum;
-                                    customerClient.GetNewShipTo(ref customerTableset, custNum);
-                                    var shipToRow = customerTableset.ShipTo.FirstOrDefault(s => s.RowMod == "A");
+                                    var shipToRow = customerTableset.ShipTo.FirstOrDefault();
                                     if(shipToRow != null)
                                     {
+                                        MapToShipToRow(shipToRow, customer);
+                                        shipToRow.RowMod = "U";
+                                        customerClient.Update(ref customerTableset);
+                                        Console.WriteLine($"Added customer ship to 1: #{customer.CustomerCode} successfully!");
+                                        //customerRow.ShipToNum = "";
+                                        //customerRow.RowMod = "U";
+                                        //shipToRow.ShipToNum = "";
+                                        //shipToRow.RowMod = "U";
+                                        //customerClient.Update(ref customerTableset);
+                                        //Console.WriteLine($"Updated default ship to: #{customer.CustomerCode} successfully!");
+
                                         var customerShipTo = db.CUSTOMER_SHIPTO.FirstOrDefault(cst => cst.CustomerCode == customer.CustomerCode);
                                         if(customerShipTo != null)
                                         {
-                                            MapToShipToRow(shipToRow, customerShipTo);
+                                            customerClient.GetNewShipTo(ref customerTableset, custNum);
+                                            var shipToRow2 = customerTableset.ShipTo.FirstOrDefault(s => s.RowMod == "A");
+                                            MapToShipToRow(shipToRow2, customerShipTo);
+                                            //customerRow.ShipToNum = shipToRow2.ShipToNum;
+                                            //customerRow.RowMod = "U";
                                             customerClient.Update(ref customerTableset);
-                                            Console.WriteLine($"Added customer ship to: #{customer.CustomerCode} successfully!");
+                                            //customerShipTo.DMSFlag = "S";
+                                            Console.WriteLine($"Added customer ship to 2: #{customer.CustomerCode} successfully!");
                                         }
                                     }
-                                    customer.DMSFlag = "S";
+                                    //customer.DMSFlag = "S";
                                     Console.WriteLine($"Added customer: #{customer.CustomerCode} successfully!");
                                 }
                             }
@@ -154,13 +169,27 @@ namespace EpicorConsole.Services
             row.UserDefinedColumns["ShortChar04"] = entity.AttrName8;
         }
 
+        private void MapToShipToRow(ShipToRow row, CUSTOMER entity)
+        {
+            row.ShipToNum = "ST" + entity.CustomerCode;
+            row.TerritoryID = entity.TerritoryID;
+            row.UserDefinedColumns["Character01"] = entity.AttrName0;
+            row.UserDefinedColumns["Character02"] = entity.AttrName1;
+            row.UserDefinedColumns["Character03"] = entity.AttrName2;
+            row.UserDefinedColumns["Character04"] = entity.AttrName3;
+            row.UserDefinedColumns["Character05"] = entity.AttrName4;
+            row.UserDefinedColumns["ShortChar01"] = entity.AttrName5;
+            row.UserDefinedColumns["ShortChar02"] = entity.AttrName6;
+            row.UserDefinedColumns["ShortChar03"] = entity.AttrName7;
+            row.UserDefinedColumns["ShortChar04"] = entity.AttrName8;
+        }
+
         private void MapToCustomerRow(CustomerRow row, CUSTOMER entity)
         {
             row.Company = entity.CompanyCode;
             row.CustID = entity.CustomerCode;
             row.CustomerType = entity.CustomerType;
             row.Name = entity.CustomerName;
-            row.UserDefinedColumns["Character01"] = entity.FullAddress;
             row.Address1 = entity.Address;
             row.Address2 = entity.Ward;
             row.Address3 = entity.District;
@@ -178,15 +207,8 @@ namespace EpicorConsole.Services
             row.CreditLimit = entity.CreditLimit;
             row.TermsCode = entity.PaymentTerm;
             row.TerritoryID = entity.TerritoryID;
-            row.UserDefinedColumns["Character01"] = entity.AttrName0;
-            row.UserDefinedColumns["Character02"] = entity.AttrName1;
-            row.UserDefinedColumns["Character03"] = entity.AttrName2;
-            row.UserDefinedColumns["Character04"] = entity.AttrName3;
-            row.UserDefinedColumns["Character05"] = entity.AttrName4;
-            row.UserDefinedColumns["ShortChar01"] = entity.AttrName5;
-            row.UserDefinedColumns["ShortChar02"] = entity.AttrName6;
-            row.UserDefinedColumns["ShortChar03"] = entity.AttrName7;
-            row.UserDefinedColumns["ShortChar04"] = entity.AttrName8;
+            row.ShipToNum = "ST" + entity.CustomerCode;
+            row.UserDefinedColumns["Character01"] = entity.FullAddress;
         }
     }
 }
