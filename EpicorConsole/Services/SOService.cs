@@ -62,6 +62,7 @@ namespace EpicorConsole.Services
                                     soClient.Update(ref soTableset);
                                     var orderNum = soTableset.OrderHed[0].OrderNum;
                                     soHeader.Ordernum = orderNum;
+                                    soHeader.LastUpdatedDateTime = DateTime.Now;
                                     soHeader.DMSFlag = "S";
                                     Console.WriteLine($"Added soHeader: [{soHeader.CompanyCode}]#{orderNum} successfully!");
 
